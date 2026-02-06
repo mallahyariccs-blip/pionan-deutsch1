@@ -1,4 +1,4 @@
-name: Build APK - FINAL SOLUTION
+name: Build APK - Public Docker
 on: [push]
 jobs:
   build:
@@ -6,31 +6,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Docker Build Environment
-        run: |
-          # ایجاد volume برای cache کردن buildozer
-          mkdir -p .buildozer_cache
-          
-      - name: Build APK with Docker (No TTY)
+      - name: Build with Official Kivy Docker
         run: |
           docker run --rm \
-            -v "$(pwd)":/src \
-            -v "$(pwd)/.buildozer_cache":/home/user/.buildozer \
+            -v "$PWD":/src \
             -w /src \
-            magland/buildozer-android:latest \
-            buildozer android debug
-      
-      - name: List Generated Files
-        run: |
-          echo "=== فایل‌های موجود ==="
-          ls -la bin/ 2>/dev/null || echo "پوشه bin هنوز ایجاد نشده"
-          find . -name "*.apk" 2>/dev/null || echo "فایل APK پیدا نشد"
+            kivy/kivy:latest \
+            /bin/bash -c "pip install buildozer && buildozer android debug"
       
       - name: Upload APK
-        if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: final-apk
+          name: pimon-apk
           path: bin/*.apk
-          if-no-files-found: error
-          retention-days: 7
