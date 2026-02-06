@@ -9,14 +9,14 @@ jobs:
       - name: Build with Kivy's Official Buildozer Docker
         run: |
           docker run --rm \
+            --user "$(id -u):$(id -g)" \
             -v "$(pwd)":/src \
             -w /src \
             kivy/buildozer:latest \
             /bin/bash -c "
-              # به روز رسانی Buildozer داخل کانتینر
+              mkdir -p /home/user/.buildozer /home/user/.android
               pip install --upgrade buildozer
-              # ساخت APK
-              echo y | buildozer --verbose --color=no android debug
+              cd /src && buildozer --verbose android debug
             "
 
       - name: Check for APK
