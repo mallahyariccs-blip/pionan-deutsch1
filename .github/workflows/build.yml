@@ -9,36 +9,35 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y python3-pip python3-dev openjdk-11-jdk wget unzip git zlib1g-dev
-          pip3 install --upgrade pip
+          sudo apt-get install -y python3-pip python3-dev openjdk-11-jdk wget unzip git
           pip3 install buildozer cython==0.29.33
-      - name: Build APK with Full Log
-        id: build
+      - name: Force Older Build-Tools
         run: |
-          # اجرای buildozer و ذخیره خروجی
-          if buildozer android debug 2>&1; then
-            echo "status=success" >> $GITHUB_OUTPUT
-          else
-            echo "status=failed" >> $GITHUB_OUTPUT
-            # لاگ کامل را نمایش بده
-            echo "=== LOG DUMP ==="
-            cat .buildozer/android/platform/build-*/build-output.txt 2>/dev/null || echo "No build log found"
-            exit 1  # واقعاً شکست بخورد
-          fi
-      - name: Find and List APK
-        if: steps.build.outputs.status == 'success'
+          # تنظیم مسیر SDK
+          export ANDROID_SDK_ROOT="$HOME/.buildozer/android/platform/android-sdk"
+          mkdir -p $ANDROID_SDK_ROOT
+          
+          # نصب cmdline-tools
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O cmdline-tools.zip
+          unzip -q cmdline-tools.zip -d $ANDROID_SDK_ROOT
+          mv $ANDROID_SDK_ROOT/cmdline-tools $ANDROID_SDK_ROOT/cmdline-tools-tmp
+          mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
+          mv $ANDROID_SDK_ROOT/cmdline-tools-tmp/* $ANDROID_SDK_ROOT/cmdline-tools/latest/
+          
+          # قبول licenses
+          yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses
+          
+          # نصب build-tools 34.0.0 (پایدار)
+          $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "build-tools;34.0.0" "platforms;android-34" "platform-tools"
+      - name: Build APK
         run: |
-          echo "=== جستجوی APK ==="
-          find . -name "*.apk" -type f 2>/dev/null
-          echo "=== محتوای پوشه‌ها ==="
-          ls -la bin/ .buildozer/android/platform/build-*/ 2>/dev/null || echo "پوشه‌ها وجود ندارند"
+          # ساخت با تنظیمات دستی
+          export ANDROID_SDK_ROOT="$HOME/.buildozer/android/platform/android-sdk"
+          buildozer android debug
       - name: Upload APK
-        if: steps.build.outputs.status == 'success'
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: app-apk
-          path: |
-            bin/*.apk
-            .buildozer/android/platform/build-*/*.apk
-          if-no-files-found: error
+          path: bin/*.apk
           retention-days: 7
