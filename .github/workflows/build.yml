@@ -2,18 +2,43 @@ name: Build APK
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container:
-      image: kivy/buildozer:latest
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Build
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install System Dependencies
         run: |
-          buildozer android debug
-      - name: Upload
+          sudo apt-get update
+          sudo apt-get install -y \
+            python3-pip \
+            python3-dev \
+            openjdk-11-jdk-headless \
+            wget unzip git \
+            zlib1g-dev \
+            libncurses5 \
+            libssl-dev \
+            libffi-dev
+      - name: Install Buildozer
+        run: |
+          pip3 install --upgrade pip wheel setuptools
+          pip3 install buildozer cython==0.29.33
+      - name: Build with Custom Command
+        run: |
+          # استفاده از این دستور خاص برای GitHub Actions
+          buildozer -v android debug \
+            -- \
+            --sdk_version=34 \
+            --ndk_version=25b \
+            --android_api=34
+      - name: Find and Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-apk
-          path: /home/kivy/build/*.apk
-          retention-days: 7
+          name: apk-files
+          path: |
+            bin/
+            .buildozer/android/platform/build-*/
+          if-no-files-found: warn
