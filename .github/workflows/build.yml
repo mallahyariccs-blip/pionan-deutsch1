@@ -3,38 +3,38 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120  # زمان بیشتر
     steps:
       - uses: actions/checkout@v4
-      - name: Setup
+      - name: Setup with Android SDK
         run: |
           sudo apt update
-          sudo apt install -y python3-pip openjdk-17-jdk wget unzip
+          sudo apt install -y \
+            python3-pip \
+            openjdk-17-jdk \
+            wget unzip git \
+            cmake ninja-build \
+            libncurses5
           pip3 install cython==0.29.33 buildozer
-      - name: Build with Logging
-        id: build
+          
+          # قبول licenses Android
+          mkdir -p ~/.android
+          touch ~/.android/repositories.cfg
+          yes | ${ANDROID_HOME:-$HOME/Android/Sdk}/tools/bin/sdkmanager --licenses 2>/dev/null || true
+      - name: Build APK with Buildozer
         run: |
-          # ساخت با لاگ کامل
-          if buildozer android debug; then
-            echo "BUILD_STATUS=success" >> $GITHUB_OUTPUT
-          else
-            echo "BUILD_STATUS=failed" >> $GITHUB_OUTPUT
-            exit 0  # باز هم workflow را سبز نگه دار
-          fi
-      - name: Find APK Files
-        if: steps.build.outputs.BUILD_STATUS == 'success'
-        run: |
-          echo "=== همه فایل‌های APK ==="
-          find . -type f -name "*.apk" 2>/dev/null
-          echo "=== محتوای پوشه‌ها ==="
-          ls -la bin/ .buildozer/android/platform/build-* 2>/dev/null || true
-      - name: Upload ANY APK Found
+          # تنظیم متغیر محیطی برای build-tools
+          export ANDROID_HOME="$HOME/.buildozer/android/platform/android-sdk"
+          
+          # نصب build-tools دستی
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "build-tools;34.0.0" "platforms;android-34"
+          
+          # ساخت برنامه
+          buildozer -v android debug
+      - name: Upload APK
+        if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: all-apks
-          path: |
-            **/*.apk
-            bin/
-            .buildozer/
-          if-no-files-found: warn
-          retention-days: 1
+          name: pionan-apk
+          path: bin/*.apk
+          retention-days: 7
