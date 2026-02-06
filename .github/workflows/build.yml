@@ -3,30 +3,33 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 90  # افزایش زمان
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Build Environment
+      - name: Setup
         run: |
           sudo apt update
           sudo apt install -y python3-pip openjdk-17-jdk wget unzip
-          pip3 install --upgrade pip
-          pip3 install cython==0.29.33
-          pip3 install buildozer
-      - name: Accept Android SDK Licenses
+          pip3 install cython==0.29.33 buildozer
+      - name: Build and Find APK
         run: |
-          mkdir -p ~/.android
-          touch ~/.android/repositories.cfg
-          yes | /home/runner/.buildozer/android/platform/android-sdk/cmdline-tools/latest/bin/sdkmanager --licenses || true
-      - name: Build with Buildozer
-        run: |
-          # قبول license قبل از build
-          yes | buildozer android debug 2>&1 | tail -100
-        timeout-minutes: 70
+          # ساخت برنامه
+          buildozer android debug
+          
+          # پیدا کردن فایل APK
+          echo "=== جستجوی فایل APK ==="
+          find . -name "*.apk" 2>/dev/null | head -20
+          echo "=== لیست پوشه bin ==="
+          ls -la bin/ 2>/dev/null || echo "پوشه bin وجود ندارد"
+          echo "=== لیست ریشه ==="
+          ls -la *.apk 2>/dev/null || echo "APK در ریشه نیست"
       - name: Upload APK
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: android-apk
-          path: bin/*.apk
+          name: app-apk
+          path: |
+            bin/*.apk
+            *.apk
+            **/*.apk
           retention-days: 7
