@@ -8,15 +8,18 @@ jobs:
 
       - name: Build with Kivy's Official Buildozer Docker
         run: |
+          # ایجاد یک فایل پاسخ با محتوای y (و یک اینتر)
+          echo -e "y\n" > /tmp/answer.txt
+          
           docker run --rm \
-            --user "$(id -u):$(id -g)" \
             -v "$(pwd)":/src \
+            -v "/tmp/answer.txt":/answer.txt \
             -w /src \
             kivy/buildozer:latest \
             /bin/bash -c "
-              mkdir -p /home/user/.buildozer /home/user/.android
               pip install --upgrade buildozer
-              cd /src && buildozer --verbose android debug
+              # استفاده از فایل پاسخ برای سوال root
+              buildozer --verbose android debug < /answer.txt
             "
 
       - name: Check for APK
