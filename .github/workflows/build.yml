@@ -1,4 +1,4 @@
-name: Build APK - Docker Method
+name: Build APK - FINAL SOLUTION
 on: [push]
 jobs:
   build:
@@ -6,19 +6,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Build APK using Docker
+      - name: Setup Docker Build Environment
         run: |
-          # استفاده از Docker image پایدار buildozer
-          docker run --rm -it \
-            -v "$(pwd)":/home/user/hostcwd \
-            -v "$(pwd)/.buildozer_docker":/home/user/.buildozer \
-            -w /home/user/hostcwd \
+          # ایجاد volume برای cache کردن buildozer
+          mkdir -p .buildozer_cache
+          
+      - name: Build APK with Docker (No TTY)
+        run: |
+          docker run --rm \
+            -v "$(pwd)":/src \
+            -v "$(pwd)/.buildozer_cache":/home/user/.buildozer \
+            -w /src \
             magland/buildozer-android:latest \
             buildozer android debug
       
+      - name: List Generated Files
+        run: |
+          echo "=== فایل‌های موجود ==="
+          ls -la bin/ 2>/dev/null || echo "پوشه bin هنوز ایجاد نشده"
+          find . -name "*.apk" 2>/dev/null || echo "فایل APK پیدا نشد"
+      
       - name: Upload APK
+        if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: pimon-apk
+          name: final-apk
           path: bin/*.apk
           if-no-files-found: error
+          retention-days: 7
