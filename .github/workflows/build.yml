@@ -1,19 +1,24 @@
-name: Build APK with Pre-built Action
+name: Build APK - Docker Method
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-      - name: Build APK using Buildozer Action
-        uses: mindey/actions-buildozer-android@v1
-        with:
-          buildozer_version: '1.5.0'  # نسخه پایدار
-          command: 'android debug'    # برای ساخت APK دیباگ
-          project_dir: '.'            # مسیر پروژه (همان پوشه ریشه)
+      - uses: actions/checkout@v4
+      
+      - name: Build APK using Docker
+        run: |
+          # استفاده از Docker image پایدار buildozer
+          docker run --rm -it \
+            -v "$(pwd)":/home/user/hostcwd \
+            -v "$(pwd)/.buildozer_docker":/home/user/.buildozer \
+            -w /home/user/hostcwd \
+            magland/buildozer-android:latest \
+            buildozer android debug
+      
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-apk
+          name: pimon-apk
           path: bin/*.apk
+          if-no-files-found: error
