@@ -2,35 +2,43 @@ name: Build APK
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-22.04  # استفاده از نسخه پایدار
+    runs-on: ubuntu-22.04
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
-            python3-pip \
-            python3-dev \
-            openjdk-11-jdk \
-            wget unzip git \
-            zlib1g-dev \
-            ccache
+          sudo apt-get install -y python3-pip python3-dev openjdk-11-jdk wget unzip git zlib1g-dev
           pip3 install --upgrade pip
           pip3 install buildozer cython==0.29.33
-      - name: Accept Android Licenses
+      - name: Build APK with Full Log
+        id: build
         run: |
-          mkdir -p ~/.android
-          touch ~/.android/repositories.cfg
-          yes | $HOME/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --licenses || true
-      - name: Build APK
+          # اجرای buildozer و ذخیره خروجی
+          if buildozer android debug 2>&1; then
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "status=failed" >> $GITHUB_OUTPUT
+            # لاگ کامل را نمایش بده
+            echo "=== LOG DUMP ==="
+            cat .buildozer/android/platform/build-*/build-output.txt 2>/dev/null || echo "No build log found"
+            exit 1  # واقعاً شکست بخورد
+          fi
+      - name: Find and List APK
+        if: steps.build.outputs.status == 'success'
         run: |
-          buildozer android debug 2>&1 | tail -50
-        timeout-minutes: 60
+          echo "=== جستجوی APK ==="
+          find . -name "*.apk" -type f 2>/dev/null
+          echo "=== محتوای پوشه‌ها ==="
+          ls -la bin/ .buildozer/android/platform/build-*/ 2>/dev/null || echo "پوشه‌ها وجود ندارند"
       - name: Upload APK
-        if: success()
+        if: steps.build.outputs.status == 'success'
         uses: actions/upload-artifact@v4
         with:
-          name: app
-          path: bin/*.apk
+          name: app-apk
+          path: |
+            bin/*.apk
+            .buildozer/android/platform/build-*/*.apk
+          if-no-files-found: error
           retention-days: 7
