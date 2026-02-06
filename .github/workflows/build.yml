@@ -1,4 +1,4 @@
-name: Build APK - Docker Final
+name: Build APK - Official Kivy Docker
 on: [push]
 jobs:
   build:
@@ -6,21 +6,34 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build APK using Official Kivy Docker Image
+      - name: Build with Kivy's Official Buildozer Docker
         run: |
-          # استفاده از یک Docker Image سبک و رسمی که برای Buildozer بهینه شده
           docker run --rm \
-            --volume "$(pwd)":/home/user/workdir \
-            --workdir /home/user/workdir \
-            "tsitle/docker-buildozer:latest" \
-            bash -c "
-              pip install --upgrade buildozer &&
+            -v "$(pwd)":/src \
+            -w /src \
+            kivy/buildozer:latest \
+            /bin/bash -c "
+              # به روز رسانی Buildozer داخل کانتینر
+              pip install --upgrade buildozer
+              # ساخت APK
               buildozer android debug
             "
+
+      - name: Check for APK
+        run: |
+          if ls bin/*.apk 2>/dev/null; then
+            echo "✅ APK با موفقیت ساخته شد!"
+            ls -lh bin/*.apk
+          else
+            echo "❌ APK ساخته نشد. فایل‌های موجود:"
+            find . -name '*.apk' 2>/dev/null
+            exit 1
+          fi
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: PIONAN-APK-FINAL
+          name: PIONAN-APK-READY
           path: bin/*.apk
           if-no-files-found: error
+          retention-days: 7
