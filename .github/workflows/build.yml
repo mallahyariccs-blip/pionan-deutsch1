@@ -1,45 +1,26 @@
-name: Build APK - Guaranteed
+name: Build APK - Docker Final
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-22.04
-    timeout-minutes: 120
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Install Buildozer the Right Way
+
+      - name: Build APK using Official Kivy Docker Image
         run: |
-          # روش نصب توصیه‌شده توسط Buildozer
-          sudo apt-get update
-          sudo apt-get install -y \
-            python3-pip \
-            python3-dev \
-            git \
-            wget \
-            make \
-            unzip \
-            openjdk-11-jdk \
-            libssl-dev \
-            libffi-dev \
-            zlib1g-dev \
-            libncurses5-dev
-          
-          # نصب Cython و Buildozer
-          python3 -m pip install --upgrade pip wheel setuptools virtualenv
-          python3 -m pip install cython==0.29.33
-          python3 -m pip install buildozer==1.5.0
-          
-      - name: Build APK
-        run: |
-          buildozer android debug
-          
-      - name: Check and Upload
-        run: |
-          if [ -f bin/*.apk ]; then
-            echo "✅ APK ساخته شد!"
-            ls -lh bin/*.apk
-          else
-            echo "❌ APK ساخته نشد. بررسی کن:"
-            find . -name "*.apk" 2>/dev/null
-            exit 1
-          fi
+          # استفاده از یک Docker Image سبک و رسمی که برای Buildozer بهینه شده
+          docker run --rm \
+            --volume "$(pwd)":/home/user/workdir \
+            --workdir /home/user/workdir \
+            "tsitle/docker-buildozer:latest" \
+            bash -c "
+              pip install --upgrade buildozer &&
+              buildozer android debug
+            "
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: PIONAN-APK-FINAL
+          path: bin/*.apk
+          if-no-files-found: error
