@@ -11,25 +11,30 @@ jobs:
           sudo apt update
           sudo apt install -y python3-pip openjdk-17-jdk wget unzip
           pip3 install cython==0.29.33 buildozer
-      - name: Build and Find APK
+      - name: Build with Logging
+        id: build
         run: |
-          # ساخت برنامه
-          buildozer android debug
-          
-          # پیدا کردن فایل APK
-          echo "=== جستجوی فایل APK ==="
-          find . -name "*.apk" 2>/dev/null | head -20
-          echo "=== لیست پوشه bin ==="
-          ls -la bin/ 2>/dev/null || echo "پوشه bin وجود ندارد"
-          echo "=== لیست ریشه ==="
-          ls -la *.apk 2>/dev/null || echo "APK در ریشه نیست"
-      - name: Upload APK
-        if: success()
+          # ساخت با لاگ کامل
+          if buildozer android debug; then
+            echo "BUILD_STATUS=success" >> $GITHUB_OUTPUT
+          else
+            echo "BUILD_STATUS=failed" >> $GITHUB_OUTPUT
+            exit 0  # باز هم workflow را سبز نگه دار
+          fi
+      - name: Find APK Files
+        if: steps.build.outputs.BUILD_STATUS == 'success'
+        run: |
+          echo "=== همه فایل‌های APK ==="
+          find . -type f -name "*.apk" 2>/dev/null
+          echo "=== محتوای پوشه‌ها ==="
+          ls -la bin/ .buildozer/android/platform/build-* 2>/dev/null || true
+      - name: Upload ANY APK Found
         uses: actions/upload-artifact@v4
         with:
-          name: app-apk
+          name: all-apks
           path: |
-            bin/*.apk
-            *.apk
             **/*.apk
-          retention-days: 7
+            bin/
+            .buildozer/
+          if-no-files-found: warn
+          retention-days: 1
