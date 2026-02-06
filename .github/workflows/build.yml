@@ -12,7 +12,6 @@ jobs:
           pip3 install buildozer
       - name: Build with Buildozer
         run: |
-          buildozer init
           buildozer android debug
       - name: Upload APK
         uses: actions/upload-artifact@v4
