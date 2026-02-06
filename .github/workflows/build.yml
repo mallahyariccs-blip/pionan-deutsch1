@@ -16,7 +16,7 @@ jobs:
               # به روز رسانی Buildozer داخل کانتینر
               pip install --upgrade buildozer
               # ساخت APK
-              buildozer --verbose --color=no android debug
+              echo y | buildozer --verbose --color=no android debug
             "
 
       - name: Check for APK
