@@ -1,5 +1,4 @@
 [app]
-
 title = PIONAN Deutsch Courses
 package.name = pionan_deutsch
 package.domain = org.pionan
@@ -9,6 +8,7 @@ source.dir = .
 source.main = main.py
 source.include_exts = py,html,txt,json,jpg,png
 
+# نکته مهم: کینوی ۲.۳.۰ ممکن است مشکلاتی ایجاد کند
 requirements = python3,kivy==2.3.0
 
 orientation = portrait
@@ -16,13 +16,12 @@ fullscreen = 0
 
 [android]
 
-# نسخه Buildozer 1.5.0
-p4a.branch = stable
-android.sdk = 24
-android.ndk = 10e
+# ⭐⭐⭐ تنظیمات حیاتی برای GitHub Actions ⭐⭐⭐
+# کامنت کن یا حذف کن: android.sdk = 24
+# کامنت کن یا حذف کن: android.ndk = 10e
 android.minapi = 21
-android.maxapi = 29
-android.targetapi = 29
+android.maxapi = 34
+android.targetapi = 34
 android.arch = armeabi-v7a
 
 # دسترسی‌ها
@@ -34,5 +33,4 @@ android.accept_sdk_license = True
 android.allow_backup = True
 
 [buildozer]
-
 log_level = 2
