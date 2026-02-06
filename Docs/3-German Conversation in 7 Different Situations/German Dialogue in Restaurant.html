@@ -1,0 +1,8585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>German Dialogue In Restaurant</title>
+<style>
+body { font-family: Tahoma, sans-serif; background: #fdfdfd; color: #222; padding: 20px; padding-bottom:120px; }
+.block { margin:20px 0; white-space: pre-wrap; }
+.word { cursor:pointer; padding:1px 2px; transition: background 0.2s; display:inline; white-space: pre-wrap; }
+.sentence-highlight { background-color:#ffe06688; border-radius:3px; }
+.section-header { 
+    background: #3498db; 
+    color: white; 
+    padding: 12px 20px; 
+    border-radius: 8px; 
+    margin: 25px 0 15px 0; 
+    font-weight: bold; 
+    font-size: 1.3em; 
+    cursor: pointer; 
+    border-left: 6px solid #2980b9;
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.2);
+    transition: all 0.3s;
+}
+.section-header:hover { 
+    background: #2980b9; 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+.toc-container { 
+    background: #f8f9fa; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    padding: 20px; 
+    margin: 25px 0; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.toc-title { 
+    font-size: 1.4em; 
+    font-weight: bold; 
+    color: #2c3e50; 
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+.toc-item { 
+    padding: 10px 15px; 
+    margin: 8px 0; 
+    background: white; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    border-left: 5px solid #3498db;
+    transition: all 0.2s;
+    font-size: 0.95em;
+}
+.toc-item:hover { 
+    background: #e3f2fd; 
+    transform: translateX(5px); 
+    border-left-color: #2980b9;
+}
+/* Bookmark Styles */
+.word.bookmark-red { background-color: rgba(255, 107, 107, 0.3) !important; border-bottom: 2px solid #ff6b6b; }
+.word.bookmark-blue { background-color: rgba(77, 150, 255, 0.3) !important; border-bottom: 2px solid #4d96ff; }
+.word.bookmark-green { background-color: rgba(107, 207, 127, 0.3) !important; border-bottom: 2px solid #6bcf7f; }
+.word.bookmark-purple { background-color: rgba(157, 101, 201, 0.3) !important; border-bottom: 2px solid #9d65c9; }
+.word.bookmark-orange { background-color: rgba(255, 169, 77, 0.3) !important; border-bottom: 2px solid #ffa94d; }
+/* Bookmark Palette */
+#bookmark-palette { 
+    display: none;
+    position: fixed;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 10002;
+    border: 3px solid #1a1a2e;
+}
+</style>
+</head>
+<body>
+<h2 style="text-align:center; color:#2c3e50; margin-bottom:30px;">🎧 German Dialogue In Restaurant</h2>
+
+
+
+<div id="text"></div>
+
+<audio id="audio" src="German Dialogue in Restaurant.mp3"></audio>
+
+<!-- Bookmark Palette -->
+<div id="bookmark-palette">
+    <div style="text-align: center; margin-bottom: 15px; font-weight: bold; color: #1a1a2e;">
+        📌 Bookmark with color:
+    </div>
+    <div style="display: flex; gap: 15px; justify-content: center;">
+        <div class="bookmark-color-btn" data-color="red" title="Important" style="width: 40px; height: 40px; background: #ff6b6b; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="blue" title="Grammar" style="width: 40px; height: 40px; background: #4d96ff; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="green" title="New Vocabulary" style="width: 40px; height: 40px; background: #6bcf7f; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="purple" title="Questions" style="width: 40px; height: 40px; background: #9d65c9; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="orange" title="Practice" style="width: 40px; height: 40px; background: #ffa94d; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+    </div>
+    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
+        <button id="show-all-bookmarks" style="padding: 8px 15px; background: #0984e3; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px;">Show All Bookmarks</button>
+        <button id="clear-all-bookmarks" style="padding: 8px 15px; background: #d63031; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px;">Clear All</button>
+        <button id="cancel-bookmark" style="padding: 8px 15px; background: #666; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px;">Cancel</button>
+    </div>
+    <div style="text-align: center; margin-top: 15px; font-size: 12px; color: #666;">
+        Click on a word or select multiple words, then choose a color
+    </div>
+</div>
+
+<script>
+const wordData = [
+  {
+    "word": " Are",
+    "start": 0.0,
+    "end": 0.46
+  },
+  {
+    "word": " you",
+    "start": 0.46,
+    "end": 0.68
+  },
+  {
+    "word": " hungry",
+    "start": 0.68,
+    "end": 1.14
+  },
+  {
+    "word": " and",
+    "start": 1.14,
+    "end": 1.56
+  },
+  {
+    "word": " thirsty?",
+    "start": 1.56,
+    "end": 1.96
+  },
+  {
+    "word": " Great!",
+    "start": 2.46,
+    "end": 2.94
+  },
+  {
+    "word": " This",
+    "start": 3.32,
+    "end": 3.56
+  },
+  {
+    "word": " dialogue",
+    "start": 3.56,
+    "end": 3.98
+  },
+  {
+    "word": " in",
+    "start": 3.98,
+    "end": 4.32
+  },
+  {
+    "word": " German",
+    "start": 4.32,
+    "end": 4.64
+  },
+  {
+    "word": " will",
+    "start": 4.64,
+    "end": 4.96
+  },
+  {
+    "word": " prepare",
+    "start": 4.96,
+    "end": 5.4
+  },
+  {
+    "word": " you",
+    "start": 5.4,
+    "end": 5.9
+  },
+  {
+    "word": " for",
+    "start": 5.9,
+    "end": 6.34
+  },
+  {
+    "word": " your",
+    "start": 6.34,
+    "end": 6.48
+  },
+  {
+    "word": " next",
+    "start": 6.48,
+    "end": 6.78
+  },
+  {
+    "word": " visit",
+    "start": 6.78,
+    "end": 7.12
+  },
+  {
+    "word": " to",
+    "start": 7.12,
+    "end": 7.36
+  },
+  {
+    "word": " the",
+    "start": 7.36,
+    "end": 7.5
+  },
+  {
+    "word": " restaurant.",
+    "start": 7.5,
+    "end": 8.08
+  },
+  {
+    "word": " You",
+    "start": 8.58,
+    "end": 8.82
+  },
+  {
+    "word": " will",
+    "start": 8.82,
+    "end": 9.06
+  },
+  {
+    "word": " learn",
+    "start": 9.06,
+    "end": 9.42
+  },
+  {
+    "word": " all",
+    "start": 9.42,
+    "end": 9.66
+  },
+  {
+    "word": " the",
+    "start": 9.66,
+    "end": 9.82
+  },
+  {
+    "word": " essential",
+    "start": 9.82,
+    "end": 10.2
+  },
+  {
+    "word": " vocabulary",
+    "start": 10.2,
+    "end": 10.78
+  },
+  {
+    "word": " and",
+    "start": 10.78,
+    "end": 11.24
+  },
+  {
+    "word": " expressions",
+    "start": 11.24,
+    "end": 11.76
+  },
+  {
+    "word": " that",
+    "start": 11.76,
+    "end": 12.34
+  },
+  {
+    "word": " are",
+    "start": 12.34,
+    "end": 12.48
+  },
+  {
+    "word": " necessary",
+    "start": 12.48,
+    "end": 13.0
+  },
+  {
+    "word": " to",
+    "start": 13.0,
+    "end": 13.32
+  },
+  {
+    "word": " express",
+    "start": 13.32,
+    "end": 13.78
+  },
+  {
+    "word": " yourself",
+    "start": 13.78,
+    "end": 14.16
+  },
+  {
+    "word": " fluently",
+    "start": 14.16,
+    "end": 14.84
+  },
+  {
+    "word": " in",
+    "start": 14.84,
+    "end": 15.16
+  },
+  {
+    "word": " German.",
+    "start": 15.16,
+    "end": 15.42
+  },
+  {
+    "word": " By",
+    "start": 16.0,
+    "end": 16.24
+  },
+  {
+    "word": " the",
+    "start": 16.24,
+    "end": 16.36
+  },
+  {
+    "word": " way,",
+    "start": 16.34,
+    "end": 16.54
+  },
+  {
+    "word": " if",
+    "start": 16.68,
+    "end": 16.84
+  },
+  {
+    "word": " we",
+    "start": 16.84,
+    "end": 17.04
+  },
+  {
+    "word": " speak",
+    "start": 17.04,
+    "end": 17.34
+  },
+  {
+    "word": " too",
+    "start": 17.34,
+    "end": 17.56
+  },
+  {
+    "word": " quickly",
+    "start": 17.56,
+    "end": 17.88
+  },
+  {
+    "word": " or",
+    "start": 17.88,
+    "end": 18.22
+  },
+  {
+    "word": " too",
+    "start": 18.22,
+    "end": 18.42
+  },
+  {
+    "word": " slowly,",
+    "start": 18.42,
+    "end": 18.84
+  },
+  {
+    "word": " you",
+    "start": 19.28,
+    "end": 19.400000000000002
+  },
+  {
+    "word": " can",
+    "start": 19.38,
+    "end": 19.6
+  },
+  {
+    "word": " change",
+    "start": 19.6,
+    "end": 19.98
+  },
+  {
+    "word": " the",
+    "start": 19.98,
+    "end": 20.16
+  },
+  {
+    "word": " video",
+    "start": 20.16,
+    "end": 20.54
+  },
+  {
+    "word": " speed",
+    "start": 20.54,
+    "end": 20.92
+  },
+  {
+    "word": " so",
+    "start": 20.92,
+    "end": 21.22
+  },
+  {
+    "word": " that",
+    "start": 21.22,
+    "end": 21.46
+  },
+  {
+    "word": " it",
+    "start": 21.46,
+    "end": 21.580000000000002
+  },
+  {
+    "word": " is",
+    "start": 21.58,
+    "end": 21.74
+  },
+  {
+    "word": " perfect",
+    "start": 21.74,
+    "end": 22.06
+  },
+  {
+    "word": " for",
+    "start": 22.06,
+    "end": 22.34
+  },
+  {
+    "word": " you.",
+    "start": 22.34,
+    "end": 22.6
+  },
+  {
+    "word": " On",
+    "start": 23.04,
+    "end": 23.24
+  },
+  {
+    "word": " your",
+    "start": 23.24,
+    "end": 23.36
+  },
+  {
+    "word": " computer",
+    "start": 23.36,
+    "end": 23.72
+  },
+  {
+    "word": " or",
+    "start": 23.72,
+    "end": 23.96
+  },
+  {
+    "word": " cell",
+    "start": 23.96,
+    "end": 24.2
+  },
+  {
+    "word": " phone",
+    "start": 24.2,
+    "end": 24.42
+  },
+  {
+    "word": " go",
+    "start": 24.42,
+    "end": 24.64
+  },
+  {
+    "word": " to",
+    "start": 24.64,
+    "end": 24.76
+  },
+  {
+    "word": " the",
+    "start": 24.76,
+    "end": 24.880000000000003
+  },
+  {
+    "word": " video",
+    "start": 24.86,
+    "end": 25.12
+  },
+  {
+    "word": " settings",
+    "start": 25.12,
+    "end": 25.5
+  },
+  {
+    "word": " and",
+    "start": 25.5,
+    "end": 26.08
+  },
+  {
+    "word": " set",
+    "start": 26.08,
+    "end": 26.4
+  },
+  {
+    "word": " the",
+    "start": 26.4,
+    "end": 26.58
+  },
+  {
+    "word": " speed",
+    "start": 26.58,
+    "end": 26.9
+  },
+  {
+    "word": " that",
+    "start": 26.9,
+    "end": 27.24
+  },
+  {
+    "word": " feels",
+    "start": 27.24,
+    "end": 27.62
+  },
+  {
+    "word": " right",
+    "start": 27.62,
+    "end": 28.06
+  },
+  {
+    "word": " for",
+    "start": 28.06,
+    "end": 28.32
+  },
+  {
+    "word": " you.",
+    "start": 28.32,
+    "end": 28.54
+  },
+  {
+    "word": " So,",
+    "start": 28.54,
+    "end": 29.42
+  },
+  {
+    "word": " let's",
+    "start": 29.84,
+    "end": 30.62
+  },
+  {
+    "word": " go",
+    "start": 30.62,
+    "end": 30.740000000000002
+  },
+  {
+    "word": " to",
+    "start": 30.7,
+    "end": 30.9
+  },
+  {
+    "word": " the",
+    "start": 30.9,
+    "end": 31.02
+  },
+  {
+    "word": " restaurant",
+    "start": 31.02,
+    "end": 31.68
+  },
+  {
+    "word": " and",
+    "start": 31.68,
+    "end": 32.38
+  },
+  {
+    "word": " have",
+    "start": 32.38,
+    "end": 32.72
+  },
+  {
+    "word": " some",
+    "start": 32.72,
+    "end": 32.94
+  },
+  {
+    "word": " delicious",
+    "start": 32.94,
+    "end": 33.3
+  },
+  {
+    "word": " food.",
+    "start": 33.3,
+    "end": 33.82
+  },
+  {
+    "word": " Let's",
+    "start": 34.24,
+    "end": 34.76
+  },
+  {
+    "word": " go!",
+    "start": 34.76,
+    "end": 34.879999999999995
+  },
+  {
+    "word": " Welcome",
+    "start": 45.36,
+    "end": 46.2
+  },
+  {
+    "word": " to",
+    "start": 46.2,
+    "end": 46.7
+  },
+  {
+    "word": " Pippe!",
+    "start": 46.7,
+    "end": 47.16
+  },
+  {
+    "word": " Do",
+    "start": 47.48,
+    "end": 47.72
+  },
+  {
+    "word": " you",
+    "start": 47.72,
+    "end": 47.96
+  },
+  {
+    "word": " have",
+    "start": 47.96,
+    "end": 48.08
+  },
+  {
+    "word": " a",
+    "start": 47.96,
+    "end": 48.2
+  },
+  {
+    "word": " reservation?",
+    "start": 48.2,
+    "end": 48.54
+  },
+  {
+    "word": " Good",
+    "start": 49.16,
+    "end": 49.44
+  },
+  {
+    "word": " evening!",
+    "start": 49.44,
+    "end": 49.86
+  },
+  {
+    "word": " Oh",
+    "start": 50.44,
+    "end": 50.74
+  },
+  {
+    "word": " no,",
+    "start": 50.74,
+    "end": 51.14
+  },
+  {
+    "word": " we",
+    "start": 51.56,
+    "end": 51.76
+  },
+  {
+    "word": " haven't",
+    "start": 51.76,
+    "end": 52.24
+  },
+  {
+    "word": " reserved!",
+    "start": 52.24,
+    "end": 52.74
+  },
+  {
+    "word": " We",
+    "start": 53.28,
+    "end": 53.54
+  },
+  {
+    "word": " didn't",
+    "start": 53.54,
+    "end": 54.14
+  },
+  {
+    "word": " know",
+    "start": 54.14,
+    "end": 54.26
+  },
+  {
+    "word": " that",
+    "start": 54.14,
+    "end": 54.52
+  },
+  {
+    "word": " Friday",
+    "start": 54.52,
+    "end": 55.22
+  },
+  {
+    "word": " is",
+    "start": 55.22,
+    "end": 55.52
+  },
+  {
+    "word": " so",
+    "start": 55.52,
+    "end": 55.68
+  },
+  {
+    "word": " crowded!",
+    "start": 55.68,
+    "end": 56.16
+  },
+  {
+    "word": " No",
+    "start": 56.78,
+    "end": 57.2
+  },
+  {
+    "word": " problem!",
+    "start": 57.2,
+    "end": 57.7
+  },
+  {
+    "word": " How",
+    "start": 57.7,
+    "end": 58.38
+  },
+  {
+    "word": " many",
+    "start": 58.38,
+    "end": 58.6
+  },
+  {
+    "word": " people",
+    "start": 58.6,
+    "end": 59.06
+  },
+  {
+    "word": " are",
+    "start": 59.06,
+    "end": 59.48
+  },
+  {
+    "word": " you?",
+    "start": 59.48,
+    "end": 59.8
+  },
+  {
+    "word": " We",
+    "start": 60.12,
+    "end": 60.38
+  },
+  {
+    "word": " are",
+    "start": 60.38,
+    "end": 60.62
+  },
+  {
+    "word": " two",
+    "start": 60.62,
+    "end": 61.04
+  },
+  {
+    "word": " people.",
+    "start": 61.04,
+    "end": 61.66
+  },
+  {
+    "word": " All",
+    "start": 62.48,
+    "end": 62.74
+  },
+  {
+    "word": " right,",
+    "start": 62.74,
+    "end": 63.08
+  },
+  {
+    "word": " please",
+    "start": 63.38,
+    "end": 63.7
+  },
+  {
+    "word": " wait",
+    "start": 63.7,
+    "end": 64.02
+  },
+  {
+    "word": " here",
+    "start": 64.02,
+    "end": 64.56
+  },
+  {
+    "word": " for",
+    "start": 64.56,
+    "end": 64.78
+  },
+  {
+    "word": " a",
+    "start": 64.78,
+    "end": 64.9
+  },
+  {
+    "word": " moment,",
+    "start": 64.86,
+    "end": 65.16
+  },
+  {
+    "word": " I'll",
+    "start": 65.48,
+    "end": 65.74
+  },
+  {
+    "word": " see",
+    "start": 65.74,
+    "end": 65.92
+  },
+  {
+    "word": " what",
+    "start": 65.92,
+    "end": 66.3
+  },
+  {
+    "word": " I",
+    "start": 66.3,
+    "end": 66.56
+  },
+  {
+    "word": " can",
+    "start": 66.56,
+    "end": 66.68
+  },
+  {
+    "word": " do,",
+    "start": 66.6,
+    "end": 66.82
+  },
+  {
+    "word": " I'll",
+    "start": 67.3,
+    "end": 67.64
+  },
+  {
+    "word": " be",
+    "start": 67.64,
+    "end": 67.76
+  },
+  {
+    "word": " right",
+    "start": 67.64,
+    "end": 68.04
+  },
+  {
+    "word": " back.",
+    "start": 68.04,
+    "end": 68.52
+  },
+  {
+    "word": " We'll",
+    "start": 69.04,
+    "end": 69.38
+  },
+  {
+    "word": " be",
+    "start": 69.38,
+    "end": 69.52
+  },
+  {
+    "word": " waiting",
+    "start": 69.52,
+    "end": 69.66
+  },
+  {
+    "word": " here,",
+    "start": 69.66,
+    "end": 69.94
+  },
+  {
+    "word": " thank",
+    "start": 70.14,
+    "end": 70.28
+  },
+  {
+    "word": " you",
+    "start": 70.28,
+    "end": 70.4
+  },
+  {
+    "word": " very",
+    "start": 70.34,
+    "end": 70.46000000000001
+  },
+  {
+    "word": " much!",
+    "start": 70.34,
+    "end": 70.46000000000001
+  },
+  {
+    "word": " So,",
+    "start": 74.24,
+    "end": 74.88
+  },
+  {
+    "word": " I",
+    "start": 75.16,
+    "end": 75.36
+  },
+  {
+    "word": " have",
+    "start": 75.36,
+    "end": 75.56
+  },
+  {
+    "word": " good",
+    "start": 75.56,
+    "end": 75.98
+  },
+  {
+    "word": " news!",
+    "start": 75.98,
+    "end": 76.28
+  },
+  {
+    "word": " We",
+    "start": 77.0,
+    "end": 77.12
+  },
+  {
+    "word": " still",
+    "start": 77.12,
+    "end": 77.52
+  },
+  {
+    "word": " have",
+    "start": 77.52,
+    "end": 77.64
+  },
+  {
+    "word": " two",
+    "start": 77.52,
+    "end": 78.16
+  },
+  {
+    "word": " free",
+    "start": 78.16,
+    "end": 78.58
+  },
+  {
+    "word": " tables.",
+    "start": 78.58,
+    "end": 79.02
+  },
+  {
+    "word": " Would",
+    "start": 79.64,
+    "end": 79.84
+  },
+  {
+    "word": " you",
+    "start": 79.84,
+    "end": 80.22
+  },
+  {
+    "word": " like",
+    "start": 80.22,
+    "end": 80.34
+  },
+  {
+    "word": " a",
+    "start": 80.22,
+    "end": 80.52
+  },
+  {
+    "word": " table",
+    "start": 80.52,
+    "end": 80.8
+  },
+  {
+    "word": " on",
+    "start": 80.8,
+    "end": 81.02
+  },
+  {
+    "word": " our",
+    "start": 81.02,
+    "end": 81.38
+  },
+  {
+    "word": " terrace",
+    "start": 81.38,
+    "end": 81.74
+  },
+  {
+    "word": " or",
+    "start": 81.74,
+    "end": 82.58
+  },
+  {
+    "word": " inside",
+    "start": 82.58,
+    "end": 83.14
+  },
+  {
+    "word": " the",
+    "start": 83.14,
+    "end": 83.38
+  },
+  {
+    "word": " restaurant?",
+    "start": 83.38,
+    "end": 83.86
+  },
+  {
+    "word": " Today",
+    "start": 84.72,
+    "end": 85.36
+  },
+  {
+    "word": " it's",
+    "start": 85.36,
+    "end": 85.8
+  },
+  {
+    "word": " very",
+    "start": 85.8,
+    "end": 86.12
+  },
+  {
+    "word": " warm.",
+    "start": 86.12,
+    "end": 86.62
+  },
+  {
+    "word": " We",
+    "start": 86.62,
+    "end": 87.18
+  },
+  {
+    "word": " would",
+    "start": 87.18,
+    "end": 87.42
+  },
+  {
+    "word": " rather",
+    "start": 87.42,
+    "end": 87.78
+  },
+  {
+    "word": " have",
+    "start": 87.78,
+    "end": 87.9
+  },
+  {
+    "word": " a",
+    "start": 87.86,
+    "end": 88.24
+  },
+  {
+    "word": " table",
+    "start": 88.24,
+    "end": 88.66
+  },
+  {
+    "word": " on",
+    "start": 88.66,
+    "end": 88.86
+  },
+  {
+    "word": " the",
+    "start": 88.86,
+    "end": 89.02
+  },
+  {
+    "word": " terrace,",
+    "start": 89.02,
+    "end": 89.46
+  },
+  {
+    "word": " please.",
+    "start": 89.56,
+    "end": 89.72
+  },
+  {
+    "word": " The",
+    "start": 90.28,
+    "end": 90.48
+  },
+  {
+    "word": " restaurant",
+    "start": 90.48,
+    "end": 91.06
+  },
+  {
+    "word": " has",
+    "start": 91.06,
+    "end": 91.32
+  },
+  {
+    "word": " a",
+    "start": 91.32,
+    "end": 91.56
+  },
+  {
+    "word": " nice",
+    "start": 91.56,
+    "end": 92.0
+  },
+  {
+    "word": " garden.",
+    "start": 92.0,
+    "end": 92.6
+  },
+  {
+    "word": " That's",
+    "start": 93.4,
+    "end": 94.08
+  },
+  {
+    "word": " right,",
+    "start": 94.08,
+    "end": 94.2
+  },
+  {
+    "word": " very",
+    "start": 94.48,
+    "end": 94.64
+  },
+  {
+    "word": " nice!",
+    "start": 94.64,
+    "end": 94.96
+  },
+  {
+    "word": " Please",
+    "start": 95.44,
+    "end": 95.8
+  },
+  {
+    "word": " come",
+    "start": 95.8,
+    "end": 95.92
+  },
+  {
+    "word": " with",
+    "start": 95.8,
+    "end": 96.4
+  },
+  {
+    "word": " me,",
+    "start": 96.4,
+    "end": 96.6
+  },
+  {
+    "word": " I'll",
+    "start": 96.88,
+    "end": 97.16
+  },
+  {
+    "word": " accompany",
+    "start": 97.16,
+    "end": 97.46
+  },
+  {
+    "word": " you",
+    "start": 97.46,
+    "end": 97.86
+  },
+  {
+    "word": " to",
+    "start": 97.86,
+    "end": 98.14
+  },
+  {
+    "word": " your",
+    "start": 98.14,
+    "end": 98.34
+  },
+  {
+    "word": " table.",
+    "start": 98.34,
+    "end": 98.68
+  },
+  {
+    "word": " Yes,",
+    "start": 99.06,
+    "end": 99.38
+  },
+  {
+    "word": " of",
+    "start": 99.52,
+    "end": 99.64
+  },
+  {
+    "word": " course,",
+    "start": 99.6,
+    "end": 99.8
+  },
+  {
+    "word": " we",
+    "start": 100.0,
+    "end": 100.12
+  },
+  {
+    "word": " follow",
+    "start": 100.1,
+    "end": 100.52
+  },
+  {
+    "word": " you.",
+    "start": 100.52,
+    "end": 100.78
+  },
+  {
+    "word": " So,",
+    "start": 105.42,
+    "end": 106.1
+  },
+  {
+    "word": " here",
+    "start": 106.48,
+    "end": 106.68
+  },
+  {
+    "word": " we",
+    "start": 106.68,
+    "end": 107.3
+  },
+  {
+    "word": " are",
+    "start": 107.3,
+    "end": 107.42
+  },
+  {
+    "word": " already",
+    "start": 107.3,
+    "end": 107.64
+  },
+  {
+    "word": " one",
+    "start": 107.64,
+    "end": 108.14
+  },
+  {
+    "word": " table",
+    "start": 108.14,
+    "end": 108.5
+  },
+  {
+    "word": " for",
+    "start": 108.5,
+    "end": 108.76
+  },
+  {
+    "word": " two",
+    "start": 108.76,
+    "end": 109.22
+  },
+  {
+    "word": " on",
+    "start": 109.22,
+    "end": 109.56
+  },
+  {
+    "word": " our",
+    "start": 109.56,
+    "end": 109.96
+  },
+  {
+    "word": " cozy",
+    "start": 109.96,
+    "end": 110.78
+  },
+  {
+    "word": " terrace.",
+    "start": 110.78,
+    "end": 111.42
+  },
+  {
+    "word": " I",
+    "start": 112.04,
+    "end": 112.38
+  },
+  {
+    "word": " also",
+    "start": 112.38,
+    "end": 112.52
+  },
+  {
+    "word": " give",
+    "start": 112.52,
+    "end": 112.64
+  },
+  {
+    "word": " you",
+    "start": 112.52,
+    "end": 112.8
+  },
+  {
+    "word": " the",
+    "start": 112.8,
+    "end": 113.22
+  },
+  {
+    "word": " menu,",
+    "start": 113.22,
+    "end": 113.74
+  },
+  {
+    "word": " so,",
+    "start": 113.98,
+    "end": 114.32
+  },
+  {
+    "word": " please",
+    "start": 114.86,
+    "end": 115.16
+  },
+  {
+    "word": " very",
+    "start": 115.16,
+    "end": 115.52
+  },
+  {
+    "word": " much.",
+    "start": 115.52,
+    "end": 115.88
+  },
+  {
+    "word": " Do",
+    "start": 115.88,
+    "end": 116.38
+  },
+  {
+    "word": " you",
+    "start": 116.38,
+    "end": 116.64
+  },
+  {
+    "word": " know",
+    "start": 116.64,
+    "end": 116.76
+  },
+  {
+    "word": " what",
+    "start": 116.64,
+    "end": 117.1
+  },
+  {
+    "word": " you",
+    "start": 117.1,
+    "end": 117.3
+  },
+  {
+    "word": " want",
+    "start": 117.3,
+    "end": 117.42
+  },
+  {
+    "word": " to",
+    "start": 117.3,
+    "end": 117.42
+  },
+  {
+    "word": " drink",
+    "start": 117.32,
+    "end": 117.56
+  },
+  {
+    "word": " or",
+    "start": 117.56,
+    "end": 118.5
+  },
+  {
+    "word": " do",
+    "start": 118.5,
+    "end": 119.06
+  },
+  {
+    "word": " you",
+    "start": 119.06,
+    "end": 119.48
+  },
+  {
+    "word": " still",
+    "start": 119.48,
+    "end": 119.60000000000001
+  },
+  {
+    "word": " need",
+    "start": 119.48,
+    "end": 119.60000000000001
+  },
+  {
+    "word": " a",
+    "start": 119.48,
+    "end": 119.94
+  },
+  {
+    "word": " moment?",
+    "start": 119.94,
+    "end": 120.24
+  },
+  {
+    "word": " No,",
+    "start": 120.52,
+    "end": 120.8
+  },
+  {
+    "word": " we",
+    "start": 120.96,
+    "end": 121.1
+  },
+  {
+    "word": " have",
+    "start": 121.1,
+    "end": 121.26
+  },
+  {
+    "word": " to",
+    "start": 121.26,
+    "end": 122.04
+  },
+  {
+    "word": " see",
+    "start": 122.04,
+    "end": 122.5
+  },
+  {
+    "word": " what",
+    "start": 122.5,
+    "end": 122.9
+  },
+  {
+    "word": " we",
+    "start": 122.9,
+    "end": 123.16
+  },
+  {
+    "word": " want",
+    "start": 123.16,
+    "end": 123.28
+  },
+  {
+    "word": " to",
+    "start": 123.28,
+    "end": 123.4
+  },
+  {
+    "word": " eat",
+    "start": 123.28,
+    "end": 123.68
+  },
+  {
+    "word": " first.",
+    "start": 123.68,
+    "end": 123.80000000000001
+  },
+  {
+    "word": " Then",
+    "start": 124.32,
+    "end": 124.72
+  },
+  {
+    "word": " we",
+    "start": 124.72,
+    "end": 125.44
+  },
+  {
+    "word": " choose",
+    "start": 125.44,
+    "end": 125.56
+  },
+  {
+    "word": " the",
+    "start": 125.44,
+    "end": 125.62
+  },
+  {
+    "word": " drinks.",
+    "start": 125.62,
+    "end": 126.04
+  },
+  {
+    "word": " No",
+    "start": 126.74,
+    "end": 127.24
+  },
+  {
+    "word": " problem,",
+    "start": 127.24,
+    "end": 127.72
+  },
+  {
+    "word": " I'll",
+    "start": 128.04,
+    "end": 128.28
+  },
+  {
+    "word": " be",
+    "start": 128.28,
+    "end": 128.5
+  },
+  {
+    "word": " right",
+    "start": 128.5,
+    "end": 129.06
+  },
+  {
+    "word": " back.",
+    "start": 129.06,
+    "end": 129.58
+  },
+  {
+    "word": " Then",
+    "start": 129.76,
+    "end": 130.04
+  },
+  {
+    "word": " we'll",
+    "start": 130.04,
+    "end": 130.46
+  },
+  {
+    "word": " make",
+    "start": 130.46,
+    "end": 130.58
+  },
+  {
+    "word": " the",
+    "start": 130.46,
+    "end": 130.66
+  },
+  {
+    "word": " order.",
+    "start": 130.66,
+    "end": 130.92
+  },
+  {
+    "word": " Leave",
+    "start": 131.38,
+    "end": 131.64
+  },
+  {
+    "word": " your",
+    "start": 131.64,
+    "end": 131.98
+  },
+  {
+    "word": " time.",
+    "start": 131.98,
+    "end": 132.4
+  },
+  {
+    "word": " Well,",
+    "start": 141.44,
+    "end": 142.08
+  },
+  {
+    "word": " Melissa,",
+    "start": 142.2,
+    "end": 142.48
+  },
+  {
+    "word": " are",
+    "start": 142.92,
+    "end": 143.04
+  },
+  {
+    "word": " you",
+    "start": 142.96,
+    "end": 143.08
+  },
+  {
+    "word": " comfortable",
+    "start": 143.08,
+    "end": 143.32
+  },
+  {
+    "word": " here",
+    "start": 143.32,
+    "end": 143.9
+  },
+  {
+    "word": " or",
+    "start": 143.9,
+    "end": 144.3
+  },
+  {
+    "word": " do",
+    "start": 144.3,
+    "end": 144.82
+  },
+  {
+    "word": " you",
+    "start": 144.82,
+    "end": 145.4
+  },
+  {
+    "word": " already",
+    "start": 145.4,
+    "end": 145.54
+  },
+  {
+    "word": " know",
+    "start": 145.54,
+    "end": 145.66
+  },
+  {
+    "word": " what",
+    "start": 145.64,
+    "end": 145.86
+  },
+  {
+    "word": " you",
+    "start": 145.86,
+    "end": 146.12
+  },
+  {
+    "word": " want",
+    "start": 146.12,
+    "end": 146.24
+  },
+  {
+    "word": " to",
+    "start": 146.14,
+    "end": 146.26
+  },
+  {
+    "word": " eat?",
+    "start": 146.18,
+    "end": 146.44
+  },
+  {
+    "word": " Hmm,",
+    "start": 147.74,
+    "end": 148.34
+  },
+  {
+    "word": " difficult.",
+    "start": 148.92,
+    "end": 149.04
+  },
+  {
+    "word": " I",
+    "start": 149.74,
+    "end": 149.98
+  },
+  {
+    "word": " would",
+    "start": 149.98,
+    "end": 150.16
+  },
+  {
+    "word": " like",
+    "start": 150.16,
+    "end": 150.4
+  },
+  {
+    "word": " to",
+    "start": 150.4,
+    "end": 150.62
+  },
+  {
+    "word": " order",
+    "start": 150.62,
+    "end": 150.74
+  },
+  {
+    "word": " the",
+    "start": 150.62,
+    "end": 150.74
+  },
+  {
+    "word": " spaghetti",
+    "start": 150.68,
+    "end": 151.06
+  },
+  {
+    "word": " carbonara,",
+    "start": 151.06,
+    "end": 151.8
+  },
+  {
+    "word": " but",
+    "start": 152.14,
+    "end": 152.62
+  },
+  {
+    "word": " I",
+    "start": 152.62,
+    "end": 153.34
+  },
+  {
+    "word": " have",
+    "start": 153.34,
+    "end": 153.52
+  },
+  {
+    "word": " an",
+    "start": 153.52,
+    "end": 153.8
+  },
+  {
+    "word": " intolerance",
+    "start": 153.8,
+    "end": 154.8
+  },
+  {
+    "word": " against",
+    "start": 154.8,
+    "end": 154.98
+  },
+  {
+    "word": " eggs.",
+    "start": 154.98,
+    "end": 155.54
+  },
+  {
+    "word": " Yes,",
+    "start": 155.88,
+    "end": 156.22
+  },
+  {
+    "word": " that's",
+    "start": 156.4,
+    "end": 156.92
+  },
+  {
+    "word": " bad.",
+    "start": 156.92,
+    "end": 157.32
+  },
+  {
+    "word": " The",
+    "start": 157.86,
+    "end": 158.06
+  },
+  {
+    "word": " egg",
+    "start": 158.06,
+    "end": 158.42
+  },
+  {
+    "word": " is",
+    "start": 158.42,
+    "end": 158.62
+  },
+  {
+    "word": " an",
+    "start": 158.62,
+    "end": 158.78
+  },
+  {
+    "word": " important",
+    "start": 158.78,
+    "end": 159.2
+  },
+  {
+    "word": " ingredient",
+    "start": 159.2,
+    "end": 159.68
+  },
+  {
+    "word": " for",
+    "start": 159.68,
+    "end": 159.98
+  },
+  {
+    "word": " the",
+    "start": 159.98,
+    "end": 160.14
+  },
+  {
+    "word": " carbonara.",
+    "start": 160.14,
+    "end": 160.74
+  },
+  {
+    "word": " Hmm,",
+    "start": 161.46,
+    "end": 162.08
+  },
+  {
+    "word": " I",
+    "start": 162.24,
+    "end": 162.38
+  },
+  {
+    "word": " want",
+    "start": 162.38,
+    "end": 162.5
+  },
+  {
+    "word": " to",
+    "start": 162.38,
+    "end": 162.5
+  },
+  {
+    "word": " try",
+    "start": 162.38,
+    "end": 162.5
+  },
+  {
+    "word": " it.",
+    "start": 162.38,
+    "end": 162.5
+  },
+  {
+    "word": " I",
+    "start": 162.38,
+    "end": 162.5
+  },
+  {
+    "word": " have",
+    "start": 162.38,
+    "end": 162.64
+  },
+  {
+    "word": " to",
+    "start": 162.64,
+    "end": 162.76
+  },
+  {
+    "word": " think",
+    "start": 162.64,
+    "end": 163.08
+  },
+  {
+    "word": " about",
+    "start": 163.08,
+    "end": 163.20000000000002
+  },
+  {
+    "word": " it.",
+    "start": 163.08,
+    "end": 164.24
+  },
+  {
+    "word": " What",
+    "start": 164.24,
+    "end": 164.58
+  },
+  {
+    "word": " would",
+    "start": 164.58,
+    "end": 164.72
+  },
+  {
+    "word": " you",
+    "start": 164.72,
+    "end": 165.16
+  },
+  {
+    "word": " like",
+    "start": 165.16,
+    "end": 165.28
+  },
+  {
+    "word": " to",
+    "start": 165.16,
+    "end": 165.4
+  },
+  {
+    "word": " order?",
+    "start": 165.4,
+    "end": 165.76
+  },
+  {
+    "word": " Do",
+    "start": 166.06,
+    "end": 166.4
+  },
+  {
+    "word": " you",
+    "start": 166.4,
+    "end": 166.58
+  },
+  {
+    "word": " already",
+    "start": 166.58,
+    "end": 166.70000000000002
+  },
+  {
+    "word": " have",
+    "start": 166.7,
+    "end": 166.82
+  },
+  {
+    "word": " an",
+    "start": 166.7,
+    "end": 166.98
+  },
+  {
+    "word": " idea?",
+    "start": 166.98,
+    "end": 167.24
+  },
+  {
+    "word": " I",
+    "start": 167.64,
+    "end": 168.02
+  },
+  {
+    "word": " would",
+    "start": 168.02,
+    "end": 168.24
+  },
+  {
+    "word": " like",
+    "start": 168.24,
+    "end": 168.56
+  },
+  {
+    "word": " a",
+    "start": 168.56,
+    "end": 169.18
+  },
+  {
+    "word": " hamburger",
+    "start": 169.18,
+    "end": 169.7
+  },
+  {
+    "word": " with",
+    "start": 169.7,
+    "end": 169.96
+  },
+  {
+    "word": " cheese",
+    "start": 169.96,
+    "end": 170.24
+  },
+  {
+    "word": " or",
+    "start": 170.24,
+    "end": 171.2
+  },
+  {
+    "word": " maybe",
+    "start": 171.2,
+    "end": 171.86
+  },
+  {
+    "word": " a",
+    "start": 171.86,
+    "end": 172.34
+  },
+  {
+    "word": " pizza.",
+    "start": 172.34,
+    "end": 172.74
+  },
+  {
+    "word": " Yes,",
+    "start": 173.44,
+    "end": 173.98
+  },
+  {
+    "word": " the",
+    "start": 174.2,
+    "end": 174.32
+  },
+  {
+    "word": " pizzas",
+    "start": 174.3,
+    "end": 174.66
+  },
+  {
+    "word": " look",
+    "start": 174.66,
+    "end": 174.98
+  },
+  {
+    "word": " delicious",
+    "start": 174.98,
+    "end": 175.56
+  },
+  {
+    "word": " too.",
+    "start": 175.56,
+    "end": 175.96
+  },
+  {
+    "word": " Do",
+    "start": 176.44,
+    "end": 176.86
+  },
+  {
+    "word": " you",
+    "start": 176.86,
+    "end": 177.04
+  },
+  {
+    "word": " see",
+    "start": 177.04,
+    "end": 177.16
+  },
+  {
+    "word": " a",
+    "start": 177.04,
+    "end": 177.32
+  },
+  {
+    "word": " vegetarian",
+    "start": 177.32,
+    "end": 177.92
+  },
+  {
+    "word": " pizza?",
+    "start": 177.92,
+    "end": 178.48
+  },
+  {
+    "word": " Yes,",
+    "start": 178.94,
+    "end": 179.18
+  },
+  {
+    "word": " there",
+    "start": 179.4,
+    "end": 179.72
+  },
+  {
+    "word": " is",
+    "start": 179.72,
+    "end": 179.98
+  },
+  {
+    "word": " a",
+    "start": 179.98,
+    "end": 180.38
+  },
+  {
+    "word": " vegetable",
+    "start": 180.38,
+    "end": 180.8
+  },
+  {
+    "word": " pizza.",
+    "start": 180.8,
+    "end": 181.3
+  },
+  {
+    "word": " Up",
+    "start": 182.2,
+    "end": 182.56
+  },
+  {
+    "word": " here",
+    "start": 182.56,
+    "end": 182.74
+  },
+  {
+    "word": " on",
+    "start": 182.74,
+    "end": 183.1
+  },
+  {
+    "word": " the",
+    "start": 183.1,
+    "end": 183.26
+  },
+  {
+    "word": " map,",
+    "start": 183.26,
+    "end": 183.56
+  },
+  {
+    "word": " are",
+    "start": 183.9,
+    "end": 184.42
+  },
+  {
+    "word": " you",
+    "start": 184.42,
+    "end": 184.62
+  },
+  {
+    "word": " vegetarian?",
+    "start": 184.62,
+    "end": 185.1
+  },
+  {
+    "word": " I",
+    "start": 185.76,
+    "end": 186.1
+  },
+  {
+    "word": " didn't",
+    "start": 186.1,
+    "end": 186.26
+  },
+  {
+    "word": " know",
+    "start": 186.26,
+    "end": 186.38
+  },
+  {
+    "word": " that.",
+    "start": 186.3,
+    "end": 186.42000000000002
+  },
+  {
+    "word": " Well,",
+    "start": 187.14,
+    "end": 187.92
+  },
+  {
+    "word": " I",
+    "start": 188.52,
+    "end": 188.86
+  },
+  {
+    "word": " try",
+    "start": 188.86,
+    "end": 189.28
+  },
+  {
+    "word": " to",
+    "start": 189.28,
+    "end": 189.56
+  },
+  {
+    "word": " eat",
+    "start": 189.56,
+    "end": 189.68
+  },
+  {
+    "word": " less",
+    "start": 189.56,
+    "end": 189.9
+  },
+  {
+    "word": " meat,",
+    "start": 189.9,
+    "end": 190.4
+  },
+  {
+    "word": " but",
+    "start": 191.0,
+    "end": 191.64
+  },
+  {
+    "word": " I'm",
+    "start": 191.64,
+    "end": 191.94
+  },
+  {
+    "word": " not",
+    "start": 191.94,
+    "end": 192.2
+  },
+  {
+    "word": " a",
+    "start": 192.2,
+    "end": 192.44
+  },
+  {
+    "word": " real",
+    "start": 192.44,
+    "end": 192.7
+  },
+  {
+    "word": " vegetarian.",
+    "start": 192.7,
+    "end": 193.48
+  },
+  {
+    "word": " Sometimes",
+    "start": 194.22,
+    "end": 194.72
+  },
+  {
+    "word": " I",
+    "start": 194.72,
+    "end": 195.52
+  },
+  {
+    "word": " still",
+    "start": 195.52,
+    "end": 195.7
+  },
+  {
+    "word": " eat",
+    "start": 195.7,
+    "end": 195.82
+  },
+  {
+    "word": " meat.",
+    "start": 195.7,
+    "end": 196.44
+  },
+  {
+    "word": " Oh,",
+    "start": 196.92,
+    "end": 197.34
+  },
+  {
+    "word": " look,",
+    "start": 197.52,
+    "end": 197.66
+  },
+  {
+    "word": " Henry,",
+    "start": 197.98,
+    "end": 198.22
+  },
+  {
+    "word": " that",
+    "start": 198.92,
+    "end": 199.08
+  },
+  {
+    "word": " sounds",
+    "start": 199.08,
+    "end": 199.42
+  },
+  {
+    "word": " delicious.",
+    "start": 199.42,
+    "end": 199.94
+  },
+  {
+    "word": " Hamburger",
+    "start": 200.76,
+    "end": 201.42
+  },
+  {
+    "word": " alla",
+    "start": 201.42,
+    "end": 201.78
+  },
+  {
+    "word": " tartuffe.",
+    "start": 201.78,
+    "end": 202.66
+  },
+  {
+    "word": " With",
+    "start": 202.94,
+    "end": 203.18
+  },
+  {
+    "word": " beef,",
+    "start": 203.18,
+    "end": 203.54
+  },
+  {
+    "word": " goat",
+    "start": 204.14,
+    "end": 204.44
+  },
+  {
+    "word": " cheese,",
+    "start": 204.44,
+    "end": 204.96
+  },
+  {
+    "word": " rucola,",
+    "start": 205.3,
+    "end": 205.82
+  },
+  {
+    "word": " baby",
+    "start": 206.26,
+    "end": 206.44
+  },
+  {
+    "word": " spinach,",
+    "start": 206.44,
+    "end": 206.92
+  },
+  {
+    "word": " truffle",
+    "start": 207.22,
+    "end": 207.5
+  },
+  {
+    "word": " sauce",
+    "start": 207.5,
+    "end": 207.82
+  },
+  {
+    "word": " and",
+    "start": 207.82,
+    "end": 208.18
+  },
+  {
+    "word": " walnuts.",
+    "start": 208.18,
+    "end": 208.74
+  },
+  {
+    "word": " Hmm,",
+    "start": 209.08,
+    "end": 209.42
+  },
+  {
+    "word": " that",
+    "start": 209.64,
+    "end": 209.8
+  },
+  {
+    "word": " really",
+    "start": 209.8,
+    "end": 210.42
+  },
+  {
+    "word": " sounds",
+    "start": 210.42,
+    "end": 210.86
+  },
+  {
+    "word": " delicious.",
+    "start": 210.86,
+    "end": 211.48
+  },
+  {
+    "word": " But",
+    "start": 212.06,
+    "end": 212.32
+  },
+  {
+    "word": " for",
+    "start": 212.32,
+    "end": 212.44
+  },
+  {
+    "word": " me",
+    "start": 212.32,
+    "end": 212.64
+  },
+  {
+    "word": " it's",
+    "start": 212.64,
+    "end": 213.28
+  },
+  {
+    "word": " nothing.",
+    "start": 213.28,
+    "end": 214.06
+  },
+  {
+    "word": " I",
+    "start": 214.06,
+    "end": 214.78
+  },
+  {
+    "word": " don't",
+    "start": 214.78,
+    "end": 215.54
+  },
+  {
+    "word": " betray",
+    "start": 215.54,
+    "end": 215.66
+  },
+  {
+    "word": " women.",
+    "start": 215.54,
+    "end": 216.22
+  },
+  {
+    "word": " I",
+    "start": 216.7,
+    "end": 216.86
+  },
+  {
+    "word": " have",
+    "start": 216.86,
+    "end": 217.2
+  },
+  {
+    "word": " an",
+    "start": 217.2,
+    "end": 217.5
+  },
+  {
+    "word": " allergy",
+    "start": 217.5,
+    "end": 218.04
+  },
+  {
+    "word": " against",
+    "start": 218.04,
+    "end": 218.3
+  },
+  {
+    "word": " women.",
+    "start": 218.3,
+    "end": 218.74
+  },
+  {
+    "word": " Too",
+    "start": 219.58,
+    "end": 219.82
+  },
+  {
+    "word": " bad.",
+    "start": 219.82,
+    "end": 219.94
+  },
+  {
+    "word": " Yes,",
+    "start": 220.86,
+    "end": 221.28
+  },
+  {
+    "word": " too",
+    "start": 221.58,
+    "end": 221.72
+  },
+  {
+    "word": " bad.",
+    "start": 221.72,
+    "end": 221.84
+  },
+  {
+    "word": " We",
+    "start": 222.34,
+    "end": 222.58
+  },
+  {
+    "word": " have",
+    "start": 222.58,
+    "end": 222.78
+  },
+  {
+    "word": " to",
+    "start": 222.78,
+    "end": 222.98
+  },
+  {
+    "word": " find",
+    "start": 222.98,
+    "end": 223.1
+  },
+  {
+    "word": " another",
+    "start": 222.98,
+    "end": 223.5
+  },
+  {
+    "word": " dish",
+    "start": 223.5,
+    "end": 224.02
+  },
+  {
+    "word": " for",
+    "start": 224.02,
+    "end": 224.24
+  },
+  {
+    "word": " you.",
+    "start": 224.24,
+    "end": 224.42
+  },
+  {
+    "word": " Would",
+    "start": 225.26,
+    "end": 225.72
+  },
+  {
+    "word": " you",
+    "start": 225.72,
+    "end": 226.08
+  },
+  {
+    "word": " like",
+    "start": 226.08,
+    "end": 226.20000000000002
+  },
+  {
+    "word": " to",
+    "start": 226.12,
+    "end": 226.28
+  },
+  {
+    "word": " have",
+    "start": 226.28,
+    "end": 226.4
+  },
+  {
+    "word": " a",
+    "start": 226.28,
+    "end": 226.4
+  },
+  {
+    "word": " foreshadowing?",
+    "start": 226.4,
+    "end": 227.22
+  },
+  {
+    "word": " Oh",
+    "start": 227.86,
+    "end": 228.46
+  },
+  {
+    "word": " yes,",
+    "start": 228.46,
+    "end": 228.72
+  },
+  {
+    "word": " good",
+    "start": 228.98,
+    "end": 229.24
+  },
+  {
+    "word": " idea.",
+    "start": 229.24,
+    "end": 229.66
+  },
+  {
+    "word": " Where",
+    "start": 230.48,
+    "end": 230.98
+  },
+  {
+    "word": " are",
+    "start": 230.98,
+    "end": 231.32
+  },
+  {
+    "word": " the",
+    "start": 231.32,
+    "end": 231.52
+  },
+  {
+    "word": " foreshadowing",
+    "start": 231.52,
+    "end": 232.34
+  },
+  {
+    "word": " on",
+    "start": 232.34,
+    "end": 232.66
+  },
+  {
+    "word": " the",
+    "start": 232.66,
+    "end": 232.84
+  },
+  {
+    "word": " map?",
+    "start": 232.84,
+    "end": 233.14
+  },
+  {
+    "word": " I",
+    "start": 233.42,
+    "end": 233.62
+  },
+  {
+    "word": " don't",
+    "start": 233.62,
+    "end": 234.14
+  },
+  {
+    "word": " see",
+    "start": 234.14,
+    "end": 234.26
+  },
+  {
+    "word": " them.",
+    "start": 234.16,
+    "end": 234.44
+  },
+  {
+    "word": " They",
+    "start": 234.7,
+    "end": 234.96
+  },
+  {
+    "word": " are",
+    "start": 234.96,
+    "end": 235.22
+  },
+  {
+    "word": " on",
+    "start": 235.22,
+    "end": 235.52
+  },
+  {
+    "word": " the",
+    "start": 235.52,
+    "end": 235.7
+  },
+  {
+    "word": " first",
+    "start": 235.7,
+    "end": 236.08
+  },
+  {
+    "word": " page,",
+    "start": 236.08,
+    "end": 236.48
+  },
+  {
+    "word": " Melissa.",
+    "start": 236.7,
+    "end": 237.02
+  },
+  {
+    "word": " Look,",
+    "start": 237.84,
+    "end": 237.96
+  },
+  {
+    "word": " right",
+    "start": 238.26,
+    "end": 238.56
+  },
+  {
+    "word": " here.",
+    "start": 238.56,
+    "end": 239.0
+  },
+  {
+    "word": " Ah,",
+    "start": 239.76,
+    "end": 240.22
+  },
+  {
+    "word": " thank",
+    "start": 240.4,
+    "end": 240.52
+  },
+  {
+    "word": " you,",
+    "start": 240.52,
+    "end": 240.72
+  },
+  {
+    "word": " Henry.",
+    "start": 240.82,
+    "end": 241.04
+  },
+  {
+    "word": " Is",
+    "start": 241.04,
+    "end": 241.96
+  },
+  {
+    "word": " there",
+    "start": 241.96,
+    "end": 242.08
+  },
+  {
+    "word": " a",
+    "start": 242.04,
+    "end": 242.34
+  },
+  {
+    "word": " delicious",
+    "start": 242.34,
+    "end": 242.64
+  },
+  {
+    "word": " foreshadowing?",
+    "start": 242.64,
+    "end": 243.26
+  },
+  {
+    "word": " Yes,",
+    "start": 243.74,
+    "end": 244.14
+  },
+  {
+    "word": " I",
+    "start": 244.44,
+    "end": 244.66
+  },
+  {
+    "word": " think",
+    "start": 244.66,
+    "end": 245.0
+  },
+  {
+    "word": " the",
+    "start": 245.0,
+    "end": 245.34
+  },
+  {
+    "word": " caprese",
+    "start": 245.34,
+    "end": 246.16
+  },
+  {
+    "word": " salad.",
+    "start": 246.16,
+    "end": 246.58
+  },
+  {
+    "word": " And",
+    "start": 247.2,
+    "end": 247.32
+  },
+  {
+    "word": " the",
+    "start": 247.32,
+    "end": 247.52
+  },
+  {
+    "word": " fried",
+    "start": 247.52,
+    "end": 247.94
+  },
+  {
+    "word": " aubergine",
+    "start": 247.94,
+    "end": 248.68
+  },
+  {
+    "word": " in",
+    "start": 248.68,
+    "end": 248.92
+  },
+  {
+    "word": " honey",
+    "start": 248.92,
+    "end": 249.28
+  },
+  {
+    "word": " sounds",
+    "start": 249.28,
+    "end": 249.74
+  },
+  {
+    "word": " interesting.",
+    "start": 249.74,
+    "end": 250.36
+  },
+  {
+    "word": " I",
+    "start": 250.9,
+    "end": 251.44
+  },
+  {
+    "word": " don't",
+    "start": 251.44,
+    "end": 251.56
+  },
+  {
+    "word": " like",
+    "start": 251.44,
+    "end": 251.56
+  },
+  {
+    "word": " aubergine",
+    "start": 251.44,
+    "end": 252.12
+  },
+  {
+    "word": " that",
+    "start": 252.12,
+    "end": 253.04
+  },
+  {
+    "word": " much.",
+    "start": 253.04,
+    "end": 253.16
+  },
+  {
+    "word": " I",
+    "start": 253.9,
+    "end": 254.16
+  },
+  {
+    "word": " prefer",
+    "start": 254.16,
+    "end": 254.28
+  },
+  {
+    "word": " the",
+    "start": 254.16,
+    "end": 254.46
+  },
+  {
+    "word": " caprese",
+    "start": 254.46,
+    "end": 255.04
+  },
+  {
+    "word": " salad.",
+    "start": 255.04,
+    "end": 255.48
+  },
+  {
+    "word": " Do",
+    "start": 256.26,
+    "end": 256.68
+  },
+  {
+    "word": " you",
+    "start": 256.68,
+    "end": 256.82
+  },
+  {
+    "word": " like",
+    "start": 256.82,
+    "end": 256.94
+  },
+  {
+    "word": " cheese?",
+    "start": 256.82,
+    "end": 257.16
+  },
+  {
+    "word": " Oh",
+    "start": 257.52,
+    "end": 257.94
+  },
+  {
+    "word": " yes,",
+    "start": 257.94,
+    "end": 258.24
+  },
+  {
+    "word": " I",
+    "start": 258.48,
+    "end": 258.72
+  },
+  {
+    "word": " love",
+    "start": 258.72,
+    "end": 259.18
+  },
+  {
+    "word": " cheese.",
+    "start": 259.18,
+    "end": 259.74
+  },
+  {
+    "word": " There",
+    "start": 260.26,
+    "end": 260.74
+  },
+  {
+    "word": " is",
+    "start": 260.74,
+    "end": 260.96
+  },
+  {
+    "word": " a",
+    "start": 260.96,
+    "end": 261.38
+  },
+  {
+    "word": " ham",
+    "start": 261.38,
+    "end": 261.88
+  },
+  {
+    "word": " cheese",
+    "start": 261.88,
+    "end": 262.44
+  },
+  {
+    "word": " plate.",
+    "start": 262.44,
+    "end": 262.76
+  },
+  {
+    "word": " We",
+    "start": 263.52,
+    "end": 263.66
+  },
+  {
+    "word": " could",
+    "start": 263.66,
+    "end": 264.0
+  },
+  {
+    "word": " take",
+    "start": 264.0,
+    "end": 264.12
+  },
+  {
+    "word": " the",
+    "start": 264.04,
+    "end": 264.24
+  },
+  {
+    "word": " cheese",
+    "start": 264.24,
+    "end": 264.54
+  },
+  {
+    "word": " plate",
+    "start": 264.54,
+    "end": 264.82
+  },
+  {
+    "word": " and",
+    "start": 264.82,
+    "end": 265.3
+  },
+  {
+    "word": " a",
+    "start": 265.3,
+    "end": 265.62
+  },
+  {
+    "word": " salad",
+    "start": 265.62,
+    "end": 266.04
+  },
+  {
+    "word": " as",
+    "start": 266.04,
+    "end": 266.32
+  },
+  {
+    "word": " a",
+    "start": 266.32,
+    "end": 266.44
+  },
+  {
+    "word": " foreshadowing.",
+    "start": 266.44,
+    "end": 267.1
+  },
+  {
+    "word": " Is",
+    "start": 267.6,
+    "end": 268.04
+  },
+  {
+    "word": " that",
+    "start": 268.04,
+    "end": 268.2
+  },
+  {
+    "word": " enough?",
+    "start": 268.2,
+    "end": 268.54
+  },
+  {
+    "word": " Yes,",
+    "start": 268.54,
+    "end": 269.64
+  },
+  {
+    "word": " I",
+    "start": 269.92,
+    "end": 270.2
+  },
+  {
+    "word": " think",
+    "start": 270.2,
+    "end": 270.58
+  },
+  {
+    "word": " so.",
+    "start": 270.58,
+    "end": 270.92
+  },
+  {
+    "word": " We",
+    "start": 271.5,
+    "end": 271.84
+  },
+  {
+    "word": " can",
+    "start": 271.84,
+    "end": 272.16
+  },
+  {
+    "word": " ask",
+    "start": 272.16,
+    "end": 272.5
+  },
+  {
+    "word": " the",
+    "start": 272.5,
+    "end": 272.96
+  },
+  {
+    "word": " caprese",
+    "start": 272.96,
+    "end": 273.28
+  },
+  {
+    "word": " later",
+    "start": 273.28,
+    "end": 273.48
+  },
+  {
+    "word": " how",
+    "start": 273.48,
+    "end": 274.48
+  },
+  {
+    "word": " big",
+    "start": 274.48,
+    "end": 274.84
+  },
+  {
+    "word": " the",
+    "start": 274.84,
+    "end": 275.02
+  },
+  {
+    "word": " portions",
+    "start": 275.02,
+    "end": 275.34
+  },
+  {
+    "word": " are.",
+    "start": 275.34,
+    "end": 275.88
+  },
+  {
+    "word": " What",
+    "start": 276.36,
+    "end": 276.82
+  },
+  {
+    "word": " do",
+    "start": 276.82,
+    "end": 277.08
+  },
+  {
+    "word": " you",
+    "start": 277.08,
+    "end": 277.34
+  },
+  {
+    "word": " take",
+    "start": 277.34,
+    "end": 277.46
+  },
+  {
+    "word": " as",
+    "start": 277.34,
+    "end": 277.56
+  },
+  {
+    "word": " the",
+    "start": 277.56,
+    "end": 277.68
+  },
+  {
+    "word": " main",
+    "start": 277.62,
+    "end": 277.76
+  },
+  {
+    "word": " dish?",
+    "start": 277.76,
+    "end": 278.1
+  },
+  {
+    "word": " Have",
+    "start": 278.5,
+    "end": 278.66
+  },
+  {
+    "word": " you",
+    "start": 278.66,
+    "end": 279.0
+  },
+  {
+    "word": " already",
+    "start": 279.0,
+    "end": 279.18
+  },
+  {
+    "word": " decided?",
+    "start": 279.18,
+    "end": 279.58
+  },
+  {
+    "word": " I",
+    "start": 280.34,
+    "end": 281.02
+  },
+  {
+    "word": " think",
+    "start": 281.02,
+    "end": 281.42
+  },
+  {
+    "word": " I'll",
+    "start": 281.42,
+    "end": 282.32
+  },
+  {
+    "word": " take",
+    "start": 282.32,
+    "end": 282.52
+  },
+  {
+    "word": " the",
+    "start": 282.52,
+    "end": 282.7
+  },
+  {
+    "word": " vegetable",
+    "start": 282.7,
+    "end": 283.16
+  },
+  {
+    "word": " salad.",
+    "start": 283.16,
+    "end": 283.52
+  },
+  {
+    "word": " Can",
+    "start": 284.0,
+    "end": 284.58
+  },
+  {
+    "word": " you",
+    "start": 284.58,
+    "end": 284.86
+  },
+  {
+    "word": " please",
+    "start": 284.86,
+    "end": 284.98
+  },
+  {
+    "word": " ask",
+    "start": 284.86,
+    "end": 284.98
+  },
+  {
+    "word": " the",
+    "start": 284.86,
+    "end": 284.98
+  },
+  {
+    "word": " caprese",
+    "start": 284.94,
+    "end": 285.34
+  },
+  {
+    "word": " what",
+    "start": 285.34,
+    "end": 286.72
+  },
+  {
+    "word": " the",
+    "start": 286.72,
+    "end": 287.08
+  },
+  {
+    "word": " pizza",
+    "start": 287.08,
+    "end": 287.64
+  },
+  {
+    "word": " of",
+    "start": 287.64,
+    "end": 287.84
+  },
+  {
+    "word": " the",
+    "start": 287.84,
+    "end": 287.96
+  },
+  {
+    "word": " day",
+    "start": 287.88,
+    "end": 288.24
+  },
+  {
+    "word": " is?",
+    "start": 288.24,
+    "end": 288.62
+  },
+  {
+    "word": " Of",
+    "start": 288.82,
+    "end": 289.14
+  },
+  {
+    "word": " course,",
+    "start": 289.14,
+    "end": 289.3
+  },
+  {
+    "word": " I",
+    "start": 289.48,
+    "end": 289.64
+  },
+  {
+    "word": " like",
+    "start": 289.64,
+    "end": 289.76
+  },
+  {
+    "word": " that.",
+    "start": 289.64,
+    "end": 289.76
+  },
+  {
+    "word": " And",
+    "start": 290.86,
+    "end": 291.54
+  },
+  {
+    "word": " you?",
+    "start": 291.54,
+    "end": 291.82
+  },
+  {
+    "word": " Have",
+    "start": 292.26,
+    "end": 292.46
+  },
+  {
+    "word": " you",
+    "start": 292.46,
+    "end": 292.8
+  },
+  {
+    "word": " already",
+    "start": 292.8,
+    "end": 292.98
+  },
+  {
+    "word": " decided?",
+    "start": 292.98,
+    "end": 293.4
+  },
+  {
+    "word": " Will",
+    "start": 294.14,
+    "end": 294.26
+  },
+  {
+    "word": " it",
+    "start": 294.26,
+    "end": 294.46
+  },
+  {
+    "word": " be",
+    "start": 294.46,
+    "end": 294.58
+  },
+  {
+    "word": " a",
+    "start": 294.46,
+    "end": 294.62
+  },
+  {
+    "word": " burger",
+    "start": 294.62,
+    "end": 295.0
+  },
+  {
+    "word": " or",
+    "start": 295.0,
+    "end": 295.64
+  },
+  {
+    "word": " a",
+    "start": 295.64,
+    "end": 295.9
+  },
+  {
+    "word": " pizza?",
+    "start": 295.9,
+    "end": 296.24
+  },
+  {
+    "word": " I",
+    "start": 296.24,
+    "end": 296.84
+  },
+  {
+    "word": " think",
+    "start": 296.84,
+    "end": 297.32
+  },
+  {
+    "word": " I'll",
+    "start": 297.32,
+    "end": 298.1
+  },
+  {
+    "word": " take",
+    "start": 298.1,
+    "end": 298.22
+  },
+  {
+    "word": " the",
+    "start": 298.1,
+    "end": 298.3
+  },
+  {
+    "word": " Mexico",
+    "start": 298.3,
+    "end": 299.02
+  },
+  {
+    "word": " burger.",
+    "start": 299.02,
+    "end": 299.64
+  },
+  {
+    "word": " With",
+    "start": 299.94,
+    "end": 300.28
+  },
+  {
+    "word": " corn,",
+    "start": 300.28,
+    "end": 300.66
+  },
+  {
+    "word": " jalapeños",
+    "start": 301.02,
+    "end": 301.76
+  },
+  {
+    "word": " and",
+    "start": 301.76,
+    "end": 302.16
+  },
+  {
+    "word": " guacamole",
+    "start": 302.16,
+    "end": 302.88
+  },
+  {
+    "word": " sauce.",
+    "start": 302.88,
+    "end": 303.16
+  },
+  {
+    "word": " I",
+    "start": 303.88,
+    "end": 304.44
+  },
+  {
+    "word": " have",
+    "start": 304.44,
+    "end": 304.88
+  },
+  {
+    "word": " appetite",
+    "start": 304.88,
+    "end": 305.48
+  },
+  {
+    "word": " for",
+    "start": 305.48,
+    "end": 305.6
+  },
+  {
+    "word": " that",
+    "start": 305.48,
+    "end": 305.6
+  },
+  {
+    "word": " now.",
+    "start": 305.48,
+    "end": 305.6
+  },
+  {
+    "word": " And",
+    "start": 306.22,
+    "end": 306.74
+  },
+  {
+    "word": " what",
+    "start": 306.74,
+    "end": 307.38
+  },
+  {
+    "word": " do",
+    "start": 307.38,
+    "end": 307.66
+  },
+  {
+    "word": " we",
+    "start": 307.66,
+    "end": 307.84
+  },
+  {
+    "word": " drink?",
+    "start": 307.84,
+    "end": 307.96
+  },
+  {
+    "word": " Wine,",
+    "start": 308.58,
+    "end": 309.14
+  },
+  {
+    "word": " beer,",
+    "start": 309.68,
+    "end": 310.2
+  },
+  {
+    "word": " a",
+    "start": 310.62,
+    "end": 310.88
+  },
+  {
+    "word": " cocktail,",
+    "start": 310.88,
+    "end": 311.58
+  },
+  {
+    "word": " water?",
+    "start": 312.24,
+    "end": 312.44
+  },
+  {
+    "word": " I'll",
+    "start": 313.24,
+    "end": 313.98
+  },
+  {
+    "word": " take",
+    "start": 313.98,
+    "end": 314.18
+  },
+  {
+    "word": " a",
+    "start": 314.18,
+    "end": 314.46
+  },
+  {
+    "word": " glass",
+    "start": 314.46,
+    "end": 314.62
+  },
+  {
+    "word": " of",
+    "start": 314.62,
+    "end": 314.88
+  },
+  {
+    "word": " wine.",
+    "start": 314.88,
+    "end": 315.04
+  },
+  {
+    "word": " And",
+    "start": 315.32,
+    "end": 315.44
+  },
+  {
+    "word": " you?",
+    "start": 315.4,
+    "end": 315.6
+  },
+  {
+    "word": " I'll",
+    "start": 315.92,
+    "end": 316.56
+  },
+  {
+    "word": " only",
+    "start": 316.56,
+    "end": 317.42
+  },
+  {
+    "word": " take",
+    "start": 317.42,
+    "end": 317.54
+  },
+  {
+    "word": " a",
+    "start": 317.42,
+    "end": 318.24
+  },
+  {
+    "word": " glass",
+    "start": 318.24,
+    "end": 318.48
+  },
+  {
+    "word": " of",
+    "start": 318.48,
+    "end": 318.68
+  },
+  {
+    "word": " water",
+    "start": 318.68,
+    "end": 319.06
+  },
+  {
+    "word": " today.",
+    "start": 319.06,
+    "end": 319.18
+  },
+  {
+    "word": " I'll",
+    "start": 319.46,
+    "end": 319.7
+  },
+  {
+    "word": " soon",
+    "start": 319.7,
+    "end": 320.26
+  },
+  {
+    "word": " have",
+    "start": 320.26,
+    "end": 320.38
+  },
+  {
+    "word": " a",
+    "start": 320.26,
+    "end": 320.54
+  },
+  {
+    "word": " half",
+    "start": 320.54,
+    "end": 320.9
+  },
+  {
+    "word": "-marathon.",
+    "start": 320.9,
+    "end": 321.34
+  },
+  {
+    "word": " And",
+    "start": 321.34,
+    "end": 321.9
+  },
+  {
+    "word": " I'm",
+    "start": 321.9,
+    "end": 322.48
+  },
+  {
+    "word": " training",
+    "start": 322.48,
+    "end": 322.6
+  },
+  {
+    "word": " a",
+    "start": 322.48,
+    "end": 322.72
+  },
+  {
+    "word": " lot",
+    "start": 322.72,
+    "end": 322.84000000000003
+  },
+  {
+    "word": " right",
+    "start": 322.72,
+    "end": 322.84000000000003
+  },
+  {
+    "word": " now.",
+    "start": 322.72,
+    "end": 323.1
+  },
+  {
+    "word": " Do",
+    "start": 324.52,
+    "end": 324.64
+  },
+  {
+    "word": " you",
+    "start": 324.52,
+    "end": 324.88
+  },
+  {
+    "word": " prefer",
+    "start": 324.88,
+    "end": 325.02
+  },
+  {
+    "word": " white",
+    "start": 325.02,
+    "end": 325.66
+  },
+  {
+    "word": " or",
+    "start": 325.66,
+    "end": 326.12
+  },
+  {
+    "word": " red",
+    "start": 326.12,
+    "end": 326.56
+  },
+  {
+    "word": " wine,",
+    "start": 326.56,
+    "end": 326.84
+  },
+  {
+    "word": " Melissa?",
+    "start": 326.92,
+    "end": 327.32
+  },
+  {
+    "word": " I",
+    "start": 327.78,
+    "end": 328.36
+  },
+  {
+    "word": " don't",
+    "start": 328.36,
+    "end": 328.54
+  },
+  {
+    "word": " care.",
+    "start": 328.54,
+    "end": 329.0
+  },
+  {
+    "word": " Maybe",
+    "start": 329.32,
+    "end": 329.72
+  },
+  {
+    "word": " the",
+    "start": 329.72,
+    "end": 330.36
+  },
+  {
+    "word": " waiter",
+    "start": 330.36,
+    "end": 330.66
+  },
+  {
+    "word": " can",
+    "start": 330.66,
+    "end": 330.92
+  },
+  {
+    "word": " recommend",
+    "start": 330.92,
+    "end": 331.04
+  },
+  {
+    "word": " us",
+    "start": 330.92,
+    "end": 331.04
+  },
+  {
+    "word": " a",
+    "start": 330.92,
+    "end": 331.12
+  },
+  {
+    "word": " good",
+    "start": 331.12,
+    "end": 331.44
+  },
+  {
+    "word": " wine.",
+    "start": 331.44,
+    "end": 331.84
+  },
+  {
+    "word": " Yes,",
+    "start": 332.58,
+    "end": 332.92
+  },
+  {
+    "word": " great",
+    "start": 333.12,
+    "end": 333.4
+  },
+  {
+    "word": " idea.",
+    "start": 333.4,
+    "end": 333.68
+  },
+  {
+    "word": " Maybe",
+    "start": 334.2,
+    "end": 334.7
+  },
+  {
+    "word": " she",
+    "start": 334.7,
+    "end": 335.06
+  },
+  {
+    "word": " has",
+    "start": 335.06,
+    "end": 335.18
+  },
+  {
+    "word": " a",
+    "start": 335.06,
+    "end": 335.34
+  },
+  {
+    "word": " secret",
+    "start": 335.34,
+    "end": 335.72
+  },
+  {
+    "word": " tip",
+    "start": 335.72,
+    "end": 336.06
+  },
+  {
+    "word": " for",
+    "start": 336.06,
+    "end": 336.22
+  },
+  {
+    "word": " us.",
+    "start": 336.22,
+    "end": 336.48
+  },
+  {
+    "word": " I'll",
+    "start": 336.9,
+    "end": 337.3
+  },
+  {
+    "word": " ask",
+    "start": 337.3,
+    "end": 337.42
+  },
+  {
+    "word": " her",
+    "start": 337.32,
+    "end": 337.54
+  },
+  {
+    "word": " right",
+    "start": 337.54,
+    "end": 337.74
+  },
+  {
+    "word": " away.",
+    "start": 337.74,
+    "end": 337.96
+  },
+  {
+    "word": " Oh,",
+    "start": 339.18,
+    "end": 339.92
+  },
+  {
+    "word": " there",
+    "start": 340.32,
+    "end": 340.58
+  },
+  {
+    "word": " she",
+    "start": 340.58,
+    "end": 341.0
+  },
+  {
+    "word": " is.",
+    "start": 341.0,
+    "end": 341.12
+  },
+  {
+    "word": " Sorry,",
+    "start": 341.72,
+    "end": 342.44
+  },
+  {
+    "word": " we're",
+    "start": 343.02,
+    "end": 343.78
+  },
+  {
+    "word": " so",
+    "start": 343.78,
+    "end": 344.08
+  },
+  {
+    "word": " far.",
+    "start": 344.08,
+    "end": 344.34
+  },
+  {
+    "word": " Have",
+    "start": 353.08,
+    "end": 353.76
+  },
+  {
+    "word": " you",
+    "start": 353.76,
+    "end": 354.0
+  },
+  {
+    "word": " decided?",
+    "start": 354.0,
+    "end": 354.48
+  },
+  {
+    "word": " Yes,",
+    "start": 355.08,
+    "end": 355.34
+  },
+  {
+    "word": " exactly.",
+    "start": 356.02,
+    "end": 356.44
+  },
+  {
+    "word": " We",
+    "start": 356.92,
+    "end": 357.08
+  },
+  {
+    "word": " also",
+    "start": 357.08,
+    "end": 357.52
+  },
+  {
+    "word": " have",
+    "start": 357.52,
+    "end": 357.64
+  },
+  {
+    "word": " a",
+    "start": 357.52,
+    "end": 357.72
+  },
+  {
+    "word": " few",
+    "start": 357.72,
+    "end": 357.88
+  },
+  {
+    "word": " questions.",
+    "start": 357.88,
+    "end": 358.3
+  },
+  {
+    "word": " No",
+    "start": 359.1,
+    "end": 359.34
+  },
+  {
+    "word": " problem.",
+    "start": 359.34,
+    "end": 359.76
+  },
+  {
+    "word": " How",
+    "start": 360.16,
+    "end": 360.32
+  },
+  {
+    "word": " can",
+    "start": 360.32,
+    "end": 360.52
+  },
+  {
+    "word": " I",
+    "start": 360.52,
+    "end": 360.84
+  },
+  {
+    "word": " help",
+    "start": 360.84,
+    "end": 361.16
+  },
+  {
+    "word": " you?",
+    "start": 361.16,
+    "end": 361.28000000000003
+  },
+  {
+    "word": " Can",
+    "start": 361.6,
+    "end": 361.86
+  },
+  {
+    "word": " you",
+    "start": 361.86,
+    "end": 362.56
+  },
+  {
+    "word": " recommend",
+    "start": 362.56,
+    "end": 362.68
+  },
+  {
+    "word": " us",
+    "start": 362.56,
+    "end": 362.68
+  },
+  {
+    "word": " a",
+    "start": 362.56,
+    "end": 362.84
+  },
+  {
+    "word": " good",
+    "start": 362.84,
+    "end": 363.14
+  },
+  {
+    "word": " wine?",
+    "start": 363.14,
+    "end": 363.56
+  },
+  {
+    "word": " Do",
+    "start": 364.96,
+    "end": 365.26
+  },
+  {
+    "word": " you",
+    "start": 365.26,
+    "end": 365.6
+  },
+  {
+    "word": " prefer",
+    "start": 365.6,
+    "end": 365.72
+  },
+  {
+    "word": " red,",
+    "start": 365.68,
+    "end": 366.48
+  },
+  {
+    "word": " white",
+    "start": 366.8,
+    "end": 367.12
+  },
+  {
+    "word": " or",
+    "start": 367.12,
+    "end": 367.6
+  },
+  {
+    "word": " rosé",
+    "start": 367.6,
+    "end": 368.04
+  },
+  {
+    "word": " wine?",
+    "start": 368.04,
+    "end": 368.34
+  },
+  {
+    "word": " That",
+    "start": 368.54,
+    "end": 369.0
+  },
+  {
+    "word": " doesn't",
+    "start": 369.0,
+    "end": 369.22
+  },
+  {
+    "word": " matter.",
+    "start": 369.22,
+    "end": 369.6
+  },
+  {
+    "word": " Do",
+    "start": 370.32,
+    "end": 370.84
+  },
+  {
+    "word": " you",
+    "start": 370.84,
+    "end": 371.38
+  },
+  {
+    "word": " prefer",
+    "start": 371.38,
+    "end": 371.5
+  },
+  {
+    "word": " sweet",
+    "start": 371.38,
+    "end": 371.9
+  },
+  {
+    "word": " or",
+    "start": 371.9,
+    "end": 372.64
+  },
+  {
+    "word": " dry",
+    "start": 372.64,
+    "end": 373.12
+  },
+  {
+    "word": " wine?",
+    "start": 373.12,
+    "end": 373.62
+  },
+  {
+    "word": " The",
+    "start": 373.84,
+    "end": 374.02
+  },
+  {
+    "word": " best",
+    "start": 374.02,
+    "end": 374.36
+  },
+  {
+    "word": " is",
+    "start": 374.36,
+    "end": 374.64
+  },
+  {
+    "word": " a",
+    "start": 374.64,
+    "end": 374.92
+  },
+  {
+    "word": " half",
+    "start": 374.92,
+    "end": 375.24
+  },
+  {
+    "word": "-dry",
+    "start": 375.24,
+    "end": 375.54
+  },
+  {
+    "word": " wine.",
+    "start": 375.54,
+    "end": 376.1
+  },
+  {
+    "word": " I",
+    "start": 376.5,
+    "end": 377.12
+  },
+  {
+    "word": " can",
+    "start": 377.12,
+    "end": 377.42
+  },
+  {
+    "word": " recommend",
+    "start": 377.42,
+    "end": 377.54
+  },
+  {
+    "word": " you",
+    "start": 377.5,
+    "end": 377.84
+  },
+  {
+    "word": " the",
+    "start": 377.84,
+    "end": 378.1
+  },
+  {
+    "word": " L",
+    "start": 378.1,
+    "end": 378.34
+  },
+  {
+    "word": "'Ambrusco.",
+    "start": 378.34,
+    "end": 378.94
+  },
+  {
+    "word": " It's",
+    "start": 379.64,
+    "end": 380.26
+  },
+  {
+    "word": " not",
+    "start": 380.26,
+    "end": 380.5
+  },
+  {
+    "word": " too",
+    "start": 380.5,
+    "end": 380.76
+  },
+  {
+    "word": " sweet",
+    "start": 380.76,
+    "end": 381.04
+  },
+  {
+    "word": " and",
+    "start": 381.04,
+    "end": 381.44
+  },
+  {
+    "word": " not",
+    "start": 381.44,
+    "end": 381.68
+  },
+  {
+    "word": " too",
+    "start": 381.68,
+    "end": 381.9
+  },
+  {
+    "word": " dry.",
+    "start": 381.9,
+    "end": 382.2
+  },
+  {
+    "word": " And",
+    "start": 382.66,
+    "end": 382.86
+  },
+  {
+    "word": " we",
+    "start": 382.86,
+    "end": 383.04
+  },
+  {
+    "word": " serve",
+    "start": 383.04,
+    "end": 383.34
+  },
+  {
+    "word": " it",
+    "start": 383.34,
+    "end": 383.68
+  },
+  {
+    "word": " cold.",
+    "start": 383.68,
+    "end": 384.04
+  },
+  {
+    "word": " It's",
+    "start": 384.48,
+    "end": 384.86
+  },
+  {
+    "word": " perfect",
+    "start": 384.86,
+    "end": 385.36
+  },
+  {
+    "word": " for",
+    "start": 385.36,
+    "end": 385.66
+  },
+  {
+    "word": " the",
+    "start": 385.66,
+    "end": 385.8
+  },
+  {
+    "word": " summer.",
+    "start": 385.8,
+    "end": 386.12
+  },
+  {
+    "word": " That",
+    "start": 386.38,
+    "end": 386.6
+  },
+  {
+    "word": " sounds",
+    "start": 386.6,
+    "end": 387.02
+  },
+  {
+    "word": " great.",
+    "start": 387.02,
+    "end": 387.6
+  },
+  {
+    "word": " Please",
+    "start": 388.02,
+    "end": 388.18
+  },
+  {
+    "word": " take",
+    "start": 388.18,
+    "end": 388.44
+  },
+  {
+    "word": " a",
+    "start": 388.44,
+    "end": 389.16
+  },
+  {
+    "word": " glass",
+    "start": 389.16,
+    "end": 389.48
+  },
+  {
+    "word": " of",
+    "start": 389.48,
+    "end": 389.9
+  },
+  {
+    "word": " L",
+    "start": 389.9,
+    "end": 390.02
+  },
+  {
+    "word": "'Ambrusco",
+    "start": 389.98,
+    "end": 390.5
+  },
+  {
+    "word": " for",
+    "start": 390.5,
+    "end": 390.72
+  },
+  {
+    "word": " the",
+    "start": 390.72,
+    "end": 390.84000000000003
+  },
+  {
+    "word": " lady",
+    "start": 390.82,
+    "end": 391.04
+  },
+  {
+    "word": " and",
+    "start": 391.04,
+    "end": 391.68
+  },
+  {
+    "word": " a",
+    "start": 391.68,
+    "end": 392.0
+  },
+  {
+    "word": " glass",
+    "start": 392.0,
+    "end": 392.2
+  },
+  {
+    "word": " of",
+    "start": 392.2,
+    "end": 392.38
+  },
+  {
+    "word": " water",
+    "start": 392.38,
+    "end": 392.56
+  },
+  {
+    "word": " for",
+    "start": 392.56,
+    "end": 392.82
+  },
+  {
+    "word": " me.",
+    "start": 392.82,
+    "end": 393.04
+  },
+  {
+    "word": " Very",
+    "start": 394.2,
+    "end": 394.82
+  },
+  {
+    "word": " nice.",
+    "start": 394.82,
+    "end": 395.26
+  },
+  {
+    "word": " What",
+    "start": 395.8,
+    "end": 396.14
+  },
+  {
+    "word": " can",
+    "start": 396.14,
+    "end": 396.32
+  },
+  {
+    "word": " it",
+    "start": 396.32,
+    "end": 396.68
+  },
+  {
+    "word": " be",
+    "start": 396.68,
+    "end": 396.8
+  },
+  {
+    "word": " for",
+    "start": 396.68,
+    "end": 396.8
+  },
+  {
+    "word": " you",
+    "start": 396.68,
+    "end": 396.82
+  },
+  {
+    "word": " to",
+    "start": 396.82,
+    "end": 397.0
+  },
+  {
+    "word": " eat?",
+    "start": 397.0,
+    "end": 397.32
+  },
+  {
+    "word": " Yes,",
+    "start": 397.94,
+    "end": 398.2
+  },
+  {
+    "word": " a",
+    "start": 398.3,
+    "end": 398.52
+  },
+  {
+    "word": " question",
+    "start": 398.52,
+    "end": 398.92
+  },
+  {
+    "word": " beforehand.",
+    "start": 398.92,
+    "end": 399.46
+  },
+  {
+    "word": " What",
+    "start": 399.74,
+    "end": 399.88
+  },
+  {
+    "word": " exactly",
+    "start": 399.88,
+    "end": 400.22
+  },
+  {
+    "word": " is",
+    "start": 400.22,
+    "end": 400.48
+  },
+  {
+    "word": " the",
+    "start": 400.48,
+    "end": 400.66
+  },
+  {
+    "word": " pizza",
+    "start": 400.66,
+    "end": 401.02
+  },
+  {
+    "word": " of",
+    "start": 401.02,
+    "end": 401.24
+  },
+  {
+    "word": " the",
+    "start": 401.24,
+    "end": 401.36
+  },
+  {
+    "word": " day?",
+    "start": 401.28,
+    "end": 401.56
+  },
+  {
+    "word": " The",
+    "start": 402.24,
+    "end": 402.56
+  },
+  {
+    "word": " pizza",
+    "start": 402.56,
+    "end": 402.9
+  },
+  {
+    "word": " of",
+    "start": 402.9,
+    "end": 403.12
+  },
+  {
+    "word": " the",
+    "start": 403.12,
+    "end": 403.24
+  },
+  {
+    "word": " day",
+    "start": 403.12,
+    "end": 403.42
+  },
+  {
+    "word": " is",
+    "start": 403.42,
+    "end": 403.84
+  },
+  {
+    "word": " a",
+    "start": 403.84,
+    "end": 404.16
+  },
+  {
+    "word": " calzone.",
+    "start": 404.16,
+    "end": 404.86
+  },
+  {
+    "word": " We",
+    "start": 405.38,
+    "end": 405.54
+  },
+  {
+    "word": " make",
+    "start": 405.54,
+    "end": 405.72
+  },
+  {
+    "word": " our",
+    "start": 405.72,
+    "end": 406.06
+  },
+  {
+    "word": " calzone",
+    "start": 406.06,
+    "end": 406.86
+  },
+  {
+    "word": " with",
+    "start": 406.86,
+    "end": 407.08
+  },
+  {
+    "word": " tomato",
+    "start": 407.08,
+    "end": 407.62
+  },
+  {
+    "word": " sauce,",
+    "start": 407.62,
+    "end": 408.08
+  },
+  {
+    "word": " mozzarella,",
+    "start": 408.08,
+    "end": 408.94
+  },
+  {
+    "word": " ham",
+    "start": 409.54,
+    "end": 410.04
+  },
+  {
+    "word": " and",
+    "start": 410.04,
+    "end": 410.54
+  },
+  {
+    "word": " champignons.",
+    "start": 410.54,
+    "end": 411.44
+  },
+  {
+    "word": " Okay,",
+    "start": 411.74,
+    "end": 412.46
+  },
+  {
+    "word": " that's",
+    "start": 412.66,
+    "end": 412.98
+  },
+  {
+    "word": " clear.",
+    "start": 412.98,
+    "end": 413.28
+  },
+  {
+    "word": " Then",
+    "start": 414.04,
+    "end": 414.6
+  },
+  {
+    "word": " we",
+    "start": 414.6,
+    "end": 415.04
+  },
+  {
+    "word": " would",
+    "start": 415.04,
+    "end": 415.16
+  },
+  {
+    "word": " like",
+    "start": 415.1,
+    "end": 415.32
+  },
+  {
+    "word": " a",
+    "start": 415.32,
+    "end": 415.92
+  },
+  {
+    "word": " vegetable",
+    "start": 415.92,
+    "end": 416.3
+  },
+  {
+    "word": " lasagne",
+    "start": 416.3,
+    "end": 416.92
+  },
+  {
+    "word": " and",
+    "start": 416.92,
+    "end": 417.4
+  },
+  {
+    "word": " a",
+    "start": 417.4,
+    "end": 417.76
+  },
+  {
+    "word": " Mexican",
+    "start": 417.76,
+    "end": 418.2
+  },
+  {
+    "word": " burger.",
+    "start": 418.2,
+    "end": 418.64
+  },
+  {
+    "word": " So",
+    "start": 419.3,
+    "end": 419.96
+  },
+  {
+    "word": " no",
+    "start": 419.96,
+    "end": 420.32
+  },
+  {
+    "word": " pizza",
+    "start": 420.32,
+    "end": 420.74
+  },
+  {
+    "word": " of",
+    "start": 420.74,
+    "end": 420.94
+  },
+  {
+    "word": " the",
+    "start": 420.94,
+    "end": 421.06
+  },
+  {
+    "word": " day?",
+    "start": 420.96,
+    "end": 421.24
+  },
+  {
+    "word": " No,",
+    "start": 421.7,
+    "end": 422.18
+  },
+  {
+    "word": " we",
+    "start": 422.46,
+    "end": 422.66
+  },
+  {
+    "word": " unfortunately",
+    "start": 422.66,
+    "end": 423.34
+  },
+  {
+    "word": " don't",
+    "start": 423.34,
+    "end": 423.58
+  },
+  {
+    "word": " like",
+    "start": 423.58,
+    "end": 423.7
+  },
+  {
+    "word": " champignons.",
+    "start": 423.58,
+    "end": 425.34
+  },
+  {
+    "word": " Ah,",
+    "start": 425.66,
+    "end": 426.24
+  },
+  {
+    "word": " and",
+    "start": 426.56,
+    "end": 427.08
+  },
+  {
+    "word": " I",
+    "start": 427.08,
+    "end": 427.66
+  },
+  {
+    "word": " forgot",
+    "start": 427.66,
+    "end": 427.84
+  },
+  {
+    "word": " the",
+    "start": 427.84,
+    "end": 427.98
+  },
+  {
+    "word": " appetizers.",
+    "start": 427.98,
+    "end": 428.7
+  },
+  {
+    "word": " Are",
+    "start": 429.7,
+    "end": 430.12
+  },
+  {
+    "word": " the",
+    "start": 430.12,
+    "end": 430.3
+  },
+  {
+    "word": " appetizers",
+    "start": 430.3,
+    "end": 430.96
+  },
+  {
+    "word": " large",
+    "start": 430.96,
+    "end": 431.64
+  },
+  {
+    "word": " portions?",
+    "start": 431.64,
+    "end": 432.28
+  },
+  {
+    "word": " The",
+    "start": 433.12,
+    "end": 433.74
+  },
+  {
+    "word": " plates",
+    "start": 433.74,
+    "end": 434.0
+  },
+  {
+    "word": " are",
+    "start": 434.0,
+    "end": 434.28
+  },
+  {
+    "word": " about",
+    "start": 434.28,
+    "end": 434.7
+  },
+  {
+    "word": " this",
+    "start": 434.7,
+    "end": 435.12
+  },
+  {
+    "word": " big.",
+    "start": 435.12,
+    "end": 435.46
+  },
+  {
+    "word": " Do",
+    "start": 435.46,
+    "end": 436.5
+  },
+  {
+    "word": " you",
+    "start": 436.5,
+    "end": 436.86
+  },
+  {
+    "word": " think",
+    "start": 436.86,
+    "end": 436.98
+  },
+  {
+    "word": " that",
+    "start": 436.86,
+    "end": 437.08
+  },
+  {
+    "word": " two",
+    "start": 437.08,
+    "end": 437.52
+  },
+  {
+    "word": " appetizers",
+    "start": 437.52,
+    "end": 438.4
+  },
+  {
+    "word": " and",
+    "start": 438.4,
+    "end": 438.82
+  },
+  {
+    "word": " two",
+    "start": 438.82,
+    "end": 439.34
+  },
+  {
+    "word": " main",
+    "start": 439.34,
+    "end": 439.76
+  },
+  {
+    "word": " appetizers",
+    "start": 439.76,
+    "end": 440.38
+  },
+  {
+    "word": " are",
+    "start": 440.38,
+    "end": 440.5
+  },
+  {
+    "word": " too",
+    "start": 440.5,
+    "end": 440.62
+  },
+  {
+    "word": " much",
+    "start": 440.6,
+    "end": 440.92
+  },
+  {
+    "word": " for",
+    "start": 440.92,
+    "end": 441.08
+  },
+  {
+    "word": " us?",
+    "start": 441.08,
+    "end": 441.3
+  },
+  {
+    "word": " I",
+    "start": 441.88,
+    "end": 442.3
+  },
+  {
+    "word": " think",
+    "start": 442.3,
+    "end": 442.6
+  },
+  {
+    "word": " the",
+    "start": 442.6,
+    "end": 442.86
+  },
+  {
+    "word": " portions",
+    "start": 442.86,
+    "end": 443.24
+  },
+  {
+    "word": " are",
+    "start": 443.24,
+    "end": 443.62
+  },
+  {
+    "word": " exactly",
+    "start": 443.62,
+    "end": 443.98
+  },
+  {
+    "word": " right",
+    "start": 443.98,
+    "end": 444.34
+  },
+  {
+    "word": " for",
+    "start": 444.34,
+    "end": 444.6
+  },
+  {
+    "word": " you.",
+    "start": 444.6,
+    "end": 444.84
+  },
+  {
+    "word": " Good.",
+    "start": 445.16,
+    "end": 445.42
+  },
+  {
+    "word": " Then",
+    "start": 445.9,
+    "end": 446.28
+  },
+  {
+    "word": " we",
+    "start": 446.28,
+    "end": 446.94
+  },
+  {
+    "word": " would",
+    "start": 446.94,
+    "end": 447.06
+  },
+  {
+    "word": " like",
+    "start": 447.06,
+    "end": 447.4
+  },
+  {
+    "word": " the",
+    "start": 447.4,
+    "end": 447.78
+  },
+  {
+    "word": " caprese",
+    "start": 447.78,
+    "end": 448.42
+  },
+  {
+    "word": " salad",
+    "start": 448.42,
+    "end": 448.8
+  },
+  {
+    "word": " and",
+    "start": 448.8,
+    "end": 449.32
+  },
+  {
+    "word": " the",
+    "start": 449.32,
+    "end": 449.58
+  },
+  {
+    "word": " cheese",
+    "start": 449.58,
+    "end": 449.98
+  },
+  {
+    "word": " plate,",
+    "start": 449.98,
+    "end": 450.28
+  },
+  {
+    "word": " please.",
+    "start": 450.64,
+    "end": 450.76
+  },
+  {
+    "word": " Very",
+    "start": 451.38,
+    "end": 452.14
+  },
+  {
+    "word": " nice.",
+    "start": 452.14,
+    "end": 452.9
+  },
+  {
+    "word": " So,",
+    "start": 453.92,
+    "end": 454.54
+  },
+  {
+    "word": " would",
+    "start": 454.9,
+    "end": 455.02
+  },
+  {
+    "word": " you",
+    "start": 454.9,
+    "end": 455.34
+  },
+  {
+    "word": " like",
+    "start": 455.34,
+    "end": 455.46
+  },
+  {
+    "word": " to",
+    "start": 455.34,
+    "end": 455.46
+  },
+  {
+    "word": " order",
+    "start": 455.36,
+    "end": 455.48
+  },
+  {
+    "word": " something",
+    "start": 455.36,
+    "end": 455.86
+  },
+  {
+    "word": " else?",
+    "start": 455.86,
+    "end": 455.98
+  },
+  {
+    "word": " Would",
+    "start": 456.7,
+    "end": 456.92
+  },
+  {
+    "word": " you",
+    "start": 456.92,
+    "end": 457.42
+  },
+  {
+    "word": " like",
+    "start": 457.42,
+    "end": 457.54
+  },
+  {
+    "word": " a",
+    "start": 457.42,
+    "end": 458.44
+  },
+  {
+    "word": " dessert?",
+    "start": 458.44,
+    "end": 458.92
+  },
+  {
+    "word": " We",
+    "start": 459.62,
+    "end": 460.02
+  },
+  {
+    "word": " have",
+    "start": 460.02,
+    "end": 460.14
+  },
+  {
+    "word": " many",
+    "start": 460.12,
+    "end": 460.44
+  },
+  {
+    "word": " homemade",
+    "start": 460.44,
+    "end": 461.06
+  },
+  {
+    "word": " cakes",
+    "start": 461.06,
+    "end": 461.58
+  },
+  {
+    "word": " and",
+    "start": 461.58,
+    "end": 461.96
+  },
+  {
+    "word": " cakes.",
+    "start": 461.96,
+    "end": 462.2
+  },
+  {
+    "word": " I",
+    "start": 462.2,
+    "end": 463.26
+  },
+  {
+    "word": " think",
+    "start": 463.26,
+    "end": 463.58
+  },
+  {
+    "word": " we",
+    "start": 463.58,
+    "end": 463.88
+  },
+  {
+    "word": " have",
+    "start": 463.88,
+    "end": 464.26
+  },
+  {
+    "word": " to",
+    "start": 464.26,
+    "end": 464.38
+  },
+  {
+    "word": " wait",
+    "start": 464.3,
+    "end": 464.42
+  },
+  {
+    "word": " a",
+    "start": 464.3,
+    "end": 464.76
+  },
+  {
+    "word": " little",
+    "start": 464.76,
+    "end": 465.04
+  },
+  {
+    "word": " bit.",
+    "start": 465.04,
+    "end": 465.16
+  },
+  {
+    "word": " We",
+    "start": 465.38,
+    "end": 465.58
+  },
+  {
+    "word": " have",
+    "start": 465.58,
+    "end": 465.7
+  },
+  {
+    "word": " to",
+    "start": 465.64,
+    "end": 466.2
+  },
+  {
+    "word": " see",
+    "start": 466.2,
+    "end": 466.56
+  },
+  {
+    "word": " if",
+    "start": 466.56,
+    "end": 466.82
+  },
+  {
+    "word": " we",
+    "start": 466.82,
+    "end": 467.0
+  },
+  {
+    "word": " can",
+    "start": 467.0,
+    "end": 467.12
+  },
+  {
+    "word": " eat",
+    "start": 467.02,
+    "end": 467.14
+  },
+  {
+    "word": " it",
+    "start": 467.02,
+    "end": 467.14
+  },
+  {
+    "word": " all.",
+    "start": 467.14,
+    "end": 467.38
+  },
+  {
+    "word": " Of",
+    "start": 468.88,
+    "end": 469.38
+  },
+  {
+    "word": " course,",
+    "start": 469.38,
+    "end": 470.0
+  },
+  {
+    "word": " I",
+    "start": 470.32,
+    "end": 470.44
+  },
+  {
+    "word": " would",
+    "start": 470.34,
+    "end": 470.72
+  },
+  {
+    "word": " love",
+    "start": 470.72,
+    "end": 470.84000000000003
+  },
+  {
+    "word": " to.",
+    "start": 470.72,
+    "end": 470.88
+  },
+  {
+    "word": " I",
+    "start": 471.3,
+    "end": 471.56
+  },
+  {
+    "word": " can",
+    "start": 471.56,
+    "end": 471.78
+  },
+  {
+    "word": " also",
+    "start": 471.78,
+    "end": 471.9
+  },
+  {
+    "word": " bring",
+    "start": 471.78,
+    "end": 471.9
+  },
+  {
+    "word": " you",
+    "start": 471.78,
+    "end": 472.02
+  },
+  {
+    "word": " the",
+    "start": 472.02,
+    "end": 472.18
+  },
+  {
+    "word": " dessert",
+    "start": 472.18,
+    "end": 472.58
+  },
+  {
+    "word": " card",
+    "start": 472.58,
+    "end": 473.46
+  },
+  {
+    "word": " after",
+    "start": 473.46,
+    "end": 473.92
+  },
+  {
+    "word": " the",
+    "start": 473.92,
+    "end": 474.18
+  },
+  {
+    "word": " meal.",
+    "start": 474.18,
+    "end": 474.44
+  },
+  {
+    "word": " So,",
+    "start": 475.5,
+    "end": 476.06
+  },
+  {
+    "word": " I'll",
+    "start": 476.16,
+    "end": 476.4
+  },
+  {
+    "word": " put",
+    "start": 476.4,
+    "end": 476.52
+  },
+  {
+    "word": " it",
+    "start": 476.4,
+    "end": 476.92
+  },
+  {
+    "word": " all",
+    "start": 476.92,
+    "end": 477.04
+  },
+  {
+    "word": " together.",
+    "start": 476.92,
+    "end": 477.1
+  },
+  {
+    "word": " One",
+    "start": 477.4,
+    "end": 477.82
+  },
+  {
+    "word": " glass",
+    "start": 477.82,
+    "end": 478.0
+  },
+  {
+    "word": " of",
+    "start": 478.0,
+    "end": 478.22
+  },
+  {
+    "word": " lambrusco",
+    "start": 478.22,
+    "end": 478.86
+  },
+  {
+    "word": " and",
+    "start": 478.86,
+    "end": 479.14
+  },
+  {
+    "word": " one",
+    "start": 479.14,
+    "end": 479.42
+  },
+  {
+    "word": " glass",
+    "start": 479.42,
+    "end": 479.58
+  },
+  {
+    "word": " of",
+    "start": 479.58,
+    "end": 479.78
+  },
+  {
+    "word": " water.",
+    "start": 479.78,
+    "end": 480.06
+  },
+  {
+    "word": " One",
+    "start": 480.44,
+    "end": 480.7
+  },
+  {
+    "word": " caprese",
+    "start": 480.7,
+    "end": 481.1
+  },
+  {
+    "word": " salad,",
+    "start": 481.1,
+    "end": 481.54
+  },
+  {
+    "word": " one",
+    "start": 481.92,
+    "end": 482.08
+  },
+  {
+    "word": " cheese",
+    "start": 482.08,
+    "end": 482.36
+  },
+  {
+    "word": " plate",
+    "start": 482.36,
+    "end": 482.72
+  },
+  {
+    "word": " for",
+    "start": 482.72,
+    "end": 483.54
+  },
+  {
+    "word": " the",
+    "start": 483.54,
+    "end": 483.7
+  },
+  {
+    "word": " lady,",
+    "start": 483.7,
+    "end": 483.96
+  },
+  {
+    "word": " one",
+    "start": 484.2,
+    "end": 484.38
+  },
+  {
+    "word": " vegetable",
+    "start": 484.38,
+    "end": 484.72
+  },
+  {
+    "word": " lasagne",
+    "start": 484.72,
+    "end": 485.28
+  },
+  {
+    "word": " and",
+    "start": 485.28,
+    "end": 485.78
+  },
+  {
+    "word": " for",
+    "start": 485.78,
+    "end": 486.06
+  },
+  {
+    "word": " the",
+    "start": 486.06,
+    "end": 486.18
+  },
+  {
+    "word": " gentleman,",
+    "start": 486.18,
+    "end": 486.46
+  },
+  {
+    "word": " one",
+    "start": 486.78,
+    "end": 486.9
+  },
+  {
+    "word": " Mexican",
+    "start": 486.8,
+    "end": 487.08
+  },
+  {
+    "word": " burger.",
+    "start": 487.08,
+    "end": 487.54
+  },
+  {
+    "word": " Right?",
+    "start": 487.64,
+    "end": 487.78
+  },
+  {
+    "word": " Exactly,",
+    "start": 488.24,
+    "end": 488.62
+  },
+  {
+    "word": " right.",
+    "start": 488.8,
+    "end": 488.94
+  },
+  {
+    "word": " Thank",
+    "start": 489.38,
+    "end": 489.58
+  },
+  {
+    "word": " you",
+    "start": 489.58,
+    "end": 490.02
+  },
+  {
+    "word": " very",
+    "start": 490.02,
+    "end": 490.14
+  },
+  {
+    "word": " much.",
+    "start": 490.02,
+    "end": 490.14
+  },
+  {
+    "word": " Thank",
+    "start": 490.02,
+    "end": 490.58
+  },
+  {
+    "word": " you.",
+    "start": 490.58,
+    "end": 491.02
+  },
+  {
+    "word": " I'll",
+    "start": 491.54,
+    "end": 492.18
+  },
+  {
+    "word": " take",
+    "start": 492.18,
+    "end": 492.3
+  },
+  {
+    "word": " the",
+    "start": 492.18,
+    "end": 492.4
+  },
+  {
+    "word": " menus",
+    "start": 492.4,
+    "end": 492.8
+  },
+  {
+    "word": " with",
+    "start": 492.8,
+    "end": 493.12
+  },
+  {
+    "word": " me",
+    "start": 493.12,
+    "end": 493.5
+  },
+  {
+    "word": " and",
+    "start": 493.5,
+    "end": 493.62
+  },
+  {
+    "word": " come",
+    "start": 493.5,
+    "end": 493.74
+  },
+  {
+    "word": " right",
+    "start": 493.74,
+    "end": 494.14
+  },
+  {
+    "word": " away",
+    "start": 494.14,
+    "end": 494.32
+  },
+  {
+    "word": " with",
+    "start": 494.32,
+    "end": 494.48
+  },
+  {
+    "word": " the",
+    "start": 494.48,
+    "end": 494.64
+  },
+  {
+    "word": " drinks.",
+    "start": 494.64,
+    "end": 494.94
+  },
+  {
+    "word": " So,",
+    "start": 504.54,
+    "end": 505.18
+  },
+  {
+    "word": " here",
+    "start": 505.62,
+    "end": 505.8
+  },
+  {
+    "word": " comes",
+    "start": 505.8,
+    "end": 506.12
+  },
+  {
+    "word": " the",
+    "start": 506.12,
+    "end": 506.56
+  },
+  {
+    "word": " food.",
+    "start": 506.56,
+    "end": 507.04
+  },
+  {
+    "word": " For",
+    "start": 507.72,
+    "end": 508.0
+  },
+  {
+    "word": " whom",
+    "start": 508.0,
+    "end": 508.28
+  },
+  {
+    "word": " is",
+    "start": 508.28,
+    "end": 508.44
+  },
+  {
+    "word": " the",
+    "start": 508.44,
+    "end": 508.62
+  },
+  {
+    "word": " caprese",
+    "start": 508.62,
+    "end": 509.12
+  },
+  {
+    "word": " salad?",
+    "start": 509.12,
+    "end": 509.42
+  },
+  {
+    "word": " Please",
+    "start": 509.82,
+    "end": 510.16
+  },
+  {
+    "word": " put",
+    "start": 510.16,
+    "end": 510.28000000000003
+  },
+  {
+    "word": " the",
+    "start": 510.16,
+    "end": 510.52
+  },
+  {
+    "word": " salad",
+    "start": 510.52,
+    "end": 510.98
+  },
+  {
+    "word": " and",
+    "start": 510.98,
+    "end": 511.3
+  },
+  {
+    "word": " the",
+    "start": 511.3,
+    "end": 511.6
+  },
+  {
+    "word": " cheese",
+    "start": 511.6,
+    "end": 511.98
+  },
+  {
+    "word": " plate",
+    "start": 511.98,
+    "end": 512.26
+  },
+  {
+    "word": " in",
+    "start": 512.26,
+    "end": 512.82
+  },
+  {
+    "word": " the",
+    "start": 512.82,
+    "end": 512.94
+  },
+  {
+    "word": " middle.",
+    "start": 512.92,
+    "end": 513.16
+  },
+  {
+    "word": " We",
+    "start": 513.64,
+    "end": 513.84
+  },
+  {
+    "word": " will",
+    "start": 513.84,
+    "end": 514.12
+  },
+  {
+    "word": " share",
+    "start": 514.12,
+    "end": 514.24
+  },
+  {
+    "word": " the",
+    "start": 514.14,
+    "end": 514.3
+  },
+  {
+    "word": " appetizers.",
+    "start": 514.3,
+    "end": 514.92
+  },
+  {
+    "word": " All",
+    "start": 514.92,
+    "end": 516.2
+  },
+  {
+    "word": " right.",
+    "start": 516.2,
+    "end": 516.84
+  },
+  {
+    "word": " So,",
+    "start": 517.0,
+    "end": 517.58
+  },
+  {
+    "word": " please.",
+    "start": 517.94,
+    "end": 518.14
+  },
+  {
+    "word": " Then",
+    "start": 518.9,
+    "end": 519.62
+  },
+  {
+    "word": " I",
+    "start": 519.62,
+    "end": 520.02
+  },
+  {
+    "word": " have",
+    "start": 520.02,
+    "end": 520.14
+  },
+  {
+    "word": " one",
+    "start": 520.02,
+    "end": 520.64
+  },
+  {
+    "word": " more",
+    "start": 520.64,
+    "end": 520.76
+  },
+  {
+    "word": " vegetable",
+    "start": 520.74,
+    "end": 521.2
+  },
+  {
+    "word": " lasagne",
+    "start": 521.2,
+    "end": 521.94
+  },
+  {
+    "word": " which",
+    "start": 521.94,
+    "end": 522.52
+  },
+  {
+    "word": " was",
+    "start": 522.52,
+    "end": 522.72
+  },
+  {
+    "word": " for",
+    "start": 522.72,
+    "end": 522.92
+  },
+  {
+    "word": " the",
+    "start": 522.92,
+    "end": 523.12
+  },
+  {
+    "word": " lady,",
+    "start": 523.12,
+    "end": 523.52
+  },
+  {
+    "word": " right?",
+    "start": 523.64,
+    "end": 523.84
+  },
+  {
+    "word": " And",
+    "start": 524.84,
+    "end": 525.28
+  },
+  {
+    "word": " the",
+    "start": 525.28,
+    "end": 525.66
+  },
+  {
+    "word": " burger",
+    "start": 525.66,
+    "end": 526.2
+  },
+  {
+    "word": " for",
+    "start": 526.2,
+    "end": 526.58
+  },
+  {
+    "word": " the",
+    "start": 526.58,
+    "end": 526.74
+  },
+  {
+    "word": " gentleman.",
+    "start": 526.74,
+    "end": 527.06
+  },
+  {
+    "word": " Exactly,",
+    "start": 527.44,
+    "end": 527.78
+  },
+  {
+    "word": " thank",
+    "start": 528.3,
+    "end": 528.42
+  },
+  {
+    "word": " you",
+    "start": 528.4,
+    "end": 528.52
+  },
+  {
+    "word": " very",
+    "start": 528.48,
+    "end": 528.6
+  },
+  {
+    "word": " much.",
+    "start": 528.48,
+    "end": 528.66
+  },
+  {
+    "word": " I",
+    "start": 529.38,
+    "end": 529.7
+  },
+  {
+    "word": " wish",
+    "start": 529.7,
+    "end": 529.9
+  },
+  {
+    "word": " you",
+    "start": 529.9,
+    "end": 530.28
+  },
+  {
+    "word": " a",
+    "start": 530.28,
+    "end": 530.54
+  },
+  {
+    "word": " good",
+    "start": 530.54,
+    "end": 530.78
+  },
+  {
+    "word": " appetite.",
+    "start": 530.78,
+    "end": 531.2
+  },
+  {
+    "word": " Thank",
+    "start": 532.18,
+    "end": 532.48
+  },
+  {
+    "word": " you.",
+    "start": 532.48,
+    "end": 532.68
+  },
+  {
+    "word": " Oh,",
+    "start": 532.94,
+    "end": 533.24
+  },
+  {
+    "word": " one",
+    "start": 533.32,
+    "end": 533.56
+  },
+  {
+    "word": " moment,",
+    "start": 533.56,
+    "end": 533.96
+  },
+  {
+    "word": " please.",
+    "start": 534.1,
+    "end": 534.22
+  },
+  {
+    "word": " Could",
+    "start": 534.84,
+    "end": 534.96
+  },
+  {
+    "word": " you",
+    "start": 534.92,
+    "end": 535.38
+  },
+  {
+    "word": " please",
+    "start": 535.38,
+    "end": 535.5
+  },
+  {
+    "word": " bring",
+    "start": 535.44,
+    "end": 535.5600000000001
+  },
+  {
+    "word": " me",
+    "start": 535.44,
+    "end": 535.5600000000001
+  },
+  {
+    "word": " ketchup",
+    "start": 535.44,
+    "end": 536.24
+  },
+  {
+    "word": " and",
+    "start": 536.24,
+    "end": 536.64
+  },
+  {
+    "word": " mayo",
+    "start": 536.64,
+    "end": 537.12
+  },
+  {
+    "word": " for",
+    "start": 537.12,
+    "end": 537.32
+  },
+  {
+    "word": " my",
+    "start": 537.32,
+    "end": 537.54
+  },
+  {
+    "word": " promise?",
+    "start": 537.54,
+    "end": 537.86
+  },
+  {
+    "word": " Of",
+    "start": 538.58,
+    "end": 538.96
+  },
+  {
+    "word": " course,",
+    "start": 538.96,
+    "end": 539.68
+  },
+  {
+    "word": " right",
+    "start": 540.24,
+    "end": 540.4
+  },
+  {
+    "word": " away.",
+    "start": 540.4,
+    "end": 541.12
+  },
+  {
+    "word": " Do",
+    "start": 541.34,
+    "end": 541.62
+  },
+  {
+    "word": " you",
+    "start": 541.62,
+    "end": 541.98
+  },
+  {
+    "word": " need",
+    "start": 541.98,
+    "end": 542.1
+  },
+  {
+    "word": " anything",
+    "start": 541.98,
+    "end": 542.62
+  },
+  {
+    "word": " else?",
+    "start": 542.62,
+    "end": 542.74
+  },
+  {
+    "word": " Would",
+    "start": 542.62,
+    "end": 543.28
+  },
+  {
+    "word": " you",
+    "start": 543.28,
+    "end": 543.64
+  },
+  {
+    "word": " like",
+    "start": 543.64,
+    "end": 543.76
+  },
+  {
+    "word": " to",
+    "start": 543.76,
+    "end": 544.22
+  },
+  {
+    "word": " drink",
+    "start": 544.22,
+    "end": 544.4
+  },
+  {
+    "word": " something",
+    "start": 544.4,
+    "end": 544.52
+  },
+  {
+    "word": " else?",
+    "start": 544.4,
+    "end": 544.52
+  },
+  {
+    "word": " No,",
+    "start": 544.74,
+    "end": 545.12
+  },
+  {
+    "word": " thank",
+    "start": 545.28,
+    "end": 545.46
+  },
+  {
+    "word": " you.",
+    "start": 545.46,
+    "end": 545.64
+  },
+  {
+    "word": " Everything",
+    "start": 545.78,
+    "end": 546.02
+  },
+  {
+    "word": " is",
+    "start": 546.02,
+    "end": 546.22
+  },
+  {
+    "word": " perfect.",
+    "start": 546.22,
+    "end": 546.68
+  },
+  {
+    "word": " Thank",
+    "start": 547.0,
+    "end": 547.16
+  },
+  {
+    "word": " you",
+    "start": 547.16,
+    "end": 547.76
+  },
+  {
+    "word": " very",
+    "start": 547.76,
+    "end": 547.88
+  },
+  {
+    "word": " much.",
+    "start": 547.76,
+    "end": 547.88
+  },
+  {
+    "word": " And",
+    "start": 555.6,
+    "end": 556.2
+  },
+  {
+    "word": " was",
+    "start": 556.2,
+    "end": 556.74
+  },
+  {
+    "word": " everything",
+    "start": 556.74,
+    "end": 556.98
+  },
+  {
+    "word": " all",
+    "start": 556.98,
+    "end": 557.24
+  },
+  {
+    "word": " right",
+    "start": 557.24,
+    "end": 557.44
+  },
+  {
+    "word": " with",
+    "start": 557.44,
+    "end": 557.76
+  },
+  {
+    "word": " you?",
+    "start": 557.76,
+    "end": 558.0
+  },
+  {
+    "word": " Did",
+    "start": 558.46,
+    "end": 558.78
+  },
+  {
+    "word": " you",
+    "start": 558.78,
+    "end": 559.04
+  },
+  {
+    "word": " enjoy",
+    "start": 559.04,
+    "end": 559.16
+  },
+  {
+    "word": " the",
+    "start": 559.08,
+    "end": 559.2
+  },
+  {
+    "word": " food?",
+    "start": 559.16,
+    "end": 559.46
+  },
+  {
+    "word": " Oh,",
+    "start": 560.16,
+    "end": 560.46
+  },
+  {
+    "word": " yes,",
+    "start": 560.68,
+    "end": 560.8
+  },
+  {
+    "word": " it",
+    "start": 560.86,
+    "end": 561.08
+  },
+  {
+    "word": " was",
+    "start": 561.08,
+    "end": 561.28
+  },
+  {
+    "word": " very",
+    "start": 561.28,
+    "end": 561.66
+  },
+  {
+    "word": " tasty.",
+    "start": 561.66,
+    "end": 562.06
+  },
+  {
+    "word": " Would",
+    "start": 562.88,
+    "end": 563.14
+  },
+  {
+    "word": " you",
+    "start": 563.14,
+    "end": 563.48
+  },
+  {
+    "word": " like",
+    "start": 563.48,
+    "end": 563.6
+  },
+  {
+    "word": " a",
+    "start": 563.48,
+    "end": 563.74
+  },
+  {
+    "word": " dessert",
+    "start": 563.74,
+    "end": 564.08
+  },
+  {
+    "word": " or",
+    "start": 564.08,
+    "end": 564.84
+  },
+  {
+    "word": " a",
+    "start": 564.84,
+    "end": 565.12
+  },
+  {
+    "word": " coffee?",
+    "start": 565.12,
+    "end": 565.46
+  },
+  {
+    "word": " We",
+    "start": 566.46,
+    "end": 567.06
+  },
+  {
+    "word": " are",
+    "start": 567.06,
+    "end": 567.34
+  },
+  {
+    "word": " so",
+    "start": 567.34,
+    "end": 567.76
+  },
+  {
+    "word": " full,",
+    "start": 567.76,
+    "end": 568.32
+  },
+  {
+    "word": " we",
+    "start": 568.62,
+    "end": 568.9
+  },
+  {
+    "word": " are",
+    "start": 568.9,
+    "end": 569.78
+  },
+  {
+    "word": " almost",
+    "start": 569.78,
+    "end": 569.9
+  },
+  {
+    "word": " full.",
+    "start": 569.88,
+    "end": 570.0
+  },
+  {
+    "word": " Unfortunately,",
+    "start": 569.88,
+    "end": 570.2
+  },
+  {
+    "word": " we",
+    "start": 571.56,
+    "end": 571.68
+  },
+  {
+    "word": " don't",
+    "start": 571.56,
+    "end": 571.68
+  },
+  {
+    "word": " have",
+    "start": 571.56,
+    "end": 571.68
+  },
+  {
+    "word": " a",
+    "start": 571.56,
+    "end": 572.24
+  },
+  {
+    "word": " place",
+    "start": 572.24,
+    "end": 572.36
+  },
+  {
+    "word": " for",
+    "start": 572.24,
+    "end": 572.78
+  },
+  {
+    "word": " dessert",
+    "start": 572.78,
+    "end": 573.2
+  },
+  {
+    "word": " anymore.",
+    "start": 573.2,
+    "end": 573.52
+  },
+  {
+    "word": " Could",
+    "start": 573.82,
+    "end": 574.32
+  },
+  {
+    "word": " you",
+    "start": 574.32,
+    "end": 574.72
+  },
+  {
+    "word": " please",
+    "start": 574.72,
+    "end": 574.94
+  },
+  {
+    "word": " bring",
+    "start": 574.94,
+    "end": 575.0600000000001
+  },
+  {
+    "word": " me",
+    "start": 574.94,
+    "end": 575.3
+  },
+  {
+    "word": " the",
+    "start": 575.3,
+    "end": 575.42
+  },
+  {
+    "word": " bill?",
+    "start": 575.3,
+    "end": 575.64
+  },
+  {
+    "word": " Of",
+    "start": 576.62,
+    "end": 577.16
+  },
+  {
+    "word": " course.",
+    "start": 577.16,
+    "end": 577.46
+  },
+  {
+    "word": " Do",
+    "start": 577.82,
+    "end": 577.98
+  },
+  {
+    "word": " you",
+    "start": 577.98,
+    "end": 578.24
+  },
+  {
+    "word": " pay",
+    "start": 578.24,
+    "end": 578.36
+  },
+  {
+    "word": " for",
+    "start": 578.24,
+    "end": 578.36
+  },
+  {
+    "word": " the",
+    "start": 578.24,
+    "end": 578.56
+  },
+  {
+    "word": " bar",
+    "start": 578.56,
+    "end": 578.68
+  },
+  {
+    "word": " or",
+    "start": 578.56,
+    "end": 578.92
+  },
+  {
+    "word": " with",
+    "start": 578.92,
+    "end": 579.2
+  },
+  {
+    "word": " a",
+    "start": 579.2,
+    "end": 579.38
+  },
+  {
+    "word": " credit",
+    "start": 579.38,
+    "end": 579.5
+  },
+  {
+    "word": " card?",
+    "start": 579.5,
+    "end": 579.88
+  },
+  {
+    "word": " I",
+    "start": 580.22,
+    "end": 580.58
+  },
+  {
+    "word": " would",
+    "start": 580.58,
+    "end": 580.7
+  },
+  {
+    "word": " like",
+    "start": 580.64,
+    "end": 580.76
+  },
+  {
+    "word": " to",
+    "start": 580.74,
+    "end": 581.12
+  },
+  {
+    "word": " pay",
+    "start": 581.12,
+    "end": 581.24
+  },
+  {
+    "word": " for",
+    "start": 581.12,
+    "end": 581.24
+  },
+  {
+    "word": " the",
+    "start": 581.12,
+    "end": 581.24
+  },
+  {
+    "word": " bar.",
+    "start": 581.12,
+    "end": 581.48
+  },
+  {
+    "word": " All",
+    "start": 582.16,
+    "end": 582.7
+  },
+  {
+    "word": " right,",
+    "start": 582.7,
+    "end": 583.14
+  },
+  {
+    "word": " come",
+    "start": 583.32,
+    "end": 583.56
+  },
+  {
+    "word": " right",
+    "start": 583.56,
+    "end": 584.1
+  },
+  {
+    "word": " away.",
+    "start": 584.1,
+    "end": 584.32
+  },
+  {
+    "word": " So,",
+    "start": 587.34,
+    "end": 588.06
+  },
+  {
+    "word": " that",
+    "start": 588.38,
+    "end": 588.6
+  },
+  {
+    "word": " makes",
+    "start": 588.6,
+    "end": 588.84
+  },
+  {
+    "word": " 38",
+    "start": 588.84,
+    "end": 589.72
+  },
+  {
+    "word": " euros.",
+    "start": 589.72,
+    "end": 590.26
+  },
+  {
+    "word": " 65,",
+    "start": 590.5,
+    "end": 590.98
+  },
+  {
+    "word": " please.",
+    "start": 591.44,
+    "end": 591.5600000000001
+  },
+  {
+    "word": " So,",
+    "start": 591.98,
+    "end": 592.64
+  },
+  {
+    "word": " please,",
+    "start": 592.88,
+    "end": 593.1
+  },
+  {
+    "word": " very",
+    "start": 593.32,
+    "end": 593.44
+  },
+  {
+    "word": " much.",
+    "start": 593.44,
+    "end": 593.62
+  },
+  {
+    "word": " 42",
+    "start": 593.76,
+    "end": 594.3
+  },
+  {
+    "word": " euros.",
+    "start": 594.3,
+    "end": 594.92
+  },
+  {
+    "word": " Uh",
+    "start": 595.38,
+    "end": 595.58
+  },
+  {
+    "word": "-huh,",
+    "start": 595.58,
+    "end": 596.0
+  },
+  {
+    "word": " thank",
+    "start": 596.46,
+    "end": 596.62
+  },
+  {
+    "word": " you",
+    "start": 596.62,
+    "end": 596.8
+  },
+  {
+    "word": " very",
+    "start": 596.8,
+    "end": 596.92
+  },
+  {
+    "word": " much.",
+    "start": 596.8,
+    "end": 597.04
+  },
+  {
+    "word": " Thank",
+    "start": 597.04,
+    "end": 597.16
+  },
+  {
+    "word": " you,",
+    "start": 597.04,
+    "end": 597.38
+  },
+  {
+    "word": " I'm",
+    "start": 597.38,
+    "end": 597.98
+  },
+  {
+    "word": " looking",
+    "start": 597.98,
+    "end": 598.1
+  },
+  {
+    "word": " for",
+    "start": 597.98,
+    "end": 598.1
+  },
+  {
+    "word": " the",
+    "start": 598.06,
+    "end": 598.44
+  },
+  {
+    "word": " little",
+    "start": 598.44,
+    "end": 598.8
+  },
+  {
+    "word": " money.",
+    "start": 598.8,
+    "end": 599.24
+  },
+  {
+    "word": " No,",
+    "start": 599.26,
+    "end": 599.78
+  },
+  {
+    "word": " no,",
+    "start": 599.9,
+    "end": 600.1
+  },
+  {
+    "word": " that's",
+    "start": 600.4,
+    "end": 600.92
+  },
+  {
+    "word": " right.",
+    "start": 600.92,
+    "end": 601.04
+  },
+  {
+    "word": " Thank",
+    "start": 601.6,
+    "end": 601.98
+  },
+  {
+    "word": " you",
+    "start": 601.98,
+    "end": 602.14
+  },
+  {
+    "word": " very",
+    "start": 602.14,
+    "end": 602.26
+  },
+  {
+    "word": " much.",
+    "start": 602.14,
+    "end": 602.48
+  },
+  {
+    "word": " You",
+    "start": 603.06,
+    "end": 603.28
+  },
+  {
+    "word": " were",
+    "start": 603.28,
+    "end": 603.5
+  },
+  {
+    "word": " really",
+    "start": 603.5,
+    "end": 604.06
+  },
+  {
+    "word": " very",
+    "start": 604.06,
+    "end": 604.34
+  },
+  {
+    "word": " friendly.",
+    "start": 604.34,
+    "end": 604.76
+  },
+  {
+    "word": " Oh,",
+    "start": 605.56,
+    "end": 605.78
+  },
+  {
+    "word": " thank",
+    "start": 605.94,
+    "end": 606.18
+  },
+  {
+    "word": " you",
+    "start": 606.18,
+    "end": 606.7
+  },
+  {
+    "word": " very",
+    "start": 606.7,
+    "end": 606.82
+  },
+  {
+    "word": " much.",
+    "start": 606.7,
+    "end": 606.82
+  },
+  {
+    "word": " I'm",
+    "start": 607.06,
+    "end": 607.24
+  },
+  {
+    "word": " happy",
+    "start": 607.24,
+    "end": 607.5
+  },
+  {
+    "word": " that",
+    "start": 607.5,
+    "end": 607.96
+  },
+  {
+    "word": " you",
+    "start": 607.96,
+    "end": 608.16
+  },
+  {
+    "word": " were",
+    "start": 608.16,
+    "end": 608.28
+  },
+  {
+    "word": " satisfied.",
+    "start": 608.18,
+    "end": 608.54
+  },
+  {
+    "word": " I",
+    "start": 609.44,
+    "end": 609.62
+  },
+  {
+    "word": " hope",
+    "start": 609.62,
+    "end": 609.86
+  },
+  {
+    "word": " you",
+    "start": 609.86,
+    "end": 610.24
+  },
+  {
+    "word": " will",
+    "start": 610.24,
+    "end": 610.36
+  },
+  {
+    "word": " visit",
+    "start": 610.34,
+    "end": 610.62
+  },
+  {
+    "word": " us",
+    "start": 610.62,
+    "end": 611.0
+  },
+  {
+    "word": " again",
+    "start": 611.0,
+    "end": 611.52
+  },
+  {
+    "word": " soon.",
+    "start": 611.52,
+    "end": 611.64
+  },
+  {
+    "word": " Definitely.",
+    "start": 611.92,
+    "end": 612.4
+  },
+  {
+    "word": " We",
+    "start": 613.3,
+    "end": 613.48
+  },
+  {
+    "word": " will",
+    "start": 613.48,
+    "end": 613.76
+  },
+  {
+    "word": " come",
+    "start": 613.76,
+    "end": 613.88
+  },
+  {
+    "word": " back",
+    "start": 613.76,
+    "end": 614.06
+  },
+  {
+    "word": " very",
+    "start": 614.06,
+    "end": 614.18
+  },
+  {
+    "word": " soon.",
+    "start": 614.12,
+    "end": 614.52
+  },
+  {
+    "word": " Don't",
+    "start": 615.3,
+    "end": 615.96
+  },
+  {
+    "word": " forget",
+    "start": 615.96,
+    "end": 616.24
+  },
+  {
+    "word": " to",
+    "start": 616.24,
+    "end": 617.32
+  },
+  {
+    "word": " reserve",
+    "start": 617.32,
+    "end": 617.8
+  },
+  {
+    "word": " beforehand.",
+    "start": 617.8,
+    "end": 617.92
+  },
+  {
+    "word": " Today",
+    "start": 618.28,
+    "end": 619.0
+  },
+  {
+    "word": " we",
+    "start": 619.0,
+    "end": 619.78
+  },
+  {
+    "word": " were",
+    "start": 619.78,
+    "end": 619.9
+  },
+  {
+    "word": " lucky",
+    "start": 619.78,
+    "end": 620.06
+  },
+  {
+    "word": " and",
+    "start": 620.06,
+    "end": 620.5
+  },
+  {
+    "word": " we",
+    "start": 620.5,
+    "end": 620.7
+  },
+  {
+    "word": " found",
+    "start": 620.7,
+    "end": 620.88
+  },
+  {
+    "word": " a",
+    "start": 620.88,
+    "end": 621.3
+  },
+  {
+    "word": " table.",
+    "start": 621.3,
+    "end": 621.58
+  },
+  {
+    "word": " But",
+    "start": 622.58,
+    "end": 622.92
+  },
+  {
+    "word": " normally",
+    "start": 622.92,
+    "end": 623.56
+  },
+  {
+    "word": " it's",
+    "start": 623.56,
+    "end": 624.18
+  },
+  {
+    "word": " very",
+    "start": 624.18,
+    "end": 624.9
+  },
+  {
+    "word": " full.",
+    "start": 624.9,
+    "end": 625.58
+  },
+  {
+    "word": " It's",
+    "start": 625.58,
+    "end": 626.58
+  },
+  {
+    "word": " better",
+    "start": 626.58,
+    "end": 627.08
+  },
+  {
+    "word": " if",
+    "start": 627.08,
+    "end": 627.32
+  },
+  {
+    "word": " you",
+    "start": 627.32,
+    "end": 627.56
+  },
+  {
+    "word": " have",
+    "start": 627.56,
+    "end": 627.68
+  },
+  {
+    "word": " a",
+    "start": 627.56,
+    "end": 627.8
+  },
+  {
+    "word": " reservation.",
+    "start": 627.8,
+    "end": 628.26
+  },
+  {
+    "word": " All",
+    "start": 629.24,
+    "end": 629.6
+  },
+  {
+    "word": " right,",
+    "start": 629.6,
+    "end": 629.94
+  },
+  {
+    "word": " we",
+    "start": 630.08,
+    "end": 630.38
+  },
+  {
+    "word": " will",
+    "start": 630.38,
+    "end": 630.5
+  },
+  {
+    "word": " remember",
+    "start": 630.38,
+    "end": 630.88
+  },
+  {
+    "word": " that",
+    "start": 630.88,
+    "end": 631.32
+  },
+  {
+    "word": " for",
+    "start": 631.32,
+    "end": 631.58
+  },
+  {
+    "word": " the",
+    "start": 631.58,
+    "end": 631.8
+  },
+  {
+    "word": " next",
+    "start": 631.8,
+    "end": 632.16
+  },
+  {
+    "word": " time.",
+    "start": 632.16,
+    "end": 632.68
+  },
+  {
+    "word": " Have",
+    "start": 633.06,
+    "end": 633.42
+  },
+  {
+    "word": " a",
+    "start": 633.42,
+    "end": 633.98
+  },
+  {
+    "word": " nice",
+    "start": 633.98,
+    "end": 634.16
+  },
+  {
+    "word": " evening.",
+    "start": 634.16,
+    "end": 634.64
+  },
+  {
+    "word": " Likewise,",
+    "start": 635.02,
+    "end": 635.54
+  },
+  {
+    "word": " bye.",
+    "start": 636.12,
+    "end": 636.36
+  },
+  {
+    "word": " You",
+    "start": 655.62,
+    "end": 656.34
+  },
+  {
+    "word": " can",
+    "start": 656.34,
+    "end": 656.98
+  },
+  {
+    "word": " find",
+    "start": 656.98,
+    "end": 657.2
+  },
+  {
+    "word": " the",
+    "start": 657.2,
+    "end": 657.4
+  },
+  {
+    "word": " transcript",
+    "start": 657.4,
+    "end": 657.8
+  },
+  {
+    "word": " and",
+    "start": 657.8,
+    "end": 658.16
+  },
+  {
+    "word": " vocabulary",
+    "start": 658.16,
+    "end": 658.58
+  },
+  {
+    "word": " on",
+    "start": 658.58,
+    "end": 659.06
+  },
+  {
+    "word": " our",
+    "start": 659.06,
+    "end": 659.24
+  },
+  {
+    "word": " website",
+    "start": 659.24,
+    "end": 659.66
+  },
+  {
+    "word": " www",
+    "start": 659.66,
+    "end": 660.38
+  },
+  {
+    "word": ".langura",
+    "start": 660.38,
+    "end": 662.02
+  },
+  {
+    "word": ".de",
+    "start": 662.02,
+    "end": 662.96
+  },
+  {
+    "word": ".library",
+    "start": 662.96,
+    "end": 664.24
+  },
+  {
+    "word": " And",
+    "start": 664.24,
+    "end": 664.84
+  },
+  {
+    "word": " don't",
+    "start": 664.84,
+    "end": 665.2
+  },
+  {
+    "word": " forget",
+    "start": 665.2,
+    "end": 665.44
+  },
+  {
+    "word": " to",
+    "start": 665.44,
+    "end": 665.7
+  },
+  {
+    "word": " check",
+    "start": 665.7,
+    "end": 665.94
+  },
+  {
+    "word": " out",
+    "start": 665.94,
+    "end": 666.22
+  },
+  {
+    "word": " our",
+    "start": 666.22,
+    "end": 666.48
+  },
+  {
+    "word": " other",
+    "start": 666.48,
+    "end": 666.86
+  },
+  {
+    "word": " videos",
+    "start": 666.86,
+    "end": 667.24
+  },
+  {
+    "word": " with",
+    "start": 667.24,
+    "end": 667.62
+  },
+  {
+    "word": " dialogues",
+    "start": 667.62,
+    "end": 668.02
+  },
+  {
+    "word": " in",
+    "start": 668.02,
+    "end": 668.36
+  },
+  {
+    "word": " German.",
+    "start": 668.36,
+    "end": 668.66
+  },
+  {
+    "word": " They",
+    "start": 669.16,
+    "end": 669.34
+  },
+  {
+    "word": " help",
+    "start": 669.34,
+    "end": 669.62
+  },
+  {
+    "word": " you",
+    "start": 669.62,
+    "end": 669.84
+  },
+  {
+    "word": " improve",
+    "start": 669.84,
+    "end": 670.26
+  },
+  {
+    "word": " your",
+    "start": 670.26,
+    "end": 670.52
+  },
+  {
+    "word": " speaking",
+    "start": 670.52,
+    "end": 670.96
+  },
+  {
+    "word": " skills",
+    "start": 670.96,
+    "end": 671.42
+  },
+  {
+    "word": " in",
+    "start": 671.42,
+    "end": 671.68
+  },
+  {
+    "word": " these",
+    "start": 671.68,
+    "end": 671.94
+  },
+  {
+    "word": " so",
+    "start": 671.94,
+    "end": 672.44
+  },
+  {
+    "word": " relevant",
+    "start": 672.44,
+    "end": 672.94
+  },
+  {
+    "word": " everyday",
+    "start": 672.94,
+    "end": 673.4
+  },
+  {
+    "word": " situations.",
+    "start": 673.4,
+    "end": 674.3
+  },
+  {
+    "word": " Totally",
+    "start": 674.72,
+    "end": 675.1
+  },
+  {
+    "word": " worth",
+    "start": 675.1,
+    "end": 675.46
+  },
+  {
+    "word": " it.",
+    "start": 675.46,
+    "end": 675.78
+  },
+  {
+    "word": " See",
+    "start": 676.32,
+    "end": 676.68
+  },
+  {
+    "word": " you",
+    "start": 676.68,
+    "end": 676.88
+  },
+  {
+    "word": " in",
+    "start": 676.88,
+    "end": 677.12
+  },
+  {
+    "word": " the",
+    "start": 677.12,
+    "end": 677.26
+  },
+  {
+    "word": " next",
+    "start": 677.26,
+    "end": 677.56
+  },
+  {
+    "word": " video.",
+    "start": 677.56,
+    "end": 677.98
+  },
+  {
+    "word": " We'll",
+    "start": 678.22,
+    "end": 678.58
+  },
+  {
+    "word": " see",
+    "start": 678.58,
+    "end": 678.7
+  },
+  {
+    "word": " you",
+    "start": 678.58,
+    "end": 678.7
+  },
+  {
+    "word": " in",
+    "start": 678.68,
+    "end": 679.0
+  },
+  {
+    "word": " the",
+    "start": 679.0,
+    "end": 679.34
+  },
+  {
+    "word": " next",
+    "start": 679.34,
+    "end": 679.68
+  },
+  {
+    "word": " video.",
+    "start": 679.68,
+    "end": 680.14
+  },
+  {
+    "word": " Bye.",
+    "start": 695.02,
+    "end": 696.42
+  }
+];
+window.sectionStartTimes = {"1": 0.0};
+
+// BOOKMARK STORAGE KEY - UNIQUE FOR EACH BOOK
+const BOOK_TITLE = "German Dialogue In Restaurant";
+const BOOK_ID = "f738b262";
+const BOOK_STORAGE_KEY = `audioBookBookmarks_${BOOK_TITLE}_${BOOK_ID}`;
+
+function wordsToSentences(words, pause=0.7){
+    let sentences=[], buffer=[], startTime=null;
+    for(let i=0;i<words.length;i++){
+        if(startTime===null) startTime=words[i].start;
+        buffer.push(words[i]);
+        const next=words[i+1];
+        if(!next||/[.!?]$/.test(words[i].word)||(next.start-words[i].end>pause)){
+            let endTime=words[i].end;
+            sentences.push({start:startTime, end:endTime, words:buffer});
+            buffer=[], startTime=null;
+        }
+    }
+    return sentences;
+}
+
+const sentenceData = wordsToSentences(wordData);
+const audio = document.getElementById("audio");
+const textDiv = document.getElementById("text");
+
+let autoScrollEnabled = true, currentSentence=-1;
+const allSentences = [];
+let isBookmarkMode = false;
+let selectedBookmarkColor = null;
+
+// ============ Variables for hybrid system ============
+let currentSelection = null;
+let currentRange = null;
+let isSelecting = false;
+let lastSelectionTime = 0;
+let singleClickMode = false;
+
+// Display text and create sentences - مشابه نمونه
+sentenceData.forEach(item=>{
+    let div=document.createElement("div"); 
+    div.className="block";
+    
+    // Check for section header (only if multi-section)
+    if (false && item.words[0] && item.words[0].section && 
+        (!item.words[0].previousSection || item.words[0].section !== item.words[0].previousSection)) {
+        const sectionDiv = document.createElement("div");
+        sectionDiv.className = "section-header";
+        sectionDiv.setAttribute("data-section", item.words[0].section);
+        sectionDiv.textContent = [][item.words[0].section - 1] || ("Section " + item.words[0].section);
+        textDiv.appendChild(sectionDiv);
+    }
+    
+    item.words.forEach((w, index)=>{
+        let span=document.createElement("span");
+        span.className="word";
+        
+        // حفظ فاصله قبل از کلمه (مشابه نمونه)
+        let wordText = w.word;
+        if (index > 0 && !wordText.startsWith(' ')) {
+            wordText = ' ' + wordText;
+        }
+        
+        span.textContent = wordText;
+        span.dataset.start = w.start;
+        span.dataset.word = w.word.trim();
+        span.dataset.end = w.end;
+        
+        // Hybrid click functionality - مشابه نمونه
+        span.onclick=(e)=>{
+            if (isBookmarkMode) {
+                e.stopPropagation();
+                e.preventDefault();
+                
+                if (selectedBookmarkColor) {
+                    singleClickMode = true;
+                    toggleBookmark(span, w.start, w.word.trim(), selectedBookmarkColor);
+                    singleClickMode = false;
+                }
+            } else {
+                audio.currentTime=w.start; 
+                audio.play();
+            }
+        };
+        
+        div.appendChild(span);
+    });
+    
+    textDiv.appendChild(div);
+    allSentences.push({
+        div: div,
+        start: item.start,
+        end: item.end
+    });
+});
+
+// Highlight sentences during playback
+audio.ontimeupdate=()=>{
+    allSentences.forEach((s,idx)=>{
+        if(audio.currentTime >= s.start && audio.currentTime <= s.end){
+            if(currentSentence !== idx){
+                allSentences.forEach(ss=>ss.div.classList.remove("sentence-highlight"));
+                s.div.classList.add("sentence-highlight");
+                
+                if(autoScrollEnabled){
+                    s.div.scrollIntoView({
+                        behavior: "smooth", 
+                        block: "center"
+                    });
+                }
+                currentSentence=idx;
+            }
+        }
+    });
+};
+
+// ==================== Hybrid Bookmark System ====================
+
+// Load saved bookmarks - ONLY FOR THIS BOOK
+function loadBookmarks() {
+    const saved = localStorage.getItem(BOOK_STORAGE_KEY);
+    return saved ? JSON.parse(saved) : [];
+}
+
+// Save bookmarks - ONLY FOR THIS BOOK
+function saveBookmarks(bookmarks) {
+    localStorage.setItem(BOOK_STORAGE_KEY, JSON.stringify(bookmarks));
+}
+
+// ============ Multiple word selection logic ============
+
+// Handle selection start
+document.addEventListener('mousedown', function(e) {
+    if (isBookmarkMode && e.button === 0 && !singleClickMode) {
+        isSelecting = true;
+        lastSelectionTime = Date.now();
+    }
+});
+
+// Handle selection end
+document.addEventListener('mouseup', function(e) {
+    if (isBookmarkMode && e.button === 0 && !singleClickMode) {
+        isSelecting = false;
+        
+        setTimeout(() => {
+            const selection = window.getSelection();
+            const selectedText = selection.toString().trim();
+            
+            if (selectedText.length > 0 && selectedBookmarkColor) {
+                const range = selection.rangeCount > 0 ? selection.getRangeAt(0).cloneRange() : null;
+                
+                if (range) {
+                    saveSelectionBookmark(range, selectedText, selectedBookmarkColor);
+                    window.getSelection().removeAllRanges();
+                }
+            } else {
+                processSelection();
+            }
+        }, 50);
+    }
+});
+
+// Selection processing function
+function processSelection() {
+    const selection = window.getSelection();
+    const selectedText = selection.toString().trim();
+    
+    if (selectedText.length > 0 && isBookmarkMode && !isSelecting && !singleClickMode) {
+        const now = Date.now();
+        
+        if (now - lastSelectionTime > 300) {
+            currentSelection = selectedText;
+            currentRange = selection.rangeCount > 0 ? selection.getRangeAt(0).cloneRange() : null;
+            
+            lastSelectionTime = now;
+            
+            if (selectedBookmarkColor && currentSelection && currentRange) {
+                setTimeout(() => {
+                    saveSelectionBookmark(currentRange, currentSelection, selectedBookmarkColor);
+                    currentSelection = null;
+                    currentRange = null;
+                    window.getSelection().removeAllRanges();
+                }, 100);
+            }
+        }
+    } else {
+        currentSelection = null;
+        currentRange = null;
+    }
+}
+
+// Function to get exact selected word nodes
+function getSelectedWordNodes(range) {
+    if (!range) return [];
+    
+    const selectedNodes = [];
+    const fragment = range.cloneContents();
+    const tempDiv = document.createElement('div');
+    tempDiv.appendChild(fragment);
+    
+    const wordSpans = tempDiv.querySelectorAll('.word');
+    
+    wordSpans.forEach(spanInFragment => {
+        const wordText = spanInFragment.dataset.word;
+        const startTime = spanInFragment.dataset.start;
+        
+        if (wordText && startTime) {
+            document.querySelectorAll('.word').forEach(originalSpan => {
+                if (originalSpan.dataset.word === wordText && 
+                    originalSpan.dataset.start === startTime &&
+                    !selectedNodes.includes(originalSpan)) {
+                    selectedNodes.push(originalSpan);
+                }
+            });
+        }
+    });
+    
+    return selectedNodes;
+}
+
+// Truncate text for display in list
+function truncateTextForDisplay(text, maxWords = 6) {
+    if (!text) return '';
+    
+    const words = text.trim().split(/\s+/);
+    if (words.length <= maxWords) return text;
+    
+    const firstPart = words.slice(0, 3).join(' ');
+    const lastPart = words.slice(-3).join(' ');
+    return `${firstPart} ... ${lastPart}`;
+}
+
+// Get full selected text with spaces
+function getFullSelectedText(range) {
+    if (!range) return '';
+    
+    const fragment = range.cloneContents();
+    const tempDiv = document.createElement('div');
+    tempDiv.appendChild(fragment);
+    
+    return tempDiv.textContent;
+}
+
+// Apply bookmark to word (single word)
+function toggleBookmark(spanElement, startTime, wordText, color) {
+    const bookmarks = loadBookmarks();
+    const existingIndex = bookmarks.findIndex(b => 
+        Math.abs(b.startTime - startTime) < 0.1 && b.word === wordText && b.type === 'single'
+    );
+    
+    if (existingIndex >= 0) {
+        bookmarks.splice(existingIndex, 1);
+        spanElement.classList.remove(`bookmark-${color}`);
+        showNotification('Bookmark removed', 'info');
+    } else {
+        const newBookmark = {
+            id: Date.now(),
+            startTime: startTime,
+            word: wordText,
+            color: color,
+            type: 'single',
+            timestamp: new Date().toISOString(),
+            bookTitle: BOOK_TITLE,
+            bookId: BOOK_ID,
+            displayText: wordText
+        };
+        bookmarks.push(newBookmark);
+        spanElement.classList.add(`bookmark-${color}`);
+        showNotification(`Word "${wordText}" bookmarked with ${getColorName(color)} color`, 'success');
+    }
+    
+    saveBookmarks(bookmarks);
+    updateBookmarkCount();
+}
+
+// Save selection bookmark (multiple words)
+function saveSelectionBookmark(range, selectedText, color) {
+    if (!range || !selectedText || !color) return;
+    
+    const bookmarks = loadBookmarks();
+    const selectedNodes = getSelectedWordNodes(range);
+    if (selectedNodes.length === 0) return;
+    
+    const fullText = getFullSelectedText(range);
+    const startTime = parseFloat(selectedNodes[0].dataset.start);
+    const endTime = parseFloat(selectedNodes[selectedNodes.length - 1].dataset.end);
+    
+    selectedNodes.forEach(node => {
+        node.classList.remove('bookmark-red', 'bookmark-blue', 'bookmark-green', 
+                              'bookmark-purple', 'bookmark-orange');
+        node.classList.add(`bookmark-${color}`);
+    });
+    
+    const newBookmark = {
+        id: Date.now(),
+        startTime: startTime,
+        endTime: endTime,
+        text: fullText,
+        displayText: truncateTextForDisplay(fullText),
+        color: color,
+        type: 'selection',
+        timestamp: new Date().toISOString(),
+        bookTitle: BOOK_TITLE,
+        bookId: BOOK_ID,
+        wordIds: selectedNodes.map(node => {
+            return {
+                startTime: node.dataset.start,
+                text: node.dataset.word
+            };
+        })
+    };
+    
+    bookmarks.push(newBookmark);
+    saveBookmarks(bookmarks);
+    
+    showNotification(`"${truncateTextForDisplay(fullText, 5)}" bookmarked`, 'success');
+    updateBookmarkCount();
+    
+    return newBookmark;
+}
+
+// Get color name
+function getColorName(color) {
+    const names = {
+        'red': 'Red (Important)',
+        'blue': 'Blue (Grammar)',
+        'green': 'Green (Vocabulary)',
+        'purple': 'Purple (Questions)',
+        'orange': 'Orange (Practice)'
+    };
+    return names[color] || color;
+}
+
+// Show notification
+function showNotification(message, type) {
+    const oldNotif = document.querySelector('.bookmark-notification');
+    if (oldNotif) oldNotif.remove();
+    
+    const notif = document.createElement('div');
+    notif.className = 'bookmark-notification';
+    notif.textContent = message;
+    
+    const colors = {
+        'success': '#6bcf7f',
+        'info': '#4d96ff',
+        'warning': '#ffa94d',
+        'error': '#ff6b6b'
+    };
+    
+    notif.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${colors[type] || '#4d96ff'};
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 10003;
+        font-weight: bold;
+        animation: slideIn 0.3s ease;
+        max-width: 300px;
+    `;
+    
+    document.body.appendChild(notif);
+    
+    setTimeout(() => {
+        notif.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notif.remove(), 300);
+    }, 3000);
+}
+
+// Apply saved bookmarks after page load - ONLY FOR THIS BOOK
+function applySavedBookmarks() {
+    const bookmarks = loadBookmarks();
+    bookmarks.forEach(bookmark => {
+        if (bookmark.type === 'single') {
+            document.querySelectorAll('.word').forEach(word => {
+                if (Math.abs(parseFloat(word.dataset.start) - bookmark.startTime) < 0.1 && 
+                    word.dataset.word === bookmark.word) {
+                    word.classList.add(`bookmark-${bookmark.color}`);
+                }
+            });
+        } else if (bookmark.type === 'selection' && bookmark.wordIds) {
+            bookmark.wordIds.forEach(wordInfo => {
+                document.querySelectorAll('.word').forEach(word => {
+                    if (word.dataset.start === wordInfo.startTime && 
+                        word.dataset.word === wordInfo.text) {
+                        word.classList.add(`bookmark-${bookmark.color}`);
+                    }
+                });
+            });
+        }
+    });
+}
+
+// Update bookmark count
+function updateBookmarkCount() {
+    const bookmarks = loadBookmarks();
+    const countElement = document.getElementById('bookmark-count');
+    if (countElement) {
+        countElement.textContent = `📌 Bookmarks: ${bookmarks.length}`;
+    }
+}
+
+// Jump to bookmark - مشابه نمونه: فقط حرکت بدون پخش صوت
+function jumpToBookmark(startTime) {
+    const audio = document.getElementById('audio');
+    audio.currentTime = startTime;
+    
+    allSentences.forEach((s, idx) => {
+        if (startTime >= s.start && startTime <= s.end) {
+            allSentences.forEach(ss => ss.div.classList.remove("sentence-highlight"));
+            s.div.classList.add("sentence-highlight");
+            currentSentence = idx;
+            
+            s.div.scrollIntoView({
+                behavior: "smooth", 
+                block: "center"
+            });
+        }
+    });
+    
+    const seekBar = document.getElementById('audio-seek-bar');
+    if (seekBar) {
+        seekBar.value = Math.floor(startTime);
+    }
+    
+    const timeDisplay = document.getElementById('audio-time-display');
+    if (timeDisplay && audio) {
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "00:00";
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        timeDisplay.textContent = `${formatTime(startTime)} / ${formatTime(audio.duration)}`;
+    }
+    
+    showNotification('Moved to bookmark position', 'success');
+}
+
+// Remove bookmark - ONLY FOR THIS BOOK
+function removeBookmark(bookmarkId) {
+    const bookmarks = loadBookmarks();
+    const filtered = bookmarks.filter(b => b.id !== bookmarkId);
+    saveBookmarks(filtered);
+    
+    // Reapply bookmarks to refresh display
+    document.querySelectorAll('.word').forEach(word => {
+        word.classList.remove('bookmark-red', 'bookmark-blue', 'bookmark-green', 
+                              'bookmark-purple', 'bookmark-orange');
+    });
+    
+    applySavedBookmarks();
+    updateBookmarkCount();
+    showNotification('Bookmark removed', 'info');
+}
+
+// Remove all bookmarks - ONLY FOR THIS BOOK
+function clearAllBookmarks() {
+    if (confirm('Are you sure you want to remove all bookmarks for this book?')) {
+        localStorage.removeItem(BOOK_STORAGE_KEY); // Only remove bookmarks for this book
+        document.querySelectorAll('.word').forEach(word => {
+            word.classList.remove('bookmark-red', 'bookmark-blue', 'bookmark-green', 
+                                  'bookmark-purple', 'bookmark-orange');
+        });
+        showNotification('All bookmarks removed for this book', 'warning');
+        updateBookmarkCount();
+    }
+}
+
+// Initial execution
+document.addEventListener('DOMContentLoaded', function() {
+    applySavedBookmarks();
+    updateBookmarkCount();
+});
+
+// Notification animation styles
+const notificationStyle = document.createElement('style');
+notificationStyle.textContent = `
+    @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+    }
+`;
+document.head.appendChild(notificationStyle);
+</script>
+
+<!-- BOOK CONTROLS SCRIPT START -->
+<script>
+// Navigation variables - مشابه فایل نویگیتور
+const prevLink = "../3-German Conversation in 7 Different Situations/German Dialogue for Renting Apartment.html";
+const nextLink = "../3-German Conversation in 7 Different Situations/Telephone Conversation in German.html";
+const indexLink = "../../PIONAN Deutsch Course_index.html";
+
+// Text file variables
+const textFile = "German Dialogue in Restaurant.docx";
+
+// Page load
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Page loaded, initializing controls...');
+    initializeAllControls();
+    setupTOCNavigation();
+    setupBookmarkControls();
+});
+
+function initializeAllControls() {
+    createControlPanel();
+    createBackToTopButton();
+    setupAudioPlayer();
+    setupNavigation();
+    setupAutoScroll();
+    setupFontControls();
+    console.log('✅ All controls initialized successfully!');
+}
+
+function setupTOCNavigation() {
+    // Add click events to TOC items (only if they exist)
+    document.querySelectorAll('.toc-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const sectionNum = this.getAttribute('data-section');
+            const targetDiv = document.querySelector(`.section-header[data-section="${sectionNum}"]`);
+            if (targetDiv) {
+                targetDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                document.querySelectorAll('.section-header').forEach(h => h.style.background = '#3498db');
+                targetDiv.style.background = '#2980b9';
+                
+                const audio = document.getElementById('audio');
+                if (audio && window.sectionStartTimes && window.sectionStartTimes[sectionNum]) {
+                    audio.currentTime = window.sectionStartTimes[sectionNum];
+                    audio.play();
+                }
+            }
+        });
+    });
+    
+    // Add click events to section headers (only if they exist)
+    document.querySelectorAll('.section-header').forEach(header => {
+        header.addEventListener('click', function() {
+            const sectionNum = this.getAttribute('data-section');
+            const audio = document.getElementById('audio');
+            if (audio && window.sectionStartTimes && window.sectionStartTimes[sectionNum]) {
+                audio.currentTime = window.sectionStartTimes[sectionNum];
+                audio.play();
+            }
+        });
+    });
+}
+
+function createControlPanel() {
+    // Remove old controls
+    const oldPanel = document.getElementById('book-controls-panel');
+    if (oldPanel) oldPanel.remove();
+    
+    // Create control panel
+    const panel = document.createElement('div');
+    panel.id = 'book-controls-panel';
+    panel.style.cssText = `
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        padding: 15px 20px;
+        border-top: 3px solid #0f3460;
+        z-index: 10000;
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    `;
+    
+    // Row 1: Audio controls
+    const audioRow = document.createElement('div');
+    audioRow.style.cssText = 'display: flex; gap: 15px; align-items: center; margin-bottom: 15px; flex-wrap: wrap;';
+    
+    // Play/Pause button
+    const playBtn = document.createElement('button');
+    playBtn.id = 'audio-play-btn';
+    playBtn.innerHTML = '▶ <span style="margin-left: 5px;">Play</span>';
+    playBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #00b894, #00a085);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    // Seek Bar
+    const seekBar = document.createElement('input');
+    seekBar.id = 'audio-seek-bar';
+    seekBar.type = 'range';
+    seekBar.style.cssText = `
+        flex: 1;
+        min-width: 200px;
+        height: 8px;
+        border-radius: 4px;
+        background: #2c3e50;
+        outline: none;
+    `;
+    
+    // Speed control
+    const speedControl = document.createElement('div');
+    speedControl.style.cssText = 'display: flex; align-items: center; gap: 8px;';
+    
+    const speedLabel = document.createElement('span');
+    speedLabel.textContent = 'Speed:';
+    speedLabel.style.cssText = 'color: #ecf0f1; font-size: 14px;';
+    
+    const speedSelect = document.createElement('select');
+    speedSelect.id = 'audio-speed-select';
+    speedSelect.innerHTML = `
+        <option value="0.5">0.5x</option>
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1.0x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2.0x</option>
+    `;
+    speedSelect.style.cssText = `
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 2px solid #3498db;
+        background: #2c3e50;
+        color: #ecf0f1;
+        font-weight: bold;
+    `;
+    
+    speedControl.appendChild(speedLabel);
+    speedControl.appendChild(speedSelect);
+    
+    // Time display
+    const timeDisplay = document.createElement('div');
+    timeDisplay.id = 'audio-time-display';
+    timeDisplay.textContent = '00:00 / 00:00';
+    timeDisplay.style.cssText = `
+        color: #ecf0f1;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        min-width: 110px;
+        text-align: center;
+        background: rgba(44, 62, 80, 0.7);
+        padding: 6px 12px;
+        border-radius: 6px;
+    `;
+    
+    audioRow.appendChild(playBtn);
+    audioRow.appendChild(seekBar);
+    audioRow.appendChild(speedControl);
+    audioRow.appendChild(timeDisplay);
+    
+    // Row 2: Other controls
+    const controlRow = document.createElement('div');
+    controlRow.style.cssText = 'display: flex; gap: 15px; align-items: center; margin-bottom: 10px; flex-wrap: wrap;';
+    
+    // Auto scroll button
+    const scrollBtn = document.createElement('button');
+    scrollBtn.id = 'auto-scroll-btn';
+    scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: OFF</span>';
+    scrollBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #0984e3, #074a7a);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    // Bookmark mode button
+    const bookmarkModeBtn = document.createElement('button');
+    bookmarkModeBtn.id = 'bookmark-mode-btn';
+    bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: OFF</span>';
+    bookmarkModeBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    // Font control
+    const fontControl = document.createElement('div');
+    fontControl.style.cssText = 'display: flex; align-items: center; gap: 10px;';
+    
+    const fontBtn = document.createElement('button');
+    fontBtn.id = 'font-change-btn';
+    fontBtn.innerHTML = 'A <span style="margin-left: 5px;">Font</span>';
+    fontBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    const fontSizeSelect = document.createElement('select');
+    fontSizeSelect.id = 'font-size-select';
+    fontSizeSelect.innerHTML = `
+        <option value="16">16px</option>
+        <option value="18" selected>18px</option>
+        <option value="20">20px</option>
+        <option value="24">24px</option>
+        <option value="28">28px</option>
+        <option value="32">32px</option>
+        <option value="36">36px</option>
+        <option value="40">40px</option>
+        <option value="44">44px</option>
+        <option value="48">48px</option>
+    `;
+    fontSizeSelect.style.cssText = `
+        padding: 8px 15px;
+        border-radius: 6px;
+        border: 2px solid #9b59b6;
+        background: #2c3e50;
+        color: #ecf0f1;
+        font-weight: bold;
+        min-width: 80px;
+    `;
+    
+    fontControl.appendChild(fontBtn);
+    fontControl.appendChild(fontSizeSelect);
+    
+    // Text button
+    const textBtn = document.createElement('button');
+    textBtn.id = 'text-file-btn';
+    textBtn.innerHTML = '📄 <span style="margin-left: 5px;">Text</span>';
+    textBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #e17055, #d63031);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    textBtn.addEventListener('click', function() {
+        window.open(textFile, '_blank');
+    });
+    
+    // Navigation - مشابه فایل نویگیتور
+    const navControl = document.createElement('div');
+    navControl.style.cssText = 'display: flex; gap: 10px; align-items: center; margin-left: auto;';
+    
+    const prevBtn = document.createElement('button');
+    prevBtn.id = 'nav-prev-btn';
+    prevBtn.innerHTML = '◀ <span style="margin-left: 5px;">Previous</span>';
+    prevBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #e17055, #d63031);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    if (!prevLink || prevLink === 'null') {
+        prevBtn.disabled = true;
+        prevBtn.style.opacity = '0.5';
+        prevBtn.style.cursor = 'not-allowed';
+    }
+    
+    const indexBtn = document.createElement('button');
+    indexBtn.id = 'nav-index-btn';
+    indexBtn.innerHTML = '📑 <span style="margin-left: 5px;">Index</span>';
+    indexBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #fdcb6e, #e17055);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    const nextBtn = document.createElement('button');
+    nextBtn.id = 'nav-next-btn';
+    nextBtn.innerHTML = '<span style="margin-right: 5px;">Next</span> ▶';
+    nextBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #00cec9, #00b894);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    if (!nextLink || nextLink === 'null') {
+        nextBtn.disabled = true;
+        nextBtn.style.opacity = '0.5';
+        nextBtn.style.cursor = 'not-allowed';
+    }
+    
+    navControl.appendChild(prevBtn);
+    navControl.appendChild(indexBtn);
+    navControl.appendChild(nextBtn);
+    
+    controlRow.appendChild(scrollBtn);
+    controlRow.appendChild(bookmarkModeBtn);
+    controlRow.appendChild(fontControl);
+    controlRow.appendChild(textBtn);
+    controlRow.appendChild(navControl);
+    
+    // Row 3: File information - مشابه نمونه
+    const infoRow = document.createElement('div');
+    infoRow.style.cssText = 'display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; gap: 10px;';
+    
+    const fileInfo = document.createElement('div');
+    fileInfo.id = 'file-info';
+    fileInfo.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="background: #e74c3c; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold;">German Dialogue In Restaurant</span>
+            <span id="bookmark-count" style="background: #9b59b6; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold;">
+                📌 Bookmarks: 0
+            </span>
+        </div>
+    `;
+    
+    infoRow.appendChild(fileInfo);
+    
+    // Add everything to panel
+    panel.appendChild(audioRow);
+    panel.appendChild(controlRow);
+    panel.appendChild(infoRow);
+    
+    // Add panel to page
+    document.body.appendChild(panel);
+    
+    // Add padding to body
+    const panelHeight = panel.offsetHeight;
+    document.body.style.paddingBottom = panelHeight + 20 + 'px';
+}
+
+function createBackToTopButton() {
+    const existingBackBtn = document.getElementById('back-to-top-btn');
+    if (existingBackBtn) existingBackBtn.remove();
+    
+    const backBtn = document.createElement('button');
+    backBtn.id = 'back-to-top-btn';
+    backBtn.innerHTML = '⬆ <span style="color: white; margin-left: 5px;">Back to Top</span>';
+    backBtn.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #118AB2, #2980b9);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        z-index: 10001;
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        transition: all 0.3s;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    `;
+    
+    backBtn.addEventListener('click', function() {
+        const audio = document.querySelector('audio');
+        if (audio) {
+            audio.pause();
+        }
+        
+        const scrollBtn = document.getElementById('auto-scroll-btn');
+        if (scrollBtn && scrollBtn.innerHTML.includes('ON')) {
+            scrollBtn.click();
+        }
+        
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        if (audio) {
+            audio.currentTime = 0;
+        }
+        
+        const seekBar = document.getElementById('audio-seek-bar');
+        if (seekBar) {
+            seekBar.value = 0;
+        }
+        
+        if (audio) {
+            const timeDisplay = document.getElementById('audio-time-display');
+            if (timeDisplay) {
+                function formatTime(seconds) {
+                    if (isNaN(seconds)) return "00:00";
+                    const mins = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                }
+                
+                timeDisplay.textContent = `00:00 / ${formatTime(audio.duration)}`;
+            }
+        }
+        
+        document.querySelectorAll('.sentence-highlight').forEach(el => {
+            el.classList.remove('sentence-highlight');
+        });
+    });
+    
+    document.body.appendChild(backBtn);
+}
+
+function setupAudioPlayer() {
+    const audio = document.querySelector('audio');
+    if (!audio) {
+        document.getElementById('audio-play-btn').style.display = 'none';
+        document.getElementById('audio-seek-bar').style.display = 'none';
+        document.getElementById('audio-speed-select').parentElement.style.display = 'none';
+        document.getElementById('audio-time-display').style.display = 'none';
+        return;
+    }
+    
+    const playBtn = document.getElementById('audio-play-btn');
+    const seekBar = document.getElementById('audio-seek-bar');
+    const speedSelect = document.getElementById('audio-speed-select');
+    const timeDisplay = document.getElementById('audio-time-display');
+    
+    function formatTime(seconds) {
+        if (isNaN(seconds)) return "00:00";
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+    
+    function updateTime() {
+        if (audio.duration) {
+            timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+            seekBar.max = Math.floor(audio.duration);
+            seekBar.value = Math.floor(audio.currentTime);
+        }
+    }
+    
+    audio.addEventListener('loadedmetadata', updateTime);
+    audio.addEventListener('timeupdate', updateTime);
+    
+    audio.addEventListener('play', function() {
+        playBtn.innerHTML = '⏸ <span style="margin-left: 5px;">Pause</span>';
+        playBtn.style.background = 'linear-gradient(135deg, #d63031, #c0392b)';
+        playBtn.disabled = false;
+    });
+    
+    audio.addEventListener('pause', function() {
+        playBtn.innerHTML = '▶ <span style="margin-left: 5px;">Play</span>';
+        playBtn.style.background = 'linear-gradient(135deg, #00b894, #00a085)';
+        playBtn.disabled = false;
+    });
+    
+    playBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play().catch(e => console.log('Play error:', e));
+        } else {
+            audio.pause();
+        }
+    });
+    
+    seekBar.addEventListener('input', function() {
+        if (audio.duration) {
+            audio.currentTime = this.value;
+        }
+    });
+    
+    speedSelect.addEventListener('change', function() {
+        audio.playbackRate = parseFloat(this.value);
+    });
+    
+    audio.playbackRate = 1.0;
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.code === 'Space' && !e.target.matches('input, textarea, button, select')) {
+            e.preventDefault();
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    });
+}
+
+function setupNavigation() {
+    const prevBtn = document.getElementById('nav-prev-btn');
+    const nextBtn = document.getElementById('nav-next-btn');
+    const indexBtn = document.getElementById('nav-index-btn');
+    
+    if (prevBtn && !prevBtn.disabled) {
+        prevBtn.addEventListener('click', function() {
+            if (prevLink && prevLink !== 'null') {
+                window.location.href = prevLink;
+            }
+        });
+    }
+    
+    if (nextBtn && !nextBtn.disabled) {
+        nextBtn.addEventListener('click', function() {
+            if (nextLink && nextLink !== 'null') {
+                window.location.href = nextLink;
+            }
+        });
+    }
+    
+    if (indexBtn) {
+        indexBtn.addEventListener('click', function() {
+            if (indexLink && indexLink !== 'null') {
+                window.location.href = indexLink;
+            }
+        });
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.target.matches('input, textarea, button, select')) return;
+        
+        switch(e.code) {
+            case 'ArrowLeft':
+                if (prevLink && prevLink !== 'null' && prevBtn && !prevBtn.disabled) {
+                    window.location.href = prevLink;
+                }
+                break;
+                
+            case 'ArrowRight':
+                if (nextLink && nextLink !== 'null' && nextBtn && !nextBtn.disabled) {
+                    window.location.href = nextLink;
+                }
+                break;
+                
+            case 'Home':
+                if (indexLink && indexLink !== 'null') {
+                    window.location.href = indexLink;
+                }
+                break;
+        }
+    });
+}
+
+function setupAutoScroll() {
+    const scrollBtn = document.getElementById('auto-scroll-btn');
+    if (!scrollBtn) return;
+    
+    let isScrolling = false;
+    let scrollInterval;
+    let scrollSpeed = 1;
+    
+    scrollBtn.addEventListener('click', function() {
+        isScrolling = !isScrolling;
+        
+        if (isScrolling) {
+            scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: ON</span>';
+            scrollBtn.style.background = 'linear-gradient(135deg, #00cec9, #00b894)';
+            
+            scrollInterval = setInterval(function() {
+                window.scrollBy({
+                    top: scrollSpeed,
+                    behavior: 'smooth'
+                });
+                
+                if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100) {
+                    clearInterval(scrollInterval);
+                    isScrolling = false;
+                    scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: OFF</span>';
+                    scrollBtn.style.background = 'linear-gradient(135deg, #0984e3, #074a7a)';
+                }
+            }, 30);
+        } else {
+            scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: OFF</span>';
+            scrollBtn.style.background = 'linear-gradient(135deg, #0984e3, #074a7a)';
+            
+            if (scrollInterval) {
+                clearInterval(scrollInterval);
+            }
+        }
+    });
+}
+
+function setupFontControls() {
+    const fontBtn = document.getElementById('font-change-btn');
+    const fontSizeSelect = document.getElementById('font-size-select');
+    
+    if (!fontBtn || !fontSizeSelect) return;
+    
+    const fonts = [
+        'Arial, Helvetica, sans-serif',
+        'Tahoma, Geneva, sans-serif',
+        'Verdana, Geneva, sans-serif',
+        'Georgia, serif',
+        '"Times New Roman", Times, serif',
+        '"Courier New", Courier, monospace',
+        '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
+    ];
+    
+    const fontNames = ['Arial', 'Tahoma', 'Verdana', 'Georgia', 'Times', 'Courier', 'Segoe'];
+    let fontIndex = 0;
+    
+    const savedFont = localStorage.getItem('book-pro-font') || fonts[0];
+    const savedSize = localStorage.getItem('book-pro-size') || '18';
+    
+    document.body.style.fontFamily = savedFont;
+    document.body.style.fontSize = savedSize + 'px';
+    
+    const savedIndex = fonts.findIndex(f => f === savedFont);
+    if (savedIndex !== -1) {
+        fontIndex = savedIndex;
+    }
+    
+    fontSizeSelect.value = savedSize;
+    
+    fontBtn.addEventListener('click', function() {
+        fontIndex = (fontIndex + 1) % fonts.length;
+        const newFont = fonts[fontIndex];
+        document.body.style.fontFamily = newFont;
+        localStorage.setItem('book-pro-font', newFont);
+        fontBtn.innerHTML = `${fontNames[fontIndex][0]} <span style="margin-left: 5px;">${fontNames[fontIndex]}</span>`;
+    });
+    
+    fontBtn.innerHTML = `${fontNames[fontIndex][0]} <span style="margin-left: 5px;">${fontNames[fontIndex]}</span>`;
+    
+    fontSizeSelect.addEventListener('change', function() {
+        const size = this.value + 'px';
+        document.body.style.fontSize = size;
+        localStorage.setItem('book-pro-size', this.value);
+    });
+}
+
+// ==================== Hybrid Bookmark System in Controls ====================
+
+function setupBookmarkControls() {
+    const bookmarkModeBtn = document.getElementById('bookmark-mode-btn');
+    const palette = document.getElementById('bookmark-palette');
+    const cancelBtn = document.getElementById('cancel-bookmark');
+    const showAllBtn = document.getElementById('show-all-bookmarks');
+    const clearAllBtn = document.getElementById('clear-all-bookmarks');
+    const audio = document.getElementById('audio');
+    const playBtn = document.getElementById('audio-play-btn');
+    
+    if (!bookmarkModeBtn) return;
+    
+    bookmarkModeBtn.addEventListener('click', function() {
+        isBookmarkMode = !isBookmarkMode;
+        
+        if (isBookmarkMode) {
+            bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: ON</span>';
+            bookmarkModeBtn.style.background = 'linear-gradient(135deg, #00cec9, #00b894)';
+            palette.style.display = 'block';
+            
+            if (audio && !audio.paused) {
+                audio.pause();
+            }
+            
+            if (playBtn) {
+                playBtn.disabled = true;
+                playBtn.style.opacity = '0.5';
+                playBtn.style.cursor = 'not-allowed';
+            }
+            
+            showNotification('Bookmark mode activated. Choose a color and click on words or select multiple words', 'info');
+        } else {
+            bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: OFF</span>';
+            bookmarkModeBtn.style.background = 'linear-gradient(135deg, #9b59b6, #8e44ad)';
+            palette.style.display = 'none';
+            selectedBookmarkColor = null;
+            currentSelection = null;
+            currentRange = null;
+            isSelecting = false;
+            
+            if (playBtn) {
+                playBtn.disabled = false;
+                playBtn.style.opacity = '1';
+                playBtn.style.cursor = 'pointer';
+            }
+            
+            showNotification('Bookmark mode deactivated', 'info');
+        }
+    });
+    
+    document.querySelectorAll('.bookmark-color-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            
+            selectedBookmarkColor = this.dataset.color;
+            
+            document.querySelectorAll('.bookmark-color-btn').forEach(b => {
+                b.style.transform = 'scale(1)';
+                b.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+            });
+            this.style.transform = 'scale(1.1)';
+            this.style.boxShadow = '0 6px 12px rgba(0,0,0,0.3)';
+            
+            if (currentSelection && currentRange) {
+                saveSelectionBookmark(currentRange, currentSelection, selectedBookmarkColor);
+                currentSelection = null;
+                currentRange = null;
+            } else {
+                showNotification(`Color ${getColorName(selectedBookmarkColor)} selected. Click on words or select multiple words`, 'info');
+            }
+        });
+    });
+    
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', function() {
+            isBookmarkMode = false;
+            bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: OFF</span>';
+            bookmarkModeBtn.style.background = 'linear-gradient(135deg, #9b59b6, #8e44ad)';
+            palette.style.display = 'none';
+            selectedBookmarkColor = null;
+            currentSelection = null;
+            currentRange = null;
+            isSelecting = false;
+            
+            if (playBtn) {
+                playBtn.disabled = false;
+                playBtn.style.opacity = '1';
+                playBtn.style.cursor = 'pointer';
+            }
+            
+            showNotification('Bookmark mode cancelled', 'info');
+        });
+    }
+    
+    if (showAllBtn) {
+        showAllBtn.addEventListener('click', function() {
+            const bookmarks = loadBookmarks();
+            if (bookmarks.length === 0) {
+                showNotification('No bookmarks available for this book', 'info');
+                return;
+            }
+            
+            const modal = document.createElement('div');
+            modal.id = 'bookmarks-modal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.7);
+                z-index: 10004;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                animation: fadeIn 0.3s ease;
+            `;
+            
+            let contentHTML = `
+                <div style="background: white; border-radius: 15px; padding: 25px; max-width: 600px; max-height: 500px; overflow-y: auto; box-shadow: 0 15px 40px rgba(0,0,0,0.4);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="margin: 0; color: #1a1a2e;">📚 Your Bookmarks (${bookmarks.length}) - ${BOOK_TITLE}</h3>
+                        <button id="close-bookmarks-modal" style="background: none; border: none; font-size: 20px; cursor: pointer; color: #666;">×</button>
+                    </div>
+            `;
+            
+            if (bookmarks.length === 0) {
+                contentHTML += `
+                    <div style="text-align: center; padding: 40px; color: #666;">
+                        No bookmarks available for this book
+                    </div>
+                `;
+            } else {
+                bookmarks.forEach((b, i) => {
+                    const colorHex = {
+                        'red': '#ff6b6b',
+                        'blue': '#4d96ff',
+                        'green': '#6bcf7f',
+                        'purple': '#9d65c9',
+                        'orange': '#ffa94d'
+                    }[b.color] || '#888';
+                    
+                    const colorStyle = `background: ${colorHex}; color: white; padding: 2px 8px; border-radius: 10px; font-size: 11px;`;
+                    
+                    let displayText = b.displayText || b.word;
+                    if (b.text && b.text.split(/\s+/).length > 6) {
+                        const words = b.text.split(/\s+/);
+                        if (words.length > 6) {
+                            const firstThree = words.slice(0, 3).join(' ');
+                            const lastThree = words.slice(-3).join(' ');
+                            displayText = `${firstThree} ... ${lastThree}`;
+                        }
+                    }
+                    
+                    contentHTML += `
+                        <div style="margin: 12px 0; padding: 15px; border: 1px solid #eee; border-radius: 10px; background: #f9f9f9;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: bold; font-size: 14px; margin-bottom: 5px; cursor: pointer;" 
+                                         onclick="jumpToBookmark(${b.startTime}); document.getElementById('bookmarks-modal').remove();"
+                                         title="${b.text || b.word}">
+                                        ${i+1}. "${displayText}"
+                                    </div>
+                                    <div style="font-size: 12px; color: #888; margin-top: 8px;">
+                                        Time: ${formatTime(b.startTime)} • 
+                                        ${new Date(b.timestamp).toLocaleDateString('en-US')}
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 8px; align-items: center;">
+                                    <span style="${colorStyle}">${getColorName(b.color)}</span>
+                                    <button onclick="removeBookmark(${b.id}); this.parentElement.parentElement.parentElement.remove(); updateBookmarkCount();" 
+                                            style="background: #d63031; color: white; border: none; border-radius: 5px; padding: 4px 10px; font-size: 11px; cursor: pointer;">
+                                        Remove
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            contentHTML += `
+                    <div style="margin-top: 20px; text-align: center;">
+                        <button id="close-bookmarks-btn" style="padding: 10px 25px; background: #0984e3; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            modal.innerHTML = contentHTML;
+            document.body.appendChild(modal);
+            
+            document.getElementById('close-bookmarks-modal').addEventListener('click', function() {
+                modal.remove();
+            });
+            
+            document.getElementById('close-bookmarks-btn').addEventListener('click', function() {
+                modal.remove();
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        });
+    }
+    
+    if (clearAllBtn) {
+        clearAllBtn.addEventListener('click', function() {
+            clearAllBookmarks();
+        });
+    }
+    
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+}
+
+const proStyle = document.createElement('style');
+proStyle.textContent = `
+    #book-controls-panel button {
+        transition: all 0.3s ease !important;
+    }
+    
+    #book-controls-panel button:hover:not(:disabled) {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    #book-controls-panel button:active:not(:disabled) {
+        transform: translateY(0) !important;
+    }
+    
+    #audio-seek-bar {
+        -webkit-appearance: none;
+        height: 8px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #3498db 0%, #2c3e50 100%);
+        outline: none;
+    }
+    
+    #audio-seek-bar::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #3498db;
+        cursor: pointer;
+        border: 3px solid white;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    
+    .bookmark-color-btn {
+        transition: all 0.3s ease !important;
+    }
+    
+    .bookmark-color-btn:hover {
+        transform: scale(1.1) !important;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.3) !important;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+`;
+document.head.appendChild(proStyle);
+
+console.log('🎯 Book Pro controls loaded successfully!');
+</script>
+</body>
+</html>

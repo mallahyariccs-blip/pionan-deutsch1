@@ -1,0 +1,1154 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>گزارش پیشرفت یادگیری زبان</title>
+<style>
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --background-color: #f8f9fa;
+    --card-color: #ffffff;
+    --header-height: 70px;
+}
+
+body {
+    font-family: "Segoe UI Emoji", Tahoma, sans-serif;
+    margin:0;
+    padding:10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding-top: calc(var(--header-height) + 20px);
+}
+
+/* نوار عنوان ثابت */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: linear-gradient(135deg, var(--primary-color), #1a252f);
+    color: white;
+    z-index: 1000;
+    padding: 0 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.report-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.report-icon {
+    font-size: 1.8em;
+    background: rgba(255, 255, 255, 0.15);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.report-title-text h2 {
+    font-size: 1.3em;
+    margin-bottom: 3px;
+}
+
+.report-subtitle {
+    font-size: 0.85em;
+    opacity: 0.9;
+}
+
+.back-to-index-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--accent-color), #c0392b);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 180px;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+.back-to-index-btn:hover {
+    background: linear-gradient(135deg, #d63031, #b33939);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+}
+
+.container {
+    max-width:950px;
+    margin:20px auto;
+    background:rgba(255, 255, 255, 0.95);
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 15px 40px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+h1 { 
+    text-align:center;
+    color: var(--primary-color);
+    margin-bottom:25px;
+    padding-bottom:15px;
+    border-bottom:3px solid var(--secondary-color);
+}
+
+.form-row {
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:15px;
+    background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+    padding:15px;
+    border-radius:10px;
+    border-right:4px solid var(--secondary-color);
+}
+.form-row label { 
+    white-space:nowrap;
+    font-weight:bold;
+    color: var(--primary-color);
+}
+
+select, input[type="number"], input[type="date"] {
+    padding:8px 12px;
+    border-radius:8px;
+    border:2px solid #ddd;
+    background:white;
+    font-family: "Segoe UI Emoji", Tahoma, sans-serif;
+    font-size:14px;
+    transition: all 0.3s;
+}
+select:focus, input[type="number"]:focus, input[type="date"]:focus {
+    border-color: var(--secondary-color);
+    outline:none;
+    box-shadow:0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.activity-box, .exercise-box {
+    border:2px solid #e9ecef;
+    border-radius:12px;
+    padding:15px;
+    margin-bottom:20px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    flex:1;
+    min-height:400px;
+    background: var(--card-color);
+    box-shadow:0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+.activity-box:hover, .exercise-box:hover {
+    border-color: var(--secondary-color);
+    box-shadow:0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.row-container { 
+    display:flex; 
+    gap:15px; 
+    align-items:stretch;
+    margin:20px 0;
+}
+
+.checkbox-row {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px;
+    border-radius:8px;
+    transition: all 0.2s;
+    background: #f8f9fa;
+}
+.checkbox-row:hover {
+    background: #e9ecef;
+    transform: translateX(-3px);
+}
+
+.checkbox-row .time-container {
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.checkbox-row .content-container {
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.checkbox-row input[type="number"] { 
+    width:70px;
+    text-align:center;
+}
+.minute-label { 
+    font-size:12px; 
+    color:#6c757d;
+}
+
+button {
+    font-family: Tahoma, sans-serif;
+    margin-top:10px;
+    padding:10px 20px;
+    font-size:15px;
+    border-radius:30px;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    height:42px;
+    transition: all 0.3s;
+    min-width:120px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+#uploadFile { 
+    display:none;
+}
+
+#chart-container { 
+    margin-top:25px; 
+    flex-basis:100%;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    border:2px solid #e9ecef;
+}
+
+#saveBtn { 
+    background: linear-gradient(135deg, var(--success-color), #219653);
+    color:white;
+    box-shadow:0 5px 15px rgba(39, 174, 96, 0.3);
+}
+#saveBtn:hover {
+    transform: translateY(-3px);
+    box-shadow:0 8px 20px rgba(39, 174, 96, 0.4);
+}
+
+#clearBtn { 
+    background: linear-gradient(135deg, var(--accent-color), #c0392b);
+    color:white;
+    box-shadow:0 5px 15px rgba(231, 76, 60, 0.3);
+}
+#clearBtn:hover {
+    transform: translateY(-3px);
+    box-shadow:0 8px 20px rgba(231, 76, 60, 0.4);
+}
+
+#downloadBtn { 
+    background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+    color:white;
+    box-shadow:0 5px 15px rgba(52, 152, 219, 0.3);
+}
+#downloadBtn:hover {
+    transform: translateY(-3px);
+    box-shadow:0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+#uploadBtn { 
+    background: linear-gradient(135deg, #9D4EDD, #7B2CBF);
+    color:white;
+    box-shadow:0 5px 15px rgba(157, 78, 221, 0.3);
+}
+#uploadBtn:hover {
+    transform: translateY(-3px);
+    box-shadow:0 8px 20px rgba(157, 78, 221, 0.4);
+}
+
+#weeklyBtn { 
+    background: linear-gradient(135deg, #FF9F1C, #FF7F11);
+    color:white;
+    box-shadow:0 5px 15px rgba(255, 159, 28, 0.3);
+}
+#weeklyBtn:hover {
+    transform: translateY(-3px);
+    box-shadow:0 8px 20px rgba(255, 159, 28, 0.4);
+}
+
+#monthlyBtn { 
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color:#333;
+    box-shadow:0 5px 15px rgba(255, 215, 0, 0.3);
+}
+#monthlyBtn:hover {
+    transform: translateY(-3px);
+    box-shadow:0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+#allBtn { 
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    color:white;
+    box-shadow:0 5px 15px rgba(155, 89, 182, 0.3);
+}
+#allBtn:hover {
+    transform: translateY(-3px);
+    box-shadow:0 8px 20px rgba(155, 89, 182, 0.4);
+}
+
+.button-group { 
+    display:flex;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:15px;
+    justify-content:center;
+}
+.button-row { 
+    display:flex; 
+    gap:15px; 
+    flex-wrap:wrap; 
+    margin-bottom:15px; 
+    align-items:center;
+    justify-content:center;
+}
+.section-title { 
+    font-weight:bold; 
+    margin-bottom:10px;
+    color: var(--primary-color);
+    font-size:1.2em;
+    padding-bottom:5px;
+    border-bottom:2px solid var(--secondary-color);
+    display:inline-block;
+}
+
+#chart-info { 
+    text-align:center; 
+    font-weight:bold; 
+    margin-top:15px;
+    padding:10px;
+    background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+    border-radius:10px;
+    color: var(--primary-color);
+    border-right:4px solid var(--secondary-color);
+}
+
+/* استایل برای آیکون‌ها در دکمه‌ها */
+button span {
+    font-size:1.2em;
+}
+
+/* استایل برای تایتل‌های باکس */
+.activity-box-wrapper h3, .exercise-box-wrapper h3 {
+    color: var(--primary-color);
+    background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+    padding:10px 15px;
+    border-radius:10px 10px 0 0;
+    margin:0;
+    border-bottom:3px solid var(--secondary-color);
+}
+
+/* استایل برای چک‌باکس */
+input[type="checkbox"] {
+    width:18px;
+    height:18px;
+    cursor:pointer;
+    accent-color: var(--secondary-color);
+}
+
+/* استایل برای وقتی که چک‌باکس فعال است */
+.checkbox-row input[type="checkbox"]:checked + span + label {
+    font-weight:bold;
+    color: var(--primary-color);
+}
+
+/* استایل برای دکمه‌ها در موبایل */
+@media (max-width: 1024px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+    }
+    
+    .report-title {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .back-to-index-btn {
+        min-width: 160px;
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+    
+    body {
+        padding-top: calc(var(--header-height) + 80px);
+    }
+}
+
+@media (max-width: 768px) {
+    .fixed-header {
+        height: auto;
+        padding: 10px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .report-title {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .back-to-index-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    body {
+        padding-top: 150px;
+    }
+    
+    .row-container {
+        flex-direction:column;
+    }
+    
+    .button-row, .button-group {
+        flex-direction:column;
+        align-items:stretch;
+    }
+    
+    button, .chart-select-container {
+        width:100%;
+        margin-top:5px;
+    }
+    
+    .form-row {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    
+    select, input[type="number"], input[type="date"] {
+        width:100%;
+    }
+    
+    .chart-select-container select {
+        width:100%;
+    }
+}
+
+/* استایل برای کانتینر انتخاب نمودار */
+.chart-select-container {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:10px;
+}
+
+.chart-select-container label {
+    white-space:nowrap;
+    font-weight:bold;
+    color: var(--primary-color);
+}
+
+.chart-select-container select {
+    min-width:200px;
+    padding:8px 12px;
+    border-radius:8px;
+    border:2px solid #ddd;
+    background:white;
+    font-family: "Segoe UI Emoji", Tahoma, sans-serif;
+    font-size:14px;
+}
+
+/* استایل برای خطوط نمودار اضافی */
+.chart-line-item {
+    margin-right:20px;
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    margin-top:5px;
+}
+
+.chart-line-color {
+    width:15px;
+    height:15px;
+    border-radius:3px;
+    display:inline-block;
+}
+
+/* نمایش انتخاب‌های نمودار */
+.selected-charts {
+    margin-top:15px;
+    padding:10px;
+    background:#f8f9fa;
+    border-radius:8px;
+    border:1px solid #dee2e6;
+}
+
+.selected-charts h4 {
+    margin:0 0 10px 0;
+    color: var(--primary-color);
+}
+
+.chart-tag {
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    background:var(--secondary-color);
+    color:white;
+    padding:5px 10px;
+    border-radius:15px;
+    margin:0 5px 5px 0;
+    font-size:0.9em;
+}
+
+.chart-tag button {
+    background:none;
+    border:none;
+    color:white;
+    font-size:1.2em;
+    padding:0;
+    margin:0;
+    height:auto;
+    min-width:auto;
+    cursor:pointer;
+}
+
+.chart-tag button:hover {
+    color:#ffeb3b;
+}
+
+/* استایل برای چک‌باکس غیرفعال */
+.checkbox-row input[type="checkbox"]:not(:checked) + span + label {
+    opacity:0.7;
+}
+</style>
+</head>
+<body>
+<!-- نوار عنوان ثابت -->
+<div class="fixed-header">
+    <div class="header-content">
+        <div class="report-title">
+            <div class="report-icon">📊</div>
+            <div class="report-title-text">
+                <h2>گزارش پیشرفت یادگیری زبان</h2>
+                <div class="report-subtitle">ثبت و تحلیل روزانه فعالیت‌های آموزشی</div>
+            </div>
+        </div>
+        
+        <a href="../PIONAN Deutsch Course_index.html" class="back-to-index-btn" title="Back to Index">
+            <span>←</span>
+            <span>Back to Index</span>
+        </a>
+    </div>
+</div>
+
+<div class="container">
+<h1>📊 گزارش پیشرفت یادگیری زبان</h1>
+
+<div class="form-row">
+    <label for="language">زبان هدف:</label>
+    <select id="language">
+        <option value="">انتخاب کنید</option>
+        <option>انگلیسی</option><option>اسپانیایی</option><option>آلمانی</option>
+        <option>فرانسوی</option><option>روسی</option><option>چینی</option>
+        <option>پرتغالی</option><option>عربی</option><option>ترکی</option>
+    </select>
+
+    <label for="level">سطح:</label>
+    <select id="level">
+        <option value="">انتخاب کنید</option>
+        <option>A1.1</option><option>A1.2</option><option>A2.1</option><option>A2.2</option>
+        <option>B1.1</option><option>B1.2</option><option>B2.1</option><option>B2.2</option>
+        <option>C1.1</option><option>C1.2</option>
+    </select>
+
+    <label for="dailyTarget">هدف روزانه:</label>
+    <input type="number" id="dailyTarget" min="1" value="60">
+</div>
+
+<div class="form-row">
+    <input type="checkbox" id="pastDateChk">
+    <label for="pastDateChk">ثبت برای تاریخ گذشته</label>
+    <input type="date" id="pastDate" disabled>
+</div>
+
+<div class="row-container">
+    <div class="activity-box-wrapper" style="flex:1; display:flex; flex-direction:column;">
+        <h3 class="section-title">📈 فعالیت‌ها</h3>
+        <div class="activity-box" id="activities">
+            <div class="checkbox-row"><div class="content-container"><input type="checkbox"><span>🎧</span><label>گوش دادن</label></div><div class="time-container"><input type="number" min="0" value="0"><span class="minute-label">دقیقه</span></div></div>
+            <div class="checkbox-row"><div class="content-container"><input type="checkbox"><span>📖</span><label>درک مطلب</label></div><div class="time-container"><input type="number" min="0" value="0"><span class="minute-label">دقیقه</span></div></div>
+            <div class="checkbox-row"><div class="content-container"><input type="checkbox"><span>🗣</span><label>زمزمه در کنار صدای گوینده</label></div><div class="time-container"><input type="number" min="0" value="0"><span class="minute-label">دقیقه</span></div></div>
+            <div class="checkbox-row"><div class="content-container"><input type="checkbox"><span>📢</span><label>بلند خواندن و ضبط صدا</label></div><div class="time-container"><input type="number" min="0" value="0"><span class="minute-label">دقیقه</span></div></div>
+        </div>
+    </div>
+
+    <div class="exercise-box-wrapper" style="flex:1; display:flex; flex-direction:column;">
+        <h3 class="section-title">📝 تمرین‌ها</h3>
+        <div class="exercise-box" id="exercises">
+            <div class="checkbox-row"><div class="content-container"><input type="checkbox"><span>❓</span><label>سوالات درک مطلب</label></div><div class="time-container"><input type="number" min="0" value="0"><span class="minute-label">دقیقه</span></div></div>
+            <div class="checkbox-row"><div class="content-container"><input type="checkbox"><span>📚</span><label>سوالات گرامر کلیدی</label></div><div class="time-container"><input type="number" min="0" value="0"><span class="minute-label">دقیقه</span></div></div>
+            <div class="checkbox-row"><div class="content-container"><input type="checkbox"><span>💬</span><label>مکالمه</label></div><div class="time-container"><input type="number" min="0" value="0"><span class="minute-label">دقیقه</span></div></div>
+            <div class="checkbox-row"><div class="content-container"><input type="checkbox"><span>✍️</span><label>نوشتن</label></div><div class="time-container"><input type="number" min="0" value="0"><span class="minute-label">دقیقه</span></div></div>
+        </div>
+    </div>
+</div>
+
+<div class="button-row">
+    <button id="saveBtn" onclick="saveData()"><span>💾</span> ثبت و نمایش نمودار</button>
+    <button id="downloadBtn" onclick="downloadCSV()"><span>📥</span> خروجی CSV</button>
+    <button id="clearBtn" onclick="clearData()"><span>🗑️</span> پاک کردن داده‌ها</button>
+    <button id="uploadBtn" onclick="document.getElementById('uploadFile').click()"><span>📤</span> آپلود داده‌ها</button>
+    <input type="file" id="uploadFile" accept=".csv" onchange="uploadData()">
+</div>
+
+<div class="button-group">
+    <div class="chart-select-container">
+        <label for="chartSelect">انتخاب نمودار:</label>
+        <select id="chartSelect" onchange="addSelectedChart()">
+            <option value="">انتخاب کنید...</option>
+            <option value="listening">🎧 گوش دادن</option>
+            <option value="reading">📖 درک مطلب</option>
+            <option value="whispering">🗣 زمزمه</option>
+            <option value="recording">📢 بلند خواندن</option>
+            <option value="comprehension">❓ سوالات درک مطلب</option>
+            <option value="grammar">📚 سوالات گرامر</option>
+            <option value="conversation">💬 مکالمه</option>
+            <option value="writing">✍️ نوشتن</option>
+        </select>
+    </div>
+    <button id="weeklyBtn" onclick="updateChart('weekly')"><span>📅</span> هفتگی</button>
+    <button id="monthlyBtn" onclick="updateChart('monthly')"><span>📆</span> ماهانه</button>
+    <button id="allBtn" onclick="updateChart('all')"><span>📊</span> کل</button>
+</div>
+
+<div id="selected-charts-container" class="selected-charts" style="display:none;">
+    <h4>نمودارهای انتخاب شده:</h4>
+    <div id="selected-charts-list"></div>
+</div>
+
+<div id="chart-info"></div>
+<div id="chart-container">
+    <canvas id="progressChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const languageEl=document.getElementById("language");
+const levelEl=document.getElementById("level");
+const dailyTargetEl=document.getElementById("dailyTarget");
+const pastDateChkEl=document.getElementById("pastDateChk");
+const pastDateEl=document.getElementById("pastDate");
+const chartInfo=document.getElementById("chart-info");
+const chartSelectEl=document.getElementById("chartSelect");
+const selectedChartsContainer = document.getElementById("selected-charts-container");
+const selectedChartsList = document.getElementById("selected-charts-list");
+
+// نام‌های فعالیت‌ها و تمرین‌ها برای نمودار و CSV
+const activityNames = [
+    "گوش دادن",
+    "درک مطلب", 
+    "زمزمه در کنار صدای گوینده",
+    "بلند خواندن و ضبط صدا"
+];
+
+const exerciseNames = [
+    "سوالات درک مطلب",
+    "سوالات گرامر کلیدی",
+    "مکالمه",
+    "نوشتن"
+];
+
+// رنگ‌های مختلف برای نمودارها
+const chartColors = {
+    "total": "#3498db",
+    "target": "#c0392b",
+    "listening": "#1abc9c",
+    "reading": "#2ecc71",
+    "whispering": "#9b59b6",
+    "recording": "#34495e",
+    "comprehension": "#e74c3c",
+    "grammar": "#f39c12",
+    "conversation": "#16a085",
+    "writing": "#8e44ad"
+};
+
+// لیست نمودارهای انتخاب شده توسط کاربر
+let selectedCharts = [];
+
+pastDateChkEl.addEventListener("change",function(){ pastDateEl.disabled=!this.checked; });
+
+// مقداردهی اولیه - همه فیلدهای عددی 0 هستند
+document.querySelectorAll('.checkbox-row').forEach(row=>{
+    const chk=row.querySelector('.content-container input[type=checkbox]');
+    const num=row.querySelector('.time-container input[type=number]');
+    
+    // مقدار پیشفرض 0 برای همه فیلدها
+    num.value = 0;
+    num.disabled = false; // همه فیلدها فعال هستند
+    
+    chk.addEventListener('change',()=>{
+        // اگر چک‌باکس تیک نخورده باشد، مقدار را 0 نگه دار اما فیلد فعال بماند
+        if(!chk.checked) {
+            num.value = 0;
+        }
+    });
+    
+    num.addEventListener('input',()=>{ 
+        if(num.value<0||isNaN(num.value)) num.value=0; 
+    });
+});
+
+let savedData=JSON.parse(localStorage.getItem("progressData")||"[]");
+let currentChartPeriod='weekly';
+
+function saveData(){
+    const lang = languageEl.value;
+    const levelVal = levelEl.value;
+    if(!lang || !levelVal){ alert("لطفاً زبان و سطح را انتخاب کنید"); return; }
+
+    const dateVal = pastDateChkEl.checked ? pastDateEl.value : new Date().toISOString().split('T')[0];
+    if(pastDateChkEl.checked && !dateVal){ alert("لطفاً تاریخ گذشته را وارد کنید"); return; }
+
+    const dailyTargetVal = parseInt(dailyTargetEl.value) || 60;
+
+    // خواندن تمام مقادیر (فعال یا غیرفعال)
+    const activities=[...document.querySelectorAll("#activities .checkbox-row")].map(r=>{
+        const val=parseInt(r.querySelector('.time-container input[type=number]').value)||0;
+        return val; // همیشه مقدار را برگردان، حتی اگر 0 باشد
+    });
+
+    const exercises=[...document.querySelectorAll("#exercises .checkbox-row")].map(r=>{
+        const val=parseInt(r.querySelector('.time-container input[type=number]').value)||0;
+        return val; // همیشه مقدار را برگردان، حتی اگر 0 باشد
+    });
+
+    const total=activities.reduce((a,b)=>a+b,0)+exercises.reduce((a,b)=>a+b,0);
+
+    // حذف رکوردهای تکراری
+    savedData=savedData.filter(d=>!(d.Date===dateVal && d.Language===lang && d.Level===levelVal));
+    
+    // اضافه کردن داده جدید (همیشه تمام مقادیر ذخیره می‌شوند)
+    savedData.push({
+        Date:dateVal,
+        Language:lang,
+        Level:levelVal,
+        DailyTarget:dailyTargetVal,
+        Activities:activities,
+        Exercises:exercises,
+        TotalMinutes:total
+    });
+    
+    localStorage.setItem("progressData", JSON.stringify(savedData));
+    updateChart(currentChartPeriod);
+    
+    // ریست کردن فرم (فقط مقادیر را 0 کن، چک‌باکس‌ها را تغییر نده)
+    document.querySelectorAll('.time-container input[type="number"]').forEach(input => {
+        input.value = 0;
+    });
+}
+
+function generateDateRange(start, end){
+    const dates=[];
+    let d=new Date(start);
+    while(d<=end){ dates.push(d.toISOString().split('T')[0]); d.setDate(d.getDate()+1); }
+    return dates;
+}
+
+function getChartData(data, chartType) {
+    // برای فعالیت‌ها
+    const activityIndexMap = {
+        'listening': 0,
+        'reading': 1,
+        'whispering': 2,
+        'recording': 3
+    };
+    
+    // برای تمرین‌ها
+    const exerciseIndexMap = {
+        'comprehension': 0,
+        'grammar': 1,
+        'conversation': 2,
+        'writing': 3
+    };
+    
+    if (chartType === 'total') {
+        return data.map(d => d.TotalMinutes || 0);
+    }
+    
+    if (activityIndexMap[chartType] !== undefined) {
+        return data.map(d => (d.Activities && d.Activities[activityIndexMap[chartType]]) || 0);
+    }
+    
+    if (exerciseIndexMap[chartType] !== undefined) {
+        return data.map(d => (d.Exercises && d.Exercises[exerciseIndexMap[chartType]]) || 0);
+    }
+    
+    return data.map(d => d.TotalMinutes || 0);
+}
+
+function getChartLabel(chartType) {
+    const labels = {
+        'total': 'کل دقایق',
+        'listening': '🎧 گوش دادن',
+        'reading': '📖 درک مطلب',
+        'whispering': '🗣 زمزمه',
+        'recording': '📢 بلند خواندن',
+        'comprehension': '❓ سوالات درک مطلب',
+        'grammar': '📚 سوالات گرامر',
+        'conversation': '💬 مکالمه',
+        'writing': '✍️ نوشتن',
+        'target': 'هدف روزانه'
+    };
+    return labels[chartType] || chartType;
+}
+
+function addSelectedChart() {
+    const selectedValue = chartSelectEl.value;
+    if (!selectedValue) return;
+    
+    // اگر قبلاً انتخاب نشده باشد، اضافه کن
+    if (!selectedCharts.includes(selectedValue)) {
+        selectedCharts.push(selectedValue);
+        updateSelectedChartsDisplay();
+        updateChart(currentChartPeriod);
+    }
+    
+    // ریست کردن انتخاب
+    chartSelectEl.value = "";
+}
+
+function removeSelectedChart(chartType) {
+    const index = selectedCharts.indexOf(chartType);
+    if (index > -1) {
+        selectedCharts.splice(index, 1);
+        updateSelectedChartsDisplay();
+        updateChart(currentChartPeriod);
+    }
+}
+
+function updateSelectedChartsDisplay() {
+    if (selectedCharts.length > 0) {
+        selectedChartsContainer.style.display = 'block';
+        selectedChartsList.innerHTML = '';
+        
+        selectedCharts.forEach(chartType => {
+            const tag = document.createElement('div');
+            tag.className = 'chart-tag';
+            tag.innerHTML = `
+                ${getChartLabel(chartType)}
+                <button onclick="removeSelectedChart('${chartType}')">×</button>
+            `;
+            tag.style.backgroundColor = chartColors[chartType] || chartColors.total;
+            selectedChartsList.appendChild(tag);
+        });
+    } else {
+        selectedChartsContainer.style.display = 'none';
+    }
+}
+
+function updateChart(period){
+    currentChartPeriod = period;
+
+    if(languageEl.value && levelEl.value){
+        chartInfo.textContent=`📊 گزارش پیشرفت | زبان: ${languageEl.value} | سطح: ${levelEl.value}`;
+    } else chartInfo.textContent="";
+
+    let lang = languageEl.value;
+    let levelVal = levelEl.value;
+
+    let data = savedData;
+    if(lang && levelVal){
+        data = savedData.filter(d=>d.Language===lang && d.Level===levelVal);
+    }
+
+    if(data.length===0){
+        const today=new Date().toISOString().split('T')[0];
+        data=[{
+            Date:today, 
+            TotalMinutes:0, 
+            DailyTarget: parseInt(dailyTargetEl.value)||60, 
+            Activities:[0,0,0,0], 
+            Exercises:[0,0,0,0]
+        }];
+    }
+
+    data = data.sort((a,b)=>new Date(a.Date)-new Date(b.Date));
+    const allDates = generateDateRange(new Date(data[0].Date), new Date(data[data.length-1].Date));
+    
+    // ایجاد داده کامل با مقدار 0 برای تاریخ‌های از دست رفته
+    const fullData=allDates.map(d=>{
+        const found=data.find(x=>x.Date===d);
+        if(found){ 
+            return {
+                Date: d,
+                TotalMinutes: found.TotalMinutes || 0,
+                DailyTarget: found.DailyTarget || 60,
+                Activities: found.Activities || [0,0,0,0],
+                Exercises: found.Exercises || [0,0,0,0]
+            }; 
+        }
+        else return {
+            Date:d, 
+            TotalMinutes:0, 
+            DailyTarget:60,
+            Activities: [0,0,0,0],
+            Exercises: [0,0,0,0]
+        };
+    });
+
+    let sliced=fullData;
+    if(period==='weekly') sliced=fullData.slice(-7);
+    if(period==='monthly') sliced=fullData.slice(-30);
+    
+    const ctx = document.getElementById("progressChart").getContext('2d');
+    if(window.myChart) window.myChart.destroy();
+    
+    const datasets = [];
+    
+    // همیشه نمودار کل دقایق نمایش داده شود
+    datasets.push({
+        label: "کل دقایق",
+        data: sliced.map(d => d.TotalMinutes || 0),
+        borderColor: chartColors.total,
+        backgroundColor: "rgba(52, 152, 219, 0.1)",
+        tension: 0.1,
+        fill: true,
+        pointRadius: 6,
+        pointBackgroundColor: chartColors.total,
+        borderWidth: 3
+    });
+    
+    // همیشه نمودار هدف روزانه نمایش داده شود
+    datasets.push({
+        label: "هدف روزانه",
+        data: sliced.map(d => d.DailyTarget || 60),
+        borderColor: chartColors.target,
+        backgroundColor: "rgba(192, 57, 43, 0.1)",
+        borderDash: [5,5],
+        tension: 0.1,
+        fill: false,
+        pointRadius: 6,
+        pointBackgroundColor: chartColors.target,
+        borderWidth: 2
+    });
+    
+    // اضافه کردن نمودارهای انتخاب شده توسط کاربر
+    selectedCharts.forEach(chartType => {
+        const chartData = getChartData(sliced, chartType);
+        datasets.push({
+            label: getChartLabel(chartType),
+            data: chartData,
+            borderColor: chartColors[chartType] || chartColors.total,
+            backgroundColor: "rgba(52, 152, 219, 0.1)",
+            tension: 0.1,
+            fill: false,
+            pointRadius: 5,
+            pointBackgroundColor: chartColors[chartType] || chartColors.total,
+            borderWidth: 2
+        });
+    });
+    
+    window.myChart = new Chart(ctx,{
+        type:'line',
+        data:{
+            labels:sliced.map(d=>d.Date),
+            datasets: datasets
+        },
+        options:{
+            responsive:true,
+            plugins:{
+                legend:{ 
+                    position:"top",
+                    labels: {
+                        font: {
+                            size: 14,
+                            family: "'Segoe UI Emoji', Tahoma, sans-serif"
+                        },
+                        padding: 20,
+                        usePointStyle: true
+                    }
+                },
+                tooltip: { 
+                    enabled: true, 
+                    backgroundColor: "rgba(0,0,0,0.7)",
+                    titleFont: { size: 14 },
+                    bodyFont: { size: 14 },
+                    callbacks: { 
+                        label: function(context){ 
+                            return context.dataset.label + ": " + context.raw + " دقیقه"; 
+                        } 
+                    } 
+                }
+            },
+            scales:{ 
+                y:{ 
+                    beginAtZero:true, 
+                    title:{
+                        display:true,
+                        text:"دقیقه",
+                        font: { size: 14, weight: 'bold' }
+                    },
+                    grid: {
+                        color: "rgba(0,0,0,0.05)"
+                    }
+                }, 
+                x:{ 
+                    title:{
+                        display:true,
+                        text:"تاریخ",
+                        font: { size: 14, weight: 'bold' }
+                    },
+                    grid: {
+                        color: "rgba(0,0,0,0.05)"
+                    }
+                } 
+            }
+        }
+    });
+}
+
+function downloadCSV(){
+    let csv = ["تاریخ","زبان","سطح","هدف روزانه", ...activityNames, ...exerciseNames, "جمع","اختلاف"].join(";") + "\n";
+
+    savedData.forEach(d=>{
+        // برای اطمینان از اینکه همه مقادیر وجود دارند
+        const activityValues = (d.Activities || [0,0,0,0]).map(n => n || 0);
+        const exerciseValues = (d.Exercises || [0,0,0,0]).map(n => n || 0);
+
+        const total = activityValues.reduce((a,b)=>a+b,0) + exerciseValues.reduce((a,b)=>a+b,0);
+        const diff = (d.DailyTarget || 60) - total;
+
+        const row = [
+            d.Date,
+            d.Language || "",
+            d.Level || "",
+            d.DailyTarget || 60,
+            ...activityValues,
+            ...exerciseValues,
+            total,
+            diff
+        ].join(";");
+
+        csv += row + "\n";
+    });
+
+    const csvContent = "\uFEFF" + csv;
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csvContent], { type: 'text/csv;charset=utf-8' }));
+    a.download = "progress_data.csv";
+    a.click();
+}
+
+function clearData(){
+    if(confirm("آیا واقعاً می‌خواهید تمام داده‌ها پاک شوند؟")){
+        savedData=[];
+        selectedCharts = [];
+        localStorage.removeItem("progressData");
+        updateSelectedChartsDisplay();
+        updateChart(currentChartPeriod);
+    }
+}
+
+function uploadData(){
+    const fileInput = document.getElementById('uploadFile');
+    if(!fileInput.files.length){ 
+        alert("لطفاً یک فایل انتخاب کنید."); 
+        return; 
+    }
+
+    const file = fileInput.files[0];
+    if(file.type !== "text/csv" && !file.name.endsWith(".csv")){
+        alert("فرمت فایل معتبر نیست. لطفاً یک فایل CSV انتخاب کنید."); 
+        return; 
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e){
+        try{
+            const text = e.target.result.replace(/^\uFEFF/, '').trim();
+            const lines = text.split("\n");
+
+            const header = lines.shift().split(";");
+            if(header.length < 12 || header[0]!=="تاریخ"){ 
+                throw "فرمت CSV اشتباه است"; 
+            }
+
+            const newData = [];
+
+            lines.forEach(line=>{
+                const parts = line.split(";");
+
+                if(parts.length < header.length) throw "فرمت CSV اشتباه است";
+
+                // خواندن مقادیر با مقدار پیشفرض 0
+                const activities = parts.slice(4, 8).map(n => parseInt(n)||0);
+                const exercises = parts.slice(8, 12).map(n => parseInt(n)||0);
+
+                newData.push({
+                    Date: parts[0],
+                    Language: parts[1] || "",
+                    Level: parts[2] || "",
+                    DailyTarget: parseInt(parts[3])||60,
+                    Activities: activities,
+                    Exercises: exercises,
+                    TotalMinutes: activities.reduce((a,b)=>a+b,0) + exercises.reduce((a,b)=>a+b,0)
+                });
+            });
+
+            savedData = newData;
+            localStorage.setItem("progressData", JSON.stringify(savedData));
+            updateChart(currentChartPeriod);
+            alert("✅ داده‌ها با موفقیت بارگذاری شدند.");
+        } catch(err){
+            alert("❌ خطا در فرمت فایل CSV: "+err);
+        }
+    };
+    reader.readAsText(file);
+}
+
+// بارگذاری اولیه نمودار
+document.addEventListener('DOMContentLoaded', function() {
+    updateChart('weekly');
+    
+    // افزودن افکت اسکرول برای نوار عنوان
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.fixed-header');
+        if (window.scrollY > 50) {
+            header.style.boxShadow = '0 6px 25px rgba(0, 0, 0, 0.4)';
+            header.style.height = '65px';
+        } else {
+            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            header.style.height = '70px';
+        }
+    });
+});
+</script>
+</div>
+</body>
+</html>

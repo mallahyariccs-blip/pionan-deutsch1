@@ -1,0 +1,7185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Telephone Conversation In German</title>
+<style>
+body { font-family: Tahoma, sans-serif; background: #fdfdfd; color: #222; padding: 20px; padding-bottom:120px; }
+.block { margin:20px 0; white-space: pre-wrap; }
+.word { cursor:pointer; padding:1px 2px; transition: background 0.2s; display:inline; white-space: pre-wrap; }
+.sentence-highlight { background-color:#ffe06688; border-radius:3px; }
+.section-header { 
+    background: #3498db; 
+    color: white; 
+    padding: 12px 20px; 
+    border-radius: 8px; 
+    margin: 25px 0 15px 0; 
+    font-weight: bold; 
+    font-size: 1.3em; 
+    cursor: pointer; 
+    border-left: 6px solid #2980b9;
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.2);
+    transition: all 0.3s;
+}
+.section-header:hover { 
+    background: #2980b9; 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+.toc-container { 
+    background: #f8f9fa; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    padding: 20px; 
+    margin: 25px 0; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.toc-title { 
+    font-size: 1.4em; 
+    font-weight: bold; 
+    color: #2c3e50; 
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+.toc-item { 
+    padding: 10px 15px; 
+    margin: 8px 0; 
+    background: white; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    border-left: 5px solid #3498db;
+    transition: all 0.2s;
+    font-size: 0.95em;
+}
+.toc-item:hover { 
+    background: #e3f2fd; 
+    transform: translateX(5px); 
+    border-left-color: #2980b9;
+}
+/* Bookmark Styles */
+.word.bookmark-red { background-color: rgba(255, 107, 107, 0.3) !important; border-bottom: 2px solid #ff6b6b; }
+.word.bookmark-blue { background-color: rgba(77, 150, 255, 0.3) !important; border-bottom: 2px solid #4d96ff; }
+.word.bookmark-green { background-color: rgba(107, 207, 127, 0.3) !important; border-bottom: 2px solid #6bcf7f; }
+.word.bookmark-purple { background-color: rgba(157, 101, 201, 0.3) !important; border-bottom: 2px solid #9d65c9; }
+.word.bookmark-orange { background-color: rgba(255, 169, 77, 0.3) !important; border-bottom: 2px solid #ffa94d; }
+/* Bookmark Palette */
+#bookmark-palette { 
+    display: none;
+    position: fixed;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 10002;
+    border: 3px solid #1a1a2e;
+}
+</style>
+</head>
+<body>
+<h2 style="text-align:center; color:#2c3e50; margin-bottom:30px;">🎧 Telephone Conversation In German</h2>
+
+
+
+<div id="text"></div>
+
+<audio id="audio" src="Telephone Conversation in German.mp3"></audio>
+
+<!-- Bookmark Palette -->
+<div id="bookmark-palette">
+    <div style="text-align: center; margin-bottom: 15px; font-weight: bold; color: #1a1a2e;">
+        📌 Bookmark with color:
+    </div>
+    <div style="display: flex; gap: 15px; justify-content: center;">
+        <div class="bookmark-color-btn" data-color="red" title="Important" style="width: 40px; height: 40px; background: #ff6b6b; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="blue" title="Grammar" style="width: 40px; height: 40px; background: #4d96ff; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="green" title="New Vocabulary" style="width: 40px; height: 40px; background: #6bcf7f; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="purple" title="Questions" style="width: 40px; height: 40px; background: #9d65c9; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="orange" title="Practice" style="width: 40px; height: 40px; background: #ffa94d; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+    </div>
+    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
+        <button id="show-all-bookmarks" style="padding: 8px 15px; background: #0984e3; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px;">Show All Bookmarks</button>
+        <button id="clear-all-bookmarks" style="padding: 8px 15px; background: #d63031; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px;">Clear All</button>
+        <button id="cancel-bookmark" style="padding: 8px 15px; background: #666; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px;">Cancel</button>
+    </div>
+    <div style="text-align: center; margin-top: 15px; font-size: 12px; color: #666;">
+        Click on a word or select multiple words, then choose a color
+    </div>
+</div>
+
+<script>
+const wordData = [
+  {
+    "word": " Herzlich",
+    "start": 2.08,
+    "end": 2.84
+  },
+  {
+    "word": " willkommen",
+    "start": 2.84,
+    "end": 3.46
+  },
+  {
+    "word": " bei",
+    "start": 3.46,
+    "end": 3.86
+  },
+  {
+    "word": " Tele",
+    "start": 3.86,
+    "end": 4.3
+  },
+  {
+    "word": " 123.",
+    "start": 4.3,
+    "end": 4.8
+  },
+  {
+    "word": " Wenn",
+    "start": 6.02,
+    "end": 6.18
+  },
+  {
+    "word": " Sie",
+    "start": 6.18,
+    "end": 6.48
+  },
+  {
+    "word": " ein",
+    "start": 6.48,
+    "end": 6.76
+  },
+  {
+    "word": " Produkt",
+    "start": 6.76,
+    "end": 7.14
+  },
+  {
+    "word": " kaufen",
+    "start": 7.14,
+    "end": 7.58
+  },
+  {
+    "word": " möchten,",
+    "start": 7.58,
+    "end": 8.16
+  },
+  {
+    "word": " drücken",
+    "start": 8.54,
+    "end": 8.78
+  },
+  {
+    "word": " Sie",
+    "start": 8.78,
+    "end": 9.0
+  },
+  {
+    "word": " die",
+    "start": 9.0,
+    "end": 9.16
+  },
+  {
+    "word": " 1.",
+    "start": 9.16,
+    "end": 9.54
+  },
+  {
+    "word": " Wenn",
+    "start": 10.06,
+    "end": 10.36
+  },
+  {
+    "word": " Sie",
+    "start": 10.36,
+    "end": 10.64
+  },
+  {
+    "word": " Informationen",
+    "start": 10.64,
+    "end": 11.36
+  },
+  {
+    "word": " zu",
+    "start": 11.36,
+    "end": 11.94
+  },
+  {
+    "word": " Ihrem",
+    "start": 11.94,
+    "end": 12.2
+  },
+  {
+    "word": " Vertrag",
+    "start": 12.2,
+    "end": 12.8
+  },
+  {
+    "word": " oder",
+    "start": 12.8,
+    "end": 13.38
+  },
+  {
+    "word": " einem",
+    "start": 13.38,
+    "end": 13.72
+  },
+  {
+    "word": " Produkt",
+    "start": 13.72,
+    "end": 14.16
+  },
+  {
+    "word": " bekommen",
+    "start": 14.16,
+    "end": 14.56
+  },
+  {
+    "word": " möchten,",
+    "start": 14.56,
+    "end": 15.06
+  },
+  {
+    "word": " drücken",
+    "start": 15.48,
+    "end": 15.7
+  },
+  {
+    "word": " Sie",
+    "start": 15.7,
+    "end": 15.92
+  },
+  {
+    "word": " die",
+    "start": 15.92,
+    "end": 16.04
+  },
+  {
+    "word": " 2.",
+    "start": 16.04,
+    "end": 16.36
+  },
+  {
+    "word": " Wenn",
+    "start": 17.02,
+    "end": 17.22
+  },
+  {
+    "word": " Sie",
+    "start": 17.22,
+    "end": 17.4
+  },
+  {
+    "word": " ein",
+    "start": 17.4,
+    "end": 17.6
+  },
+  {
+    "word": " Problem",
+    "start": 17.6,
+    "end": 17.94
+  },
+  {
+    "word": " melden",
+    "start": 17.94,
+    "end": 18.54
+  },
+  {
+    "word": " möchten,",
+    "start": 18.54,
+    "end": 18.96
+  },
+  {
+    "word": " drücken",
+    "start": 19.38,
+    "end": 19.74
+  },
+  {
+    "word": " Sie",
+    "start": 19.74,
+    "end": 20.0
+  },
+  {
+    "word": " die",
+    "start": 20.0,
+    "end": 20.14
+  },
+  {
+    "word": " 3.",
+    "start": 20.14,
+    "end": 20.52
+  },
+  {
+    "word": " Sie",
+    "start": 21.22,
+    "end": 21.4
+  },
+  {
+    "word": " werden",
+    "start": 21.4,
+    "end": 21.72
+  },
+  {
+    "word": " gleich",
+    "start": 21.72,
+    "end": 22.14
+  },
+  {
+    "word": " mit",
+    "start": 22.14,
+    "end": 22.46
+  },
+  {
+    "word": " unserem",
+    "start": 22.46,
+    "end": 22.82
+  },
+  {
+    "word": " Kundenservice",
+    "start": 22.82,
+    "end": 23.7
+  },
+  {
+    "word": " verbunden.",
+    "start": 23.7,
+    "end": 24.4
+  },
+  {
+    "word": " Die",
+    "start": 24.98,
+    "end": 25.16
+  },
+  {
+    "word": " Wartezeit",
+    "start": 25.16,
+    "end": 25.92
+  },
+  {
+    "word": " beträgt",
+    "start": 25.92,
+    "end": 26.36
+  },
+  {
+    "word": " weniger",
+    "start": 26.36,
+    "end": 26.7
+  },
+  {
+    "word": " als",
+    "start": 26.7,
+    "end": 27.2
+  },
+  {
+    "word": " eine",
+    "start": 27.2,
+    "end": 27.74
+  },
+  {
+    "word": " Minute.",
+    "start": 27.74,
+    "end": 28.1
+  },
+  {
+    "word": " Tele",
+    "start": 32.88,
+    "end": 33.46
+  },
+  {
+    "word": " 123,",
+    "start": 33.46,
+    "end": 34.04
+  },
+  {
+    "word": " Schäfer",
+    "start": 34.84,
+    "end": 35.22
+  },
+  {
+    "word": " ist",
+    "start": 35.22,
+    "end": 35.44
+  },
+  {
+    "word": " mein",
+    "start": 35.44,
+    "end": 35.66
+  },
+  {
+    "word": " Name.",
+    "start": 35.66,
+    "end": 35.96
+  },
+  {
+    "word": " Wie",
+    "start": 36.44,
+    "end": 36.58
+  },
+  {
+    "word": " kann",
+    "start": 36.58,
+    "end": 36.8
+  },
+  {
+    "word": " ich",
+    "start": 36.8,
+    "end": 36.96
+  },
+  {
+    "word": " Ihnen",
+    "start": 36.96,
+    "end": 37.14
+  },
+  {
+    "word": " behilflich",
+    "start": 37.14,
+    "end": 37.74
+  },
+  {
+    "word": " sein?",
+    "start": 37.74,
+    "end": 38.0
+  },
+  {
+    "word": " Guten",
+    "start": 38.84,
+    "end": 39.18
+  },
+  {
+    "word": " Tag,",
+    "start": 39.18,
+    "end": 39.58
+  },
+  {
+    "word": " ich",
+    "start": 39.76,
+    "end": 39.879999999999995
+  },
+  {
+    "word": " möchte",
+    "start": 39.84,
+    "end": 40.02
+  },
+  {
+    "word": " mich",
+    "start": 40.02,
+    "end": 40.28
+  },
+  {
+    "word": " gerne",
+    "start": 40.28,
+    "end": 40.54
+  },
+  {
+    "word": " beschweren.",
+    "start": 40.54,
+    "end": 41.24
+  },
+  {
+    "word": " Ich",
+    "start": 41.4,
+    "end": 41.519999999999996
+  },
+  {
+    "word": " habe",
+    "start": 41.5,
+    "end": 41.68
+  },
+  {
+    "word": " seit",
+    "start": 41.68,
+    "end": 41.96
+  },
+  {
+    "word": " gestern",
+    "start": 41.96,
+    "end": 42.68
+  },
+  {
+    "word": " Probleme",
+    "start": 42.68,
+    "end": 43.24
+  },
+  {
+    "word": " mit",
+    "start": 43.24,
+    "end": 43.54
+  },
+  {
+    "word": " meinem",
+    "start": 43.54,
+    "end": 43.82
+  },
+  {
+    "word": " Internet",
+    "start": 43.82,
+    "end": 44.36
+  },
+  {
+    "word": " und",
+    "start": 44.36,
+    "end": 44.8
+  },
+  {
+    "word": " finde",
+    "start": 44.8,
+    "end": 45.14
+  },
+  {
+    "word": " keine",
+    "start": 45.14,
+    "end": 45.54
+  },
+  {
+    "word": " Lösung.",
+    "start": 45.54,
+    "end": 46.08
+  },
+  {
+    "word": " Moment,",
+    "start": 46.54,
+    "end": 46.9
+  },
+  {
+    "word": " da",
+    "start": 47.18,
+    "end": 47.3
+  },
+  {
+    "word": " sind",
+    "start": 47.3,
+    "end": 47.54
+  },
+  {
+    "word": " Sie",
+    "start": 47.54,
+    "end": 47.8
+  },
+  {
+    "word": " hier",
+    "start": 47.8,
+    "end": 48.26
+  },
+  {
+    "word": " an",
+    "start": 48.26,
+    "end": 48.52
+  },
+  {
+    "word": " der",
+    "start": 48.52,
+    "end": 48.7
+  },
+  {
+    "word": " falschen",
+    "start": 48.7,
+    "end": 49.26
+  },
+  {
+    "word": " Stelle.",
+    "start": 49.26,
+    "end": 49.64
+  },
+  {
+    "word": " Ich",
+    "start": 50.14,
+    "end": 50.34
+  },
+  {
+    "word": " leite",
+    "start": 50.34,
+    "end": 50.72
+  },
+  {
+    "word": " Sie",
+    "start": 50.72,
+    "end": 50.9
+  },
+  {
+    "word": " aber",
+    "start": 50.9,
+    "end": 51.12
+  },
+  {
+    "word": " gern",
+    "start": 51.12,
+    "end": 51.48
+  },
+  {
+    "word": " zu",
+    "start": 51.48,
+    "end": 51.76
+  },
+  {
+    "word": " meinem",
+    "start": 51.76,
+    "end": 51.98
+  },
+  {
+    "word": " Kollegen",
+    "start": 51.98,
+    "end": 52.48
+  },
+  {
+    "word": " in",
+    "start": 52.48,
+    "end": 52.68
+  },
+  {
+    "word": " die",
+    "start": 52.68,
+    "end": 52.8
+  },
+  {
+    "word": " richtige",
+    "start": 52.8,
+    "end": 53.14
+  },
+  {
+    "word": " Abteilung",
+    "start": 53.14,
+    "end": 53.78
+  },
+  {
+    "word": " weiter.",
+    "start": 53.78,
+    "end": 54.1
+  },
+  {
+    "word": " Einen",
+    "start": 54.66,
+    "end": 55.06
+  },
+  {
+    "word": " kleinen",
+    "start": 55.06,
+    "end": 55.42
+  },
+  {
+    "word": " Moment,",
+    "start": 55.42,
+    "end": 55.86
+  },
+  {
+    "word": " bitte.",
+    "start": 56.14,
+    "end": 56.28
+  },
+  {
+    "word": " Ach",
+    "start": 56.9,
+    "end": 57.12
+  },
+  {
+    "word": " so,",
+    "start": 57.12,
+    "end": 57.36
+  },
+  {
+    "word": " ja,",
+    "start": 57.52,
+    "end": 57.64
+  },
+  {
+    "word": " bitte,",
+    "start": 57.94,
+    "end": 58.2
+  },
+  {
+    "word": " ich",
+    "start": 58.46,
+    "end": 58.58
+  },
+  {
+    "word": " warte.",
+    "start": 58.58,
+    "end": 58.9
+  },
+  {
+    "word": " Schönen",
+    "start": 64.44,
+    "end": 64.96
+  },
+  {
+    "word": " guten",
+    "start": 64.96,
+    "end": 65.18
+  },
+  {
+    "word": " Tag,",
+    "start": 65.18,
+    "end": 65.6
+  },
+  {
+    "word": " Polenski",
+    "start": 65.86,
+    "end": 66.5
+  },
+  {
+    "word": " ist",
+    "start": 66.5,
+    "end": 66.7
+  },
+  {
+    "word": " mein",
+    "start": 66.7,
+    "end": 66.9
+  },
+  {
+    "word": " Name.",
+    "start": 66.9,
+    "end": 67.22
+  },
+  {
+    "word": " Was",
+    "start": 67.74,
+    "end": 67.88
+  },
+  {
+    "word": " kann",
+    "start": 67.88,
+    "end": 68.22
+  },
+  {
+    "word": " ich",
+    "start": 68.22,
+    "end": 68.34
+  },
+  {
+    "word": " für",
+    "start": 68.34,
+    "end": 68.5
+  },
+  {
+    "word": " Sie",
+    "start": 68.5,
+    "end": 68.62
+  },
+  {
+    "word": " tun?",
+    "start": 68.62,
+    "end": 68.82
+  },
+  {
+    "word": " Ja,",
+    "start": 69.66,
+    "end": 69.82
+  },
+  {
+    "word": " hallo,",
+    "start": 69.88,
+    "end": 70.08
+  },
+  {
+    "word": " mein",
+    "start": 70.24,
+    "end": 70.38
+  },
+  {
+    "word": " Name",
+    "start": 70.38,
+    "end": 70.76
+  },
+  {
+    "word": " ist",
+    "start": 70.76,
+    "end": 71.0
+  },
+  {
+    "word": " Seifert.",
+    "start": 71.0,
+    "end": 71.66
+  },
+  {
+    "word": " Ihr",
+    "start": 71.84,
+    "end": 71.96000000000001
+  },
+  {
+    "word": " Kollege",
+    "start": 71.94,
+    "end": 72.26
+  },
+  {
+    "word": " hat",
+    "start": 72.26,
+    "end": 72.6
+  },
+  {
+    "word": " mich",
+    "start": 72.6,
+    "end": 72.84
+  },
+  {
+    "word": " mit",
+    "start": 72.84,
+    "end": 73.12
+  },
+  {
+    "word": " Ihnen",
+    "start": 73.12,
+    "end": 73.28
+  },
+  {
+    "word": " verbunden,",
+    "start": 73.28,
+    "end": 73.94
+  },
+  {
+    "word": " da",
+    "start": 74.1,
+    "end": 74.22
+  },
+  {
+    "word": " ich",
+    "start": 74.18,
+    "end": 74.32
+  },
+  {
+    "word": " seit",
+    "start": 74.32,
+    "end": 74.54
+  },
+  {
+    "word": " gestern",
+    "start": 74.54,
+    "end": 75.1
+  },
+  {
+    "word": " Probleme",
+    "start": 75.1,
+    "end": 75.58
+  },
+  {
+    "word": " mit",
+    "start": 75.58,
+    "end": 75.88
+  },
+  {
+    "word": " meinem",
+    "start": 75.88,
+    "end": 76.16
+  },
+  {
+    "word": " Internet",
+    "start": 76.16,
+    "end": 76.6
+  },
+  {
+    "word": " habe.",
+    "start": 76.6,
+    "end": 77.14
+  },
+  {
+    "word": " Ja,",
+    "start": 77.78,
+    "end": 78.06
+  },
+  {
+    "word": " natürlich",
+    "start": 78.28,
+    "end": 78.9
+  },
+  {
+    "word": " helfe",
+    "start": 78.9,
+    "end": 79.24
+  },
+  {
+    "word": " ich",
+    "start": 79.24,
+    "end": 79.4
+  },
+  {
+    "word": " Ihnen",
+    "start": 79.4,
+    "end": 79.54
+  },
+  {
+    "word": " gern.",
+    "start": 79.54,
+    "end": 79.92
+  },
+  {
+    "word": " Haben",
+    "start": 80.34,
+    "end": 80.56
+  },
+  {
+    "word": " Sie",
+    "start": 80.56,
+    "end": 80.76
+  },
+  {
+    "word": " den",
+    "start": 80.76,
+    "end": 80.92
+  },
+  {
+    "word": " Router",
+    "start": 80.92,
+    "end": 81.16
+  },
+  {
+    "word": " schon",
+    "start": 81.16,
+    "end": 81.46
+  },
+  {
+    "word": " neu",
+    "start": 81.46,
+    "end": 81.86
+  },
+  {
+    "word": " gestartet?",
+    "start": 81.86,
+    "end": 82.4
+  },
+  {
+    "word": " Ja,",
+    "start": 83.04,
+    "end": 83.64
+  },
+  {
+    "word": " ja,",
+    "start": 83.9,
+    "end": 84.02000000000001
+  },
+  {
+    "word": " das",
+    "start": 84.2,
+    "end": 84.46
+  },
+  {
+    "word": " habe",
+    "start": 84.46,
+    "end": 84.62
+  },
+  {
+    "word": " ich",
+    "start": 84.62,
+    "end": 84.74000000000001
+  },
+  {
+    "word": " alles",
+    "start": 84.74,
+    "end": 85.04
+  },
+  {
+    "word": " schon",
+    "start": 85.04,
+    "end": 85.32
+  },
+  {
+    "word": " probiert.",
+    "start": 85.32,
+    "end": 85.84
+  },
+  {
+    "word": " Es",
+    "start": 86.08,
+    "end": 86.22
+  },
+  {
+    "word": " funktioniert",
+    "start": 86.22,
+    "end": 86.78
+  },
+  {
+    "word": " aber",
+    "start": 86.78,
+    "end": 87.26
+  },
+  {
+    "word": " nicht.",
+    "start": 87.26,
+    "end": 87.56
+  },
+  {
+    "word": " Es",
+    "start": 88.02,
+    "end": 88.18
+  },
+  {
+    "word": " kann",
+    "start": 88.18,
+    "end": 88.36
+  },
+  {
+    "word": " keine",
+    "start": 88.36,
+    "end": 88.72
+  },
+  {
+    "word": " Verbindung",
+    "start": 88.72,
+    "end": 89.34
+  },
+  {
+    "word": " hergestellt",
+    "start": 89.34,
+    "end": 89.96
+  },
+  {
+    "word": " werden.",
+    "start": 89.96,
+    "end": 90.46
+  },
+  {
+    "word": " Das",
+    "start": 90.98,
+    "end": 91.16
+  },
+  {
+    "word": " ist",
+    "start": 91.16,
+    "end": 91.3
+  },
+  {
+    "word": " schon",
+    "start": 91.3,
+    "end": 91.58
+  },
+  {
+    "word": " das",
+    "start": 91.58,
+    "end": 91.86
+  },
+  {
+    "word": " zweite",
+    "start": 91.86,
+    "end": 92.32
+  },
+  {
+    "word": " Mal",
+    "start": 92.32,
+    "end": 92.86
+  },
+  {
+    "word": " diesen",
+    "start": 92.86,
+    "end": 93.3
+  },
+  {
+    "word": " Monat,",
+    "start": 93.3,
+    "end": 93.72
+  },
+  {
+    "word": " dass",
+    "start": 93.76,
+    "end": 93.88000000000001
+  },
+  {
+    "word": " ich",
+    "start": 93.84,
+    "end": 94.02
+  },
+  {
+    "word": " Probleme",
+    "start": 94.02,
+    "end": 94.42
+  },
+  {
+    "word": " mit",
+    "start": 94.42,
+    "end": 94.7
+  },
+  {
+    "word": " meinem",
+    "start": 94.7,
+    "end": 94.98
+  },
+  {
+    "word": " Internet",
+    "start": 94.98,
+    "end": 95.4
+  },
+  {
+    "word": " habe.",
+    "start": 95.4,
+    "end": 95.84
+  },
+  {
+    "word": " Echt",
+    "start": 96.34,
+    "end": 96.66
+  },
+  {
+    "word": " frustrierend.",
+    "start": 96.66,
+    "end": 97.62
+  },
+  {
+    "word": " Ich",
+    "start": 98.04,
+    "end": 98.16000000000001
+  },
+  {
+    "word": " brauche",
+    "start": 98.16,
+    "end": 98.54
+  },
+  {
+    "word": " das",
+    "start": 98.54,
+    "end": 98.76
+  },
+  {
+    "word": " Internet",
+    "start": 98.76,
+    "end": 99.24
+  },
+  {
+    "word": " für",
+    "start": 99.24,
+    "end": 99.48
+  },
+  {
+    "word": " meine",
+    "start": 99.48,
+    "end": 99.7
+  },
+  {
+    "word": " Arbeit.",
+    "start": 99.7,
+    "end": 100.22
+  },
+  {
+    "word": " Frau",
+    "start": 100.82,
+    "end": 101.1
+  },
+  {
+    "word": " Seifert,",
+    "start": 101.1,
+    "end": 101.56
+  },
+  {
+    "word": " ich",
+    "start": 101.68,
+    "end": 101.80000000000001
+  },
+  {
+    "word": " verstehe",
+    "start": 101.76,
+    "end": 102.3
+  },
+  {
+    "word": " Ihre",
+    "start": 102.3,
+    "end": 102.54
+  },
+  {
+    "word": " Frustration.",
+    "start": 102.54,
+    "end": 103.18
+  },
+  {
+    "word": " Ich",
+    "start": 103.52,
+    "end": 103.64
+  },
+  {
+    "word": " werde",
+    "start": 103.64,
+    "end": 103.94
+  },
+  {
+    "word": " versuchen,",
+    "start": 103.94,
+    "end": 104.38
+  },
+  {
+    "word": " eine",
+    "start": 104.58,
+    "end": 104.74
+  },
+  {
+    "word": " Lösung",
+    "start": 104.74,
+    "end": 105.14
+  },
+  {
+    "word": " für",
+    "start": 105.14,
+    "end": 105.48
+  },
+  {
+    "word": " Sie",
+    "start": 105.48,
+    "end": 105.60000000000001
+  },
+  {
+    "word": " zu",
+    "start": 105.6,
+    "end": 105.84
+  },
+  {
+    "word": " finden.",
+    "start": 105.84,
+    "end": 106.12
+  },
+  {
+    "word": " Könnten",
+    "start": 106.66,
+    "end": 106.92
+  },
+  {
+    "word": " Sie",
+    "start": 106.92,
+    "end": 107.14
+  },
+  {
+    "word": " mir",
+    "start": 107.14,
+    "end": 107.28
+  },
+  {
+    "word": " Ihre",
+    "start": 107.28,
+    "end": 107.58
+  },
+  {
+    "word": " Kundennummer",
+    "start": 107.58,
+    "end": 108.34
+  },
+  {
+    "word": " nennen?",
+    "start": 108.34,
+    "end": 108.7
+  },
+  {
+    "word": " Dann",
+    "start": 109.02,
+    "end": 109.16
+  },
+  {
+    "word": " kann",
+    "start": 109.16,
+    "end": 109.5
+  },
+  {
+    "word": " ich",
+    "start": 109.5,
+    "end": 109.66
+  },
+  {
+    "word": " im",
+    "start": 109.66,
+    "end": 109.8
+  },
+  {
+    "word": " System",
+    "start": 109.8,
+    "end": 110.2
+  },
+  {
+    "word": " nachschauen.",
+    "start": 110.2,
+    "end": 110.88
+  },
+  {
+    "word": " Ja,",
+    "start": 110.88,
+    "end": 111.6
+  },
+  {
+    "word": " natürlich.",
+    "start": 111.72,
+    "end": 112.1
+  },
+  {
+    "word": " Das",
+    "start": 113.08,
+    "end": 113.58
+  },
+  {
+    "word": " ist",
+    "start": 113.58,
+    "end": 113.98
+  },
+  {
+    "word": " die",
+    "start": 113.98,
+    "end": 114.42
+  },
+  {
+    "word": " CT",
+    "start": 114.42,
+    "end": 115.88
+  },
+  {
+    "word": " 5367487.",
+    "start": 115.88,
+    "end": 122.24
+  },
+  {
+    "word": " Das",
+    "start": 122.52,
+    "end": 122.8
+  },
+  {
+    "word": " ist",
+    "start": 122.8,
+    "end": 123.0
+  },
+  {
+    "word": " Ihre",
+    "start": 123.0,
+    "end": 123.26
+  },
+  {
+    "word": " Vertragsnummer.",
+    "start": 123.26,
+    "end": 124.26
+  },
+  {
+    "word": " Ich",
+    "start": 124.48,
+    "end": 124.60000000000001
+  },
+  {
+    "word": " brauche",
+    "start": 124.6,
+    "end": 125.04
+  },
+  {
+    "word": " aber",
+    "start": 125.04,
+    "end": 125.26
+  },
+  {
+    "word": " Ihre",
+    "start": 125.26,
+    "end": 125.52
+  },
+  {
+    "word": " Kundennummer.",
+    "start": 125.52,
+    "end": 126.24
+  },
+  {
+    "word": " Die",
+    "start": 126.76,
+    "end": 126.88000000000001
+  },
+  {
+    "word": " Kundennummer",
+    "start": 126.84,
+    "end": 127.48
+  },
+  {
+    "word": " besteht",
+    "start": 127.48,
+    "end": 127.76
+  },
+  {
+    "word": " aus",
+    "start": 127.76,
+    "end": 128.06
+  },
+  {
+    "word": " acht",
+    "start": 128.06,
+    "end": 128.44
+  },
+  {
+    "word": " Zahlen",
+    "start": 128.44,
+    "end": 128.98
+  },
+  {
+    "word": " ohne",
+    "start": 128.98,
+    "end": 129.44
+  },
+  {
+    "word": " Buchstaben.",
+    "start": 129.44,
+    "end": 130.06
+  },
+  {
+    "word": " Ach",
+    "start": 130.86,
+    "end": 131.14
+  },
+  {
+    "word": " so,",
+    "start": 131.14,
+    "end": 131.52
+  },
+  {
+    "word": " jetzt",
+    "start": 131.7,
+    "end": 131.82
+  },
+  {
+    "word": " sehe",
+    "start": 131.82,
+    "end": 132.28
+  },
+  {
+    "word": " ich",
+    "start": 132.28,
+    "end": 132.44
+  },
+  {
+    "word": " Sie.",
+    "start": 132.44,
+    "end": 132.64
+  },
+  {
+    "word": " Das",
+    "start": 133.24,
+    "end": 133.38
+  },
+  {
+    "word": " ist",
+    "start": 133.38,
+    "end": 133.64
+  },
+  {
+    "word": " die",
+    "start": 133.64,
+    "end": 133.94
+  },
+  {
+    "word": " 76890354.",
+    "start": 133.94,
+    "end": 138.88
+  },
+  {
+    "word": " Vielen",
+    "start": 139.76,
+    "end": 140.18
+  },
+  {
+    "word": " Dank,",
+    "start": 140.18,
+    "end": 140.6
+  },
+  {
+    "word": " richtig.",
+    "start": 140.94,
+    "end": 141.2
+  },
+  {
+    "word": " Zum",
+    "start": 141.82,
+    "end": 141.96
+  },
+  {
+    "word": " Abgleich",
+    "start": 141.96,
+    "end": 142.48
+  },
+  {
+    "word": " der",
+    "start": 142.48,
+    "end": 142.7
+  },
+  {
+    "word": " Daten",
+    "start": 142.7,
+    "end": 143.22
+  },
+  {
+    "word": " brauche",
+    "start": 143.22,
+    "end": 143.64
+  },
+  {
+    "word": " ich",
+    "start": 143.64,
+    "end": 143.78
+  },
+  {
+    "word": " bitte",
+    "start": 143.78,
+    "end": 143.92
+  },
+  {
+    "word": " einmal",
+    "start": 143.92,
+    "end": 144.24
+  },
+  {
+    "word": " Ihren",
+    "start": 144.24,
+    "end": 144.52
+  },
+  {
+    "word": " vollen",
+    "start": 144.52,
+    "end": 144.92
+  },
+  {
+    "word": " Namen,",
+    "start": 144.92,
+    "end": 145.2
+  },
+  {
+    "word": " Ihre",
+    "start": 145.42,
+    "end": 145.6
+  },
+  {
+    "word": " Anschrift",
+    "start": 145.6,
+    "end": 146.2
+  },
+  {
+    "word": " und",
+    "start": 146.2,
+    "end": 146.44
+  },
+  {
+    "word": " Ihre",
+    "start": 146.44,
+    "end": 146.88
+  },
+  {
+    "word": " E",
+    "start": 146.88,
+    "end": 147.3
+  },
+  {
+    "word": "-Mail",
+    "start": 147.3,
+    "end": 147.42000000000002
+  },
+  {
+    "word": "-Adresse.",
+    "start": 147.42,
+    "end": 147.8
+  },
+  {
+    "word": " Mein",
+    "start": 148.32,
+    "end": 148.56
+  },
+  {
+    "word": " Name",
+    "start": 148.56,
+    "end": 148.86
+  },
+  {
+    "word": " ist",
+    "start": 148.86,
+    "end": 149.14
+  },
+  {
+    "word": " Sabine",
+    "start": 149.14,
+    "end": 149.64
+  },
+  {
+    "word": " Seifert.",
+    "start": 149.64,
+    "end": 150.3
+  },
+  {
+    "word": " Meine",
+    "start": 150.74,
+    "end": 150.92
+  },
+  {
+    "word": " Anschrift",
+    "start": 150.92,
+    "end": 151.58
+  },
+  {
+    "word": " lautet",
+    "start": 151.58,
+    "end": 152.12
+  },
+  {
+    "word": " Alte",
+    "start": 152.12,
+    "end": 152.82
+  },
+  {
+    "word": " Frankfurter",
+    "start": 152.82,
+    "end": 153.54
+  },
+  {
+    "word": " Straße",
+    "start": 153.54,
+    "end": 153.9
+  },
+  {
+    "word": " 10",
+    "start": 153.9,
+    "end": 154.52
+  },
+  {
+    "word": " in",
+    "start": 154.52,
+    "end": 155.08
+  },
+  {
+    "word": " 57627",
+    "start": 155.08,
+    "end": 157.5
+  },
+  {
+    "word": " Hachenburg.",
+    "start": 157.5,
+    "end": 158.86
+  },
+  {
+    "word": " Und",
+    "start": 159.32,
+    "end": 159.52
+  },
+  {
+    "word": " meine",
+    "start": 159.52,
+    "end": 159.84
+  },
+  {
+    "word": " E",
+    "start": 159.84,
+    "end": 160.12
+  },
+  {
+    "word": "-Mail",
+    "start": 160.12,
+    "end": 160.24
+  },
+  {
+    "word": "-Adresse",
+    "start": 160.2,
+    "end": 160.7
+  },
+  {
+    "word": " ist",
+    "start": 160.7,
+    "end": 161.1
+  },
+  {
+    "word": " sabine",
+    "start": 161.1,
+    "end": 161.92
+  },
+  {
+    "word": ".esathotmail",
+    "start": 161.92,
+    "end": 163.96
+  },
+  {
+    "word": ".com.",
+    "start": 163.96,
+    "end": 164.64
+  },
+  {
+    "word": " Ja,",
+    "start": 164.64,
+    "end": 164.96
+  },
+  {
+    "word": " wunderbar.",
+    "start": 165.22,
+    "end": 165.76
+  },
+  {
+    "word": " Und",
+    "start": 165.86,
+    "end": 166.04
+  },
+  {
+    "word": " Ihr",
+    "start": 166.04,
+    "end": 166.24
+  },
+  {
+    "word": " Geburtsdatum",
+    "start": 166.24,
+    "end": 167.14
+  },
+  {
+    "word": " ist?",
+    "start": 167.14,
+    "end": 167.38
+  },
+  {
+    "word": " Das",
+    "start": 167.9,
+    "end": 168.18
+  },
+  {
+    "word": " ist",
+    "start": 168.18,
+    "end": 168.36
+  },
+  {
+    "word": " der",
+    "start": 168.36,
+    "end": 168.56
+  },
+  {
+    "word": " 7",
+    "start": 168.56,
+    "end": 168.84
+  },
+  {
+    "word": ".9",
+    "start": 168.84,
+    "end": 169.4
+  },
+  {
+    "word": ".1990.",
+    "start": 169.4,
+    "end": 170.98
+  },
+  {
+    "word": " Alles",
+    "start": 171.28,
+    "end": 171.58
+  },
+  {
+    "word": " klar,",
+    "start": 171.58,
+    "end": 171.88
+  },
+  {
+    "word": " Frau",
+    "start": 172.02,
+    "end": 172.14000000000001
+  },
+  {
+    "word": " Seifert.",
+    "start": 172.12,
+    "end": 172.64
+  },
+  {
+    "word": " Ich",
+    "start": 173.0,
+    "end": 173.16
+  },
+  {
+    "word": " schaue",
+    "start": 173.16,
+    "end": 173.52
+  },
+  {
+    "word": " jetzt",
+    "start": 173.52,
+    "end": 173.76
+  },
+  {
+    "word": " im",
+    "start": 173.76,
+    "end": 174.08
+  },
+  {
+    "word": " System,",
+    "start": 174.08,
+    "end": 174.52
+  },
+  {
+    "word": " welches",
+    "start": 174.68,
+    "end": 174.96
+  },
+  {
+    "word": " Paket",
+    "start": 174.96,
+    "end": 175.5
+  },
+  {
+    "word": " Sie",
+    "start": 175.5,
+    "end": 175.64
+  },
+  {
+    "word": " gebucht",
+    "start": 175.64,
+    "end": 176.04
+  },
+  {
+    "word": " haben",
+    "start": 176.04,
+    "end": 176.48
+  },
+  {
+    "word": " und",
+    "start": 176.48,
+    "end": 176.94
+  },
+  {
+    "word": " ob",
+    "start": 176.94,
+    "end": 177.14
+  },
+  {
+    "word": " es",
+    "start": 177.14,
+    "end": 177.3
+  },
+  {
+    "word": " eventuell",
+    "start": 177.3,
+    "end": 177.86
+  },
+  {
+    "word": " eine",
+    "start": 177.86,
+    "end": 178.12
+  },
+  {
+    "word": " Problemmeldung",
+    "start": 178.12,
+    "end": 179.06
+  },
+  {
+    "word": " gibt.",
+    "start": 179.06,
+    "end": 179.28
+  },
+  {
+    "word": " Ich",
+    "start": 179.84,
+    "end": 180.26
+  },
+  {
+    "word": " habe",
+    "start": 180.26,
+    "end": 180.42
+  },
+  {
+    "word": " die",
+    "start": 180.42,
+    "end": 180.58
+  },
+  {
+    "word": " Internetflat",
+    "start": 180.58,
+    "end": 181.42
+  },
+  {
+    "word": " XL,",
+    "start": 181.42,
+    "end": 181.9
+  },
+  {
+    "word": " die",
+    "start": 182.32,
+    "end": 182.46
+  },
+  {
+    "word": " 32",
+    "start": 182.46,
+    "end": 183.16
+  },
+  {
+    "word": ",45",
+    "start": 183.16,
+    "end": 184.14
+  },
+  {
+    "word": " Euro",
+    "start": 184.14,
+    "end": 184.26
+  },
+  {
+    "word": " im",
+    "start": 184.14,
+    "end": 184.7
+  },
+  {
+    "word": " Monat",
+    "start": 184.7,
+    "end": 185.08
+  },
+  {
+    "word": " kostet.",
+    "start": 185.08,
+    "end": 185.66
+  },
+  {
+    "word": " Das",
+    "start": 186.02,
+    "end": 186.18
+  },
+  {
+    "word": " ist",
+    "start": 186.18,
+    "end": 186.34
+  },
+  {
+    "word": " die",
+    "start": 186.34,
+    "end": 186.5
+  },
+  {
+    "word": " High",
+    "start": 186.5,
+    "end": 186.8
+  },
+  {
+    "word": "-Speed",
+    "start": 186.8,
+    "end": 187.28
+  },
+  {
+    "word": " Internetflat.",
+    "start": 187.28,
+    "end": 188.12
+  },
+  {
+    "word": " Genau,",
+    "start": 188.12,
+    "end": 188.68
+  },
+  {
+    "word": " richtig.",
+    "start": 188.9,
+    "end": 189.14
+  },
+  {
+    "word": " Also",
+    "start": 189.82,
+    "end": 190.14
+  },
+  {
+    "word": " ich",
+    "start": 190.14,
+    "end": 190.42
+  },
+  {
+    "word": " sehe",
+    "start": 190.42,
+    "end": 190.88
+  },
+  {
+    "word": " im",
+    "start": 190.88,
+    "end": 191.16
+  },
+  {
+    "word": " System,",
+    "start": 191.16,
+    "end": 191.8
+  },
+  {
+    "word": " dass",
+    "start": 192.08,
+    "end": 192.24
+  },
+  {
+    "word": " es",
+    "start": 192.24,
+    "end": 192.42
+  },
+  {
+    "word": " in",
+    "start": 192.42,
+    "end": 192.58
+  },
+  {
+    "word": " Ihrer",
+    "start": 192.58,
+    "end": 192.8
+  },
+  {
+    "word": " Gegend",
+    "start": 192.8,
+    "end": 193.28
+  },
+  {
+    "word": " eine",
+    "start": 193.28,
+    "end": 193.54
+  },
+  {
+    "word": " technische",
+    "start": 193.54,
+    "end": 194.14
+  },
+  {
+    "word": " Störung",
+    "start": 194.14,
+    "end": 194.6
+  },
+  {
+    "word": " gibt.",
+    "start": 194.6,
+    "end": 194.96
+  },
+  {
+    "word": " Aus",
+    "start": 195.34,
+    "end": 195.54
+  },
+  {
+    "word": " diesem",
+    "start": 195.54,
+    "end": 195.86
+  },
+  {
+    "word": " Grund",
+    "start": 195.86,
+    "end": 196.24
+  },
+  {
+    "word": " läuft",
+    "start": 196.24,
+    "end": 196.68
+  },
+  {
+    "word": " Ihr",
+    "start": 196.68,
+    "end": 196.88
+  },
+  {
+    "word": " Internet",
+    "start": 196.88,
+    "end": 197.24
+  },
+  {
+    "word": " gerade",
+    "start": 197.24,
+    "end": 197.6
+  },
+  {
+    "word": " so",
+    "start": 197.6,
+    "end": 197.88
+  },
+  {
+    "word": " langsam.",
+    "start": 197.88,
+    "end": 198.26
+  },
+  {
+    "word": " Wir",
+    "start": 198.76,
+    "end": 199.0
+  },
+  {
+    "word": " können",
+    "start": 199.0,
+    "end": 199.36
+  },
+  {
+    "word": " Ihnen",
+    "start": 199.36,
+    "end": 199.64
+  },
+  {
+    "word": " anbieten,",
+    "start": 199.64,
+    "end": 200.38
+  },
+  {
+    "word": " dass",
+    "start": 200.8,
+    "end": 200.94
+  },
+  {
+    "word": " wir",
+    "start": 200.94,
+    "end": 201.14
+  },
+  {
+    "word": " Ihnen",
+    "start": 201.14,
+    "end": 201.38
+  },
+  {
+    "word": " in",
+    "start": 201.38,
+    "end": 201.62
+  },
+  {
+    "word": " ein",
+    "start": 201.62,
+    "end": 201.78
+  },
+  {
+    "word": " paar",
+    "start": 201.78,
+    "end": 202.1
+  },
+  {
+    "word": " Tagen",
+    "start": 202.1,
+    "end": 202.5
+  },
+  {
+    "word": " einen",
+    "start": 202.5,
+    "end": 202.8
+  },
+  {
+    "word": " Techniker",
+    "start": 202.8,
+    "end": 203.46
+  },
+  {
+    "word": " vorbeischicken,",
+    "start": 203.46,
+    "end": 204.18
+  },
+  {
+    "word": " damit",
+    "start": 204.48,
+    "end": 204.78
+  },
+  {
+    "word": " er",
+    "start": 204.78,
+    "end": 205.0
+  },
+  {
+    "word": " sich",
+    "start": 205.0,
+    "end": 205.16
+  },
+  {
+    "word": " das",
+    "start": 205.16,
+    "end": 205.4
+  },
+  {
+    "word": " Problem",
+    "start": 205.4,
+    "end": 205.78
+  },
+  {
+    "word": " mal",
+    "start": 205.78,
+    "end": 206.02
+  },
+  {
+    "word": " anschaut.",
+    "start": 206.02,
+    "end": 206.5
+  },
+  {
+    "word": " In",
+    "start": 206.5,
+    "end": 207.14
+  },
+  {
+    "word": " ein",
+    "start": 207.14,
+    "end": 207.28
+  },
+  {
+    "word": " paar",
+    "start": 207.28,
+    "end": 207.64
+  },
+  {
+    "word": " Tagen,",
+    "start": 207.64,
+    "end": 208.22
+  },
+  {
+    "word": " ich",
+    "start": 208.56,
+    "end": 208.72
+  },
+  {
+    "word": " kann",
+    "start": 208.72,
+    "end": 208.96
+  },
+  {
+    "word": " nicht",
+    "start": 208.96,
+    "end": 209.3
+  },
+  {
+    "word": " ein",
+    "start": 209.3,
+    "end": 209.58
+  },
+  {
+    "word": " paar",
+    "start": 209.58,
+    "end": 210.02
+  },
+  {
+    "word": " Tage",
+    "start": 210.02,
+    "end": 210.5
+  },
+  {
+    "word": " auf",
+    "start": 210.5,
+    "end": 210.78
+  },
+  {
+    "word": " mein",
+    "start": 210.78,
+    "end": 210.98
+  },
+  {
+    "word": " Internet",
+    "start": 210.98,
+    "end": 211.4
+  },
+  {
+    "word": " warten.",
+    "start": 211.4,
+    "end": 211.9
+  },
+  {
+    "word": " Ich",
+    "start": 212.38,
+    "end": 212.5
+  },
+  {
+    "word": " mache",
+    "start": 212.5,
+    "end": 212.72
+  },
+  {
+    "word": " Homeoffice",
+    "start": 212.72,
+    "end": 213.56
+  },
+  {
+    "word": " und",
+    "start": 213.56,
+    "end": 213.7
+  },
+  {
+    "word": " ich",
+    "start": 213.7,
+    "end": 213.84
+  },
+  {
+    "word": " brauche",
+    "start": 213.84,
+    "end": 214.14
+  },
+  {
+    "word": " gutes",
+    "start": 214.14,
+    "end": 214.6
+  },
+  {
+    "word": " und",
+    "start": 214.6,
+    "end": 214.88
+  },
+  {
+    "word": " schnelles",
+    "start": 214.88,
+    "end": 215.38
+  },
+  {
+    "word": " Internet.",
+    "start": 215.38,
+    "end": 215.8
+  },
+  {
+    "word": " Sonst",
+    "start": 216.24,
+    "end": 216.54
+  },
+  {
+    "word": " kann",
+    "start": 216.54,
+    "end": 216.86
+  },
+  {
+    "word": " ich",
+    "start": 216.86,
+    "end": 217.0
+  },
+  {
+    "word": " nicht",
+    "start": 217.0,
+    "end": 217.16
+  },
+  {
+    "word": " arbeiten.",
+    "start": 217.16,
+    "end": 217.74
+  },
+  {
+    "word": " Ich",
+    "start": 218.28,
+    "end": 218.48
+  },
+  {
+    "word": " verstehe",
+    "start": 218.48,
+    "end": 219.12
+  },
+  {
+    "word": " Sie,",
+    "start": 219.12,
+    "end": 219.32
+  },
+  {
+    "word": " aber",
+    "start": 219.52,
+    "end": 219.64000000000001
+  },
+  {
+    "word": " wir",
+    "start": 219.64,
+    "end": 219.94
+  },
+  {
+    "word": " können",
+    "start": 219.94,
+    "end": 220.26
+  },
+  {
+    "word": " aktuell",
+    "start": 220.26,
+    "end": 220.74
+  },
+  {
+    "word": " leider",
+    "start": 220.74,
+    "end": 221.16
+  },
+  {
+    "word": " nichts",
+    "start": 221.16,
+    "end": 221.54
+  },
+  {
+    "word": " machen.",
+    "start": 221.54,
+    "end": 222.0
+  },
+  {
+    "word": " Unsere",
+    "start": 222.46,
+    "end": 222.72
+  },
+  {
+    "word": " Techniker",
+    "start": 222.72,
+    "end": 223.22
+  },
+  {
+    "word": " sind",
+    "start": 223.22,
+    "end": 223.5
+  },
+  {
+    "word": " komplett",
+    "start": 223.5,
+    "end": 224.18
+  },
+  {
+    "word": " ausgebucht.",
+    "start": 224.18,
+    "end": 225.08
+  },
+  {
+    "word": " Sie",
+    "start": 225.58,
+    "end": 225.74
+  },
+  {
+    "word": " müssen",
+    "start": 225.74,
+    "end": 226.04
+  },
+  {
+    "word": " ein",
+    "start": 226.04,
+    "end": 226.28
+  },
+  {
+    "word": " bisschen",
+    "start": 226.28,
+    "end": 226.64
+  },
+  {
+    "word": " geduldig",
+    "start": 226.64,
+    "end": 227.3
+  },
+  {
+    "word": " sein.",
+    "start": 227.3,
+    "end": 227.6
+  },
+  {
+    "word": " Wie",
+    "start": 228.1,
+    "end": 228.42
+  },
+  {
+    "word": " kann",
+    "start": 228.42,
+    "end": 228.68
+  },
+  {
+    "word": " es",
+    "start": 228.68,
+    "end": 228.82
+  },
+  {
+    "word": " sein,",
+    "start": 228.82,
+    "end": 229.24
+  },
+  {
+    "word": " dass",
+    "start": 229.4,
+    "end": 229.52
+  },
+  {
+    "word": " Sie",
+    "start": 229.52,
+    "end": 229.68
+  },
+  {
+    "word": " keine",
+    "start": 229.68,
+    "end": 230.06
+  },
+  {
+    "word": " andere",
+    "start": 230.06,
+    "end": 230.5
+  },
+  {
+    "word": " Lösung",
+    "start": 230.5,
+    "end": 230.96
+  },
+  {
+    "word": " für",
+    "start": 230.96,
+    "end": 231.26
+  },
+  {
+    "word": " mich",
+    "start": 231.26,
+    "end": 231.44
+  },
+  {
+    "word": " haben?",
+    "start": 231.44,
+    "end": 231.82
+  },
+  {
+    "word": " Das",
+    "start": 231.82,
+    "end": 232.48
+  },
+  {
+    "word": " ist",
+    "start": 232.48,
+    "end": 232.62
+  },
+  {
+    "word": " schon",
+    "start": 232.62,
+    "end": 232.84
+  },
+  {
+    "word": " das",
+    "start": 232.84,
+    "end": 233.04
+  },
+  {
+    "word": " zweite",
+    "start": 233.04,
+    "end": 233.6
+  },
+  {
+    "word": " Mal",
+    "start": 233.6,
+    "end": 234.02
+  },
+  {
+    "word": " in",
+    "start": 234.02,
+    "end": 234.24
+  },
+  {
+    "word": " diesem",
+    "start": 234.24,
+    "end": 234.44
+  },
+  {
+    "word": " Monat,",
+    "start": 234.44,
+    "end": 234.92
+  },
+  {
+    "word": " dass",
+    "start": 235.02,
+    "end": 235.14000000000001
+  },
+  {
+    "word": " das",
+    "start": 235.14,
+    "end": 235.36
+  },
+  {
+    "word": " passiert.",
+    "start": 235.36,
+    "end": 235.88
+  },
+  {
+    "word": " Ich",
+    "start": 236.48,
+    "end": 236.62
+  },
+  {
+    "word": " könnte",
+    "start": 236.62,
+    "end": 236.92
+  },
+  {
+    "word": " meinen",
+    "start": 236.92,
+    "end": 237.2
+  },
+  {
+    "word": " Job",
+    "start": 237.2,
+    "end": 237.52
+  },
+  {
+    "word": " verlieren,",
+    "start": 237.52,
+    "end": 238.14
+  },
+  {
+    "word": " wenn",
+    "start": 238.28,
+    "end": 238.4
+  },
+  {
+    "word": " keine",
+    "start": 238.34,
+    "end": 238.66
+  },
+  {
+    "word": " schnelle",
+    "start": 238.66,
+    "end": 239.04
+  },
+  {
+    "word": " Lösung",
+    "start": 239.04,
+    "end": 239.38
+  },
+  {
+    "word": " gefunden",
+    "start": 239.38,
+    "end": 239.76
+  },
+  {
+    "word": " wird.",
+    "start": 239.76,
+    "end": 240.44
+  },
+  {
+    "word": " Wir",
+    "start": 240.98,
+    "end": 241.36
+  },
+  {
+    "word": " können",
+    "start": 241.36,
+    "end": 241.74
+  },
+  {
+    "word": " Ihnen",
+    "start": 241.74,
+    "end": 242.06
+  },
+  {
+    "word": " gerne",
+    "start": 242.06,
+    "end": 242.48
+  },
+  {
+    "word": " die",
+    "start": 242.48,
+    "end": 242.72
+  },
+  {
+    "word": " Internetkosten",
+    "start": 242.72,
+    "end": 243.5
+  },
+  {
+    "word": " für",
+    "start": 243.5,
+    "end": 243.74
+  },
+  {
+    "word": " diesen",
+    "start": 243.74,
+    "end": 243.96
+  },
+  {
+    "word": " Monat",
+    "start": 243.96,
+    "end": 244.38
+  },
+  {
+    "word": " erstatten.",
+    "start": 244.38,
+    "end": 244.84
+  },
+  {
+    "word": " Wäre",
+    "start": 245.26,
+    "end": 245.56
+  },
+  {
+    "word": " das",
+    "start": 245.56,
+    "end": 245.8
+  },
+  {
+    "word": " eine",
+    "start": 245.8,
+    "end": 246.04
+  },
+  {
+    "word": " Lösung?",
+    "start": 246.04,
+    "end": 246.46
+  },
+  {
+    "word": " Das",
+    "start": 247.18,
+    "end": 247.4
+  },
+  {
+    "word": " ist",
+    "start": 247.4,
+    "end": 247.6
+  },
+  {
+    "word": " zwar",
+    "start": 247.6,
+    "end": 247.84
+  },
+  {
+    "word": " nett",
+    "start": 247.84,
+    "end": 248.08
+  },
+  {
+    "word": " von",
+    "start": 248.08,
+    "end": 248.36
+  },
+  {
+    "word": " Ihnen,",
+    "start": 248.36,
+    "end": 248.62
+  },
+  {
+    "word": " löst",
+    "start": 248.92,
+    "end": 249.16
+  },
+  {
+    "word": " aber",
+    "start": 249.16,
+    "end": 249.4
+  },
+  {
+    "word": " mein",
+    "start": 249.4,
+    "end": 249.64
+  },
+  {
+    "word": " Problem",
+    "start": 249.64,
+    "end": 250.04
+  },
+  {
+    "word": " nicht.",
+    "start": 250.04,
+    "end": 250.42
+  },
+  {
+    "word": " Ich",
+    "start": 250.7,
+    "end": 250.82
+  },
+  {
+    "word": " brauche",
+    "start": 250.82,
+    "end": 251.14
+  },
+  {
+    "word": " eine",
+    "start": 251.14,
+    "end": 251.36
+  },
+  {
+    "word": " technische",
+    "start": 251.36,
+    "end": 252.02
+  },
+  {
+    "word": " Lösung,",
+    "start": 252.02,
+    "end": 252.44
+  },
+  {
+    "word": " und",
+    "start": 252.66,
+    "end": 252.78
+  },
+  {
+    "word": " zwar",
+    "start": 252.7,
+    "end": 252.94
+  },
+  {
+    "word": " so",
+    "start": 252.94,
+    "end": 253.16
+  },
+  {
+    "word": " schnell",
+    "start": 253.16,
+    "end": 253.6
+  },
+  {
+    "word": " wie",
+    "start": 253.6,
+    "end": 253.86
+  },
+  {
+    "word": " möglich.",
+    "start": 253.86,
+    "end": 254.34
+  },
+  {
+    "word": " Ich",
+    "start": 254.34,
+    "end": 255.02
+  },
+  {
+    "word": " verstehe",
+    "start": 255.02,
+    "end": 255.64
+  },
+  {
+    "word": " Ihren",
+    "start": 255.64,
+    "end": 255.98
+  },
+  {
+    "word": " Standpunkt.",
+    "start": 255.98,
+    "end": 256.66
+  },
+  {
+    "word": " Ich",
+    "start": 257.24,
+    "end": 257.48
+  },
+  {
+    "word": " habe",
+    "start": 257.48,
+    "end": 257.92
+  },
+  {
+    "word": " eine",
+    "start": 257.92,
+    "end": 258.26
+  },
+  {
+    "word": " andere",
+    "start": 258.26,
+    "end": 258.62
+  },
+  {
+    "word": " Idee.",
+    "start": 258.62,
+    "end": 259.0
+  },
+  {
+    "word": " Eventuell",
+    "start": 259.42,
+    "end": 260.06
+  },
+  {
+    "word": " könnten",
+    "start": 260.06,
+    "end": 260.34
+  },
+  {
+    "word": " Sie",
+    "start": 260.34,
+    "end": 260.66
+  },
+  {
+    "word": " auch",
+    "start": 260.66,
+    "end": 260.82
+  },
+  {
+    "word": " Ihren",
+    "start": 260.82,
+    "end": 261.16
+  },
+  {
+    "word": " Router",
+    "start": 261.16,
+    "end": 261.46
+  },
+  {
+    "word": " neu",
+    "start": 261.46,
+    "end": 262.0
+  },
+  {
+    "word": " konfigurieren.",
+    "start": 262.0,
+    "end": 262.92
+  },
+  {
+    "word": " Bei",
+    "start": 263.3,
+    "end": 263.46
+  },
+  {
+    "word": " vielen",
+    "start": 263.46,
+    "end": 263.94
+  },
+  {
+    "word": " Kunden",
+    "start": 263.94,
+    "end": 264.34
+  },
+  {
+    "word": " hat",
+    "start": 264.34,
+    "end": 264.7
+  },
+  {
+    "word": " dies",
+    "start": 264.7,
+    "end": 264.98
+  },
+  {
+    "word": " schon",
+    "start": 264.98,
+    "end": 265.24
+  },
+  {
+    "word": " geholfen.",
+    "start": 265.24,
+    "end": 265.76
+  },
+  {
+    "word": " Das",
+    "start": 266.44,
+    "end": 266.66
+  },
+  {
+    "word": " wäre",
+    "start": 266.66,
+    "end": 266.92
+  },
+  {
+    "word": " eine",
+    "start": 266.92,
+    "end": 267.3
+  },
+  {
+    "word": " Idee.",
+    "start": 267.3,
+    "end": 267.64
+  },
+  {
+    "word": " Was",
+    "start": 268.14,
+    "end": 268.28
+  },
+  {
+    "word": " muss",
+    "start": 268.28,
+    "end": 268.48
+  },
+  {
+    "word": " ich",
+    "start": 268.48,
+    "end": 268.66
+  },
+  {
+    "word": " denn",
+    "start": 268.66,
+    "end": 268.84
+  },
+  {
+    "word": " machen,",
+    "start": 268.84,
+    "end": 269.16
+  },
+  {
+    "word": " um",
+    "start": 269.36,
+    "end": 269.54
+  },
+  {
+    "word": " meinen",
+    "start": 269.54,
+    "end": 269.76
+  },
+  {
+    "word": " Router",
+    "start": 269.76,
+    "end": 270.12
+  },
+  {
+    "word": " neu",
+    "start": 270.12,
+    "end": 270.48
+  },
+  {
+    "word": " zu",
+    "start": 270.48,
+    "end": 270.72
+  },
+  {
+    "word": " konfigurieren?",
+    "start": 270.72,
+    "end": 271.62
+  },
+  {
+    "word": " Bitte",
+    "start": 272.04,
+    "end": 272.3
+  },
+  {
+    "word": " drücken",
+    "start": 272.3,
+    "end": 272.76
+  },
+  {
+    "word": " Sie",
+    "start": 272.76,
+    "end": 273.0
+  },
+  {
+    "word": " einfach",
+    "start": 273.0,
+    "end": 273.48
+  },
+  {
+    "word": " auf",
+    "start": 273.48,
+    "end": 273.8
+  },
+  {
+    "word": " den",
+    "start": 273.8,
+    "end": 274.0
+  },
+  {
+    "word": " gelben",
+    "start": 274.0,
+    "end": 274.64
+  },
+  {
+    "word": " Knopf",
+    "start": 274.64,
+    "end": 275.1
+  },
+  {
+    "word": " auf",
+    "start": 275.1,
+    "end": 275.42
+  },
+  {
+    "word": " der",
+    "start": 275.42,
+    "end": 275.58
+  },
+  {
+    "word": " Rückseite",
+    "start": 275.58,
+    "end": 276.18
+  },
+  {
+    "word": " des",
+    "start": 276.18,
+    "end": 276.4
+  },
+  {
+    "word": " Routers",
+    "start": 276.4,
+    "end": 276.86
+  },
+  {
+    "word": " und",
+    "start": 276.86,
+    "end": 277.7
+  },
+  {
+    "word": " halten",
+    "start": 277.7,
+    "end": 278.18
+  },
+  {
+    "word": " Sie",
+    "start": 278.18,
+    "end": 278.54
+  },
+  {
+    "word": " ihn",
+    "start": 278.54,
+    "end": 278.84
+  },
+  {
+    "word": " drei",
+    "start": 278.84,
+    "end": 279.44
+  },
+  {
+    "word": " Sekunden",
+    "start": 279.44,
+    "end": 280.32
+  },
+  {
+    "word": " gedrückt,",
+    "start": 280.32,
+    "end": 280.76
+  },
+  {
+    "word": " bis",
+    "start": 280.96,
+    "end": 281.1
+  },
+  {
+    "word": " ein",
+    "start": 281.1,
+    "end": 281.4
+  },
+  {
+    "word": " Licht",
+    "start": 281.4,
+    "end": 281.7
+  },
+  {
+    "word": " blinkt.",
+    "start": 281.7,
+    "end": 282.26
+  },
+  {
+    "word": " Ich",
+    "start": 282.26,
+    "end": 283.18
+  },
+  {
+    "word": " mache",
+    "start": 283.18,
+    "end": 283.42
+  },
+  {
+    "word": " es",
+    "start": 283.42,
+    "end": 283.7
+  },
+  {
+    "word": " einfach",
+    "start": 283.7,
+    "end": 284.04
+  },
+  {
+    "word": " sofort,",
+    "start": 284.04,
+    "end": 284.78
+  },
+  {
+    "word": " während",
+    "start": 285.0,
+    "end": 285.26
+  },
+  {
+    "word": " wir",
+    "start": 285.26,
+    "end": 285.46
+  },
+  {
+    "word": " am",
+    "start": 285.46,
+    "end": 285.62
+  },
+  {
+    "word": " Telefon",
+    "start": 285.62,
+    "end": 286.14
+  },
+  {
+    "word": " sprechen.",
+    "start": 286.14,
+    "end": 286.88
+  },
+  {
+    "word": " Ich",
+    "start": 287.94,
+    "end": 288.64
+  },
+  {
+    "word": " halte",
+    "start": 288.64,
+    "end": 288.92
+  },
+  {
+    "word": " gerade",
+    "start": 288.92,
+    "end": 289.34
+  },
+  {
+    "word": " den",
+    "start": 289.34,
+    "end": 289.6
+  },
+  {
+    "word": " Knopf",
+    "start": 289.6,
+    "end": 289.98
+  },
+  {
+    "word": " gedrückt",
+    "start": 289.98,
+    "end": 290.58
+  },
+  {
+    "word": " und",
+    "start": 290.58,
+    "end": 290.96
+  },
+  {
+    "word": " jetzt",
+    "start": 290.96,
+    "end": 292.42
+  },
+  {
+    "word": " blinkt",
+    "start": 292.42,
+    "end": 293.74
+  },
+  {
+    "word": " ein",
+    "start": 293.74,
+    "end": 294.06
+  },
+  {
+    "word": " Licht.",
+    "start": 294.06,
+    "end": 294.34
+  },
+  {
+    "word": " Der",
+    "start": 294.56,
+    "end": 295.24
+  },
+  {
+    "word": " Router",
+    "start": 295.24,
+    "end": 296.48
+  },
+  {
+    "word": " befindet",
+    "start": 296.48,
+    "end": 297.0
+  },
+  {
+    "word": " sich",
+    "start": 297.0,
+    "end": 297.28
+  },
+  {
+    "word": " jetzt",
+    "start": 297.28,
+    "end": 297.56
+  },
+  {
+    "word": " im",
+    "start": 297.56,
+    "end": 297.8
+  },
+  {
+    "word": " Konfigurationsmodus.",
+    "start": 297.8,
+    "end": 299.44
+  },
+  {
+    "word": " Bitte",
+    "start": 299.84,
+    "end": 300.12
+  },
+  {
+    "word": " geben",
+    "start": 300.12,
+    "end": 300.42
+  },
+  {
+    "word": " Sie",
+    "start": 300.42,
+    "end": 300.64
+  },
+  {
+    "word": " mir",
+    "start": 300.64,
+    "end": 300.8
+  },
+  {
+    "word": " einen",
+    "start": 300.8,
+    "end": 301.1
+  },
+  {
+    "word": " kurzen",
+    "start": 301.1,
+    "end": 301.74
+  },
+  {
+    "word": " Moment,",
+    "start": 301.74,
+    "end": 302.32
+  },
+  {
+    "word": " damit",
+    "start": 302.68,
+    "end": 302.92
+  },
+  {
+    "word": " ich",
+    "start": 302.92,
+    "end": 303.18
+  },
+  {
+    "word": " die",
+    "start": 303.18,
+    "end": 303.32
+  },
+  {
+    "word": " Konfiguration",
+    "start": 303.32,
+    "end": 304.52
+  },
+  {
+    "word": " für",
+    "start": 304.52,
+    "end": 304.88
+  },
+  {
+    "word": " Sie",
+    "start": 304.88,
+    "end": 305.2
+  },
+  {
+    "word": " machen",
+    "start": 305.2,
+    "end": 305.94
+  },
+  {
+    "word": " kann.",
+    "start": 305.94,
+    "end": 306.46
+  },
+  {
+    "word": " Danke",
+    "start": 306.66,
+    "end": 306.96
+  },
+  {
+    "word": " für",
+    "start": 306.96,
+    "end": 307.66
+  },
+  {
+    "word": " die",
+    "start": 307.66,
+    "end": 307.8
+  },
+  {
+    "word": " Unterstützung.",
+    "start": 307.8,
+    "end": 308.38
+  },
+  {
+    "word": " Gerne.",
+    "start": 308.38,
+    "end": 309.18
+  },
+  {
+    "word": " Dafür",
+    "start": 309.38,
+    "end": 309.76
+  },
+  {
+    "word": " sind",
+    "start": 309.76,
+    "end": 310.04
+  },
+  {
+    "word": " wir",
+    "start": 310.04,
+    "end": 310.24
+  },
+  {
+    "word": " ja",
+    "start": 310.24,
+    "end": 310.44
+  },
+  {
+    "word": " da.",
+    "start": 310.44,
+    "end": 310.7
+  },
+  {
+    "word": " Ah,",
+    "start": 311.22,
+    "end": 311.54
+  },
+  {
+    "word": " jetzt",
+    "start": 311.68,
+    "end": 311.94
+  },
+  {
+    "word": " ist",
+    "start": 311.94,
+    "end": 312.42
+  },
+  {
+    "word": " das",
+    "start": 312.42,
+    "end": 312.68
+  },
+  {
+    "word": " Licht",
+    "start": 312.68,
+    "end": 313.0
+  },
+  {
+    "word": " wieder",
+    "start": 313.0,
+    "end": 313.32
+  },
+  {
+    "word": " grün.",
+    "start": 313.32,
+    "end": 313.64
+  },
+  {
+    "word": " Genau.",
+    "start": 313.86,
+    "end": 314.26
+  },
+  {
+    "word": " Das",
+    "start": 314.6,
+    "end": 314.72
+  },
+  {
+    "word": " bedeutet,",
+    "start": 314.7,
+    "end": 315.22
+  },
+  {
+    "word": " dass",
+    "start": 315.5,
+    "end": 315.62
+  },
+  {
+    "word": " die",
+    "start": 315.6,
+    "end": 315.8
+  },
+  {
+    "word": " Konfiguration",
+    "start": 315.8,
+    "end": 316.56
+  },
+  {
+    "word": " erfolgreich",
+    "start": 316.56,
+    "end": 317.42
+  },
+  {
+    "word": " funktioniert",
+    "start": 317.42,
+    "end": 318.08
+  },
+  {
+    "word": " hat.",
+    "start": 318.08,
+    "end": 318.54
+  },
+  {
+    "word": " Könnten",
+    "start": 319.06,
+    "end": 319.38
+  },
+  {
+    "word": " Sie",
+    "start": 319.38,
+    "end": 319.58
+  },
+  {
+    "word": " bitte",
+    "start": 319.58,
+    "end": 319.8
+  },
+  {
+    "word": " überprüfen,",
+    "start": 319.8,
+    "end": 320.48
+  },
+  {
+    "word": " ob",
+    "start": 320.68,
+    "end": 320.84
+  },
+  {
+    "word": " Sie",
+    "start": 320.84,
+    "end": 321.02
+  },
+  {
+    "word": " wieder",
+    "start": 321.02,
+    "end": 321.26
+  },
+  {
+    "word": " Internet",
+    "start": 321.26,
+    "end": 321.66
+  },
+  {
+    "word": " haben?",
+    "start": 321.66,
+    "end": 322.02
+  },
+  {
+    "word": " Ich",
+    "start": 322.48,
+    "end": 323.1
+  },
+  {
+    "word": " habe",
+    "start": 323.1,
+    "end": 324.88
+  },
+  {
+    "word": " immer",
+    "start": 324.88,
+    "end": 325.12
+  },
+  {
+    "word": " noch",
+    "start": 325.12,
+    "end": 325.32
+  },
+  {
+    "word": " kein",
+    "start": 325.32,
+    "end": 325.58
+  },
+  {
+    "word": " Internet.",
+    "start": 325.58,
+    "end": 326.1
+  },
+  {
+    "word": " Warten",
+    "start": 326.68,
+    "end": 327.1
+  },
+  {
+    "word": " Sie",
+    "start": 327.1,
+    "end": 327.32
+  },
+  {
+    "word": " bitte",
+    "start": 327.32,
+    "end": 327.52
+  },
+  {
+    "word": " ein",
+    "start": 327.52,
+    "end": 327.84
+  },
+  {
+    "word": " paar",
+    "start": 327.84,
+    "end": 328.08
+  },
+  {
+    "word": " Minuten",
+    "start": 328.08,
+    "end": 328.4
+  },
+  {
+    "word": " und",
+    "start": 328.4,
+    "end": 328.8
+  },
+  {
+    "word": " rufen",
+    "start": 328.8,
+    "end": 329.3
+  },
+  {
+    "word": " Sie",
+    "start": 329.3,
+    "end": 329.52
+  },
+  {
+    "word": " uns",
+    "start": 329.52,
+    "end": 329.7
+  },
+  {
+    "word": " dann",
+    "start": 329.7,
+    "end": 330.0
+  },
+  {
+    "word": " noch",
+    "start": 330.0,
+    "end": 330.62
+  },
+  {
+    "word": " einmal",
+    "start": 330.62,
+    "end": 331.02
+  },
+  {
+    "word": " zurück.",
+    "start": 331.02,
+    "end": 331.48
+  },
+  {
+    "word": " Ich",
+    "start": 332.1,
+    "end": 332.48
+  },
+  {
+    "word": " würde",
+    "start": 332.48,
+    "end": 332.66
+  },
+  {
+    "word": " gerne",
+    "start": 332.66,
+    "end": 332.88
+  },
+  {
+    "word": " am",
+    "start": 332.88,
+    "end": 333.08
+  },
+  {
+    "word": " Telefon",
+    "start": 333.08,
+    "end": 333.64
+  },
+  {
+    "word": " bleiben,",
+    "start": 333.64,
+    "end": 334.14
+  },
+  {
+    "word": " damit",
+    "start": 334.18,
+    "end": 334.38
+  },
+  {
+    "word": " ich",
+    "start": 334.38,
+    "end": 334.6
+  },
+  {
+    "word": " nicht",
+    "start": 334.6,
+    "end": 334.74
+  },
+  {
+    "word": " nochmal",
+    "start": 334.74,
+    "end": 335.18
+  },
+  {
+    "word": " in",
+    "start": 335.18,
+    "end": 335.6
+  },
+  {
+    "word": " der",
+    "start": 335.6,
+    "end": 335.72
+  },
+  {
+    "word": " Warteschleife",
+    "start": 335.72,
+    "end": 336.48
+  },
+  {
+    "word": " warten",
+    "start": 336.48,
+    "end": 336.82
+  },
+  {
+    "word": " muss.",
+    "start": 336.82,
+    "end": 337.22
+  },
+  {
+    "word": " So,",
+    "start": 342.14,
+    "end": 342.78
+  },
+  {
+    "word": " ich",
+    "start": 343.18,
+    "end": 343.32
+  },
+  {
+    "word": " habe",
+    "start": 343.32,
+    "end": 343.5
+  },
+  {
+    "word": " jetzt",
+    "start": 343.5,
+    "end": 343.76
+  },
+  {
+    "word": " ein",
+    "start": 343.76,
+    "end": 343.96
+  },
+  {
+    "word": " paar",
+    "start": 343.96,
+    "end": 344.24
+  },
+  {
+    "word": " Minuten",
+    "start": 344.24,
+    "end": 344.54
+  },
+  {
+    "word": " gewartet.",
+    "start": 344.54,
+    "end": 345.26
+  },
+  {
+    "word": " Hier",
+    "start": 345.68,
+    "end": 345.86
+  },
+  {
+    "word": " passiert",
+    "start": 345.86,
+    "end": 346.26
+  },
+  {
+    "word": " nichts.",
+    "start": 346.26,
+    "end": 347.0
+  },
+  {
+    "word": " Immer",
+    "start": 347.06,
+    "end": 347.68
+  },
+  {
+    "word": " noch",
+    "start": 347.68,
+    "end": 347.92
+  },
+  {
+    "word": " kein",
+    "start": 347.92,
+    "end": 348.22
+  },
+  {
+    "word": " Internet.",
+    "start": 348.22,
+    "end": 348.8
+  },
+  {
+    "word": " Können",
+    "start": 349.44,
+    "end": 349.68
+  },
+  {
+    "word": " Sie",
+    "start": 349.68,
+    "end": 349.8
+  },
+  {
+    "word": " mir",
+    "start": 349.8,
+    "end": 349.96
+  },
+  {
+    "word": " heute",
+    "start": 349.96,
+    "end": 350.24
+  },
+  {
+    "word": " keinen",
+    "start": 350.24,
+    "end": 350.6
+  },
+  {
+    "word": " Techniker",
+    "start": 350.6,
+    "end": 351.2
+  },
+  {
+    "word": " schicken?",
+    "start": 351.2,
+    "end": 351.52
+  },
+  {
+    "word": " Tut",
+    "start": 351.94,
+    "end": 352.26
+  },
+  {
+    "word": " mir",
+    "start": 352.26,
+    "end": 352.56
+  },
+  {
+    "word": " leid,",
+    "start": 352.56,
+    "end": 352.94
+  },
+  {
+    "word": " das",
+    "start": 353.08,
+    "end": 353.2
+  },
+  {
+    "word": " ist",
+    "start": 353.18,
+    "end": 353.42
+  },
+  {
+    "word": " leider",
+    "start": 353.42,
+    "end": 353.82
+  },
+  {
+    "word": " nicht",
+    "start": 353.82,
+    "end": 354.04
+  },
+  {
+    "word": " möglich,",
+    "start": 354.04,
+    "end": 354.48
+  },
+  {
+    "word": " denn",
+    "start": 354.62,
+    "end": 354.78
+  },
+  {
+    "word": " wie",
+    "start": 354.78,
+    "end": 355.24
+  },
+  {
+    "word": " gesagt,",
+    "start": 355.24,
+    "end": 355.74
+  },
+  {
+    "word": " alle",
+    "start": 356.3,
+    "end": 356.48
+  },
+  {
+    "word": " Techniker",
+    "start": 356.48,
+    "end": 357.1
+  },
+  {
+    "word": " haben",
+    "start": 357.1,
+    "end": 357.38
+  },
+  {
+    "word": " bereits",
+    "start": 357.38,
+    "end": 357.82
+  },
+  {
+    "word": " andere",
+    "start": 357.82,
+    "end": 358.3
+  },
+  {
+    "word": " Kundentermine.",
+    "start": 358.3,
+    "end": 359.22
+  },
+  {
+    "word": " Ich",
+    "start": 359.82,
+    "end": 360.06
+  },
+  {
+    "word": " habe",
+    "start": 360.06,
+    "end": 360.3
+  },
+  {
+    "word": " keinen",
+    "start": 360.3,
+    "end": 360.68
+  },
+  {
+    "word": " freien",
+    "start": 360.68,
+    "end": 361.22
+  },
+  {
+    "word": " Techniker",
+    "start": 361.22,
+    "end": 361.84
+  },
+  {
+    "word": " mehr.",
+    "start": 361.84,
+    "end": 362.02
+  },
+  {
+    "word": " Das",
+    "start": 362.02,
+    "end": 362.76
+  },
+  {
+    "word": " kann",
+    "start": 362.76,
+    "end": 363.02
+  },
+  {
+    "word": " wirklich",
+    "start": 363.02,
+    "end": 363.46
+  },
+  {
+    "word": " nicht",
+    "start": 363.46,
+    "end": 363.82
+  },
+  {
+    "word": " wahr",
+    "start": 363.82,
+    "end": 364.12
+  },
+  {
+    "word": " sein.",
+    "start": 364.12,
+    "end": 364.46
+  },
+  {
+    "word": " Ich",
+    "start": 364.64,
+    "end": 364.76
+  },
+  {
+    "word": " bin",
+    "start": 364.76,
+    "end": 364.98
+  },
+  {
+    "word": " wirklich",
+    "start": 364.98,
+    "end": 365.54
+  },
+  {
+    "word": " sehr",
+    "start": 365.54,
+    "end": 365.94
+  },
+  {
+    "word": " unzufrieden.",
+    "start": 365.94,
+    "end": 366.96
+  },
+  {
+    "word": " Sie",
+    "start": 367.26,
+    "end": 367.4
+  },
+  {
+    "word": " können",
+    "start": 367.4,
+    "end": 367.7
+  },
+  {
+    "word": " doch",
+    "start": 367.7,
+    "end": 367.96
+  },
+  {
+    "word": " nicht",
+    "start": 367.96,
+    "end": 368.18
+  },
+  {
+    "word": " von",
+    "start": 368.18,
+    "end": 368.42
+  },
+  {
+    "word": " mir",
+    "start": 368.42,
+    "end": 368.64
+  },
+  {
+    "word": " verlangen,",
+    "start": 368.64,
+    "end": 369.14
+  },
+  {
+    "word": " dass",
+    "start": 369.36,
+    "end": 369.5
+  },
+  {
+    "word": " ich",
+    "start": 369.5,
+    "end": 369.68
+  },
+  {
+    "word": " tagelang",
+    "start": 369.68,
+    "end": 370.56
+  },
+  {
+    "word": " ohne",
+    "start": 370.56,
+    "end": 371.0
+  },
+  {
+    "word": " Internet",
+    "start": 371.0,
+    "end": 371.56
+  },
+  {
+    "word": " da",
+    "start": 371.56,
+    "end": 371.96
+  },
+  {
+    "word": " sitze.",
+    "start": 371.96,
+    "end": 372.38
+  },
+  {
+    "word": " Gibt",
+    "start": 372.8,
+    "end": 373.0
+  },
+  {
+    "word": " es",
+    "start": 373.0,
+    "end": 373.22
+  },
+  {
+    "word": " keine",
+    "start": 373.22,
+    "end": 373.56
+  },
+  {
+    "word": " andere",
+    "start": 373.56,
+    "end": 373.98
+  },
+  {
+    "word": " Lösung?",
+    "start": 373.98,
+    "end": 374.52
+  },
+  {
+    "word": " Lassen",
+    "start": 375.68,
+    "end": 376.36
+  },
+  {
+    "word": " Sie",
+    "start": 376.36,
+    "end": 376.64
+  },
+  {
+    "word": " mich",
+    "start": 376.64,
+    "end": 376.86
+  },
+  {
+    "word": " überlegen.",
+    "start": 376.86,
+    "end": 377.58
+  },
+  {
+    "word": " Oh,",
+    "start": 378.6,
+    "end": 378.8
+  },
+  {
+    "word": " haben",
+    "start": 379.14,
+    "end": 379.44
+  },
+  {
+    "word": " Sie",
+    "start": 379.44,
+    "end": 379.8
+  },
+  {
+    "word": " auch",
+    "start": 379.8,
+    "end": 380.06
+  },
+  {
+    "word": " einen",
+    "start": 380.06,
+    "end": 380.44
+  },
+  {
+    "word": " Handyvertrag",
+    "start": 380.44,
+    "end": 381.36
+  },
+  {
+    "word": " bei",
+    "start": 381.36,
+    "end": 381.7
+  },
+  {
+    "word": " Tele123?",
+    "start": 381.7,
+    "end": 382.74
+  },
+  {
+    "word": " Ja,",
+    "start": 383.52,
+    "end": 383.86
+  },
+  {
+    "word": " den",
+    "start": 384.08,
+    "end": 384.22
+  },
+  {
+    "word": " habe",
+    "start": 384.22,
+    "end": 384.44
+  },
+  {
+    "word": " ich.",
+    "start": 384.44,
+    "end": 384.72
+  },
+  {
+    "word": " Ach,",
+    "start": 384.72,
+    "end": 385.2
+  },
+  {
+    "word": " super.",
+    "start": 385.46,
+    "end": 385.74
+  },
+  {
+    "word": " Dann",
+    "start": 386.24,
+    "end": 386.44
+  },
+  {
+    "word": " könnten",
+    "start": 386.44,
+    "end": 386.84
+  },
+  {
+    "word": " wir",
+    "start": 386.84,
+    "end": 387.08
+  },
+  {
+    "word": " Ihnen",
+    "start": 387.08,
+    "end": 387.24
+  },
+  {
+    "word": " kostenfrei",
+    "start": 387.24,
+    "end": 388.18
+  },
+  {
+    "word": " ein",
+    "start": 388.18,
+    "end": 388.52
+  },
+  {
+    "word": " mobiles",
+    "start": 388.52,
+    "end": 388.9
+  },
+  {
+    "word": " Datenpaket",
+    "start": 388.9,
+    "end": 389.84
+  },
+  {
+    "word": " zur",
+    "start": 389.84,
+    "end": 390.04
+  },
+  {
+    "word": " Verfügung",
+    "start": 390.04,
+    "end": 390.44
+  },
+  {
+    "word": " stellen.",
+    "start": 390.44,
+    "end": 390.94
+  },
+  {
+    "word": " Dann",
+    "start": 391.42,
+    "end": 391.6
+  },
+  {
+    "word": " können",
+    "start": 391.6,
+    "end": 391.92
+  },
+  {
+    "word": " Sie",
+    "start": 391.92,
+    "end": 392.26
+  },
+  {
+    "word": " Ihren",
+    "start": 392.26,
+    "end": 392.64
+  },
+  {
+    "word": " Computer",
+    "start": 392.64,
+    "end": 393.24
+  },
+  {
+    "word": " mit",
+    "start": 393.24,
+    "end": 393.64
+  },
+  {
+    "word": " dem",
+    "start": 393.64,
+    "end": 393.78
+  },
+  {
+    "word": " Internet",
+    "start": 393.78,
+    "end": 394.28
+  },
+  {
+    "word": " Ihres",
+    "start": 394.28,
+    "end": 394.66
+  },
+  {
+    "word": " Handys",
+    "start": 394.66,
+    "end": 395.08
+  },
+  {
+    "word": " verbinden",
+    "start": 395.08,
+    "end": 395.66
+  },
+  {
+    "word": " und",
+    "start": 395.66,
+    "end": 396.32
+  },
+  {
+    "word": " das",
+    "start": 396.32,
+    "end": 396.62
+  },
+  {
+    "word": " mobile",
+    "start": 396.62,
+    "end": 397.04
+  },
+  {
+    "word": " Internet",
+    "start": 397.04,
+    "end": 397.54
+  },
+  {
+    "word": " so",
+    "start": 397.54,
+    "end": 398.08
+  },
+  {
+    "word": " lange",
+    "start": 398.08,
+    "end": 398.46
+  },
+  {
+    "word": " nutzen,",
+    "start": 398.46,
+    "end": 398.9
+  },
+  {
+    "word": " bis",
+    "start": 399.2,
+    "end": 399.5
+  },
+  {
+    "word": " wir",
+    "start": 399.5,
+    "end": 399.66
+  },
+  {
+    "word": " die",
+    "start": 399.66,
+    "end": 399.8
+  },
+  {
+    "word": " Störung",
+    "start": 399.8,
+    "end": 400.26
+  },
+  {
+    "word": " in",
+    "start": 400.26,
+    "end": 400.54
+  },
+  {
+    "word": " Ihrer",
+    "start": 400.54,
+    "end": 400.76
+  },
+  {
+    "word": " Nachbarschaft",
+    "start": 400.76,
+    "end": 401.48
+  },
+  {
+    "word": " behoben",
+    "start": 401.48,
+    "end": 401.86
+  },
+  {
+    "word": " haben.",
+    "start": 401.86,
+    "end": 402.3
+  },
+  {
+    "word": " Na,",
+    "start": 403.02,
+    "end": 403.26
+  },
+  {
+    "word": " sehen",
+    "start": 403.38,
+    "end": 403.6
+  },
+  {
+    "word": " Sie,",
+    "start": 403.6,
+    "end": 403.9
+  },
+  {
+    "word": " das",
+    "start": 404.22,
+    "end": 404.38
+  },
+  {
+    "word": " ist",
+    "start": 404.38,
+    "end": 404.58
+  },
+  {
+    "word": " doch",
+    "start": 404.58,
+    "end": 404.8
+  },
+  {
+    "word": " eine",
+    "start": 404.8,
+    "end": 405.04
+  },
+  {
+    "word": " gute",
+    "start": 405.04,
+    "end": 405.36
+  },
+  {
+    "word": " Idee.",
+    "start": 405.36,
+    "end": 405.8
+  },
+  {
+    "word": " Es",
+    "start": 406.06,
+    "end": 406.24
+  },
+  {
+    "word": " gibt",
+    "start": 406.24,
+    "end": 406.48
+  },
+  {
+    "word": " also",
+    "start": 406.48,
+    "end": 406.84
+  },
+  {
+    "word": " doch",
+    "start": 406.84,
+    "end": 407.3
+  },
+  {
+    "word": " Lösungen.",
+    "start": 407.3,
+    "end": 407.94
+  },
+  {
+    "word": " Muss",
+    "start": 408.5,
+    "end": 408.74
+  },
+  {
+    "word": " ich",
+    "start": 408.74,
+    "end": 408.92
+  },
+  {
+    "word": " die",
+    "start": 408.92,
+    "end": 409.08
+  },
+  {
+    "word": " mobilen",
+    "start": 409.08,
+    "end": 409.56
+  },
+  {
+    "word": " Daten",
+    "start": 409.56,
+    "end": 409.94
+  },
+  {
+    "word": " bezahlen?",
+    "start": 409.94,
+    "end": 410.88
+  },
+  {
+    "word": " Nein,",
+    "start": 410.88,
+    "end": 411.54
+  },
+  {
+    "word": " wie",
+    "start": 411.88,
+    "end": 412.04
+  },
+  {
+    "word": " schon",
+    "start": 412.04,
+    "end": 412.32
+  },
+  {
+    "word": " gesagt,",
+    "start": 412.32,
+    "end": 412.84
+  },
+  {
+    "word": " übernehmen",
+    "start": 413.12,
+    "end": 413.58
+  },
+  {
+    "word": " wir",
+    "start": 413.58,
+    "end": 414.02
+  },
+  {
+    "word": " selbstverständlich",
+    "start": 414.02,
+    "end": 415.3
+  },
+  {
+    "word": " die",
+    "start": 415.3,
+    "end": 415.42
+  },
+  {
+    "word": " Kosten.",
+    "start": 415.42,
+    "end": 415.82
+  },
+  {
+    "word": " Ich",
+    "start": 416.32,
+    "end": 416.46
+  },
+  {
+    "word": " brauche",
+    "start": 416.46,
+    "end": 416.9
+  },
+  {
+    "word": " jetzt",
+    "start": 416.9,
+    "end": 417.16
+  },
+  {
+    "word": " nur",
+    "start": 417.16,
+    "end": 417.54
+  },
+  {
+    "word": " noch",
+    "start": 417.54,
+    "end": 417.82
+  },
+  {
+    "word": " bitte",
+    "start": 417.82,
+    "end": 418.1
+  },
+  {
+    "word": " Ihre",
+    "start": 418.1,
+    "end": 418.46
+  },
+  {
+    "word": " Handynummer.",
+    "start": 418.46,
+    "end": 419.04
+  },
+  {
+    "word": " Sehr",
+    "start": 419.52,
+    "end": 419.82
+  },
+  {
+    "word": " gerne.",
+    "start": 419.82,
+    "end": 420.2
+  },
+  {
+    "word": " Das",
+    "start": 420.74,
+    "end": 420.86
+  },
+  {
+    "word": " ist",
+    "start": 420.84,
+    "end": 421.02
+  },
+  {
+    "word": " die",
+    "start": 421.02,
+    "end": 421.24
+  },
+  {
+    "word": " 01576743",
+    "start": 421.24,
+    "end": 424.84
+  },
+  {
+    "word": " 584345.",
+    "start": 424.84,
+    "end": 428.38
+  },
+  {
+    "word": " Vielen",
+    "start": 428.86,
+    "end": 429.28
+  },
+  {
+    "word": " Dank.",
+    "start": 429.28,
+    "end": 429.7
+  },
+  {
+    "word": " Einen",
+    "start": 430.22,
+    "end": 430.46
+  },
+  {
+    "word": " Moment,",
+    "start": 430.46,
+    "end": 430.78
+  },
+  {
+    "word": " bitte.",
+    "start": 430.98,
+    "end": 431.14
+  },
+  {
+    "word": " Sind",
+    "start": 431.92,
+    "end": 432.36
+  },
+  {
+    "word": " 500",
+    "start": 432.36,
+    "end": 432.96
+  },
+  {
+    "word": " Megabyte",
+    "start": 432.96,
+    "end": 433.66
+  },
+  {
+    "word": " ausreichend",
+    "start": 433.66,
+    "end": 434.44
+  },
+  {
+    "word": " oder",
+    "start": 434.44,
+    "end": 434.64
+  },
+  {
+    "word": " brauchen",
+    "start": 434.64,
+    "end": 435.06
+  },
+  {
+    "word": " Sie",
+    "start": 435.06,
+    "end": 435.28
+  },
+  {
+    "word": " mehr?",
+    "start": 435.28,
+    "end": 435.5
+  },
+  {
+    "word": " Ich",
+    "start": 435.86,
+    "end": 436.08
+  },
+  {
+    "word": " brauche",
+    "start": 436.08,
+    "end": 436.48
+  },
+  {
+    "word": " definitiv",
+    "start": 436.48,
+    "end": 437.32
+  },
+  {
+    "word": " mehr.",
+    "start": 437.32,
+    "end": 437.56
+  },
+  {
+    "word": " Wir",
+    "start": 437.56,
+    "end": 438.52
+  },
+  {
+    "word": " schicken",
+    "start": 438.52,
+    "end": 438.88
+  },
+  {
+    "word": " Ihnen",
+    "start": 438.88,
+    "end": 439.12
+  },
+  {
+    "word": " 15",
+    "start": 439.12,
+    "end": 439.68
+  },
+  {
+    "word": " Gigabyte.",
+    "start": 439.68,
+    "end": 440.48
+  },
+  {
+    "word": " In",
+    "start": 440.7,
+    "end": 440.82
+  },
+  {
+    "word": " Ordnung,",
+    "start": 440.8,
+    "end": 441.26
+  },
+  {
+    "word": " haben",
+    "start": 441.68,
+    "end": 442.22
+  },
+  {
+    "word": " Sie",
+    "start": 442.22,
+    "end": 442.44
+  },
+  {
+    "word": " eine",
+    "start": 442.44,
+    "end": 442.7
+  },
+  {
+    "word": " Nachricht",
+    "start": 442.7,
+    "end": 443.24
+  },
+  {
+    "word": " bekommen?",
+    "start": 443.24,
+    "end": 443.62
+  },
+  {
+    "word": " Die",
+    "start": 445.1,
+    "end": 445.34
+  },
+  {
+    "word": " Buchung",
+    "start": 445.34,
+    "end": 445.8
+  },
+  {
+    "word": " von",
+    "start": 445.8,
+    "end": 445.98
+  },
+  {
+    "word": " 15",
+    "start": 445.98,
+    "end": 446.46
+  },
+  {
+    "word": " Gigabyte",
+    "start": 446.46,
+    "end": 447.12
+  },
+  {
+    "word": " war",
+    "start": 447.12,
+    "end": 447.46
+  },
+  {
+    "word": " erfolgreich.",
+    "start": 447.46,
+    "end": 448.08
+  },
+  {
+    "word": " Ja,",
+    "start": 448.34,
+    "end": 448.46
+  },
+  {
+    "word": " ich",
+    "start": 448.74,
+    "end": 448.86
+  },
+  {
+    "word": " habe",
+    "start": 448.86,
+    "end": 448.98
+  },
+  {
+    "word": " die",
+    "start": 448.96,
+    "end": 449.16
+  },
+  {
+    "word": " Nachricht",
+    "start": 449.16,
+    "end": 449.54
+  },
+  {
+    "word": " gerade",
+    "start": 449.54,
+    "end": 449.9
+  },
+  {
+    "word": " bekommen.",
+    "start": 449.9,
+    "end": 450.34
+  },
+  {
+    "word": " Wann",
+    "start": 450.92,
+    "end": 451.12
+  },
+  {
+    "word": " haben",
+    "start": 451.12,
+    "end": 451.32
+  },
+  {
+    "word": " Sie",
+    "start": 451.32,
+    "end": 451.54
+  },
+  {
+    "word": " gesagt,",
+    "start": 451.54,
+    "end": 451.9
+  },
+  {
+    "word": " dass",
+    "start": 452.04,
+    "end": 452.16
+  },
+  {
+    "word": " der",
+    "start": 452.14,
+    "end": 452.3
+  },
+  {
+    "word": " Techniker",
+    "start": 452.3,
+    "end": 452.82
+  },
+  {
+    "word": " kommt?",
+    "start": 452.82,
+    "end": 453.18
+  },
+  {
+    "word": " Der",
+    "start": 453.48,
+    "end": 453.78
+  },
+  {
+    "word": " Techniker",
+    "start": 453.78,
+    "end": 454.38
+  },
+  {
+    "word": " kommt",
+    "start": 454.38,
+    "end": 454.76
+  },
+  {
+    "word": " sehr",
+    "start": 454.76,
+    "end": 455.2
+  },
+  {
+    "word": " wahrscheinlich",
+    "start": 455.2,
+    "end": 455.82
+  },
+  {
+    "word": " am",
+    "start": 455.82,
+    "end": 456.22
+  },
+  {
+    "word": " Montag.",
+    "start": 456.22,
+    "end": 457.06
+  },
+  {
+    "word": " Kann",
+    "start": 457.56,
+    "end": 457.78
+  },
+  {
+    "word": " ich",
+    "start": 457.78,
+    "end": 458.0
+  },
+  {
+    "word": " sonst",
+    "start": 458.0,
+    "end": 458.3
+  },
+  {
+    "word": " noch",
+    "start": 458.3,
+    "end": 458.62
+  },
+  {
+    "word": " etwas",
+    "start": 458.62,
+    "end": 458.9
+  },
+  {
+    "word": " für",
+    "start": 458.9,
+    "end": 459.14
+  },
+  {
+    "word": " Sie",
+    "start": 459.14,
+    "end": 459.26
+  },
+  {
+    "word": " tun?",
+    "start": 459.26,
+    "end": 459.5
+  },
+  {
+    "word": " Ich",
+    "start": 459.5,
+    "end": 460.58
+  },
+  {
+    "word": " hätte",
+    "start": 460.58,
+    "end": 460.82
+  },
+  {
+    "word": " gern",
+    "start": 460.82,
+    "end": 461.06
+  },
+  {
+    "word": " auch",
+    "start": 461.06,
+    "end": 461.3
+  },
+  {
+    "word": " den",
+    "start": 461.3,
+    "end": 461.48
+  },
+  {
+    "word": " Gutschein",
+    "start": 461.48,
+    "end": 462.04
+  },
+  {
+    "word": " für",
+    "start": 462.04,
+    "end": 462.22
+  },
+  {
+    "word": " das",
+    "start": 462.22,
+    "end": 462.38
+  },
+  {
+    "word": " Internet",
+    "start": 462.38,
+    "end": 462.84
+  },
+  {
+    "word": " diesen",
+    "start": 462.84,
+    "end": 463.14
+  },
+  {
+    "word": " Monat.",
+    "start": 463.14,
+    "end": 463.68
+  },
+  {
+    "word": " Ihr",
+    "start": 463.92,
+    "end": 464.04
+  },
+  {
+    "word": " Service",
+    "start": 464.02,
+    "end": 464.36
+  },
+  {
+    "word": " war",
+    "start": 464.36,
+    "end": 464.62
+  },
+  {
+    "word": " wirklich",
+    "start": 464.62,
+    "end": 465.28
+  },
+  {
+    "word": " schlecht",
+    "start": 465.28,
+    "end": 465.82
+  },
+  {
+    "word": " und",
+    "start": 465.82,
+    "end": 466.08
+  },
+  {
+    "word": " ich",
+    "start": 466.08,
+    "end": 466.24
+  },
+  {
+    "word": " habe",
+    "start": 466.24,
+    "end": 466.4
+  },
+  {
+    "word": " sehr",
+    "start": 466.4,
+    "end": 466.78
+  },
+  {
+    "word": " darauf",
+    "start": 466.78,
+    "end": 467.24
+  },
+  {
+    "word": " bestehen",
+    "start": 467.24,
+    "end": 467.9
+  },
+  {
+    "word": " müssen,",
+    "start": 467.9,
+    "end": 468.2
+  },
+  {
+    "word": " um",
+    "start": 468.4,
+    "end": 468.6
+  },
+  {
+    "word": " eine",
+    "start": 468.6,
+    "end": 468.86
+  },
+  {
+    "word": " Lösung",
+    "start": 468.86,
+    "end": 469.24
+  },
+  {
+    "word": " von",
+    "start": 469.24,
+    "end": 469.56
+  },
+  {
+    "word": " Ihnen",
+    "start": 469.56,
+    "end": 469.72
+  },
+  {
+    "word": " zu",
+    "start": 469.72,
+    "end": 469.98
+  },
+  {
+    "word": " bekommen.",
+    "start": 469.98,
+    "end": 470.32
+  },
+  {
+    "word": " Kein",
+    "start": 470.88,
+    "end": 471.3
+  },
+  {
+    "word": " Problem.",
+    "start": 471.3,
+    "end": 471.62
+  },
+  {
+    "word": " Ich",
+    "start": 471.98,
+    "end": 472.1
+  },
+  {
+    "word": " entschuldige",
+    "start": 472.08,
+    "end": 472.74
+  },
+  {
+    "word": " mich",
+    "start": 472.74,
+    "end": 472.92
+  },
+  {
+    "word": " nochmals",
+    "start": 472.92,
+    "end": 473.7
+  },
+  {
+    "word": " für",
+    "start": 473.7,
+    "end": 473.92
+  },
+  {
+    "word": " die",
+    "start": 473.92,
+    "end": 474.04
+  },
+  {
+    "word": " entstandenen",
+    "start": 474.04,
+    "end": 474.7
+  },
+  {
+    "word": " Unannehmlichkeiten.",
+    "start": 474.7,
+    "end": 475.8
+  },
+  {
+    "word": " Wir",
+    "start": 476.22,
+    "end": 476.58
+  },
+  {
+    "word": " werden",
+    "start": 476.58,
+    "end": 476.92
+  },
+  {
+    "word": " Ihnen",
+    "start": 476.92,
+    "end": 477.16
+  },
+  {
+    "word": " den",
+    "start": 477.16,
+    "end": 477.38
+  },
+  {
+    "word": " Gutschein",
+    "start": 477.38,
+    "end": 478.04
+  },
+  {
+    "word": " zusenden.",
+    "start": 478.04,
+    "end": 478.76
+  },
+  {
+    "word": " Haben",
+    "start": 479.3,
+    "end": 479.52
+  },
+  {
+    "word": " Sie",
+    "start": 479.52,
+    "end": 479.76
+  },
+  {
+    "word": " noch",
+    "start": 479.76,
+    "end": 479.98
+  },
+  {
+    "word": " Fragen?",
+    "start": 479.98,
+    "end": 480.36
+  },
+  {
+    "word": " Nein,",
+    "start": 480.9,
+    "end": 481.24
+  },
+  {
+    "word": " das",
+    "start": 481.44,
+    "end": 481.58
+  },
+  {
+    "word": " ist",
+    "start": 481.58,
+    "end": 481.74
+  },
+  {
+    "word": " alles.",
+    "start": 481.74,
+    "end": 482.02
+  },
+  {
+    "word": " Bitte",
+    "start": 482.02,
+    "end": 483.12
+  },
+  {
+    "word": " nehmen",
+    "start": 483.12,
+    "end": 483.48
+  },
+  {
+    "word": " Sie",
+    "start": 483.48,
+    "end": 483.72
+  },
+  {
+    "word": " sich",
+    "start": 483.72,
+    "end": 483.9
+  },
+  {
+    "word": " noch",
+    "start": 483.9,
+    "end": 484.08
+  },
+  {
+    "word": " eine",
+    "start": 484.08,
+    "end": 484.44
+  },
+  {
+    "word": " Sekunde,",
+    "start": 484.44,
+    "end": 485.1
+  },
+  {
+    "word": " um",
+    "start": 485.48,
+    "end": 485.7
+  },
+  {
+    "word": " diesen",
+    "start": 485.7,
+    "end": 486.06
+  },
+  {
+    "word": " Kundenservice",
+    "start": 486.06,
+    "end": 486.88
+  },
+  {
+    "word": " zu",
+    "start": 486.88,
+    "end": 487.18
+  },
+  {
+    "word": " bewerten.",
+    "start": 487.18,
+    "end": 487.6
+  },
+  {
+    "word": " Wenn",
+    "start": 488.16,
+    "end": 488.3
+  },
+  {
+    "word": " Sie",
+    "start": 488.3,
+    "end": 488.56
+  },
+  {
+    "word": " das",
+    "start": 488.56,
+    "end": 488.78
+  },
+  {
+    "word": " nicht",
+    "start": 488.78,
+    "end": 489.06
+  },
+  {
+    "word": " möchten,",
+    "start": 489.06,
+    "end": 489.58
+  },
+  {
+    "word": " legen",
+    "start": 489.76,
+    "end": 490.06
+  },
+  {
+    "word": " Sie",
+    "start": 490.06,
+    "end": 490.28
+  },
+  {
+    "word": " einfach",
+    "start": 490.28,
+    "end": 490.68
+  },
+  {
+    "word": " auf.",
+    "start": 490.68,
+    "end": 491.2
+  },
+  {
+    "word": " Alles",
+    "start": 491.8,
+    "end": 492.14
+  },
+  {
+    "word": " klar.",
+    "start": 492.14,
+    "end": 492.44
+  },
+  {
+    "word": " Schönen",
+    "start": 492.72,
+    "end": 492.9
+  },
+  {
+    "word": " Tag",
+    "start": 492.9,
+    "end": 493.18
+  },
+  {
+    "word": " noch",
+    "start": 493.18,
+    "end": 493.46
+  },
+  {
+    "word": " und",
+    "start": 493.46,
+    "end": 493.66
+  },
+  {
+    "word": " danke",
+    "start": 493.66,
+    "end": 493.9
+  },
+  {
+    "word": " für",
+    "start": 493.9,
+    "end": 494.18
+  },
+  {
+    "word": " die",
+    "start": 494.18,
+    "end": 494.32
+  },
+  {
+    "word": " Mühe.",
+    "start": 494.32,
+    "end": 494.66
+  },
+  {
+    "word": " Ebenso",
+    "start": 494.98,
+    "end": 495.58
+  },
+  {
+    "word": " und",
+    "start": 495.58,
+    "end": 495.8
+  },
+  {
+    "word": " nochmals",
+    "start": 495.8,
+    "end": 496.56
+  },
+  {
+    "word": " Verzeihung.",
+    "start": 496.56,
+    "end": 497.3
+  },
+  {
+    "word": " Ich",
+    "start": 497.7,
+    "end": 497.88
+  },
+  {
+    "word": " wünsche",
+    "start": 497.88,
+    "end": 498.18
+  },
+  {
+    "word": " Ihnen",
+    "start": 498.18,
+    "end": 498.42
+  },
+  {
+    "word": " einen",
+    "start": 498.42,
+    "end": 498.78
+  },
+  {
+    "word": " schönen",
+    "start": 498.78,
+    "end": 499.22
+  },
+  {
+    "word": " Nachmittag.",
+    "start": 499.22,
+    "end": 499.86
+  },
+  {
+    "word": " At",
+    "start": 512.02,
+    "end": 512.46
+  },
+  {
+    "word": " Langura.",
+    "start": 512.46,
+    "end": 513.12
+  },
+  {
+    "word": " Wir",
+    "start": 513.58,
+    "end": 513.9
+  },
+  {
+    "word": " senden",
+    "start": 513.9,
+    "end": 514.36
+  },
+  {
+    "word": " Ihnen",
+    "start": 514.36,
+    "end": 514.48
+  },
+  {
+    "word": " amazing",
+    "start": 514.36,
+    "end": 514.88
+  },
+  {
+    "word": " E",
+    "start": 514.88,
+    "end": 515.3
+  },
+  {
+    "word": "-Mails",
+    "start": 515.3,
+    "end": 515.54
+  },
+  {
+    "word": " mit",
+    "start": 515.54,
+    "end": 515.84
+  },
+  {
+    "word": " Learning",
+    "start": 515.84,
+    "end": 516.5
+  },
+  {
+    "word": " Content",
+    "start": 516.5,
+    "end": 517.12
+  },
+  {
+    "word": " and",
+    "start": 517.12,
+    "end": 517.44
+  },
+  {
+    "word": " Study",
+    "start": 517.44,
+    "end": 517.78
+  },
+  {
+    "word": " Tips,",
+    "start": 517.78,
+    "end": 518.2
+  },
+  {
+    "word": " so",
+    "start": 518.5,
+    "end": 518.7
+  },
+  {
+    "word": " dass",
+    "start": 518.7,
+    "end": 518.9
+  },
+  {
+    "word": " Sie",
+    "start": 518.9,
+    "end": 519.1
+  },
+  {
+    "word": " kontinuieren",
+    "start": 519.1,
+    "end": 520.34
+  },
+  {
+    "word": " können,",
+    "start": 520.34,
+    "end": 520.46
+  },
+  {
+    "word": " um",
+    "start": 520.34,
+    "end": 521.0
+  },
+  {
+    "word": " Ihre",
+    "start": 521.0,
+    "end": 521.12
+  },
+  {
+    "word": " Deutsch",
+    "start": 521.1,
+    "end": 521.48
+  },
+  {
+    "word": " zu",
+    "start": 521.48,
+    "end": 521.6
+  },
+  {
+    "word": " verbessern.",
+    "start": 521.58,
+    "end": 521.7
+  },
+  {
+    "word": " Sie",
+    "start": 522.16,
+    "end": 522.28
+  },
+  {
+    "word": " müssen",
+    "start": 522.28,
+    "end": 522.68
+  },
+  {
+    "word": " einfach",
+    "start": 522.68,
+    "end": 522.8
+  },
+  {
+    "word": " Ihren",
+    "start": 522.68,
+    "end": 523.62
+  },
+  {
+    "word": " Namen",
+    "start": 523.62,
+    "end": 524.0
+  },
+  {
+    "word": " und",
+    "start": 524.0,
+    "end": 524.34
+  },
+  {
+    "word": " E",
+    "start": 524.34,
+    "end": 524.58
+  },
+  {
+    "word": "-Mail",
+    "start": 524.58,
+    "end": 524.72
+  },
+  {
+    "word": "-Adress",
+    "start": 524.72,
+    "end": 525.1
+  },
+  {
+    "word": " an",
+    "start": 525.1,
+    "end": 525.56
+  },
+  {
+    "word": " unserem",
+    "start": 525.56,
+    "end": 525.82
+  },
+  {
+    "word": " Website",
+    "start": 525.82,
+    "end": 526.26
+  },
+  {
+    "word": " langura",
+    "start": 526.26,
+    "end": 526.84
+  },
+  {
+    "word": ".de",
+    "start": 526.84,
+    "end": 527.44
+  },
+  {
+    "word": " und",
+    "start": 527.44,
+    "end": 527.9
+  },
+  {
+    "word": " Sie",
+    "start": 527.9,
+    "end": 528.08
+  },
+  {
+    "word": " bekommen",
+    "start": 528.08,
+    "end": 528.26
+  },
+  {
+    "word": " Ihren",
+    "start": 528.26,
+    "end": 528.64
+  },
+  {
+    "word": " ersten",
+    "start": 528.64,
+    "end": 528.96
+  },
+  {
+    "word": " E",
+    "start": 528.96,
+    "end": 529.26
+  },
+  {
+    "word": "-Mail",
+    "start": 529.26,
+    "end": 529.46
+  },
+  {
+    "word": " mit",
+    "start": 529.46,
+    "end": 529.68
+  },
+  {
+    "word": " Treasures",
+    "start": 529.68,
+    "end": 530.28
+  },
+  {
+    "word": " in",
+    "start": 530.28,
+    "end": 530.74
+  },
+  {
+    "word": " 30",
+    "start": 530.74,
+    "end": 531.6
+  },
+  {
+    "word": " Sekunden.",
+    "start": 531.6,
+    "end": 532.38
+  },
+  {
+    "word": " Auf",
+    "start": 532.58,
+    "end": 533.08
+  },
+  {
+    "word": " unserem",
+    "start": 533.08,
+    "end": 533.28
+  },
+  {
+    "word": " Website",
+    "start": 533.28,
+    "end": 533.8
+  },
+  {
+    "word": " finden",
+    "start": 533.8,
+    "end": 534.02
+  },
+  {
+    "word": " Sie",
+    "start": 534.02,
+    "end": 534.14
+  },
+  {
+    "word": " auch",
+    "start": 534.02,
+    "end": 534.54
+  },
+  {
+    "word": " den",
+    "start": 534.54,
+    "end": 535.34
+  },
+  {
+    "word": " Volltranskript",
+    "start": 535.34,
+    "end": 536.56
+  },
+  {
+    "word": " und",
+    "start": 536.56,
+    "end": 536.74
+  },
+  {
+    "word": " alle",
+    "start": 536.74,
+    "end": 537.14
+  },
+  {
+    "word": " Vokabularie",
+    "start": 537.14,
+    "end": 538.12
+  },
+  {
+    "word": "-Explanations.",
+    "start": 538.12,
+    "end": 538.74
+  },
+  {
+    "word": " So,",
+    "start": 538.74,
+    "end": 539.28
+  },
+  {
+    "word": " definitiv",
+    "start": 539.62,
+    "end": 540.24
+  },
+  {
+    "word": " worth",
+    "start": 540.24,
+    "end": 540.58
+  },
+  {
+    "word": " visiting.",
+    "start": 540.58,
+    "end": 541.1
+  },
+  {
+    "word": " Don't",
+    "start": 541.72,
+    "end": 541.94
+  },
+  {
+    "word": " forget",
+    "start": 541.94,
+    "end": 542.24
+  },
+  {
+    "word": " to",
+    "start": 542.24,
+    "end": 542.52
+  },
+  {
+    "word": " give",
+    "start": 542.52,
+    "end": 542.84
+  },
+  {
+    "word": " us",
+    "start": 542.84,
+    "end": 543.2
+  },
+  {
+    "word": " a",
+    "start": 543.2,
+    "end": 543.34
+  },
+  {
+    "word": " like,",
+    "start": 543.34,
+    "end": 543.58
+  },
+  {
+    "word": " if",
+    "start": 543.66,
+    "end": 543.94
+  },
+  {
+    "word": " this",
+    "start": 543.94,
+    "end": 544.42
+  },
+  {
+    "word": " video",
+    "start": 544.42,
+    "end": 544.78
+  },
+  {
+    "word": " helped",
+    "start": 544.78,
+    "end": 545.16
+  },
+  {
+    "word": " you.",
+    "start": 545.16,
+    "end": 545.46
+  },
+  {
+    "word": " Bis",
+    "start": 546.16,
+    "end": 546.38
+  },
+  {
+    "word": " dann,",
+    "start": 546.38,
+    "end": 546.78
+  },
+  {
+    "word": " macht's",
+    "start": 547.14,
+    "end": 547.48
+  },
+  {
+    "word": " gut,",
+    "start": 547.48,
+    "end": 547.66
+  },
+  {
+    "word": " tschüss!",
+    "start": 548.08,
+    "end": 548.36
+  }
+];
+window.sectionStartTimes = {"1": 0.0};
+
+// BOOKMARK STORAGE KEY - UNIQUE FOR EACH BOOK
+const BOOK_TITLE = "Telephone Conversation In German";
+const BOOK_ID = "f738b262";
+const BOOK_STORAGE_KEY = `audioBookBookmarks_${BOOK_TITLE}_${BOOK_ID}`;
+
+function wordsToSentences(words, pause=0.7){
+    let sentences=[], buffer=[], startTime=null;
+    for(let i=0;i<words.length;i++){
+        if(startTime===null) startTime=words[i].start;
+        buffer.push(words[i]);
+        const next=words[i+1];
+        if(!next||/[.!?]$/.test(words[i].word)||(next.start-words[i].end>pause)){
+            let endTime=words[i].end;
+            sentences.push({start:startTime, end:endTime, words:buffer});
+            buffer=[], startTime=null;
+        }
+    }
+    return sentences;
+}
+
+const sentenceData = wordsToSentences(wordData);
+const audio = document.getElementById("audio");
+const textDiv = document.getElementById("text");
+
+let autoScrollEnabled = true, currentSentence=-1;
+const allSentences = [];
+let isBookmarkMode = false;
+let selectedBookmarkColor = null;
+
+// ============ Variables for hybrid system ============
+let currentSelection = null;
+let currentRange = null;
+let isSelecting = false;
+let lastSelectionTime = 0;
+let singleClickMode = false;
+
+// Display text and create sentences - مشابه نمونه
+sentenceData.forEach(item=>{
+    let div=document.createElement("div"); 
+    div.className="block";
+    
+    // Check for section header (only if multi-section)
+    if (false && item.words[0] && item.words[0].section && 
+        (!item.words[0].previousSection || item.words[0].section !== item.words[0].previousSection)) {
+        const sectionDiv = document.createElement("div");
+        sectionDiv.className = "section-header";
+        sectionDiv.setAttribute("data-section", item.words[0].section);
+        sectionDiv.textContent = [][item.words[0].section - 1] || ("Section " + item.words[0].section);
+        textDiv.appendChild(sectionDiv);
+    }
+    
+    item.words.forEach((w, index)=>{
+        let span=document.createElement("span");
+        span.className="word";
+        
+        // حفظ فاصله قبل از کلمه (مشابه نمونه)
+        let wordText = w.word;
+        if (index > 0 && !wordText.startsWith(' ')) {
+            wordText = ' ' + wordText;
+        }
+        
+        span.textContent = wordText;
+        span.dataset.start = w.start;
+        span.dataset.word = w.word.trim();
+        span.dataset.end = w.end;
+        
+        // Hybrid click functionality - مشابه نمونه
+        span.onclick=(e)=>{
+            if (isBookmarkMode) {
+                e.stopPropagation();
+                e.preventDefault();
+                
+                if (selectedBookmarkColor) {
+                    singleClickMode = true;
+                    toggleBookmark(span, w.start, w.word.trim(), selectedBookmarkColor);
+                    singleClickMode = false;
+                }
+            } else {
+                audio.currentTime=w.start; 
+                audio.play();
+            }
+        };
+        
+        div.appendChild(span);
+    });
+    
+    textDiv.appendChild(div);
+    allSentences.push({
+        div: div,
+        start: item.start,
+        end: item.end
+    });
+});
+
+// Highlight sentences during playback
+audio.ontimeupdate=()=>{
+    allSentences.forEach((s,idx)=>{
+        if(audio.currentTime >= s.start && audio.currentTime <= s.end){
+            if(currentSentence !== idx){
+                allSentences.forEach(ss=>ss.div.classList.remove("sentence-highlight"));
+                s.div.classList.add("sentence-highlight");
+                
+                if(autoScrollEnabled){
+                    s.div.scrollIntoView({
+                        behavior: "smooth", 
+                        block: "center"
+                    });
+                }
+                currentSentence=idx;
+            }
+        }
+    });
+};
+
+// ==================== Hybrid Bookmark System ====================
+
+// Load saved bookmarks - ONLY FOR THIS BOOK
+function loadBookmarks() {
+    const saved = localStorage.getItem(BOOK_STORAGE_KEY);
+    return saved ? JSON.parse(saved) : [];
+}
+
+// Save bookmarks - ONLY FOR THIS BOOK
+function saveBookmarks(bookmarks) {
+    localStorage.setItem(BOOK_STORAGE_KEY, JSON.stringify(bookmarks));
+}
+
+// ============ Multiple word selection logic ============
+
+// Handle selection start
+document.addEventListener('mousedown', function(e) {
+    if (isBookmarkMode && e.button === 0 && !singleClickMode) {
+        isSelecting = true;
+        lastSelectionTime = Date.now();
+    }
+});
+
+// Handle selection end
+document.addEventListener('mouseup', function(e) {
+    if (isBookmarkMode && e.button === 0 && !singleClickMode) {
+        isSelecting = false;
+        
+        setTimeout(() => {
+            const selection = window.getSelection();
+            const selectedText = selection.toString().trim();
+            
+            if (selectedText.length > 0 && selectedBookmarkColor) {
+                const range = selection.rangeCount > 0 ? selection.getRangeAt(0).cloneRange() : null;
+                
+                if (range) {
+                    saveSelectionBookmark(range, selectedText, selectedBookmarkColor);
+                    window.getSelection().removeAllRanges();
+                }
+            } else {
+                processSelection();
+            }
+        }, 50);
+    }
+});
+
+// Selection processing function
+function processSelection() {
+    const selection = window.getSelection();
+    const selectedText = selection.toString().trim();
+    
+    if (selectedText.length > 0 && isBookmarkMode && !isSelecting && !singleClickMode) {
+        const now = Date.now();
+        
+        if (now - lastSelectionTime > 300) {
+            currentSelection = selectedText;
+            currentRange = selection.rangeCount > 0 ? selection.getRangeAt(0).cloneRange() : null;
+            
+            lastSelectionTime = now;
+            
+            if (selectedBookmarkColor && currentSelection && currentRange) {
+                setTimeout(() => {
+                    saveSelectionBookmark(currentRange, currentSelection, selectedBookmarkColor);
+                    currentSelection = null;
+                    currentRange = null;
+                    window.getSelection().removeAllRanges();
+                }, 100);
+            }
+        }
+    } else {
+        currentSelection = null;
+        currentRange = null;
+    }
+}
+
+// Function to get exact selected word nodes
+function getSelectedWordNodes(range) {
+    if (!range) return [];
+    
+    const selectedNodes = [];
+    const fragment = range.cloneContents();
+    const tempDiv = document.createElement('div');
+    tempDiv.appendChild(fragment);
+    
+    const wordSpans = tempDiv.querySelectorAll('.word');
+    
+    wordSpans.forEach(spanInFragment => {
+        const wordText = spanInFragment.dataset.word;
+        const startTime = spanInFragment.dataset.start;
+        
+        if (wordText && startTime) {
+            document.querySelectorAll('.word').forEach(originalSpan => {
+                if (originalSpan.dataset.word === wordText && 
+                    originalSpan.dataset.start === startTime &&
+                    !selectedNodes.includes(originalSpan)) {
+                    selectedNodes.push(originalSpan);
+                }
+            });
+        }
+    });
+    
+    return selectedNodes;
+}
+
+// Truncate text for display in list
+function truncateTextForDisplay(text, maxWords = 6) {
+    if (!text) return '';
+    
+    const words = text.trim().split(/\s+/);
+    if (words.length <= maxWords) return text;
+    
+    const firstPart = words.slice(0, 3).join(' ');
+    const lastPart = words.slice(-3).join(' ');
+    return `${firstPart} ... ${lastPart}`;
+}
+
+// Get full selected text with spaces
+function getFullSelectedText(range) {
+    if (!range) return '';
+    
+    const fragment = range.cloneContents();
+    const tempDiv = document.createElement('div');
+    tempDiv.appendChild(fragment);
+    
+    return tempDiv.textContent;
+}
+
+// Apply bookmark to word (single word)
+function toggleBookmark(spanElement, startTime, wordText, color) {
+    const bookmarks = loadBookmarks();
+    const existingIndex = bookmarks.findIndex(b => 
+        Math.abs(b.startTime - startTime) < 0.1 && b.word === wordText && b.type === 'single'
+    );
+    
+    if (existingIndex >= 0) {
+        bookmarks.splice(existingIndex, 1);
+        spanElement.classList.remove(`bookmark-${color}`);
+        showNotification('Bookmark removed', 'info');
+    } else {
+        const newBookmark = {
+            id: Date.now(),
+            startTime: startTime,
+            word: wordText,
+            color: color,
+            type: 'single',
+            timestamp: new Date().toISOString(),
+            bookTitle: BOOK_TITLE,
+            bookId: BOOK_ID,
+            displayText: wordText
+        };
+        bookmarks.push(newBookmark);
+        spanElement.classList.add(`bookmark-${color}`);
+        showNotification(`Word "${wordText}" bookmarked with ${getColorName(color)} color`, 'success');
+    }
+    
+    saveBookmarks(bookmarks);
+    updateBookmarkCount();
+}
+
+// Save selection bookmark (multiple words)
+function saveSelectionBookmark(range, selectedText, color) {
+    if (!range || !selectedText || !color) return;
+    
+    const bookmarks = loadBookmarks();
+    const selectedNodes = getSelectedWordNodes(range);
+    if (selectedNodes.length === 0) return;
+    
+    const fullText = getFullSelectedText(range);
+    const startTime = parseFloat(selectedNodes[0].dataset.start);
+    const endTime = parseFloat(selectedNodes[selectedNodes.length - 1].dataset.end);
+    
+    selectedNodes.forEach(node => {
+        node.classList.remove('bookmark-red', 'bookmark-blue', 'bookmark-green', 
+                              'bookmark-purple', 'bookmark-orange');
+        node.classList.add(`bookmark-${color}`);
+    });
+    
+    const newBookmark = {
+        id: Date.now(),
+        startTime: startTime,
+        endTime: endTime,
+        text: fullText,
+        displayText: truncateTextForDisplay(fullText),
+        color: color,
+        type: 'selection',
+        timestamp: new Date().toISOString(),
+        bookTitle: BOOK_TITLE,
+        bookId: BOOK_ID,
+        wordIds: selectedNodes.map(node => {
+            return {
+                startTime: node.dataset.start,
+                text: node.dataset.word
+            };
+        })
+    };
+    
+    bookmarks.push(newBookmark);
+    saveBookmarks(bookmarks);
+    
+    showNotification(`"${truncateTextForDisplay(fullText, 5)}" bookmarked`, 'success');
+    updateBookmarkCount();
+    
+    return newBookmark;
+}
+
+// Get color name
+function getColorName(color) {
+    const names = {
+        'red': 'Red (Important)',
+        'blue': 'Blue (Grammar)',
+        'green': 'Green (Vocabulary)',
+        'purple': 'Purple (Questions)',
+        'orange': 'Orange (Practice)'
+    };
+    return names[color] || color;
+}
+
+// Show notification
+function showNotification(message, type) {
+    const oldNotif = document.querySelector('.bookmark-notification');
+    if (oldNotif) oldNotif.remove();
+    
+    const notif = document.createElement('div');
+    notif.className = 'bookmark-notification';
+    notif.textContent = message;
+    
+    const colors = {
+        'success': '#6bcf7f',
+        'info': '#4d96ff',
+        'warning': '#ffa94d',
+        'error': '#ff6b6b'
+    };
+    
+    notif.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${colors[type] || '#4d96ff'};
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 10003;
+        font-weight: bold;
+        animation: slideIn 0.3s ease;
+        max-width: 300px;
+    `;
+    
+    document.body.appendChild(notif);
+    
+    setTimeout(() => {
+        notif.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notif.remove(), 300);
+    }, 3000);
+}
+
+// Apply saved bookmarks after page load - ONLY FOR THIS BOOK
+function applySavedBookmarks() {
+    const bookmarks = loadBookmarks();
+    bookmarks.forEach(bookmark => {
+        if (bookmark.type === 'single') {
+            document.querySelectorAll('.word').forEach(word => {
+                if (Math.abs(parseFloat(word.dataset.start) - bookmark.startTime) < 0.1 && 
+                    word.dataset.word === bookmark.word) {
+                    word.classList.add(`bookmark-${bookmark.color}`);
+                }
+            });
+        } else if (bookmark.type === 'selection' && bookmark.wordIds) {
+            bookmark.wordIds.forEach(wordInfo => {
+                document.querySelectorAll('.word').forEach(word => {
+                    if (word.dataset.start === wordInfo.startTime && 
+                        word.dataset.word === wordInfo.text) {
+                        word.classList.add(`bookmark-${bookmark.color}`);
+                    }
+                });
+            });
+        }
+    });
+}
+
+// Update bookmark count
+function updateBookmarkCount() {
+    const bookmarks = loadBookmarks();
+    const countElement = document.getElementById('bookmark-count');
+    if (countElement) {
+        countElement.textContent = `📌 Bookmarks: ${bookmarks.length}`;
+    }
+}
+
+// Jump to bookmark - مشابه نمونه: فقط حرکت بدون پخش صوت
+function jumpToBookmark(startTime) {
+    const audio = document.getElementById('audio');
+    audio.currentTime = startTime;
+    
+    allSentences.forEach((s, idx) => {
+        if (startTime >= s.start && startTime <= s.end) {
+            allSentences.forEach(ss => ss.div.classList.remove("sentence-highlight"));
+            s.div.classList.add("sentence-highlight");
+            currentSentence = idx;
+            
+            s.div.scrollIntoView({
+                behavior: "smooth", 
+                block: "center"
+            });
+        }
+    });
+    
+    const seekBar = document.getElementById('audio-seek-bar');
+    if (seekBar) {
+        seekBar.value = Math.floor(startTime);
+    }
+    
+    const timeDisplay = document.getElementById('audio-time-display');
+    if (timeDisplay && audio) {
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "00:00";
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        timeDisplay.textContent = `${formatTime(startTime)} / ${formatTime(audio.duration)}`;
+    }
+    
+    showNotification('Moved to bookmark position', 'success');
+}
+
+// Remove bookmark - ONLY FOR THIS BOOK
+function removeBookmark(bookmarkId) {
+    const bookmarks = loadBookmarks();
+    const filtered = bookmarks.filter(b => b.id !== bookmarkId);
+    saveBookmarks(filtered);
+    
+    // Reapply bookmarks to refresh display
+    document.querySelectorAll('.word').forEach(word => {
+        word.classList.remove('bookmark-red', 'bookmark-blue', 'bookmark-green', 
+                              'bookmark-purple', 'bookmark-orange');
+    });
+    
+    applySavedBookmarks();
+    updateBookmarkCount();
+    showNotification('Bookmark removed', 'info');
+}
+
+// Remove all bookmarks - ONLY FOR THIS BOOK
+function clearAllBookmarks() {
+    if (confirm('Are you sure you want to remove all bookmarks for this book?')) {
+        localStorage.removeItem(BOOK_STORAGE_KEY); // Only remove bookmarks for this book
+        document.querySelectorAll('.word').forEach(word => {
+            word.classList.remove('bookmark-red', 'bookmark-blue', 'bookmark-green', 
+                                  'bookmark-purple', 'bookmark-orange');
+        });
+        showNotification('All bookmarks removed for this book', 'warning');
+        updateBookmarkCount();
+    }
+}
+
+// Initial execution
+document.addEventListener('DOMContentLoaded', function() {
+    applySavedBookmarks();
+    updateBookmarkCount();
+});
+
+// Notification animation styles
+const notificationStyle = document.createElement('style');
+notificationStyle.textContent = `
+    @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+    }
+`;
+document.head.appendChild(notificationStyle);
+</script>
+
+<!-- BOOK CONTROLS SCRIPT START -->
+<script>
+// Navigation variables - مشابه فایل نویگیتور
+const prevLink = "../3-German Conversation in 7 Different Situations/German Dialogue in Restaurant.html";
+const nextLink = "../4-Der Bankraub A1.1 to C1.2/Der Bankraub A1.1 (Kapitel 1-4).html";
+const indexLink = "../../PIONAN Deutsch Course_index.html";
+
+// Text file variables
+const textFile = "Telephone Conversation in German.docx";
+
+// Page load
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Page loaded, initializing controls...');
+    initializeAllControls();
+    setupTOCNavigation();
+    setupBookmarkControls();
+});
+
+function initializeAllControls() {
+    createControlPanel();
+    createBackToTopButton();
+    setupAudioPlayer();
+    setupNavigation();
+    setupAutoScroll();
+    setupFontControls();
+    console.log('✅ All controls initialized successfully!');
+}
+
+function setupTOCNavigation() {
+    // Add click events to TOC items (only if they exist)
+    document.querySelectorAll('.toc-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const sectionNum = this.getAttribute('data-section');
+            const targetDiv = document.querySelector(`.section-header[data-section="${sectionNum}"]`);
+            if (targetDiv) {
+                targetDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                document.querySelectorAll('.section-header').forEach(h => h.style.background = '#3498db');
+                targetDiv.style.background = '#2980b9';
+                
+                const audio = document.getElementById('audio');
+                if (audio && window.sectionStartTimes && window.sectionStartTimes[sectionNum]) {
+                    audio.currentTime = window.sectionStartTimes[sectionNum];
+                    audio.play();
+                }
+            }
+        });
+    });
+    
+    // Add click events to section headers (only if they exist)
+    document.querySelectorAll('.section-header').forEach(header => {
+        header.addEventListener('click', function() {
+            const sectionNum = this.getAttribute('data-section');
+            const audio = document.getElementById('audio');
+            if (audio && window.sectionStartTimes && window.sectionStartTimes[sectionNum]) {
+                audio.currentTime = window.sectionStartTimes[sectionNum];
+                audio.play();
+            }
+        });
+    });
+}
+
+function createControlPanel() {
+    // Remove old controls
+    const oldPanel = document.getElementById('book-controls-panel');
+    if (oldPanel) oldPanel.remove();
+    
+    // Create control panel
+    const panel = document.createElement('div');
+    panel.id = 'book-controls-panel';
+    panel.style.cssText = `
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        padding: 15px 20px;
+        border-top: 3px solid #0f3460;
+        z-index: 10000;
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    `;
+    
+    // Row 1: Audio controls
+    const audioRow = document.createElement('div');
+    audioRow.style.cssText = 'display: flex; gap: 15px; align-items: center; margin-bottom: 15px; flex-wrap: wrap;';
+    
+    // Play/Pause button
+    const playBtn = document.createElement('button');
+    playBtn.id = 'audio-play-btn';
+    playBtn.innerHTML = '▶ <span style="margin-left: 5px;">Play</span>';
+    playBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #00b894, #00a085);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    // Seek Bar
+    const seekBar = document.createElement('input');
+    seekBar.id = 'audio-seek-bar';
+    seekBar.type = 'range';
+    seekBar.style.cssText = `
+        flex: 1;
+        min-width: 200px;
+        height: 8px;
+        border-radius: 4px;
+        background: #2c3e50;
+        outline: none;
+    `;
+    
+    // Speed control
+    const speedControl = document.createElement('div');
+    speedControl.style.cssText = 'display: flex; align-items: center; gap: 8px;';
+    
+    const speedLabel = document.createElement('span');
+    speedLabel.textContent = 'Speed:';
+    speedLabel.style.cssText = 'color: #ecf0f1; font-size: 14px;';
+    
+    const speedSelect = document.createElement('select');
+    speedSelect.id = 'audio-speed-select';
+    speedSelect.innerHTML = `
+        <option value="0.5">0.5x</option>
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1.0x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2.0x</option>
+    `;
+    speedSelect.style.cssText = `
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 2px solid #3498db;
+        background: #2c3e50;
+        color: #ecf0f1;
+        font-weight: bold;
+    `;
+    
+    speedControl.appendChild(speedLabel);
+    speedControl.appendChild(speedSelect);
+    
+    // Time display
+    const timeDisplay = document.createElement('div');
+    timeDisplay.id = 'audio-time-display';
+    timeDisplay.textContent = '00:00 / 00:00';
+    timeDisplay.style.cssText = `
+        color: #ecf0f1;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        min-width: 110px;
+        text-align: center;
+        background: rgba(44, 62, 80, 0.7);
+        padding: 6px 12px;
+        border-radius: 6px;
+    `;
+    
+    audioRow.appendChild(playBtn);
+    audioRow.appendChild(seekBar);
+    audioRow.appendChild(speedControl);
+    audioRow.appendChild(timeDisplay);
+    
+    // Row 2: Other controls
+    const controlRow = document.createElement('div');
+    controlRow.style.cssText = 'display: flex; gap: 15px; align-items: center; margin-bottom: 10px; flex-wrap: wrap;';
+    
+    // Auto scroll button
+    const scrollBtn = document.createElement('button');
+    scrollBtn.id = 'auto-scroll-btn';
+    scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: OFF</span>';
+    scrollBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #0984e3, #074a7a);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    // Bookmark mode button
+    const bookmarkModeBtn = document.createElement('button');
+    bookmarkModeBtn.id = 'bookmark-mode-btn';
+    bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: OFF</span>';
+    bookmarkModeBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    // Font control
+    const fontControl = document.createElement('div');
+    fontControl.style.cssText = 'display: flex; align-items: center; gap: 10px;';
+    
+    const fontBtn = document.createElement('button');
+    fontBtn.id = 'font-change-btn';
+    fontBtn.innerHTML = 'A <span style="margin-left: 5px;">Font</span>';
+    fontBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    const fontSizeSelect = document.createElement('select');
+    fontSizeSelect.id = 'font-size-select';
+    fontSizeSelect.innerHTML = `
+        <option value="16">16px</option>
+        <option value="18" selected>18px</option>
+        <option value="20">20px</option>
+        <option value="24">24px</option>
+        <option value="28">28px</option>
+        <option value="32">32px</option>
+        <option value="36">36px</option>
+        <option value="40">40px</option>
+        <option value="44">44px</option>
+        <option value="48">48px</option>
+    `;
+    fontSizeSelect.style.cssText = `
+        padding: 8px 15px;
+        border-radius: 6px;
+        border: 2px solid #9b59b6;
+        background: #2c3e50;
+        color: #ecf0f1;
+        font-weight: bold;
+        min-width: 80px;
+    `;
+    
+    fontControl.appendChild(fontBtn);
+    fontControl.appendChild(fontSizeSelect);
+    
+    // Text button
+    const textBtn = document.createElement('button');
+    textBtn.id = 'text-file-btn';
+    textBtn.innerHTML = '📄 <span style="margin-left: 5px;">Text</span>';
+    textBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #e17055, #d63031);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    textBtn.addEventListener('click', function() {
+        window.open(textFile, '_blank');
+    });
+    
+    // Navigation - مشابه فایل نویگیتور
+    const navControl = document.createElement('div');
+    navControl.style.cssText = 'display: flex; gap: 10px; align-items: center; margin-left: auto;';
+    
+    const prevBtn = document.createElement('button');
+    prevBtn.id = 'nav-prev-btn';
+    prevBtn.innerHTML = '◀ <span style="margin-left: 5px;">Previous</span>';
+    prevBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #e17055, #d63031);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    if (!prevLink || prevLink === 'null') {
+        prevBtn.disabled = true;
+        prevBtn.style.opacity = '0.5';
+        prevBtn.style.cursor = 'not-allowed';
+    }
+    
+    const indexBtn = document.createElement('button');
+    indexBtn.id = 'nav-index-btn';
+    indexBtn.innerHTML = '📑 <span style="margin-left: 5px;">Index</span>';
+    indexBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #fdcb6e, #e17055);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    const nextBtn = document.createElement('button');
+    nextBtn.id = 'nav-next-btn';
+    nextBtn.innerHTML = '<span style="margin-right: 5px;">Next</span> ▶';
+    nextBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #00cec9, #00b894);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    if (!nextLink || nextLink === 'null') {
+        nextBtn.disabled = true;
+        nextBtn.style.opacity = '0.5';
+        nextBtn.style.cursor = 'not-allowed';
+    }
+    
+    navControl.appendChild(prevBtn);
+    navControl.appendChild(indexBtn);
+    navControl.appendChild(nextBtn);
+    
+    controlRow.appendChild(scrollBtn);
+    controlRow.appendChild(bookmarkModeBtn);
+    controlRow.appendChild(fontControl);
+    controlRow.appendChild(textBtn);
+    controlRow.appendChild(navControl);
+    
+    // Row 3: File information - مشابه نمونه
+    const infoRow = document.createElement('div');
+    infoRow.style.cssText = 'display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; gap: 10px;';
+    
+    const fileInfo = document.createElement('div');
+    fileInfo.id = 'file-info';
+    fileInfo.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="background: #e74c3c; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold;">Telephone Conversation In German</span>
+            <span id="bookmark-count" style="background: #9b59b6; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold;">
+                📌 Bookmarks: 0
+            </span>
+        </div>
+    `;
+    
+    infoRow.appendChild(fileInfo);
+    
+    // Add everything to panel
+    panel.appendChild(audioRow);
+    panel.appendChild(controlRow);
+    panel.appendChild(infoRow);
+    
+    // Add panel to page
+    document.body.appendChild(panel);
+    
+    // Add padding to body
+    const panelHeight = panel.offsetHeight;
+    document.body.style.paddingBottom = panelHeight + 20 + 'px';
+}
+
+function createBackToTopButton() {
+    const existingBackBtn = document.getElementById('back-to-top-btn');
+    if (existingBackBtn) existingBackBtn.remove();
+    
+    const backBtn = document.createElement('button');
+    backBtn.id = 'back-to-top-btn';
+    backBtn.innerHTML = '⬆ <span style="color: white; margin-left: 5px;">Back to Top</span>';
+    backBtn.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #118AB2, #2980b9);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        z-index: 10001;
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        transition: all 0.3s;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    `;
+    
+    backBtn.addEventListener('click', function() {
+        const audio = document.querySelector('audio');
+        if (audio) {
+            audio.pause();
+        }
+        
+        const scrollBtn = document.getElementById('auto-scroll-btn');
+        if (scrollBtn && scrollBtn.innerHTML.includes('ON')) {
+            scrollBtn.click();
+        }
+        
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        if (audio) {
+            audio.currentTime = 0;
+        }
+        
+        const seekBar = document.getElementById('audio-seek-bar');
+        if (seekBar) {
+            seekBar.value = 0;
+        }
+        
+        if (audio) {
+            const timeDisplay = document.getElementById('audio-time-display');
+            if (timeDisplay) {
+                function formatTime(seconds) {
+                    if (isNaN(seconds)) return "00:00";
+                    const mins = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                }
+                
+                timeDisplay.textContent = `00:00 / ${formatTime(audio.duration)}`;
+            }
+        }
+        
+        document.querySelectorAll('.sentence-highlight').forEach(el => {
+            el.classList.remove('sentence-highlight');
+        });
+    });
+    
+    document.body.appendChild(backBtn);
+}
+
+function setupAudioPlayer() {
+    const audio = document.querySelector('audio');
+    if (!audio) {
+        document.getElementById('audio-play-btn').style.display = 'none';
+        document.getElementById('audio-seek-bar').style.display = 'none';
+        document.getElementById('audio-speed-select').parentElement.style.display = 'none';
+        document.getElementById('audio-time-display').style.display = 'none';
+        return;
+    }
+    
+    const playBtn = document.getElementById('audio-play-btn');
+    const seekBar = document.getElementById('audio-seek-bar');
+    const speedSelect = document.getElementById('audio-speed-select');
+    const timeDisplay = document.getElementById('audio-time-display');
+    
+    function formatTime(seconds) {
+        if (isNaN(seconds)) return "00:00";
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+    
+    function updateTime() {
+        if (audio.duration) {
+            timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+            seekBar.max = Math.floor(audio.duration);
+            seekBar.value = Math.floor(audio.currentTime);
+        }
+    }
+    
+    audio.addEventListener('loadedmetadata', updateTime);
+    audio.addEventListener('timeupdate', updateTime);
+    
+    audio.addEventListener('play', function() {
+        playBtn.innerHTML = '⏸ <span style="margin-left: 5px;">Pause</span>';
+        playBtn.style.background = 'linear-gradient(135deg, #d63031, #c0392b)';
+        playBtn.disabled = false;
+    });
+    
+    audio.addEventListener('pause', function() {
+        playBtn.innerHTML = '▶ <span style="margin-left: 5px;">Play</span>';
+        playBtn.style.background = 'linear-gradient(135deg, #00b894, #00a085)';
+        playBtn.disabled = false;
+    });
+    
+    playBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play().catch(e => console.log('Play error:', e));
+        } else {
+            audio.pause();
+        }
+    });
+    
+    seekBar.addEventListener('input', function() {
+        if (audio.duration) {
+            audio.currentTime = this.value;
+        }
+    });
+    
+    speedSelect.addEventListener('change', function() {
+        audio.playbackRate = parseFloat(this.value);
+    });
+    
+    audio.playbackRate = 1.0;
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.code === 'Space' && !e.target.matches('input, textarea, button, select')) {
+            e.preventDefault();
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    });
+}
+
+function setupNavigation() {
+    const prevBtn = document.getElementById('nav-prev-btn');
+    const nextBtn = document.getElementById('nav-next-btn');
+    const indexBtn = document.getElementById('nav-index-btn');
+    
+    if (prevBtn && !prevBtn.disabled) {
+        prevBtn.addEventListener('click', function() {
+            if (prevLink && prevLink !== 'null') {
+                window.location.href = prevLink;
+            }
+        });
+    }
+    
+    if (nextBtn && !nextBtn.disabled) {
+        nextBtn.addEventListener('click', function() {
+            if (nextLink && nextLink !== 'null') {
+                window.location.href = nextLink;
+            }
+        });
+    }
+    
+    if (indexBtn) {
+        indexBtn.addEventListener('click', function() {
+            if (indexLink && indexLink !== 'null') {
+                window.location.href = indexLink;
+            }
+        });
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.target.matches('input, textarea, button, select')) return;
+        
+        switch(e.code) {
+            case 'ArrowLeft':
+                if (prevLink && prevLink !== 'null' && prevBtn && !prevBtn.disabled) {
+                    window.location.href = prevLink;
+                }
+                break;
+                
+            case 'ArrowRight':
+                if (nextLink && nextLink !== 'null' && nextBtn && !nextBtn.disabled) {
+                    window.location.href = nextLink;
+                }
+                break;
+                
+            case 'Home':
+                if (indexLink && indexLink !== 'null') {
+                    window.location.href = indexLink;
+                }
+                break;
+        }
+    });
+}
+
+function setupAutoScroll() {
+    const scrollBtn = document.getElementById('auto-scroll-btn');
+    if (!scrollBtn) return;
+    
+    let isScrolling = false;
+    let scrollInterval;
+    let scrollSpeed = 1;
+    
+    scrollBtn.addEventListener('click', function() {
+        isScrolling = !isScrolling;
+        
+        if (isScrolling) {
+            scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: ON</span>';
+            scrollBtn.style.background = 'linear-gradient(135deg, #00cec9, #00b894)';
+            
+            scrollInterval = setInterval(function() {
+                window.scrollBy({
+                    top: scrollSpeed,
+                    behavior: 'smooth'
+                });
+                
+                if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100) {
+                    clearInterval(scrollInterval);
+                    isScrolling = false;
+                    scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: OFF</span>';
+                    scrollBtn.style.background = 'linear-gradient(135deg, #0984e3, #074a7a)';
+                }
+            }, 30);
+        } else {
+            scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: OFF</span>';
+            scrollBtn.style.background = 'linear-gradient(135deg, #0984e3, #074a7a)';
+            
+            if (scrollInterval) {
+                clearInterval(scrollInterval);
+            }
+        }
+    });
+}
+
+function setupFontControls() {
+    const fontBtn = document.getElementById('font-change-btn');
+    const fontSizeSelect = document.getElementById('font-size-select');
+    
+    if (!fontBtn || !fontSizeSelect) return;
+    
+    const fonts = [
+        'Arial, Helvetica, sans-serif',
+        'Tahoma, Geneva, sans-serif',
+        'Verdana, Geneva, sans-serif',
+        'Georgia, serif',
+        '"Times New Roman", Times, serif',
+        '"Courier New", Courier, monospace',
+        '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
+    ];
+    
+    const fontNames = ['Arial', 'Tahoma', 'Verdana', 'Georgia', 'Times', 'Courier', 'Segoe'];
+    let fontIndex = 0;
+    
+    const savedFont = localStorage.getItem('book-pro-font') || fonts[0];
+    const savedSize = localStorage.getItem('book-pro-size') || '18';
+    
+    document.body.style.fontFamily = savedFont;
+    document.body.style.fontSize = savedSize + 'px';
+    
+    const savedIndex = fonts.findIndex(f => f === savedFont);
+    if (savedIndex !== -1) {
+        fontIndex = savedIndex;
+    }
+    
+    fontSizeSelect.value = savedSize;
+    
+    fontBtn.addEventListener('click', function() {
+        fontIndex = (fontIndex + 1) % fonts.length;
+        const newFont = fonts[fontIndex];
+        document.body.style.fontFamily = newFont;
+        localStorage.setItem('book-pro-font', newFont);
+        fontBtn.innerHTML = `${fontNames[fontIndex][0]} <span style="margin-left: 5px;">${fontNames[fontIndex]}</span>`;
+    });
+    
+    fontBtn.innerHTML = `${fontNames[fontIndex][0]} <span style="margin-left: 5px;">${fontNames[fontIndex]}</span>`;
+    
+    fontSizeSelect.addEventListener('change', function() {
+        const size = this.value + 'px';
+        document.body.style.fontSize = size;
+        localStorage.setItem('book-pro-size', this.value);
+    });
+}
+
+// ==================== Hybrid Bookmark System in Controls ====================
+
+function setupBookmarkControls() {
+    const bookmarkModeBtn = document.getElementById('bookmark-mode-btn');
+    const palette = document.getElementById('bookmark-palette');
+    const cancelBtn = document.getElementById('cancel-bookmark');
+    const showAllBtn = document.getElementById('show-all-bookmarks');
+    const clearAllBtn = document.getElementById('clear-all-bookmarks');
+    const audio = document.getElementById('audio');
+    const playBtn = document.getElementById('audio-play-btn');
+    
+    if (!bookmarkModeBtn) return;
+    
+    bookmarkModeBtn.addEventListener('click', function() {
+        isBookmarkMode = !isBookmarkMode;
+        
+        if (isBookmarkMode) {
+            bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: ON</span>';
+            bookmarkModeBtn.style.background = 'linear-gradient(135deg, #00cec9, #00b894)';
+            palette.style.display = 'block';
+            
+            if (audio && !audio.paused) {
+                audio.pause();
+            }
+            
+            if (playBtn) {
+                playBtn.disabled = true;
+                playBtn.style.opacity = '0.5';
+                playBtn.style.cursor = 'not-allowed';
+            }
+            
+            showNotification('Bookmark mode activated. Choose a color and click on words or select multiple words', 'info');
+        } else {
+            bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: OFF</span>';
+            bookmarkModeBtn.style.background = 'linear-gradient(135deg, #9b59b6, #8e44ad)';
+            palette.style.display = 'none';
+            selectedBookmarkColor = null;
+            currentSelection = null;
+            currentRange = null;
+            isSelecting = false;
+            
+            if (playBtn) {
+                playBtn.disabled = false;
+                playBtn.style.opacity = '1';
+                playBtn.style.cursor = 'pointer';
+            }
+            
+            showNotification('Bookmark mode deactivated', 'info');
+        }
+    });
+    
+    document.querySelectorAll('.bookmark-color-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            
+            selectedBookmarkColor = this.dataset.color;
+            
+            document.querySelectorAll('.bookmark-color-btn').forEach(b => {
+                b.style.transform = 'scale(1)';
+                b.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+            });
+            this.style.transform = 'scale(1.1)';
+            this.style.boxShadow = '0 6px 12px rgba(0,0,0,0.3)';
+            
+            if (currentSelection && currentRange) {
+                saveSelectionBookmark(currentRange, currentSelection, selectedBookmarkColor);
+                currentSelection = null;
+                currentRange = null;
+            } else {
+                showNotification(`Color ${getColorName(selectedBookmarkColor)} selected. Click on words or select multiple words`, 'info');
+            }
+        });
+    });
+    
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', function() {
+            isBookmarkMode = false;
+            bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: OFF</span>';
+            bookmarkModeBtn.style.background = 'linear-gradient(135deg, #9b59b6, #8e44ad)';
+            palette.style.display = 'none';
+            selectedBookmarkColor = null;
+            currentSelection = null;
+            currentRange = null;
+            isSelecting = false;
+            
+            if (playBtn) {
+                playBtn.disabled = false;
+                playBtn.style.opacity = '1';
+                playBtn.style.cursor = 'pointer';
+            }
+            
+            showNotification('Bookmark mode cancelled', 'info');
+        });
+    }
+    
+    if (showAllBtn) {
+        showAllBtn.addEventListener('click', function() {
+            const bookmarks = loadBookmarks();
+            if (bookmarks.length === 0) {
+                showNotification('No bookmarks available for this book', 'info');
+                return;
+            }
+            
+            const modal = document.createElement('div');
+            modal.id = 'bookmarks-modal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.7);
+                z-index: 10004;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                animation: fadeIn 0.3s ease;
+            `;
+            
+            let contentHTML = `
+                <div style="background: white; border-radius: 15px; padding: 25px; max-width: 600px; max-height: 500px; overflow-y: auto; box-shadow: 0 15px 40px rgba(0,0,0,0.4);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="margin: 0; color: #1a1a2e;">📚 Your Bookmarks (${bookmarks.length}) - ${BOOK_TITLE}</h3>
+                        <button id="close-bookmarks-modal" style="background: none; border: none; font-size: 20px; cursor: pointer; color: #666;">×</button>
+                    </div>
+            `;
+            
+            if (bookmarks.length === 0) {
+                contentHTML += `
+                    <div style="text-align: center; padding: 40px; color: #666;">
+                        No bookmarks available for this book
+                    </div>
+                `;
+            } else {
+                bookmarks.forEach((b, i) => {
+                    const colorHex = {
+                        'red': '#ff6b6b',
+                        'blue': '#4d96ff',
+                        'green': '#6bcf7f',
+                        'purple': '#9d65c9',
+                        'orange': '#ffa94d'
+                    }[b.color] || '#888';
+                    
+                    const colorStyle = `background: ${colorHex}; color: white; padding: 2px 8px; border-radius: 10px; font-size: 11px;`;
+                    
+                    let displayText = b.displayText || b.word;
+                    if (b.text && b.text.split(/\s+/).length > 6) {
+                        const words = b.text.split(/\s+/);
+                        if (words.length > 6) {
+                            const firstThree = words.slice(0, 3).join(' ');
+                            const lastThree = words.slice(-3).join(' ');
+                            displayText = `${firstThree} ... ${lastThree}`;
+                        }
+                    }
+                    
+                    contentHTML += `
+                        <div style="margin: 12px 0; padding: 15px; border: 1px solid #eee; border-radius: 10px; background: #f9f9f9;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: bold; font-size: 14px; margin-bottom: 5px; cursor: pointer;" 
+                                         onclick="jumpToBookmark(${b.startTime}); document.getElementById('bookmarks-modal').remove();"
+                                         title="${b.text || b.word}">
+                                        ${i+1}. "${displayText}"
+                                    </div>
+                                    <div style="font-size: 12px; color: #888; margin-top: 8px;">
+                                        Time: ${formatTime(b.startTime)} • 
+                                        ${new Date(b.timestamp).toLocaleDateString('en-US')}
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 8px; align-items: center;">
+                                    <span style="${colorStyle}">${getColorName(b.color)}</span>
+                                    <button onclick="removeBookmark(${b.id}); this.parentElement.parentElement.parentElement.remove(); updateBookmarkCount();" 
+                                            style="background: #d63031; color: white; border: none; border-radius: 5px; padding: 4px 10px; font-size: 11px; cursor: pointer;">
+                                        Remove
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            contentHTML += `
+                    <div style="margin-top: 20px; text-align: center;">
+                        <button id="close-bookmarks-btn" style="padding: 10px 25px; background: #0984e3; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            modal.innerHTML = contentHTML;
+            document.body.appendChild(modal);
+            
+            document.getElementById('close-bookmarks-modal').addEventListener('click', function() {
+                modal.remove();
+            });
+            
+            document.getElementById('close-bookmarks-btn').addEventListener('click', function() {
+                modal.remove();
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        });
+    }
+    
+    if (clearAllBtn) {
+        clearAllBtn.addEventListener('click', function() {
+            clearAllBookmarks();
+        });
+    }
+    
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+}
+
+const proStyle = document.createElement('style');
+proStyle.textContent = `
+    #book-controls-panel button {
+        transition: all 0.3s ease !important;
+    }
+    
+    #book-controls-panel button:hover:not(:disabled) {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    #book-controls-panel button:active:not(:disabled) {
+        transform: translateY(0) !important;
+    }
+    
+    #audio-seek-bar {
+        -webkit-appearance: none;
+        height: 8px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #3498db 0%, #2c3e50 100%);
+        outline: none;
+    }
+    
+    #audio-seek-bar::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #3498db;
+        cursor: pointer;
+        border: 3px solid white;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    
+    .bookmark-color-btn {
+        transition: all 0.3s ease !important;
+    }
+    
+    .bookmark-color-btn:hover {
+        transform: scale(1.1) !important;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.3) !important;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+`;
+document.head.appendChild(proStyle);
+
+console.log('🎯 Book Pro controls loaded successfully!');
+</script>
+</body>
+</html>

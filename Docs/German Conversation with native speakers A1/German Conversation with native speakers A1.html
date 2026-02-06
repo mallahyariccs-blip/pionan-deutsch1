@@ -1,0 +1,10295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>German Conversation With Native Speakers A1</title>
+<style>
+body { font-family: Tahoma, sans-serif; background: #fdfdfd; color: #222; padding: 20px; padding-bottom:120px; }
+.block { margin:20px 0; white-space: pre-wrap; }
+.word { cursor:pointer; padding:1px 2px; transition: background 0.2s; display:inline; white-space: pre-wrap; }
+.sentence-highlight { background-color:#ffe06688; border-radius:3px; }
+.section-header { 
+    background: #3498db; 
+    color: white; 
+    padding: 12px 20px; 
+    border-radius: 8px; 
+    margin: 25px 0 15px 0; 
+    font-weight: bold; 
+    font-size: 1.3em; 
+    cursor: pointer; 
+    border-left: 6px solid #2980b9;
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.2);
+    transition: all 0.3s;
+}
+.section-header:hover { 
+    background: #2980b9; 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+.toc-container { 
+    background: #f8f9fa; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    padding: 20px; 
+    margin: 25px 0; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.toc-title { 
+    font-size: 1.4em; 
+    font-weight: bold; 
+    color: #2c3e50; 
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+.toc-item { 
+    padding: 10px 15px; 
+    margin: 8px 0; 
+    background: white; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    border-left: 5px solid #3498db;
+    transition: all 0.2s;
+    font-size: 0.95em;
+}
+.toc-item:hover { 
+    background: #e3f2fd; 
+    transform: translateX(5px); 
+    border-left-color: #2980b9;
+}
+/* Bookmark Styles */
+.word.bookmark-red { background-color: rgba(255, 107, 107, 0.3) !important; border-bottom: 2px solid #ff6b6b; }
+.word.bookmark-blue { background-color: rgba(77, 150, 255, 0.3) !important; border-bottom: 2px solid #4d96ff; }
+.word.bookmark-green { background-color: rgba(107, 207, 127, 0.3) !important; border-bottom: 2px solid #6bcf7f; }
+.word.bookmark-purple { background-color: rgba(157, 101, 201, 0.3) !important; border-bottom: 2px solid #9d65c9; }
+.word.bookmark-orange { background-color: rgba(255, 169, 77, 0.3) !important; border-bottom: 2px solid #ffa94d; }
+/* Bookmark Palette */
+#bookmark-palette { 
+    display: none;
+    position: fixed;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 10002;
+    border: 3px solid #1a1a2e;
+}
+</style>
+</head>
+<body>
+<h2 style="text-align:center; color:#2c3e50; margin-bottom:30px;">🎧 German Conversation With Native Speakers A1</h2>
+
+
+
+<div id="text"></div>
+
+<audio id="audio" src="German Conversation with native speakers A1.mp3"></audio>
+
+<!-- Bookmark Palette -->
+<div id="bookmark-palette">
+    <div style="text-align: center; margin-bottom: 15px; font-weight: bold; color: #1a1a2e;">
+        📌 Bookmark with color:
+    </div>
+    <div style="display: flex; gap: 15px; justify-content: center;">
+        <div class="bookmark-color-btn" data-color="red" title="Important" style="width: 40px; height: 40px; background: #ff6b6b; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="blue" title="Grammar" style="width: 40px; height: 40px; background: #4d96ff; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="green" title="New Vocabulary" style="width: 40px; height: 40px; background: #6bcf7f; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="purple" title="Questions" style="width: 40px; height: 40px; background: #9d65c9; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div class="bookmark-color-btn" data-color="orange" title="Practice" style="width: 40px; height: 40px; background: #ffa94d; border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+    </div>
+    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
+        <button id="show-all-bookmarks" style="padding: 8px 15px; background: #0984e3; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px;">Show All Bookmarks</button>
+        <button id="clear-all-bookmarks" style="padding: 8px 15px; background: #d63031; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px;">Clear All</button>
+        <button id="cancel-bookmark" style="padding: 8px 15px; background: #666; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 12px;">Cancel</button>
+    </div>
+    <div style="text-align: center; margin-top: 15px; font-size: 12px; color: #666;">
+        Click on a word or select multiple words, then choose a color
+    </div>
+</div>
+
+<script>
+const wordData = [
+  {
+    "word": " Lisa,",
+    "start": 0.0,
+    "end": 0.94
+  },
+  {
+    "word": " ich",
+    "start": 1.7,
+    "end": 1.88
+  },
+  {
+    "word": " sehe,",
+    "start": 1.88,
+    "end": 2.28
+  },
+  {
+    "word": " du",
+    "start": 2.7,
+    "end": 2.88
+  },
+  {
+    "word": " hast",
+    "start": 2.88,
+    "end": 3.34
+  },
+  {
+    "word": " sehr",
+    "start": 3.34,
+    "end": 3.86
+  },
+  {
+    "word": " gute",
+    "start": 3.86,
+    "end": 4.14
+  },
+  {
+    "word": " Laune,",
+    "start": 4.14,
+    "end": 4.56
+  },
+  {
+    "word": " oder?",
+    "start": 4.94,
+    "end": 5.16
+  },
+  {
+    "word": " Ja,",
+    "start": 5.8,
+    "end": 6.14
+  },
+  {
+    "word": " ich",
+    "start": 6.36,
+    "end": 6.54
+  },
+  {
+    "word": " habe",
+    "start": 6.54,
+    "end": 6.7
+  },
+  {
+    "word": " gute",
+    "start": 6.7,
+    "end": 7.04
+  },
+  {
+    "word": " Laune.",
+    "start": 7.04,
+    "end": 7.52
+  },
+  {
+    "word": " Hier",
+    "start": 8.44,
+    "end": 9.12
+  },
+  {
+    "word": " in",
+    "start": 9.12,
+    "end": 9.46
+  },
+  {
+    "word": " München",
+    "start": 9.46,
+    "end": 10.04
+  },
+  {
+    "word": " scheint",
+    "start": 10.04,
+    "end": 10.74
+  },
+  {
+    "word": " die",
+    "start": 10.74,
+    "end": 11.02
+  },
+  {
+    "word": " Sonne,",
+    "start": 11.02,
+    "end": 11.34
+  },
+  {
+    "word": " der",
+    "start": 11.7,
+    "end": 11.88
+  },
+  {
+    "word": " Himmel",
+    "start": 11.88,
+    "end": 12.32
+  },
+  {
+    "word": " ist",
+    "start": 12.32,
+    "end": 12.62
+  },
+  {
+    "word": " wolkenfrei",
+    "start": 12.62,
+    "end": 13.5
+  },
+  {
+    "word": " und",
+    "start": 13.5,
+    "end": 14.1
+  },
+  {
+    "word": " wir",
+    "start": 14.1,
+    "end": 14.34
+  },
+  {
+    "word": " haben",
+    "start": 14.34,
+    "end": 14.66
+  },
+  {
+    "word": " 25",
+    "start": 14.66,
+    "end": 15.34
+  },
+  {
+    "word": " Grad.",
+    "start": 15.34,
+    "end": 16.48
+  },
+  {
+    "word": " Oh,",
+    "start": 16.96,
+    "end": 17.28
+  },
+  {
+    "word": " wow.",
+    "start": 17.4,
+    "end": 17.68
+  },
+  {
+    "word": " Und",
+    "start": 18.14,
+    "end": 18.54
+  },
+  {
+    "word": " wie",
+    "start": 18.54,
+    "end": 18.84
+  },
+  {
+    "word": " ist",
+    "start": 18.84,
+    "end": 18.96
+  },
+  {
+    "word": " das",
+    "start": 18.96,
+    "end": 19.16
+  },
+  {
+    "word": " Wetter",
+    "start": 19.16,
+    "end": 19.44
+  },
+  {
+    "word": " bei",
+    "start": 19.44,
+    "end": 19.66
+  },
+  {
+    "word": " dir,",
+    "start": 19.66,
+    "end": 19.84
+  },
+  {
+    "word": " Henry?",
+    "start": 19.98,
+    "end": 20.14
+  },
+  {
+    "word": " Oh,",
+    "start": 21.2,
+    "end": 21.42
+  },
+  {
+    "word": " schön,",
+    "start": 21.54,
+    "end": 21.76
+  },
+  {
+    "word": " 25",
+    "start": 21.92,
+    "end": 22.7
+  },
+  {
+    "word": " Grad.",
+    "start": 22.7,
+    "end": 23.42
+  },
+  {
+    "word": " Das",
+    "start": 24.3,
+    "end": 24.68
+  },
+  {
+    "word": " ist",
+    "start": 24.68,
+    "end": 25.18
+  },
+  {
+    "word": " wirklich",
+    "start": 25.18,
+    "end": 25.68
+  },
+  {
+    "word": " warm.",
+    "start": 25.68,
+    "end": 26.1
+  },
+  {
+    "word": " Für",
+    "start": 26.44,
+    "end": 26.560000000000002
+  },
+  {
+    "word": " Deutschland",
+    "start": 26.54,
+    "end": 27.06
+  },
+  {
+    "word": " ist",
+    "start": 27.06,
+    "end": 27.68
+  },
+  {
+    "word": " das",
+    "start": 27.68,
+    "end": 27.9
+  },
+  {
+    "word": " sehr",
+    "start": 27.9,
+    "end": 28.18
+  },
+  {
+    "word": " warm.",
+    "start": 28.18,
+    "end": 28.64
+  },
+  {
+    "word": " Ja.",
+    "start": 29.0,
+    "end": 29.18
+  },
+  {
+    "word": " Hier",
+    "start": 29.18,
+    "end": 29.66
+  },
+  {
+    "word": " in",
+    "start": 29.66,
+    "end": 30.26
+  },
+  {
+    "word": " Hamburg",
+    "start": 30.26,
+    "end": 30.92
+  },
+  {
+    "word": " regnet",
+    "start": 30.92,
+    "end": 32.1
+  },
+  {
+    "word": " es",
+    "start": 32.1,
+    "end": 32.48
+  },
+  {
+    "word": " und",
+    "start": 32.48,
+    "end": 33.76
+  },
+  {
+    "word": " ja,",
+    "start": 33.76,
+    "end": 34.52
+  },
+  {
+    "word": " und",
+    "start": 34.94,
+    "end": 35.059999999999995
+  },
+  {
+    "word": " wir",
+    "start": 34.98,
+    "end": 35.2
+  },
+  {
+    "word": " haben",
+    "start": 35.2,
+    "end": 35.46
+  },
+  {
+    "word": " 15,",
+    "start": 35.46,
+    "end": 36.24
+  },
+  {
+    "word": " 15",
+    "start": 36.72,
+    "end": 37.28
+  },
+  {
+    "word": " Grad.",
+    "start": 37.28,
+    "end": 37.68
+  },
+  {
+    "word": " Oh,",
+    "start": 38.4,
+    "end": 38.66
+  },
+  {
+    "word": " das",
+    "start": 39.22,
+    "end": 39.42
+  },
+  {
+    "word": " tut",
+    "start": 39.42,
+    "end": 39.58
+  },
+  {
+    "word": " mir",
+    "start": 39.58,
+    "end": 39.78
+  },
+  {
+    "word": " leid.",
+    "start": 39.78,
+    "end": 40.16
+  },
+  {
+    "word": " Ja,",
+    "start": 40.7,
+    "end": 41.0
+  },
+  {
+    "word": " kein",
+    "start": 41.22,
+    "end": 41.48
+  },
+  {
+    "word": " Problem.",
+    "start": 41.48,
+    "end": 41.9
+  },
+  {
+    "word": " Ich",
+    "start": 42.32,
+    "end": 42.46
+  },
+  {
+    "word": " bin,",
+    "start": 42.46,
+    "end": 42.66
+  },
+  {
+    "word": " ich",
+    "start": 42.82,
+    "end": 43.36
+  },
+  {
+    "word": " bin",
+    "start": 43.36,
+    "end": 43.54
+  },
+  {
+    "word": " optimistisch.",
+    "start": 43.54,
+    "end": 44.58
+  },
+  {
+    "word": " Morgen",
+    "start": 45.12,
+    "end": 45.46
+  },
+  {
+    "word": " soll",
+    "start": 45.46,
+    "end": 46.04
+  },
+  {
+    "word": " das",
+    "start": 46.04,
+    "end": 46.3
+  },
+  {
+    "word": " Wetter,",
+    "start": 46.3,
+    "end": 46.7
+  },
+  {
+    "word": " ja,",
+    "start": 47.16,
+    "end": 47.46
+  },
+  {
+    "word": " morgen",
+    "start": 47.58,
+    "end": 47.84
+  },
+  {
+    "word": " soll",
+    "start": 47.84,
+    "end": 48.08
+  },
+  {
+    "word": " das",
+    "start": 48.08,
+    "end": 48.26
+  },
+  {
+    "word": " Wetter",
+    "start": 48.26,
+    "end": 48.5
+  },
+  {
+    "word": " gut",
+    "start": 48.5,
+    "end": 48.8
+  },
+  {
+    "word": " sein",
+    "start": 48.8,
+    "end": 49.16
+  },
+  {
+    "word": " und",
+    "start": 49.16,
+    "end": 49.8
+  },
+  {
+    "word": " auch",
+    "start": 49.8,
+    "end": 50.12
+  },
+  {
+    "word": " die",
+    "start": 50.12,
+    "end": 50.4
+  },
+  {
+    "word": " Sonne",
+    "start": 50.4,
+    "end": 50.66
+  },
+  {
+    "word": " scheinen.",
+    "start": 50.66,
+    "end": 51.14
+  },
+  {
+    "word": " Ja,",
+    "start": 51.8,
+    "end": 52.08
+  },
+  {
+    "word": " und",
+    "start": 52.44,
+    "end": 52.88
+  },
+  {
+    "word": " was",
+    "start": 52.88,
+    "end": 53.06
+  },
+  {
+    "word": " machst",
+    "start": 53.06,
+    "end": 53.36
+  },
+  {
+    "word": " du",
+    "start": 53.36,
+    "end": 53.56
+  },
+  {
+    "word": " heute,",
+    "start": 53.56,
+    "end": 53.88
+  },
+  {
+    "word": " Henry?",
+    "start": 54.14,
+    "end": 54.3
+  },
+  {
+    "word": " Das",
+    "start": 55.32,
+    "end": 56.02
+  },
+  {
+    "word": " ist",
+    "start": 56.02,
+    "end": 56.36
+  },
+  {
+    "word": " ein",
+    "start": 56.36,
+    "end": 56.66
+  },
+  {
+    "word": " kleiner",
+    "start": 56.66,
+    "end": 56.96
+  },
+  {
+    "word": " Appetizer.",
+    "start": 56.96,
+    "end": 57.72
+  },
+  {
+    "word": " Jetzt",
+    "start": 57.88,
+    "end": 58.3
+  },
+  {
+    "word": " bekommst",
+    "start": 58.3,
+    "end": 58.76
+  },
+  {
+    "word": " du",
+    "start": 58.76,
+    "end": 58.879999999999995
+  },
+  {
+    "word": " die",
+    "start": 58.76,
+    "end": 59.02
+  },
+  {
+    "word": " 5",
+    "start": 59.02,
+    "end": 59.42
+  },
+  {
+    "word": "-Star",
+    "start": 59.42,
+    "end": 59.74
+  },
+  {
+    "word": "-Menu",
+    "start": 59.74,
+    "end": 60.2
+  },
+  {
+    "word": " mit",
+    "start": 60.2,
+    "end": 60.4
+  },
+  {
+    "word": " der",
+    "start": 60.4,
+    "end": 60.52
+  },
+  {
+    "word": " ganzen",
+    "start": 60.52,
+    "end": 60.7
+  },
+  {
+    "word": " Konversation",
+    "start": 60.7,
+    "end": 61.4
+  },
+  {
+    "word": " zwischen",
+    "start": 61.4,
+    "end": 61.66
+  },
+  {
+    "word": " Lisa",
+    "start": 61.66,
+    "end": 62.08
+  },
+  {
+    "word": " und",
+    "start": 62.08,
+    "end": 62.44
+  },
+  {
+    "word": " ich.",
+    "start": 62.44,
+    "end": 62.7
+  },
+  {
+    "word": " Wir",
+    "start": 63.28,
+    "end": 63.64
+  },
+  {
+    "word": " sind",
+    "start": 63.64,
+    "end": 63.88
+  },
+  {
+    "word": " native",
+    "start": 63.88,
+    "end": 64.22
+  },
+  {
+    "word": " Speakers",
+    "start": 64.22,
+    "end": 64.7
+  },
+  {
+    "word": " und",
+    "start": 64.7,
+    "end": 65.04
+  },
+  {
+    "word": " Deutschleute",
+    "start": 65.04,
+    "end": 65.82
+  },
+  {
+    "word": " in",
+    "start": 65.82,
+    "end": 66.12
+  },
+  {
+    "word": " Langura.",
+    "start": 66.12,
+    "end": 66.72
+  },
+  {
+    "word": " Wir",
+    "start": 67.14,
+    "end": 67.36
+  },
+  {
+    "word": " wollen",
+    "start": 67.36,
+    "end": 67.52
+  },
+  {
+    "word": " dich",
+    "start": 67.52,
+    "end": 67.8
+  },
+  {
+    "word": " über",
+    "start": 67.8,
+    "end": 68.08
+  },
+  {
+    "word": " die",
+    "start": 68.08,
+    "end": 68.46
+  },
+  {
+    "word": " Liste",
+    "start": 68.46,
+    "end": 68.88
+  },
+  {
+    "word": " und",
+    "start": 68.88,
+    "end": 69.38
+  },
+  {
+    "word": " die",
+    "start": 69.38,
+    "end": 69.54
+  },
+  {
+    "word": " Lesen",
+    "start": 69.54,
+    "end": 69.9
+  },
+  {
+    "word": " und",
+    "start": 69.9,
+    "end": 70.02000000000001
+  },
+  {
+    "word": " auch",
+    "start": 69.9,
+    "end": 70.46
+  },
+  {
+    "word": " viele",
+    "start": 70.46,
+    "end": 70.84
+  },
+  {
+    "word": " neue",
+    "start": 70.84,
+    "end": 71.72
+  },
+  {
+    "word": " Worte",
+    "start": 71.72,
+    "end": 72.04
+  },
+  {
+    "word": " und",
+    "start": 72.04,
+    "end": 72.24
+  },
+  {
+    "word": " Expressionen",
+    "start": 72.24,
+    "end": 72.84
+  },
+  {
+    "word": " lernen,",
+    "start": 72.84,
+    "end": 72.96000000000001
+  },
+  {
+    "word": " um",
+    "start": 73.16,
+    "end": 73.28
+  },
+  {
+    "word": " in",
+    "start": 73.26,
+    "end": 74.3
+  },
+  {
+    "word": " Deutschland",
+    "start": 74.3,
+    "end": 74.72
+  },
+  {
+    "word": " besser",
+    "start": 74.72,
+    "end": 74.84
+  },
+  {
+    "word": " zu",
+    "start": 74.74,
+    "end": 74.86
+  },
+  {
+    "word": " sprechen.",
+    "start": 74.74,
+    "end": 74.86
+  },
+  {
+    "word": " So,",
+    "start": 75.08,
+    "end": 75.4
+  },
+  {
+    "word": " los",
+    "start": 75.8,
+    "end": 76.22
+  },
+  {
+    "word": " geht's!",
+    "start": 76.22,
+    "end": 77.66
+  },
+  {
+    "word": " Und",
+    "start": 82.24,
+    "end": 82.92
+  },
+  {
+    "word": " was",
+    "start": 82.92,
+    "end": 83.12
+  },
+  {
+    "word": " machst",
+    "start": 83.12,
+    "end": 83.44
+  },
+  {
+    "word": " du",
+    "start": 83.44,
+    "end": 83.62
+  },
+  {
+    "word": " heute,",
+    "start": 83.62,
+    "end": 83.96
+  },
+  {
+    "word": " Henry?",
+    "start": 84.2,
+    "end": 84.36
+  },
+  {
+    "word": " Hm,",
+    "start": 85.36,
+    "end": 85.54
+  },
+  {
+    "word": " gute",
+    "start": 86.26,
+    "end": 86.48
+  },
+  {
+    "word": " Frage.",
+    "start": 86.48,
+    "end": 86.86
+  },
+  {
+    "word": " Ich",
+    "start": 88.2,
+    "end": 88.88
+  },
+  {
+    "word": " weiß",
+    "start": 88.88,
+    "end": 89.08
+  },
+  {
+    "word": " es",
+    "start": 89.08,
+    "end": 89.3
+  },
+  {
+    "word": " noch",
+    "start": 89.3,
+    "end": 89.48
+  },
+  {
+    "word": " nicht.",
+    "start": 89.48,
+    "end": 89.74
+  },
+  {
+    "word": " Ich",
+    "start": 90.34,
+    "end": 90.7
+  },
+  {
+    "word": " habe",
+    "start": 90.7,
+    "end": 90.92
+  },
+  {
+    "word": " heute",
+    "start": 90.92,
+    "end": 91.28
+  },
+  {
+    "word": " frei",
+    "start": 91.28,
+    "end": 91.76
+  },
+  {
+    "word": " und",
+    "start": 91.76,
+    "end": 92.22
+  },
+  {
+    "word": " muss",
+    "start": 92.22,
+    "end": 92.66
+  },
+  {
+    "word": " nicht",
+    "start": 92.66,
+    "end": 93.0
+  },
+  {
+    "word": " arbeiten.",
+    "start": 93.0,
+    "end": 93.58
+  },
+  {
+    "word": " Ich",
+    "start": 94.54,
+    "end": 94.74
+  },
+  {
+    "word": " habe",
+    "start": 94.74,
+    "end": 94.98
+  },
+  {
+    "word": " also",
+    "start": 94.98,
+    "end": 95.3
+  },
+  {
+    "word": " viel",
+    "start": 95.3,
+    "end": 95.76
+  },
+  {
+    "word": " Zeit.",
+    "start": 95.76,
+    "end": 96.14
+  },
+  {
+    "word": " Schön.",
+    "start": 96.94,
+    "end": 97.26
+  },
+  {
+    "word": " Ich",
+    "start": 97.94,
+    "end": 98.18
+  },
+  {
+    "word": " muss",
+    "start": 98.18,
+    "end": 98.76
+  },
+  {
+    "word": " heute",
+    "start": 98.76,
+    "end": 99.3
+  },
+  {
+    "word": " leider",
+    "start": 99.3,
+    "end": 99.52
+  },
+  {
+    "word": " arbeiten.",
+    "start": 99.52,
+    "end": 100.14
+  },
+  {
+    "word": " Oh,",
+    "start": 100.32,
+    "end": 100.46
+  },
+  {
+    "word": " schade.",
+    "start": 100.82,
+    "end": 101.02
+  },
+  {
+    "word": " Oh,",
+    "start": 101.68,
+    "end": 101.94
+  },
+  {
+    "word": " schade.",
+    "start": 102.12,
+    "end": 102.46
+  },
+  {
+    "word": " Und",
+    "start": 103.26,
+    "end": 103.76
+  },
+  {
+    "word": " wann",
+    "start": 103.76,
+    "end": 104.08
+  },
+  {
+    "word": " musst",
+    "start": 104.08,
+    "end": 104.36
+  },
+  {
+    "word": " du",
+    "start": 104.36,
+    "end": 104.5
+  },
+  {
+    "word": " arbeiten?",
+    "start": 104.5,
+    "end": 104.94
+  },
+  {
+    "word": " Ich",
+    "start": 105.54,
+    "end": 106.5
+  },
+  {
+    "word": " arbeite",
+    "start": 106.5,
+    "end": 107.08
+  },
+  {
+    "word": " normalerweise",
+    "start": 107.08,
+    "end": 108.14
+  },
+  {
+    "word": " von",
+    "start": 108.14,
+    "end": 108.66
+  },
+  {
+    "word": " 11",
+    "start": 108.66,
+    "end": 109.24
+  },
+  {
+    "word": " Uhr",
+    "start": 109.24,
+    "end": 109.54
+  },
+  {
+    "word": " bis",
+    "start": 109.54,
+    "end": 110.1
+  },
+  {
+    "word": " 19",
+    "start": 110.1,
+    "end": 110.8
+  },
+  {
+    "word": " Uhr.",
+    "start": 110.8,
+    "end": 111.32
+  },
+  {
+    "word": " Am",
+    "start": 111.66,
+    "end": 111.96
+  },
+  {
+    "word": " Wochenende",
+    "start": 111.96,
+    "end": 112.46
+  },
+  {
+    "word": " habe",
+    "start": 112.46,
+    "end": 112.82
+  },
+  {
+    "word": " ich",
+    "start": 112.82,
+    "end": 112.98
+  },
+  {
+    "word": " frei.",
+    "start": 112.98,
+    "end": 113.24
+  },
+  {
+    "word": " Oh,",
+    "start": 113.88,
+    "end": 114.16
+  },
+  {
+    "word": " sehr",
+    "start": 114.66,
+    "end": 114.98
+  },
+  {
+    "word": " gut.",
+    "start": 114.98,
+    "end": 115.24
+  },
+  {
+    "word": " Es",
+    "start": 115.66,
+    "end": 116.12
+  },
+  {
+    "word": " ist",
+    "start": 116.12,
+    "end": 116.24000000000001
+  },
+  {
+    "word": " toll,",
+    "start": 116.24,
+    "end": 116.58
+  },
+  {
+    "word": " dass",
+    "start": 117.08,
+    "end": 117.22
+  },
+  {
+    "word": " du",
+    "start": 117.22,
+    "end": 117.38
+  },
+  {
+    "word": " am",
+    "start": 117.38,
+    "end": 117.56
+  },
+  {
+    "word": " Wochenende",
+    "start": 117.56,
+    "end": 118.04
+  },
+  {
+    "word": " frei",
+    "start": 118.04,
+    "end": 118.32
+  },
+  {
+    "word": " hast.",
+    "start": 118.32,
+    "end": 118.7
+  },
+  {
+    "word": " Und",
+    "start": 119.38,
+    "end": 119.66
+  },
+  {
+    "word": " Lisa,",
+    "start": 119.66,
+    "end": 120.08
+  },
+  {
+    "word": " was",
+    "start": 120.48,
+    "end": 120.62
+  },
+  {
+    "word": " machst",
+    "start": 120.62,
+    "end": 121.24
+  },
+  {
+    "word": " du",
+    "start": 121.24,
+    "end": 121.56
+  },
+  {
+    "word": " am",
+    "start": 121.56,
+    "end": 121.8
+  },
+  {
+    "word": " Wochenende",
+    "start": 121.8,
+    "end": 122.3
+  },
+  {
+    "word": " gern?",
+    "start": 122.3,
+    "end": 122.58
+  },
+  {
+    "word": " Hast",
+    "start": 123.14,
+    "end": 123.36
+  },
+  {
+    "word": " du",
+    "start": 123.36,
+    "end": 123.72
+  },
+  {
+    "word": " Hobbys?",
+    "start": 123.72,
+    "end": 124.16
+  },
+  {
+    "word": " Ja,",
+    "start": 124.82,
+    "end": 125.1
+  },
+  {
+    "word": " natürlich.",
+    "start": 125.38,
+    "end": 125.86
+  },
+  {
+    "word": " Ich",
+    "start": 126.74,
+    "end": 127.54
+  },
+  {
+    "word": " wandere",
+    "start": 127.54,
+    "end": 128.06
+  },
+  {
+    "word": " gern",
+    "start": 128.06,
+    "end": 128.5
+  },
+  {
+    "word": " oder",
+    "start": 128.5,
+    "end": 129.74
+  },
+  {
+    "word": " treffe",
+    "start": 129.74,
+    "end": 130.3
+  },
+  {
+    "word": " meine",
+    "start": 130.3,
+    "end": 130.58
+  },
+  {
+    "word": " Freunde.",
+    "start": 130.58,
+    "end": 131.06
+  },
+  {
+    "word": " Aber",
+    "start": 131.62,
+    "end": 132.38
+  },
+  {
+    "word": " am",
+    "start": 132.38,
+    "end": 132.72
+  },
+  {
+    "word": " liebsten",
+    "start": 132.72,
+    "end": 133.22
+  },
+  {
+    "word": " tanze",
+    "start": 133.22,
+    "end": 133.74
+  },
+  {
+    "word": " ich",
+    "start": 133.74,
+    "end": 133.92
+  },
+  {
+    "word": " Salzer.",
+    "start": 133.92,
+    "end": 134.32
+  },
+  {
+    "word": " Echt?",
+    "start": 134.32,
+    "end": 135.2
+  },
+  {
+    "word": " Du",
+    "start": 136.64,
+    "end": 136.76
+  },
+  {
+    "word": " tanzt",
+    "start": 136.76,
+    "end": 137.06
+  },
+  {
+    "word": " gern",
+    "start": 137.06,
+    "end": 137.28
+  },
+  {
+    "word": " Salzer?",
+    "start": 137.28,
+    "end": 138.74
+  },
+  {
+    "word": " Ja.",
+    "start": 139.22,
+    "end": 139.46
+  },
+  {
+    "word": " Ja,",
+    "start": 140.22,
+    "end": 140.6
+  },
+  {
+    "word": " Salzer",
+    "start": 140.8,
+    "end": 141.48
+  },
+  {
+    "word": " macht",
+    "start": 141.48,
+    "end": 142.02
+  },
+  {
+    "word": " mir",
+    "start": 142.02,
+    "end": 142.4
+  },
+  {
+    "word": " auch",
+    "start": 142.4,
+    "end": 142.82
+  },
+  {
+    "word": " Spaß.",
+    "start": 142.82,
+    "end": 143.26
+  },
+  {
+    "word": " Okay.",
+    "start": 143.8,
+    "end": 144.12
+  },
+  {
+    "word": " Aber",
+    "start": 144.5,
+    "end": 144.74
+  },
+  {
+    "word": " ich",
+    "start": 144.74,
+    "end": 145.14
+  },
+  {
+    "word": " persönlich,",
+    "start": 145.14,
+    "end": 145.74
+  },
+  {
+    "word": " Lisa,",
+    "start": 146.1,
+    "end": 146.34
+  },
+  {
+    "word": " mag",
+    "start": 147.0,
+    "end": 147.26
+  },
+  {
+    "word": " Bacchatta",
+    "start": 147.26,
+    "end": 147.8
+  },
+  {
+    "word": " lieber.",
+    "start": 147.8,
+    "end": 148.52
+  },
+  {
+    "word": " Okay,",
+    "start": 149.82,
+    "end": 150.6
+  },
+  {
+    "word": " ja,",
+    "start": 151.12,
+    "end": 151.36
+  },
+  {
+    "word": " das",
+    "start": 151.58,
+    "end": 151.8
+  },
+  {
+    "word": " ist",
+    "start": 151.8,
+    "end": 151.96
+  },
+  {
+    "word": " die",
+    "start": 151.96,
+    "end": 152.14
+  },
+  {
+    "word": " Frage.",
+    "start": 152.14,
+    "end": 152.52
+  },
+  {
+    "word": " Bacchatta",
+    "start": 153.04,
+    "end": 153.56
+  },
+  {
+    "word": " oder",
+    "start": 153.56,
+    "end": 154.16
+  },
+  {
+    "word": " Bacchatta?",
+    "start": 154.16,
+    "end": 154.72
+  },
+  {
+    "word": " Ich",
+    "start": 155.56,
+    "end": 156.02
+  },
+  {
+    "word": " mag",
+    "start": 156.02,
+    "end": 156.56
+  },
+  {
+    "word": " Bacchatta",
+    "start": 156.56,
+    "end": 157.14
+  },
+  {
+    "word": " auch.",
+    "start": 157.14,
+    "end": 157.52
+  },
+  {
+    "word": " Und",
+    "start": 157.86,
+    "end": 158.12
+  },
+  {
+    "word": " ihr",
+    "start": 158.12,
+    "end": 158.28
+  },
+  {
+    "word": " Leute,",
+    "start": 158.28,
+    "end": 158.68
+  },
+  {
+    "word": " tanzt",
+    "start": 159.08,
+    "end": 159.44
+  },
+  {
+    "word": " ihr",
+    "start": 159.44,
+    "end": 159.58
+  },
+  {
+    "word": " auch",
+    "start": 159.58,
+    "end": 159.84
+  },
+  {
+    "word": " gern?",
+    "start": 159.84,
+    "end": 160.16
+  },
+  {
+    "word": " Welchen",
+    "start": 160.92,
+    "end": 161.3
+  },
+  {
+    "word": " Tanz",
+    "start": 161.3,
+    "end": 161.56
+  },
+  {
+    "word": " mögt",
+    "start": 161.56,
+    "end": 161.98
+  },
+  {
+    "word": " ihr",
+    "start": 161.98,
+    "end": 162.14
+  },
+  {
+    "word": " lieber?",
+    "start": 162.14,
+    "end": 162.42
+  },
+  {
+    "word": " Schreibt",
+    "start": 162.98,
+    "end": 163.42
+  },
+  {
+    "word": " es",
+    "start": 163.42,
+    "end": 163.66
+  },
+  {
+    "word": " uns",
+    "start": 163.66,
+    "end": 163.86
+  },
+  {
+    "word": " unter",
+    "start": 163.86,
+    "end": 164.34
+  },
+  {
+    "word": " diesem",
+    "start": 164.34,
+    "end": 164.66
+  },
+  {
+    "word": " Video",
+    "start": 164.66,
+    "end": 165.1
+  },
+  {
+    "word": " in",
+    "start": 165.1,
+    "end": 165.66
+  },
+  {
+    "word": " den",
+    "start": 165.66,
+    "end": 165.78
+  },
+  {
+    "word": " Kommentaren",
+    "start": 165.78,
+    "end": 166.56
+  },
+  {
+    "word": " auf",
+    "start": 166.56,
+    "end": 166.8
+  },
+  {
+    "word": " Deutsch.",
+    "start": 166.8,
+    "end": 167.12
+  },
+  {
+    "word": " Aber",
+    "start": 168.44,
+    "end": 168.66
+  },
+  {
+    "word": " Henry,",
+    "start": 168.66,
+    "end": 168.92
+  },
+  {
+    "word": " dieses",
+    "start": 169.58,
+    "end": 169.84
+  },
+  {
+    "word": " Wochenende",
+    "start": 169.84,
+    "end": 170.56
+  },
+  {
+    "word": " kann",
+    "start": 170.56,
+    "end": 171.0
+  },
+  {
+    "word": " ich",
+    "start": 171.0,
+    "end": 171.16
+  },
+  {
+    "word": " nicht",
+    "start": 171.16,
+    "end": 171.36
+  },
+  {
+    "word": " tanzen",
+    "start": 171.36,
+    "end": 171.82
+  },
+  {
+    "word": " gehen.",
+    "start": 171.82,
+    "end": 172.08
+  },
+  {
+    "word": " Ich",
+    "start": 172.96,
+    "end": 173.08
+  },
+  {
+    "word": " habe",
+    "start": 173.08,
+    "end": 173.20000000000002
+  },
+  {
+    "word": " keine",
+    "start": 173.2,
+    "end": 173.48
+  },
+  {
+    "word": " Zeit.",
+    "start": 173.48,
+    "end": 173.86
+  },
+  {
+    "word": " Wirklich?",
+    "start": 174.22,
+    "end": 174.66
+  },
+  {
+    "word": " Warum",
+    "start": 175.4,
+    "end": 176.12
+  },
+  {
+    "word": " nicht?",
+    "start": 176.12,
+    "end": 176.48
+  },
+  {
+    "word": " Hast",
+    "start": 177.04,
+    "end": 177.24
+  },
+  {
+    "word": " du",
+    "start": 177.24,
+    "end": 177.38
+  },
+  {
+    "word": " Pläne?",
+    "start": 177.38,
+    "end": 177.72
+  },
+  {
+    "word": " Ja,",
+    "start": 178.36,
+    "end": 178.52
+  },
+  {
+    "word": " eine",
+    "start": 178.96,
+    "end": 180.14
+  },
+  {
+    "word": " Freundin",
+    "start": 180.14,
+    "end": 181.0
+  },
+  {
+    "word": " besucht",
+    "start": 181.0,
+    "end": 181.6
+  },
+  {
+    "word": " mich",
+    "start": 181.6,
+    "end": 181.88
+  },
+  {
+    "word": " und",
+    "start": 181.88,
+    "end": 182.3
+  },
+  {
+    "word": " wir",
+    "start": 182.3,
+    "end": 182.54
+  },
+  {
+    "word": " fahren",
+    "start": 182.54,
+    "end": 182.92
+  },
+  {
+    "word": " mit",
+    "start": 182.92,
+    "end": 183.22
+  },
+  {
+    "word": " dem",
+    "start": 183.22,
+    "end": 183.38
+  },
+  {
+    "word": " Zug",
+    "start": 183.38,
+    "end": 183.64
+  },
+  {
+    "word": " nach",
+    "start": 183.64,
+    "end": 183.9
+  },
+  {
+    "word": " Konstanz.",
+    "start": 183.9,
+    "end": 184.54
+  },
+  {
+    "word": " Kennst",
+    "start": 185.32,
+    "end": 185.6
+  },
+  {
+    "word": " du",
+    "start": 185.6,
+    "end": 185.72
+  },
+  {
+    "word": " Konstanz?",
+    "start": 185.72,
+    "end": 186.22
+  },
+  {
+    "word": " Ja,",
+    "start": 187.06,
+    "end": 187.52
+  },
+  {
+    "word": " ja,",
+    "start": 188.24,
+    "end": 188.42
+  },
+  {
+    "word": " ich",
+    "start": 188.7,
+    "end": 188.86
+  },
+  {
+    "word": " kenne",
+    "start": 188.86,
+    "end": 189.1
+  },
+  {
+    "word": " Konstanz.",
+    "start": 189.1,
+    "end": 189.86
+  },
+  {
+    "word": " Ich",
+    "start": 190.24,
+    "end": 190.64
+  },
+  {
+    "word": " habe",
+    "start": 190.64,
+    "end": 191.08
+  },
+  {
+    "word": " Konstanz",
+    "start": 191.08,
+    "end": 192.08
+  },
+  {
+    "word": " schon",
+    "start": 192.08,
+    "end": 192.6
+  },
+  {
+    "word": " einmal",
+    "start": 192.6,
+    "end": 193.32
+  },
+  {
+    "word": " besucht.",
+    "start": 193.32,
+    "end": 194.64
+  },
+  {
+    "word": " Ich",
+    "start": 194.96,
+    "end": 195.34
+  },
+  {
+    "word": " glaube,",
+    "start": 195.34,
+    "end": 195.94
+  },
+  {
+    "word": " es",
+    "start": 197.64,
+    "end": 197.78
+  },
+  {
+    "word": " war",
+    "start": 197.78,
+    "end": 198.08
+  },
+  {
+    "word": " vor",
+    "start": 198.08,
+    "end": 198.46
+  },
+  {
+    "word": " fünf",
+    "start": 198.46,
+    "end": 199.26
+  },
+  {
+    "word": " Jahren.",
+    "start": 199.26,
+    "end": 199.86
+  },
+  {
+    "word": " Ja,",
+    "start": 200.44,
+    "end": 200.94
+  },
+  {
+    "word": " es",
+    "start": 201.12,
+    "end": 201.24
+  },
+  {
+    "word": " ist",
+    "start": 201.22,
+    "end": 201.36
+  },
+  {
+    "word": " eine",
+    "start": 201.36,
+    "end": 201.6
+  },
+  {
+    "word": " sehr",
+    "start": 201.6,
+    "end": 201.96
+  },
+  {
+    "word": " schöne",
+    "start": 201.96,
+    "end": 202.4
+  },
+  {
+    "word": " Stadt.",
+    "start": 202.4,
+    "end": 202.62
+  },
+  {
+    "word": " Ja,",
+    "start": 203.36,
+    "end": 203.48000000000002
+  },
+  {
+    "word": " das",
+    "start": 203.94,
+    "end": 204.06
+  },
+  {
+    "word": " stimmt.",
+    "start": 204.04,
+    "end": 204.38
+  },
+  {
+    "word": " Das",
+    "start": 204.92,
+    "end": 205.04
+  },
+  {
+    "word": " stimmt.",
+    "start": 204.96,
+    "end": 205.18
+  },
+  {
+    "word": " Wir",
+    "start": 206.1,
+    "end": 206.52
+  },
+  {
+    "word": " möchten",
+    "start": 206.52,
+    "end": 206.94
+  },
+  {
+    "word": " in",
+    "start": 206.94,
+    "end": 207.48
+  },
+  {
+    "word": " Konstanz",
+    "start": 207.48,
+    "end": 208.26
+  },
+  {
+    "word": " in",
+    "start": 208.26,
+    "end": 208.46
+  },
+  {
+    "word": " einem",
+    "start": 208.46,
+    "end": 208.66
+  },
+  {
+    "word": " Restaurant",
+    "start": 208.66,
+    "end": 209.36
+  },
+  {
+    "word": " essen",
+    "start": 209.36,
+    "end": 210.16
+  },
+  {
+    "word": " und",
+    "start": 210.16,
+    "end": 210.62
+  },
+  {
+    "word": " dann",
+    "start": 210.62,
+    "end": 211.8
+  },
+  {
+    "word": " mit",
+    "start": 211.8,
+    "end": 212.0
+  },
+  {
+    "word": " dem",
+    "start": 212.0,
+    "end": 212.18
+  },
+  {
+    "word": " Fahrrad",
+    "start": 212.18,
+    "end": 212.76
+  },
+  {
+    "word": " auf",
+    "start": 212.76,
+    "end": 212.94
+  },
+  {
+    "word": " die",
+    "start": 212.94,
+    "end": 213.1
+  },
+  {
+    "word": " Insel",
+    "start": 213.1,
+    "end": 213.32
+  },
+  {
+    "word": " Reichenau",
+    "start": 213.32,
+    "end": 214.0
+  },
+  {
+    "word": " fahren.",
+    "start": 214.0,
+    "end": 214.28
+  },
+  {
+    "word": " Dort",
+    "start": 215.56,
+    "end": 215.74
+  },
+  {
+    "word": " kenne",
+    "start": 215.74,
+    "end": 215.96
+  },
+  {
+    "word": " ich",
+    "start": 215.96,
+    "end": 216.16
+  },
+  {
+    "word": " ein",
+    "start": 216.16,
+    "end": 216.34
+  },
+  {
+    "word": " gutes",
+    "start": 216.34,
+    "end": 216.58
+  },
+  {
+    "word": " Café.",
+    "start": 216.58,
+    "end": 217.2
+  },
+  {
+    "word": " Es",
+    "start": 217.2,
+    "end": 217.74
+  },
+  {
+    "word": " gibt",
+    "start": 217.74,
+    "end": 217.94
+  },
+  {
+    "word": " leckere",
+    "start": 217.94,
+    "end": 218.48
+  },
+  {
+    "word": " Kuchen",
+    "start": 218.48,
+    "end": 218.9
+  },
+  {
+    "word": " und",
+    "start": 218.9,
+    "end": 219.22
+  },
+  {
+    "word": " den",
+    "start": 219.22,
+    "end": 219.44
+  },
+  {
+    "word": " besten",
+    "start": 219.44,
+    "end": 219.88
+  },
+  {
+    "word": " Café.",
+    "start": 219.88,
+    "end": 220.64
+  },
+  {
+    "word": " Echt?",
+    "start": 220.7,
+    "end": 221.14
+  },
+  {
+    "word": " Den",
+    "start": 221.52,
+    "end": 221.76
+  },
+  {
+    "word": " besten",
+    "start": 221.76,
+    "end": 222.1
+  },
+  {
+    "word": " Café?",
+    "start": 222.1,
+    "end": 223.24
+  },
+  {
+    "word": " Magst",
+    "start": 223.56,
+    "end": 224.24
+  },
+  {
+    "word": " du",
+    "start": 224.24,
+    "end": 224.38
+  },
+  {
+    "word": " gerne",
+    "start": 224.38,
+    "end": 224.6
+  },
+  {
+    "word": " Kaffee",
+    "start": 224.6,
+    "end": 225.08
+  },
+  {
+    "word": " trinken,",
+    "start": 225.08,
+    "end": 225.38
+  },
+  {
+    "word": " Lisa?",
+    "start": 225.74,
+    "end": 225.94
+  },
+  {
+    "word": " Ja,",
+    "start": 226.78,
+    "end": 227.12
+  },
+  {
+    "word": " ich",
+    "start": 227.4,
+    "end": 227.58
+  },
+  {
+    "word": " liebe",
+    "start": 227.58,
+    "end": 227.84
+  },
+  {
+    "word": " Kaffee.",
+    "start": 227.84,
+    "end": 228.42
+  },
+  {
+    "word": " Am",
+    "start": 229.16,
+    "end": 229.34
+  },
+  {
+    "word": " liebsten",
+    "start": 229.34,
+    "end": 229.86
+  },
+  {
+    "word": " morgens,",
+    "start": 229.86,
+    "end": 230.68
+  },
+  {
+    "word": " mittags,",
+    "start": 230.98,
+    "end": 232.0
+  },
+  {
+    "word": " abends.",
+    "start": 233.04,
+    "end": 233.82
+  },
+  {
+    "word": " Naja,",
+    "start": 234.48,
+    "end": 234.78
+  },
+  {
+    "word": " in",
+    "start": 235.04,
+    "end": 235.16
+  },
+  {
+    "word": " der",
+    "start": 235.14,
+    "end": 235.26
+  },
+  {
+    "word": " Nacht",
+    "start": 235.24,
+    "end": 235.46
+  },
+  {
+    "word": " schlafe",
+    "start": 235.46,
+    "end": 235.86
+  },
+  {
+    "word": " ich.",
+    "start": 235.86,
+    "end": 236.16
+  },
+  {
+    "word": " Ja,",
+    "start": 236.56,
+    "end": 236.8
+  },
+  {
+    "word": " klar,",
+    "start": 236.98,
+    "end": 237.44
+  },
+  {
+    "word": " in",
+    "start": 237.74,
+    "end": 237.86
+  },
+  {
+    "word": " der",
+    "start": 237.84,
+    "end": 237.98
+  },
+  {
+    "word": " Nacht",
+    "start": 237.98,
+    "end": 238.88
+  },
+  {
+    "word": " kannst",
+    "start": 238.88,
+    "end": 239.12
+  },
+  {
+    "word": " du",
+    "start": 239.12,
+    "end": 239.34
+  },
+  {
+    "word": " keinen",
+    "start": 239.34,
+    "end": 239.6
+  },
+  {
+    "word": " Kaffee",
+    "start": 239.6,
+    "end": 240.06
+  },
+  {
+    "word": " trinken.",
+    "start": 240.06,
+    "end": 240.44
+  },
+  {
+    "word": " Und",
+    "start": 241.24,
+    "end": 241.36
+  },
+  {
+    "word": " aber",
+    "start": 241.34,
+    "end": 241.8
+  },
+  {
+    "word": " wo",
+    "start": 241.8,
+    "end": 242.84
+  },
+  {
+    "word": " schlaft",
+    "start": 242.84,
+    "end": 243.26
+  },
+  {
+    "word": " ihr",
+    "start": 243.26,
+    "end": 243.52
+  },
+  {
+    "word": " in",
+    "start": 243.52,
+    "end": 244.04
+  },
+  {
+    "word": " einem",
+    "start": 244.04,
+    "end": 244.32
+  },
+  {
+    "word": " Hotel?",
+    "start": 244.32,
+    "end": 244.7
+  },
+  {
+    "word": " Ja,",
+    "start": 245.54,
+    "end": 245.86
+  },
+  {
+    "word": " genau.",
+    "start": 246.04,
+    "end": 246.4
+  },
+  {
+    "word": " Wir",
+    "start": 246.4,
+    "end": 247.04
+  },
+  {
+    "word": " schlafen",
+    "start": 247.04,
+    "end": 247.58
+  },
+  {
+    "word": " in",
+    "start": 247.58,
+    "end": 247.78
+  },
+  {
+    "word": " einem",
+    "start": 247.78,
+    "end": 248.08
+  },
+  {
+    "word": " Hotel",
+    "start": 248.08,
+    "end": 248.96
+  },
+  {
+    "word": " im",
+    "start": 248.96,
+    "end": 249.2
+  },
+  {
+    "word": " Stadtzentrum",
+    "start": 249.2,
+    "end": 250.0
+  },
+  {
+    "word": " von",
+    "start": 250.0,
+    "end": 250.36
+  },
+  {
+    "word": " Konstanz.",
+    "start": 250.36,
+    "end": 251.06
+  },
+  {
+    "word": " Ich",
+    "start": 251.66,
+    "end": 252.12
+  },
+  {
+    "word": " freue",
+    "start": 252.12,
+    "end": 252.38
+  },
+  {
+    "word": " mich.",
+    "start": 252.38,
+    "end": 252.62
+  },
+  {
+    "word": " Machst",
+    "start": 253.22,
+    "end": 253.5
+  },
+  {
+    "word": " du",
+    "start": 253.5,
+    "end": 253.62
+  },
+  {
+    "word": " auch",
+    "start": 253.62,
+    "end": 253.84
+  },
+  {
+    "word": " bald",
+    "start": 253.84,
+    "end": 254.12
+  },
+  {
+    "word": " Urlaub,",
+    "start": 254.12,
+    "end": 254.6
+  },
+  {
+    "word": " Henry?",
+    "start": 254.6,
+    "end": 254.9
+  },
+  {
+    "word": " Ja,",
+    "start": 255.74,
+    "end": 256.12
+  },
+  {
+    "word": " also",
+    "start": 257.42,
+    "end": 257.54
+  },
+  {
+    "word": " ich",
+    "start": 257.42,
+    "end": 257.94
+  },
+  {
+    "word": " möchte",
+    "start": 257.94,
+    "end": 258.58
+  },
+  {
+    "word": " im",
+    "start": 258.58,
+    "end": 259.6
+  },
+  {
+    "word": " Herbst,",
+    "start": 259.6,
+    "end": 260.4
+  },
+  {
+    "word": " genau,",
+    "start": 260.52,
+    "end": 260.74
+  },
+  {
+    "word": " im",
+    "start": 261.18,
+    "end": 261.3
+  },
+  {
+    "word": " Herbst",
+    "start": 261.3,
+    "end": 261.8
+  },
+  {
+    "word": " mit",
+    "start": 261.8,
+    "end": 261.98
+  },
+  {
+    "word": " einem",
+    "start": 261.98,
+    "end": 262.22
+  },
+  {
+    "word": " Freund",
+    "start": 262.22,
+    "end": 262.62
+  },
+  {
+    "word": " nach",
+    "start": 262.62,
+    "end": 262.94
+  },
+  {
+    "word": " Nürnberg",
+    "start": 262.94,
+    "end": 263.42
+  },
+  {
+    "word": " fahren.",
+    "start": 263.42,
+    "end": 263.8
+  },
+  {
+    "word": " Im",
+    "start": 264.38,
+    "end": 264.64
+  },
+  {
+    "word": " Herbst,",
+    "start": 264.64,
+    "end": 265.16
+  },
+  {
+    "word": " ja,",
+    "start": 265.36,
+    "end": 265.48
+  },
+  {
+    "word": " wann",
+    "start": 265.86,
+    "end": 266.04
+  },
+  {
+    "word": " genau,",
+    "start": 266.04,
+    "end": 266.44
+  },
+  {
+    "word": " im",
+    "start": 266.66,
+    "end": 266.82
+  },
+  {
+    "word": " Oktober",
+    "start": 266.82,
+    "end": 267.36
+  },
+  {
+    "word": " oder",
+    "start": 267.36,
+    "end": 267.9
+  },
+  {
+    "word": " im",
+    "start": 267.9,
+    "end": 268.2
+  },
+  {
+    "word": " November?",
+    "start": 268.2,
+    "end": 268.48
+  },
+  {
+    "word": " Also",
+    "start": 270.64,
+    "end": 271.44
+  },
+  {
+    "word": " wir",
+    "start": 271.44,
+    "end": 272.24
+  },
+  {
+    "word": " möchten",
+    "start": 272.24,
+    "end": 272.6
+  },
+  {
+    "word": " im",
+    "start": 272.6,
+    "end": 272.98
+  },
+  {
+    "word": " Oktober",
+    "start": 272.98,
+    "end": 273.68
+  },
+  {
+    "word": " nach",
+    "start": 273.68,
+    "end": 274.38
+  },
+  {
+    "word": " Nürnberg",
+    "start": 274.38,
+    "end": 275.08
+  },
+  {
+    "word": " fahren",
+    "start": 275.08,
+    "end": 275.5
+  },
+  {
+    "word": " und",
+    "start": 276.12,
+    "end": 276.5
+  },
+  {
+    "word": " ja,",
+    "start": 276.5,
+    "end": 277.08
+  },
+  {
+    "word": " wir",
+    "start": 277.24,
+    "end": 277.36
+  },
+  {
+    "word": " fahren",
+    "start": 277.36,
+    "end": 277.7
+  },
+  {
+    "word": " nicht",
+    "start": 277.7,
+    "end": 278.02
+  },
+  {
+    "word": " mit",
+    "start": 278.02,
+    "end": 278.24
+  },
+  {
+    "word": " dem",
+    "start": 278.24,
+    "end": 278.4
+  },
+  {
+    "word": " Zug,",
+    "start": 278.4,
+    "end": 278.78
+  },
+  {
+    "word": " wir",
+    "start": 279.3,
+    "end": 279.52
+  },
+  {
+    "word": " fahren",
+    "start": 279.52,
+    "end": 279.8
+  },
+  {
+    "word": " mit",
+    "start": 279.8,
+    "end": 279.98
+  },
+  {
+    "word": " dem",
+    "start": 279.98,
+    "end": 280.1
+  },
+  {
+    "word": " Auto.",
+    "start": 280.1,
+    "end": 280.46
+  },
+  {
+    "word": " Ja,",
+    "start": 280.82,
+    "end": 281.0
+  },
+  {
+    "word": " mit",
+    "start": 281.26,
+    "end": 281.42
+  },
+  {
+    "word": " dem",
+    "start": 281.42,
+    "end": 281.54
+  },
+  {
+    "word": " Auto.",
+    "start": 281.54,
+    "end": 281.94
+  },
+  {
+    "word": " Wie",
+    "start": 282.34,
+    "end": 282.86
+  },
+  {
+    "word": " lange",
+    "start": 282.86,
+    "end": 283.1
+  },
+  {
+    "word": " muss",
+    "start": 283.1,
+    "end": 283.42
+  },
+  {
+    "word": " man",
+    "start": 283.42,
+    "end": 283.66
+  },
+  {
+    "word": " von",
+    "start": 283.66,
+    "end": 283.98
+  },
+  {
+    "word": " Hamburg",
+    "start": 283.98,
+    "end": 284.48
+  },
+  {
+    "word": " nach",
+    "start": 284.48,
+    "end": 284.84
+  },
+  {
+    "word": " Nürnberg",
+    "start": 284.84,
+    "end": 285.3
+  },
+  {
+    "word": " fahren?",
+    "start": 285.3,
+    "end": 285.66
+  },
+  {
+    "word": " Das",
+    "start": 287.0,
+    "end": 287.58
+  },
+  {
+    "word": " sind",
+    "start": 287.58,
+    "end": 287.98
+  },
+  {
+    "word": " fast",
+    "start": 287.98,
+    "end": 288.68
+  },
+  {
+    "word": " sieben",
+    "start": 288.68,
+    "end": 289.24
+  },
+  {
+    "word": " Stunden,",
+    "start": 289.24,
+    "end": 289.64
+  },
+  {
+    "word": " Lisa,",
+    "start": 290.0,
+    "end": 290.28
+  },
+  {
+    "word": " glaube",
+    "start": 290.62,
+    "end": 290.8
+  },
+  {
+    "word": " ich.",
+    "start": 290.8,
+    "end": 291.18
+  },
+  {
+    "word": " Aber",
+    "start": 291.7,
+    "end": 291.82
+  },
+  {
+    "word": " manchmal",
+    "start": 291.82,
+    "end": 292.66
+  },
+  {
+    "word": " fahre",
+    "start": 292.66,
+    "end": 293.38
+  },
+  {
+    "word": " ich",
+    "start": 293.38,
+    "end": 293.68
+  },
+  {
+    "word": " und",
+    "start": 293.68,
+    "end": 294.1
+  },
+  {
+    "word": " manchmal",
+    "start": 294.1,
+    "end": 294.68
+  },
+  {
+    "word": " fährt",
+    "start": 294.68,
+    "end": 295.16
+  },
+  {
+    "word": " mein",
+    "start": 295.16,
+    "end": 295.56
+  },
+  {
+    "word": " Freund.",
+    "start": 295.56,
+    "end": 295.94
+  },
+  {
+    "word": " Und",
+    "start": 296.86,
+    "end": 297.46
+  },
+  {
+    "word": " wir",
+    "start": 297.46,
+    "end": 298.22
+  },
+  {
+    "word": " bleiben",
+    "start": 298.22,
+    "end": 298.6
+  },
+  {
+    "word": " für",
+    "start": 298.6,
+    "end": 299.02
+  },
+  {
+    "word": " eine",
+    "start": 299.02,
+    "end": 299.36
+  },
+  {
+    "word": " Woche",
+    "start": 299.36,
+    "end": 299.68
+  },
+  {
+    "word": " dort.",
+    "start": 299.68,
+    "end": 300.34
+  },
+  {
+    "word": " Wow,",
+    "start": 301.78,
+    "end": 302.2
+  },
+  {
+    "word": " Henry,",
+    "start": 302.62,
+    "end": 302.92
+  },
+  {
+    "word": " sieben",
+    "start": 303.1,
+    "end": 303.5
+  },
+  {
+    "word": " Stunden.",
+    "start": 303.5,
+    "end": 303.94
+  },
+  {
+    "word": " Das",
+    "start": 303.94,
+    "end": 304.46
+  },
+  {
+    "word": " ist",
+    "start": 304.46,
+    "end": 304.58
+  },
+  {
+    "word": " lange.",
+    "start": 304.58,
+    "end": 304.94
+  },
+  {
+    "word": " Aber",
+    "start": 305.74,
+    "end": 306.02
+  },
+  {
+    "word": " gut,",
+    "start": 306.02,
+    "end": 306.28
+  },
+  {
+    "word": " mit",
+    "start": 306.44,
+    "end": 306.68
+  },
+  {
+    "word": " einem",
+    "start": 306.68,
+    "end": 306.92
+  },
+  {
+    "word": " Freund",
+    "start": 306.92,
+    "end": 307.36
+  },
+  {
+    "word": " und",
+    "start": 307.36,
+    "end": 307.68
+  },
+  {
+    "word": " Musik",
+    "start": 307.68,
+    "end": 308.16
+  },
+  {
+    "word": " macht",
+    "start": 308.16,
+    "end": 308.74
+  },
+  {
+    "word": " das",
+    "start": 308.74,
+    "end": 308.92
+  },
+  {
+    "word": " Spaß.",
+    "start": 308.92,
+    "end": 309.16
+  },
+  {
+    "word": " Ja,",
+    "start": 309.56,
+    "end": 309.76
+  },
+  {
+    "word": " genau.",
+    "start": 310.06,
+    "end": 310.36
+  },
+  {
+    "word": " Wir",
+    "start": 310.7,
+    "end": 310.82
+  },
+  {
+    "word": " hören",
+    "start": 310.78,
+    "end": 311.06
+  },
+  {
+    "word": " Musik",
+    "start": 311.06,
+    "end": 311.56
+  },
+  {
+    "word": " und",
+    "start": 311.56,
+    "end": 312.42
+  },
+  {
+    "word": " wir",
+    "start": 312.42,
+    "end": 312.7
+  },
+  {
+    "word": " machen",
+    "start": 312.7,
+    "end": 312.98
+  },
+  {
+    "word": " auf",
+    "start": 312.98,
+    "end": 313.2
+  },
+  {
+    "word": " der",
+    "start": 313.2,
+    "end": 313.36
+  },
+  {
+    "word": " Autobahn",
+    "start": 313.36,
+    "end": 313.82
+  },
+  {
+    "word": " auch",
+    "start": 313.82,
+    "end": 314.08
+  },
+  {
+    "word": " Pausen.",
+    "start": 314.08,
+    "end": 314.76
+  },
+  {
+    "word": " Wir",
+    "start": 315.92,
+    "end": 316.04
+  },
+  {
+    "word": " haben,",
+    "start": 315.94,
+    "end": 316.28
+  },
+  {
+    "word": " Lisa,",
+    "start": 316.56,
+    "end": 316.76
+  },
+  {
+    "word": " wir",
+    "start": 316.96,
+    "end": 317.08
+  },
+  {
+    "word": " haben",
+    "start": 317.06,
+    "end": 317.4
+  },
+  {
+    "word": " ja",
+    "start": 317.4,
+    "end": 317.62
+  },
+  {
+    "word": " Zeit",
+    "start": 317.62,
+    "end": 318.1
+  },
+  {
+    "word": " und",
+    "start": 318.68,
+    "end": 319.0
+  },
+  {
+    "word": " wir",
+    "start": 319.0,
+    "end": 319.26
+  },
+  {
+    "word": " müssen",
+    "start": 319.26,
+    "end": 319.5
+  },
+  {
+    "word": " nicht",
+    "start": 319.5,
+    "end": 319.76
+  },
+  {
+    "word": " schnell",
+    "start": 319.76,
+    "end": 320.14
+  },
+  {
+    "word": " in",
+    "start": 320.14,
+    "end": 320.6
+  },
+  {
+    "word": " Nürnberg",
+    "start": 320.6,
+    "end": 321.08
+  },
+  {
+    "word": " sein.",
+    "start": 321.08,
+    "end": 321.44
+  },
+  {
+    "word": " Und",
+    "start": 321.92,
+    "end": 322.5
+  },
+  {
+    "word": " wenn",
+    "start": 322.5,
+    "end": 323.14
+  },
+  {
+    "word": " ich",
+    "start": 323.14,
+    "end": 323.3
+  },
+  {
+    "word": " Auto",
+    "start": 323.3,
+    "end": 323.62
+  },
+  {
+    "word": " fahre,",
+    "start": 323.62,
+    "end": 324.18
+  },
+  {
+    "word": " höre",
+    "start": 324.62,
+    "end": 324.86
+  },
+  {
+    "word": " ich",
+    "start": 324.86,
+    "end": 325.04
+  },
+  {
+    "word": " auch",
+    "start": 325.04,
+    "end": 325.22
+  },
+  {
+    "word": " gerne",
+    "start": 325.22,
+    "end": 325.6
+  },
+  {
+    "word": " Rockmusik.",
+    "start": 325.6,
+    "end": 326.78
+  },
+  {
+    "word": " Da",
+    "start": 327.5,
+    "end": 327.76
+  },
+  {
+    "word": " bleibe",
+    "start": 327.76,
+    "end": 328.06
+  },
+  {
+    "word": " ich,",
+    "start": 328.06,
+    "end": 328.4
+  },
+  {
+    "word": " da",
+    "start": 328.52,
+    "end": 329.2
+  },
+  {
+    "word": " bleibe",
+    "start": 329.2,
+    "end": 329.58
+  },
+  {
+    "word": " ich",
+    "start": 329.58,
+    "end": 329.8
+  },
+  {
+    "word": " wach",
+    "start": 329.8,
+    "end": 330.14
+  },
+  {
+    "word": " und",
+    "start": 330.14,
+    "end": 330.56
+  },
+  {
+    "word": " schlafe",
+    "start": 330.56,
+    "end": 331.06
+  },
+  {
+    "word": " nicht",
+    "start": 331.06,
+    "end": 331.26
+  },
+  {
+    "word": " ein.",
+    "start": 331.26,
+    "end": 331.56
+  },
+  {
+    "word": " Und",
+    "start": 332.08,
+    "end": 332.5
+  },
+  {
+    "word": " du,",
+    "start": 332.5,
+    "end": 332.64
+  },
+  {
+    "word": " Lisa?",
+    "start": 333.06,
+    "end": 333.28
+  },
+  {
+    "word": " Das",
+    "start": 333.94,
+    "end": 334.14
+  },
+  {
+    "word": " glaube",
+    "start": 334.14,
+    "end": 334.42
+  },
+  {
+    "word": " ich,",
+    "start": 334.42,
+    "end": 334.68
+  },
+  {
+    "word": " Henry,",
+    "start": 334.74,
+    "end": 334.92
+  },
+  {
+    "word": " das",
+    "start": 335.16,
+    "end": 335.28000000000003
+  },
+  {
+    "word": " glaube",
+    "start": 335.22,
+    "end": 335.52
+  },
+  {
+    "word": " ich.",
+    "start": 335.52,
+    "end": 335.76
+  },
+  {
+    "word": " Mit",
+    "start": 335.84,
+    "end": 335.96
+  },
+  {
+    "word": " Rockmusik",
+    "start": 335.94,
+    "end": 336.72
+  },
+  {
+    "word": " kann",
+    "start": 336.72,
+    "end": 337.1
+  },
+  {
+    "word": " man",
+    "start": 337.1,
+    "end": 337.26
+  },
+  {
+    "word": " nicht",
+    "start": 337.26,
+    "end": 337.46
+  },
+  {
+    "word": " schlafen.",
+    "start": 337.46,
+    "end": 337.92
+  },
+  {
+    "word": " Ich",
+    "start": 338.64,
+    "end": 339.3
+  },
+  {
+    "word": " höre",
+    "start": 339.3,
+    "end": 339.46
+  },
+  {
+    "word": " alles",
+    "start": 339.46,
+    "end": 339.8
+  },
+  {
+    "word": " gern.",
+    "start": 339.8,
+    "end": 340.24
+  },
+  {
+    "word": " Popmusik,",
+    "start": 341.36,
+    "end": 342.2
+  },
+  {
+    "word": " Rockmusik",
+    "start": 342.38,
+    "end": 343.2
+  },
+  {
+    "word": " und",
+    "start": 343.2,
+    "end": 344.12
+  },
+  {
+    "word": " natürlich",
+    "start": 344.12,
+    "end": 344.62
+  },
+  {
+    "word": " Salzer.",
+    "start": 344.62,
+    "end": 345.08
+  },
+  {
+    "word": " Natürlich",
+    "start": 345.4,
+    "end": 345.84
+  },
+  {
+    "word": " Salzer,",
+    "start": 345.84,
+    "end": 346.62
+  },
+  {
+    "word": " cool.",
+    "start": 346.86,
+    "end": 347.18
+  },
+  {
+    "word": " Mein",
+    "start": 347.9,
+    "end": 348.22
+  },
+  {
+    "word": " Freund",
+    "start": 348.22,
+    "end": 348.52
+  },
+  {
+    "word": " und",
+    "start": 348.52,
+    "end": 348.8
+  },
+  {
+    "word": " ich",
+    "start": 348.8,
+    "end": 349.14
+  },
+  {
+    "word": " wollen",
+    "start": 349.14,
+    "end": 349.72
+  },
+  {
+    "word": " zu",
+    "start": 349.72,
+    "end": 350.5
+  },
+  {
+    "word": " einem",
+    "start": 350.5,
+    "end": 350.78
+  },
+  {
+    "word": " Konzert",
+    "start": 350.78,
+    "end": 351.48
+  },
+  {
+    "word": " nach",
+    "start": 351.48,
+    "end": 352.26
+  },
+  {
+    "word": " Nürnberg",
+    "start": 352.26,
+    "end": 352.82
+  },
+  {
+    "word": " gehen.",
+    "start": 352.82,
+    "end": 353.4
+  },
+  {
+    "word": " Es",
+    "start": 354.12,
+    "end": 354.26
+  },
+  {
+    "word": " ist",
+    "start": 354.26,
+    "end": 354.44
+  },
+  {
+    "word": " eine",
+    "start": 354.44,
+    "end": 354.88
+  },
+  {
+    "word": " deutsche",
+    "start": 354.88,
+    "end": 355.46
+  },
+  {
+    "word": " Band",
+    "start": 355.46,
+    "end": 356.04
+  },
+  {
+    "word": " und",
+    "start": 356.04,
+    "end": 356.5
+  },
+  {
+    "word": " sie",
+    "start": 356.5,
+    "end": 356.92
+  },
+  {
+    "word": " singt",
+    "start": 356.92,
+    "end": 357.38
+  },
+  {
+    "word": " auch",
+    "start": 357.38,
+    "end": 357.72
+  },
+  {
+    "word": " auf",
+    "start": 357.72,
+    "end": 357.94
+  },
+  {
+    "word": " Deutsch.",
+    "start": 357.94,
+    "end": 358.28
+  },
+  {
+    "word": " Super,",
+    "start": 358.9,
+    "end": 359.54
+  },
+  {
+    "word": " super.",
+    "start": 359.98,
+    "end": 360.4
+  },
+  {
+    "word": " Ja,",
+    "start": 360.4,
+    "end": 361.1
+  },
+  {
+    "word": " ich",
+    "start": 361.18,
+    "end": 361.32
+  },
+  {
+    "word": " mag",
+    "start": 361.32,
+    "end": 361.5
+  },
+  {
+    "word": " deutsche",
+    "start": 361.5,
+    "end": 361.98
+  },
+  {
+    "word": " Musik",
+    "start": 361.98,
+    "end": 362.5
+  },
+  {
+    "word": " auch",
+    "start": 362.5,
+    "end": 362.78
+  },
+  {
+    "word": " sehr",
+    "start": 362.78,
+    "end": 363.04
+  },
+  {
+    "word": " gern.",
+    "start": 363.04,
+    "end": 363.32
+  },
+  {
+    "word": " Wo",
+    "start": 363.96,
+    "end": 364.32
+  },
+  {
+    "word": " ist",
+    "start": 364.32,
+    "end": 364.46
+  },
+  {
+    "word": " das",
+    "start": 364.46,
+    "end": 364.64
+  },
+  {
+    "word": " Konzert",
+    "start": 364.64,
+    "end": 365.24
+  },
+  {
+    "word": " in",
+    "start": 365.24,
+    "end": 365.64
+  },
+  {
+    "word": " einem",
+    "start": 365.64,
+    "end": 365.86
+  },
+  {
+    "word": " Park?",
+    "start": 365.86,
+    "end": 366.24
+  },
+  {
+    "word": " Ja,",
+    "start": 367.36,
+    "end": 367.6
+  },
+  {
+    "word": " genau.",
+    "start": 367.94,
+    "end": 368.18
+  },
+  {
+    "word": " Woher",
+    "start": 368.96,
+    "end": 369.34
+  },
+  {
+    "word": " weißt",
+    "start": 369.34,
+    "end": 369.58
+  },
+  {
+    "word": " du",
+    "start": 369.58,
+    "end": 369.76
+  },
+  {
+    "word": " das?",
+    "start": 369.76,
+    "end": 369.94
+  },
+  {
+    "word": " Also,",
+    "start": 370.4,
+    "end": 370.6
+  },
+  {
+    "word": " das",
+    "start": 370.8,
+    "end": 370.98
+  },
+  {
+    "word": " Konzert",
+    "start": 370.98,
+    "end": 371.62
+  },
+  {
+    "word": " ist",
+    "start": 371.62,
+    "end": 372.04
+  },
+  {
+    "word": " in",
+    "start": 372.04,
+    "end": 372.34
+  },
+  {
+    "word": " einem",
+    "start": 372.34,
+    "end": 372.92
+  },
+  {
+    "word": " schönen",
+    "start": 372.92,
+    "end": 373.62
+  },
+  {
+    "word": " Park",
+    "start": 373.62,
+    "end": 374.3
+  },
+  {
+    "word": " und",
+    "start": 375.04,
+    "end": 375.44
+  },
+  {
+    "word": " da",
+    "start": 375.44,
+    "end": 375.78
+  },
+  {
+    "word": " sind",
+    "start": 375.78,
+    "end": 375.98
+  },
+  {
+    "word": " viele",
+    "start": 375.98,
+    "end": 376.32
+  },
+  {
+    "word": " Bäume",
+    "start": 376.32,
+    "end": 376.88
+  },
+  {
+    "word": " und",
+    "start": 376.88,
+    "end": 377.56
+  },
+  {
+    "word": " es",
+    "start": 377.56,
+    "end": 378.04
+  },
+  {
+    "word": " gibt",
+    "start": 378.04,
+    "end": 378.24
+  },
+  {
+    "word": " auch",
+    "start": 378.24,
+    "end": 378.84
+  },
+  {
+    "word": " einen",
+    "start": 378.84,
+    "end": 379.2
+  },
+  {
+    "word": " See.",
+    "start": 379.2,
+    "end": 379.48
+  },
+  {
+    "word": " Es",
+    "start": 379.74,
+    "end": 380.04
+  },
+  {
+    "word": " gibt",
+    "start": 380.04,
+    "end": 380.24
+  },
+  {
+    "word": " auch",
+    "start": 380.24,
+    "end": 380.48
+  },
+  {
+    "word": " einen",
+    "start": 380.48,
+    "end": 380.84
+  },
+  {
+    "word": " See",
+    "start": 380.84,
+    "end": 381.18
+  },
+  {
+    "word": " und",
+    "start": 381.18,
+    "end": 382.0
+  },
+  {
+    "word": " wir",
+    "start": 382.0,
+    "end": 382.18
+  },
+  {
+    "word": " nehmen",
+    "start": 382.18,
+    "end": 382.52
+  },
+  {
+    "word": " Bier",
+    "start": 382.52,
+    "end": 383.02
+  },
+  {
+    "word": " und",
+    "start": 383.02,
+    "end": 383.64
+  },
+  {
+    "word": " Brötchen",
+    "start": 383.64,
+    "end": 384.6
+  },
+  {
+    "word": " mit",
+    "start": 384.6,
+    "end": 385.0
+  },
+  {
+    "word": " Schinken",
+    "start": 385.0,
+    "end": 385.62
+  },
+  {
+    "word": " und",
+    "start": 385.62,
+    "end": 386.46
+  },
+  {
+    "word": " Käse",
+    "start": 386.46,
+    "end": 387.28
+  },
+  {
+    "word": " mit.",
+    "start": 387.28,
+    "end": 388.1
+  },
+  {
+    "word": " Und",
+    "start": 388.1,
+    "end": 388.56
+  },
+  {
+    "word": " dann",
+    "start": 388.56,
+    "end": 389.0
+  },
+  {
+    "word": " hören",
+    "start": 389.0,
+    "end": 389.8
+  },
+  {
+    "word": " wir",
+    "start": 389.8,
+    "end": 390.04
+  },
+  {
+    "word": " der",
+    "start": 390.04,
+    "end": 390.2
+  },
+  {
+    "word": " Band",
+    "start": 390.2,
+    "end": 390.5
+  },
+  {
+    "word": " zu.",
+    "start": 390.5,
+    "end": 391.02
+  },
+  {
+    "word": " Oh,",
+    "start": 391.7,
+    "end": 391.92
+  },
+  {
+    "word": " schön.",
+    "start": 392.02,
+    "end": 392.28
+  },
+  {
+    "word": " Das",
+    "start": 392.66,
+    "end": 392.78000000000003
+  },
+  {
+    "word": " klingt",
+    "start": 392.78,
+    "end": 393.0
+  },
+  {
+    "word": " gut.",
+    "start": 393.0,
+    "end": 393.3
+  },
+  {
+    "word": " Ja,",
+    "start": 393.92,
+    "end": 394.1
+  },
+  {
+    "word": " das",
+    "start": 394.26,
+    "end": 394.48
+  },
+  {
+    "word": " finde",
+    "start": 394.48,
+    "end": 394.64
+  },
+  {
+    "word": " ich",
+    "start": 394.64,
+    "end": 394.9
+  },
+  {
+    "word": " auch.",
+    "start": 394.9,
+    "end": 395.14
+  },
+  {
+    "word": " Warst",
+    "start": 395.96,
+    "end": 396.48
+  },
+  {
+    "word": " du",
+    "start": 396.48,
+    "end": 396.6
+  },
+  {
+    "word": " schon",
+    "start": 396.56,
+    "end": 396.82
+  },
+  {
+    "word": " in",
+    "start": 396.82,
+    "end": 397.04
+  },
+  {
+    "word": " Nürnberg,",
+    "start": 397.04,
+    "end": 397.44
+  },
+  {
+    "word": " Lisa?",
+    "start": 397.58,
+    "end": 397.74
+  },
+  {
+    "word": " Ja,",
+    "start": 398.28,
+    "end": 398.52
+  },
+  {
+    "word": " eine",
+    "start": 399.0,
+    "end": 399.28
+  },
+  {
+    "word": " gute",
+    "start": 399.28,
+    "end": 399.48
+  },
+  {
+    "word": " Freundin",
+    "start": 399.48,
+    "end": 400.04
+  },
+  {
+    "word": " von",
+    "start": 400.04,
+    "end": 400.28
+  },
+  {
+    "word": " mir",
+    "start": 400.28,
+    "end": 400.48
+  },
+  {
+    "word": " lebt",
+    "start": 400.48,
+    "end": 400.72
+  },
+  {
+    "word": " in",
+    "start": 400.72,
+    "end": 400.9
+  },
+  {
+    "word": " Nürnberg.",
+    "start": 400.9,
+    "end": 401.34
+  },
+  {
+    "word": " Ich",
+    "start": 401.82,
+    "end": 401.98
+  },
+  {
+    "word": " habe",
+    "start": 401.98,
+    "end": 402.12
+  },
+  {
+    "word": " es",
+    "start": 402.12,
+    "end": 402.3
+  },
+  {
+    "word": " schon",
+    "start": 402.3,
+    "end": 402.5
+  },
+  {
+    "word": " einmal",
+    "start": 402.5,
+    "end": 402.8
+  },
+  {
+    "word": " besucht.",
+    "start": 402.8,
+    "end": 403.42
+  },
+  {
+    "word": " Wir",
+    "start": 404.0,
+    "end": 404.12
+  },
+  {
+    "word": " sind",
+    "start": 404.1,
+    "end": 404.24
+  },
+  {
+    "word": " auch",
+    "start": 404.24,
+    "end": 404.54
+  },
+  {
+    "word": " in",
+    "start": 404.54,
+    "end": 404.74
+  },
+  {
+    "word": " einen",
+    "start": 404.74,
+    "end": 404.96
+  },
+  {
+    "word": " Park",
+    "start": 404.96,
+    "end": 405.32
+  },
+  {
+    "word": " gegangen.",
+    "start": 405.32,
+    "end": 405.8
+  },
+  {
+    "word": " Dort",
+    "start": 406.74,
+    "end": 406.86
+  },
+  {
+    "word": " haben",
+    "start": 406.82,
+    "end": 407.12
+  },
+  {
+    "word": " wir",
+    "start": 407.12,
+    "end": 407.3
+  },
+  {
+    "word": " ein",
+    "start": 407.3,
+    "end": 407.5
+  },
+  {
+    "word": " Boot",
+    "start": 407.5,
+    "end": 407.76
+  },
+  {
+    "word": " gemietet",
+    "start": 407.76,
+    "end": 408.36
+  },
+  {
+    "word": " und",
+    "start": 408.36,
+    "end": 408.84
+  },
+  {
+    "word": " sind",
+    "start": 408.84,
+    "end": 409.08
+  },
+  {
+    "word": " dann",
+    "start": 409.08,
+    "end": 409.26
+  },
+  {
+    "word": " mit",
+    "start": 409.26,
+    "end": 409.58
+  },
+  {
+    "word": " dem",
+    "start": 409.58,
+    "end": 409.84
+  },
+  {
+    "word": " Boot",
+    "start": 409.84,
+    "end": 410.16
+  },
+  {
+    "word": " auf",
+    "start": 410.16,
+    "end": 410.48
+  },
+  {
+    "word": " dem",
+    "start": 410.48,
+    "end": 410.68
+  },
+  {
+    "word": " See",
+    "start": 410.68,
+    "end": 410.9
+  },
+  {
+    "word": " gefahren.",
+    "start": 410.9,
+    "end": 411.36
+  },
+  {
+    "word": " Dann",
+    "start": 412.24,
+    "end": 412.76
+  },
+  {
+    "word": " haben",
+    "start": 412.76,
+    "end": 413.0
+  },
+  {
+    "word": " wir",
+    "start": 413.0,
+    "end": 413.12
+  },
+  {
+    "word": " ein",
+    "start": 413.12,
+    "end": 413.26
+  },
+  {
+    "word": " Picknick",
+    "start": 413.26,
+    "end": 413.7
+  },
+  {
+    "word": " gemacht.",
+    "start": 413.7,
+    "end": 414.08
+  },
+  {
+    "word": " Echt?",
+    "start": 414.96,
+    "end": 415.34
+  },
+  {
+    "word": " Ihr",
+    "start": 415.74,
+    "end": 415.94
+  },
+  {
+    "word": " habt",
+    "start": 415.94,
+    "end": 416.08
+  },
+  {
+    "word": " auf",
+    "start": 416.08,
+    "end": 416.76
+  },
+  {
+    "word": " dem",
+    "start": 416.76,
+    "end": 417.14
+  },
+  {
+    "word": " See",
+    "start": 417.14,
+    "end": 417.58
+  },
+  {
+    "word": " gegessen?",
+    "start": 417.58,
+    "end": 418.28
+  },
+  {
+    "word": " Ja,",
+    "start": 418.74,
+    "end": 418.98
+  },
+  {
+    "word": " genau.",
+    "start": 419.56,
+    "end": 419.84
+  },
+  {
+    "word": " Wir",
+    "start": 420.12,
+    "end": 420.24
+  },
+  {
+    "word": " haben",
+    "start": 420.22,
+    "end": 420.5
+  },
+  {
+    "word": " eine",
+    "start": 420.5,
+    "end": 420.84
+  },
+  {
+    "word": " Flasche",
+    "start": 420.84,
+    "end": 421.24
+  },
+  {
+    "word": " Bein,",
+    "start": 421.24,
+    "end": 421.88
+  },
+  {
+    "word": " Käse",
+    "start": 422.22,
+    "end": 422.54
+  },
+  {
+    "word": " und",
+    "start": 422.54,
+    "end": 422.76
+  },
+  {
+    "word": " Brot",
+    "start": 422.76,
+    "end": 423.3
+  },
+  {
+    "word": " mitgenommen",
+    "start": 423.3,
+    "end": 423.78
+  },
+  {
+    "word": " und",
+    "start": 423.78,
+    "end": 424.2
+  },
+  {
+    "word": " haben",
+    "start": 424.2,
+    "end": 424.48
+  },
+  {
+    "word": " im",
+    "start": 424.48,
+    "end": 424.74
+  },
+  {
+    "word": " Boot",
+    "start": 424.74,
+    "end": 425.08
+  },
+  {
+    "word": " gegessen.",
+    "start": 425.08,
+    "end": 425.6
+  },
+  {
+    "word": " Das",
+    "start": 426.3,
+    "end": 426.76
+  },
+  {
+    "word": " war",
+    "start": 426.76,
+    "end": 426.94
+  },
+  {
+    "word": " schön.",
+    "start": 426.94,
+    "end": 427.2
+  },
+  {
+    "word": " Danach",
+    "start": 427.96,
+    "end": 428.46
+  },
+  {
+    "word": " haben",
+    "start": 428.46,
+    "end": 428.74
+  },
+  {
+    "word": " wir",
+    "start": 428.74,
+    "end": 428.9
+  },
+  {
+    "word": " ein",
+    "start": 428.9,
+    "end": 429.1
+  },
+  {
+    "word": " sehr",
+    "start": 429.1,
+    "end": 429.28
+  },
+  {
+    "word": " interessantes",
+    "start": 429.28,
+    "end": 430.0
+  },
+  {
+    "word": " Museum",
+    "start": 430.0,
+    "end": 430.52
+  },
+  {
+    "word": " besucht.",
+    "start": 430.52,
+    "end": 431.1
+  },
+  {
+    "word": " Es",
+    "start": 431.64,
+    "end": 431.76
+  },
+  {
+    "word": " ist",
+    "start": 431.74,
+    "end": 431.9
+  },
+  {
+    "word": " in",
+    "start": 431.9,
+    "end": 432.06
+  },
+  {
+    "word": " der",
+    "start": 432.06,
+    "end": 432.18
+  },
+  {
+    "word": " Nähe",
+    "start": 432.18,
+    "end": 432.42
+  },
+  {
+    "word": " des",
+    "start": 432.42,
+    "end": 432.66
+  },
+  {
+    "word": " Parks.",
+    "start": 432.66,
+    "end": 433.08
+  },
+  {
+    "word": " Oh,",
+    "start": 433.36,
+    "end": 433.56
+  },
+  {
+    "word": " gute",
+    "start": 433.84,
+    "end": 434.12
+  },
+  {
+    "word": " Idee.",
+    "start": 434.12,
+    "end": 434.4
+  },
+  {
+    "word": " Das,",
+    "start": 434.98,
+    "end": 435.54
+  },
+  {
+    "word": " ja,",
+    "start": 435.82,
+    "end": 436.08
+  },
+  {
+    "word": " das",
+    "start": 436.32,
+    "end": 436.48
+  },
+  {
+    "word": " muss",
+    "start": 436.48,
+    "end": 436.68
+  },
+  {
+    "word": " ich",
+    "start": 436.68,
+    "end": 436.88
+  },
+  {
+    "word": " meinem",
+    "start": 436.88,
+    "end": 437.14
+  },
+  {
+    "word": " Freund",
+    "start": 437.14,
+    "end": 437.5
+  },
+  {
+    "word": " erzählen.",
+    "start": 437.5,
+    "end": 438.14
+  },
+  {
+    "word": " Ich",
+    "start": 438.56,
+    "end": 438.86
+  },
+  {
+    "word": " gehe",
+    "start": 438.86,
+    "end": 439.14
+  },
+  {
+    "word": " nämlich",
+    "start": 439.14,
+    "end": 439.66
+  },
+  {
+    "word": " auch",
+    "start": 439.66,
+    "end": 439.98
+  },
+  {
+    "word": " gern",
+    "start": 439.98,
+    "end": 440.32
+  },
+  {
+    "word": " in",
+    "start": 440.32,
+    "end": 440.84
+  },
+  {
+    "word": " Museen.",
+    "start": 440.84,
+    "end": 441.46
+  },
+  {
+    "word": " Aber,",
+    "start": 441.93,
+    "end": 442.38
+  },
+  {
+    "word": " Lisa,",
+    "start": 442.82,
+    "end": 443.4
+  },
+  {
+    "word": " ehrlich",
+    "start": 443.64,
+    "end": 443.8
+  },
+  {
+    "word": " gesagt,",
+    "start": 443.8,
+    "end": 444.46
+  },
+  {
+    "word": " gehe",
+    "start": 444.94,
+    "end": 445.12
+  },
+  {
+    "word": " ich",
+    "start": 445.12,
+    "end": 445.52
+  },
+  {
+    "word": " lieber",
+    "start": 445.52,
+    "end": 445.9
+  },
+  {
+    "word": " in",
+    "start": 445.9,
+    "end": 446.3
+  },
+  {
+    "word": " ein",
+    "start": 446.3,
+    "end": 446.54
+  },
+  {
+    "word": " gutes",
+    "start": 446.54,
+    "end": 446.88
+  },
+  {
+    "word": " Restaurant.",
+    "start": 446.88,
+    "end": 447.54
+  },
+  {
+    "word": " Oh",
+    "start": 448.44,
+    "end": 448.68
+  },
+  {
+    "word": " ja,",
+    "start": 448.68,
+    "end": 448.88
+  },
+  {
+    "word": " ich",
+    "start": 449.28,
+    "end": 449.48
+  },
+  {
+    "word": " esse",
+    "start": 449.48,
+    "end": 449.76
+  },
+  {
+    "word": " auch",
+    "start": 449.76,
+    "end": 450.14
+  },
+  {
+    "word": " sehr",
+    "start": 450.14,
+    "end": 450.5
+  },
+  {
+    "word": " gern.",
+    "start": 450.5,
+    "end": 450.84
+  },
+  {
+    "word": " Was",
+    "start": 452.06,
+    "end": 452.54
+  },
+  {
+    "word": " ist",
+    "start": 452.54,
+    "end": 452.7
+  },
+  {
+    "word": " dein",
+    "start": 452.7,
+    "end": 452.88
+  },
+  {
+    "word": " Lieblingsessen,",
+    "start": 452.88,
+    "end": 453.62
+  },
+  {
+    "word": " Henry?",
+    "start": 453.82,
+    "end": 454.0
+  },
+  {
+    "word": " Am",
+    "start": 455.67,
+    "end": 456.12
+  },
+  {
+    "word": " liebsten.",
+    "start": 456.12,
+    "end": 456.84
+  },
+  {
+    "word": " Am",
+    "start": 458.31,
+    "end": 458.76
+  },
+  {
+    "word": " liebsten",
+    "start": 458.76,
+    "end": 459.26
+  },
+  {
+    "word": " esse",
+    "start": 459.26,
+    "end": 459.62
+  },
+  {
+    "word": " ich",
+    "start": 459.62,
+    "end": 459.78
+  },
+  {
+    "word": " ein",
+    "start": 459.78,
+    "end": 459.96
+  },
+  {
+    "word": " Schnitzel,",
+    "start": 459.96,
+    "end": 460.52
+  },
+  {
+    "word": " ein",
+    "start": 460.6,
+    "end": 460.72
+  },
+  {
+    "word": " schönes",
+    "start": 460.72,
+    "end": 461.22
+  },
+  {
+    "word": " Schnitzel",
+    "start": 461.22,
+    "end": 461.9
+  },
+  {
+    "word": " mit",
+    "start": 461.9,
+    "end": 462.66
+  },
+  {
+    "word": " Pommes.",
+    "start": 462.66,
+    "end": 463.3
+  },
+  {
+    "word": " Und",
+    "start": 463.82,
+    "end": 464.02
+  },
+  {
+    "word": " dazu",
+    "start": 464.02,
+    "end": 464.5
+  },
+  {
+    "word": " natürlich",
+    "start": 464.5,
+    "end": 465.54
+  },
+  {
+    "word": " ein",
+    "start": 465.54,
+    "end": 466.08
+  },
+  {
+    "word": " kaltes",
+    "start": 466.08,
+    "end": 467.44
+  },
+  {
+    "word": " Bier.",
+    "start": 467.44,
+    "end": 467.74
+  },
+  {
+    "word": " Natürlich.",
+    "start": 468.34,
+    "end": 468.86
+  },
+  {
+    "word": " Ich",
+    "start": 470.56,
+    "end": 471.24
+  },
+  {
+    "word": " bin",
+    "start": 471.24,
+    "end": 471.42
+  },
+  {
+    "word": " Vegetarierin",
+    "start": 471.42,
+    "end": 472.54
+  },
+  {
+    "word": " und",
+    "start": 472.54,
+    "end": 473.0
+  },
+  {
+    "word": " liebe",
+    "start": 473.0,
+    "end": 473.62
+  },
+  {
+    "word": " vegetarische",
+    "start": 473.62,
+    "end": 474.44
+  },
+  {
+    "word": " Hamburger.",
+    "start": 474.44,
+    "end": 475.12
+  },
+  {
+    "word": " Aber",
+    "start": 475.72,
+    "end": 476.4
+  },
+  {
+    "word": " ich",
+    "start": 476.4,
+    "end": 476.76
+  },
+  {
+    "word": " esse",
+    "start": 476.76,
+    "end": 477.12
+  },
+  {
+    "word": " auch",
+    "start": 477.12,
+    "end": 477.4
+  },
+  {
+    "word": " sehr",
+    "start": 477.4,
+    "end": 477.68
+  },
+  {
+    "word": " gern",
+    "start": 477.68,
+    "end": 477.98
+  },
+  {
+    "word": " Salat.",
+    "start": 477.98,
+    "end": 478.54
+  },
+  {
+    "word": " Mein",
+    "start": 478.64,
+    "end": 479.02
+  },
+  {
+    "word": " liebsten",
+    "start": 479.02,
+    "end": 479.3
+  },
+  {
+    "word": " Kartoffelsalat.",
+    "start": 479.3,
+    "end": 480.14
+  },
+  {
+    "word": " Oh,",
+    "start": 480.16,
+    "end": 480.32
+  },
+  {
+    "word": " ja.",
+    "start": 480.54,
+    "end": 480.7
+  },
+  {
+    "word": " Der",
+    "start": 481.0,
+    "end": 481.34
+  },
+  {
+    "word": " Kartoffelsalat",
+    "start": 481.34,
+    "end": 482.22
+  },
+  {
+    "word": " meiner",
+    "start": 482.22,
+    "end": 482.5
+  },
+  {
+    "word": " Oma",
+    "start": 482.5,
+    "end": 482.98
+  },
+  {
+    "word": " ist",
+    "start": 482.98,
+    "end": 483.68
+  },
+  {
+    "word": " super",
+    "start": 483.68,
+    "end": 484.22
+  },
+  {
+    "word": " lecker.",
+    "start": 484.22,
+    "end": 484.52
+  },
+  {
+    "word": " Ja,",
+    "start": 485.0,
+    "end": 485.12
+  },
+  {
+    "word": " das",
+    "start": 485.38,
+    "end": 485.54
+  },
+  {
+    "word": " klingt",
+    "start": 485.54,
+    "end": 485.84
+  },
+  {
+    "word": " wirklich",
+    "start": 485.84,
+    "end": 486.38
+  },
+  {
+    "word": " super",
+    "start": 486.38,
+    "end": 487.08
+  },
+  {
+    "word": " lecker.",
+    "start": 487.08,
+    "end": 487.48
+  },
+  {
+    "word": " Und",
+    "start": 488.18,
+    "end": 488.3
+  },
+  {
+    "word": " die",
+    "start": 488.28,
+    "end": 488.58
+  },
+  {
+    "word": " Gerichte",
+    "start": 488.58,
+    "end": 488.94
+  },
+  {
+    "word": " generell,",
+    "start": 488.94,
+    "end": 489.82
+  },
+  {
+    "word": " generell,",
+    "start": 490.0,
+    "end": 490.66
+  },
+  {
+    "word": " die",
+    "start": 490.76,
+    "end": 490.88
+  },
+  {
+    "word": " Gerichte",
+    "start": 490.86,
+    "end": 491.3
+  },
+  {
+    "word": " von",
+    "start": 491.3,
+    "end": 491.56
+  },
+  {
+    "word": " meiner",
+    "start": 491.56,
+    "end": 491.84
+  },
+  {
+    "word": " Oma",
+    "start": 491.84,
+    "end": 492.28
+  },
+  {
+    "word": " sind",
+    "start": 492.28,
+    "end": 492.8
+  },
+  {
+    "word": " auch",
+    "start": 492.8,
+    "end": 493.1
+  },
+  {
+    "word": " super,",
+    "start": 493.1,
+    "end": 494.02
+  },
+  {
+    "word": " super",
+    "start": 494.24,
+    "end": 494.62
+  },
+  {
+    "word": " lecker.",
+    "start": 494.62,
+    "end": 494.96
+  },
+  {
+    "word": " Und",
+    "start": 495.46,
+    "end": 495.72
+  },
+  {
+    "word": " was",
+    "start": 495.72,
+    "end": 496.08
+  },
+  {
+    "word": " trinkst",
+    "start": 496.08,
+    "end": 496.44
+  },
+  {
+    "word": " du",
+    "start": 496.44,
+    "end": 496.56
+  },
+  {
+    "word": " gern,",
+    "start": 496.56,
+    "end": 496.78
+  },
+  {
+    "word": " auch",
+    "start": 497.26,
+    "end": 497.5
+  },
+  {
+    "word": " ein",
+    "start": 497.5,
+    "end": 497.84
+  },
+  {
+    "word": " Bier?",
+    "start": 497.84,
+    "end": 498.0
+  },
+  {
+    "word": " Ist",
+    "start": 498.46,
+    "end": 498.88
+  },
+  {
+    "word": " das",
+    "start": 498.88,
+    "end": 499.0
+  },
+  {
+    "word": " vegetarisch?",
+    "start": 499.0,
+    "end": 499.68
+  },
+  {
+    "word": " Ich",
+    "start": 500.7,
+    "end": 500.88
+  },
+  {
+    "word": " glaube",
+    "start": 500.88,
+    "end": 501.02
+  },
+  {
+    "word": " schon.",
+    "start": 501.02,
+    "end": 501.4
+  },
+  {
+    "word": " Im",
+    "start": 502.52,
+    "end": 502.74
+  },
+  {
+    "word": " Restaurant",
+    "start": 502.74,
+    "end": 503.6
+  },
+  {
+    "word": " trinke",
+    "start": 503.6,
+    "end": 504.14
+  },
+  {
+    "word": " ich",
+    "start": 504.14,
+    "end": 504.34
+  },
+  {
+    "word": " normalerweise",
+    "start": 504.34,
+    "end": 505.3
+  },
+  {
+    "word": " Apfelschorle.",
+    "start": 505.3,
+    "end": 506.14
+  },
+  {
+    "word": " Zu",
+    "start": 507.12,
+    "end": 507.54
+  },
+  {
+    "word": " Hause",
+    "start": 507.54,
+    "end": 507.88
+  },
+  {
+    "word": " trinke",
+    "start": 507.88,
+    "end": 508.64
+  },
+  {
+    "word": " ich",
+    "start": 508.64,
+    "end": 508.8
+  },
+  {
+    "word": " meistens",
+    "start": 508.8,
+    "end": 509.3
+  },
+  {
+    "word": " Wasser.",
+    "start": 509.3,
+    "end": 509.58
+  },
+  {
+    "word": " Apfel?",
+    "start": 510.12,
+    "end": 510.86
+  },
+  {
+    "word": " Was?",
+    "start": 511.04,
+    "end": 511.34
+  },
+  {
+    "word": " Was",
+    "start": 511.8,
+    "end": 512.16
+  },
+  {
+    "word": " ist",
+    "start": 512.16,
+    "end": 512.34
+  },
+  {
+    "word": " das?",
+    "start": 512.34,
+    "end": 512.54
+  },
+  {
+    "word": " Apfelsaft",
+    "start": 513.24,
+    "end": 514.08
+  },
+  {
+    "word": " mit",
+    "start": 514.08,
+    "end": 514.32
+  },
+  {
+    "word": " Mineralwasser.",
+    "start": 514.32,
+    "end": 515.12
+  },
+  {
+    "word": " Das",
+    "start": 515.68,
+    "end": 515.94
+  },
+  {
+    "word": " kennst",
+    "start": 515.94,
+    "end": 516.36
+  },
+  {
+    "word": " du,",
+    "start": 516.36,
+    "end": 516.52
+  },
+  {
+    "word": " Henry,",
+    "start": 516.66,
+    "end": 516.82
+  },
+  {
+    "word": " oder?",
+    "start": 517.08,
+    "end": 517.2
+  },
+  {
+    "word": " Ja,",
+    "start": 517.1,
+    "end": 517.34
+  },
+  {
+    "word": " klar.",
+    "start": 518.2,
+    "end": 518.4
+  },
+  {
+    "word": " Natürlich",
+    "start": 518.7,
+    "end": 519.04
+  },
+  {
+    "word": " kenne",
+    "start": 519.04,
+    "end": 519.46
+  },
+  {
+    "word": " ich",
+    "start": 519.46,
+    "end": 519.7
+  },
+  {
+    "word": " Apfelschorle.",
+    "start": 519.7,
+    "end": 520.54
+  },
+  {
+    "word": " Ich",
+    "start": 521.26,
+    "end": 521.5
+  },
+  {
+    "word": " trinke",
+    "start": 521.5,
+    "end": 522.16
+  },
+  {
+    "word": " meistens",
+    "start": 522.16,
+    "end": 522.72
+  },
+  {
+    "word": " Wasser,",
+    "start": 522.72,
+    "end": 523.08
+  },
+  {
+    "word": " weil",
+    "start": 523.56,
+    "end": 524.14
+  },
+  {
+    "word": " es",
+    "start": 524.14,
+    "end": 524.56
+  },
+  {
+    "word": " keinen",
+    "start": 524.56,
+    "end": 524.82
+  },
+  {
+    "word": " Zucker",
+    "start": 524.82,
+    "end": 526.02
+  },
+  {
+    "word": " hat.",
+    "start": 526.02,
+    "end": 526.34
+  },
+  {
+    "word": " Und",
+    "start": 526.34,
+    "end": 527.2
+  },
+  {
+    "word": " nach",
+    "start": 527.2,
+    "end": 528.02
+  },
+  {
+    "word": " dem",
+    "start": 528.02,
+    "end": 528.26
+  },
+  {
+    "word": " Sport",
+    "start": 528.26,
+    "end": 528.72
+  },
+  {
+    "word": " schmeckt",
+    "start": 528.72,
+    "end": 529.32
+  },
+  {
+    "word": " mir",
+    "start": 529.32,
+    "end": 530.0
+  },
+  {
+    "word": " Wasser,",
+    "start": 530.0,
+    "end": 530.8
+  },
+  {
+    "word": " zum",
+    "start": 530.98,
+    "end": 531.24
+  },
+  {
+    "word": " Beispiel",
+    "start": 531.24,
+    "end": 531.82
+  },
+  {
+    "word": " auch",
+    "start": 531.82,
+    "end": 532.26
+  },
+  {
+    "word": " am",
+    "start": 532.26,
+    "end": 532.5
+  },
+  {
+    "word": " besten.",
+    "start": 532.5,
+    "end": 532.82
+  },
+  {
+    "word": " Das",
+    "start": 533.94,
+    "end": 534.66
+  },
+  {
+    "word": " stimmt.",
+    "start": 534.66,
+    "end": 534.96
+  },
+  {
+    "word": " Machst",
+    "start": 536.02,
+    "end": 536.66
+  },
+  {
+    "word": " du",
+    "start": 536.66,
+    "end": 536.78
+  },
+  {
+    "word": " viel",
+    "start": 536.76,
+    "end": 537.04
+  },
+  {
+    "word": " Sport,",
+    "start": 537.04,
+    "end": 537.46
+  },
+  {
+    "word": " Henry?",
+    "start": 537.62,
+    "end": 537.82
+  },
+  {
+    "word": " Ja,",
+    "start": 538.9,
+    "end": 539.18
+  },
+  {
+    "word": " ja,",
+    "start": 540.4,
+    "end": 540.78
+  },
+  {
+    "word": " nein.",
+    "start": 540.98,
+    "end": 541.1
+  },
+  {
+    "word": " Also",
+    "start": 541.34,
+    "end": 541.56
+  },
+  {
+    "word": " ich",
+    "start": 541.56,
+    "end": 542.02
+  },
+  {
+    "word": " gehe",
+    "start": 542.02,
+    "end": 542.32
+  },
+  {
+    "word": " fast",
+    "start": 542.32,
+    "end": 543.82
+  },
+  {
+    "word": " jeden",
+    "start": 543.82,
+    "end": 544.18
+  },
+  {
+    "word": " Tag",
+    "start": 544.18,
+    "end": 544.58
+  },
+  {
+    "word": " am",
+    "start": 544.58,
+    "end": 544.9
+  },
+  {
+    "word": " Morgen",
+    "start": 544.9,
+    "end": 545.18
+  },
+  {
+    "word": " joggen.",
+    "start": 545.18,
+    "end": 545.64
+  },
+  {
+    "word": " Ja,",
+    "start": 546.34,
+    "end": 546.56
+  },
+  {
+    "word": " fast",
+    "start": 546.74,
+    "end": 547.12
+  },
+  {
+    "word": " jeden",
+    "start": 547.12,
+    "end": 547.48
+  },
+  {
+    "word": " Tag.",
+    "start": 547.48,
+    "end": 547.94
+  },
+  {
+    "word": " Super.",
+    "start": 548.56,
+    "end": 549.28
+  },
+  {
+    "word": " Um",
+    "start": 549.92,
+    "end": 550.04
+  },
+  {
+    "word": " wie",
+    "start": 550.04,
+    "end": 550.22
+  },
+  {
+    "word": " viel",
+    "start": 550.22,
+    "end": 550.44
+  },
+  {
+    "word": " Uhr",
+    "start": 550.44,
+    "end": 550.66
+  },
+  {
+    "word": " gehst",
+    "start": 550.66,
+    "end": 551.12
+  },
+  {
+    "word": " du",
+    "start": 551.12,
+    "end": 551.26
+  },
+  {
+    "word": " joggen?",
+    "start": 551.26,
+    "end": 551.62
+  },
+  {
+    "word": " Ach,",
+    "start": 551.62,
+    "end": 552.22
+  },
+  {
+    "word": " also",
+    "start": 553.84,
+    "end": 554.06
+  },
+  {
+    "word": " ich",
+    "start": 554.06,
+    "end": 554.6
+  },
+  {
+    "word": " stehe",
+    "start": 554.6,
+    "end": 555.48
+  },
+  {
+    "word": " so",
+    "start": 555.48,
+    "end": 556.14
+  },
+  {
+    "word": " um",
+    "start": 556.14,
+    "end": 556.62
+  },
+  {
+    "word": " 7",
+    "start": 556.62,
+    "end": 556.94
+  },
+  {
+    "word": ".30",
+    "start": 556.94,
+    "end": 557.6
+  },
+  {
+    "word": " Uhr",
+    "start": 557.6,
+    "end": 558.04
+  },
+  {
+    "word": " auf.",
+    "start": 558.04,
+    "end": 558.26
+  },
+  {
+    "word": " Ja,",
+    "start": 559.02,
+    "end": 559.5
+  },
+  {
+    "word": " sehr",
+    "start": 560.04,
+    "end": 560.58
+  },
+  {
+    "word": " früh.",
+    "start": 560.58,
+    "end": 560.9
+  },
+  {
+    "word": " Und",
+    "start": 561.52,
+    "end": 562.2
+  },
+  {
+    "word": " dann",
+    "start": 562.2,
+    "end": 562.92
+  },
+  {
+    "word": " gehe",
+    "start": 562.92,
+    "end": 563.4
+  },
+  {
+    "word": " ich",
+    "start": 563.4,
+    "end": 563.76
+  },
+  {
+    "word": " um",
+    "start": 563.76,
+    "end": 564.12
+  },
+  {
+    "word": " 8",
+    "start": 564.12,
+    "end": 564.62
+  },
+  {
+    "word": " Uhr",
+    "start": 564.62,
+    "end": 564.92
+  },
+  {
+    "word": " joggen.",
+    "start": 564.92,
+    "end": 565.72
+  },
+  {
+    "word": " OK,",
+    "start": 566.78,
+    "end": 567.1
+  },
+  {
+    "word": " und",
+    "start": 567.36,
+    "end": 567.48
+  },
+  {
+    "word": " für",
+    "start": 567.46,
+    "end": 567.9
+  },
+  {
+    "word": " wie",
+    "start": 567.9,
+    "end": 568.2
+  },
+  {
+    "word": " lange?",
+    "start": 568.2,
+    "end": 568.4
+  },
+  {
+    "word": " Normalerweise",
+    "start": 569.66,
+    "end": 570.62
+  },
+  {
+    "word": " für",
+    "start": 570.62,
+    "end": 570.98
+  },
+  {
+    "word": " eine",
+    "start": 570.98,
+    "end": 571.46
+  },
+  {
+    "word": " Stunde.",
+    "start": 571.46,
+    "end": 571.94
+  },
+  {
+    "word": " Da",
+    "start": 572.78,
+    "end": 573.22
+  },
+  {
+    "word": " laufe",
+    "start": 573.22,
+    "end": 573.72
+  },
+  {
+    "word": " ich",
+    "start": 573.72,
+    "end": 573.98
+  },
+  {
+    "word": " circa",
+    "start": 573.98,
+    "end": 574.46
+  },
+  {
+    "word": " acht",
+    "start": 574.46,
+    "end": 575.72
+  },
+  {
+    "word": " Kilometer.",
+    "start": 575.72,
+    "end": 576.28
+  },
+  {
+    "word": " Respekt.",
+    "start": 576.98,
+    "end": 577.9
+  },
+  {
+    "word": " Ich",
+    "start": 578.5,
+    "end": 578.76
+  },
+  {
+    "word": " mache",
+    "start": 578.76,
+    "end": 579.12
+  },
+  {
+    "word": " Gär",
+    "start": 579.12,
+    "end": 579.58
+  },
+  {
+    "word": " und",
+    "start": 579.58,
+    "end": 579.74
+  },
+  {
+    "word": " Sport,",
+    "start": 579.74,
+    "end": 580.16
+  },
+  {
+    "word": " aber",
+    "start": 580.44,
+    "end": 580.9
+  },
+  {
+    "word": " nicht",
+    "start": 580.9,
+    "end": 581.14
+  },
+  {
+    "word": " oft.",
+    "start": 581.14,
+    "end": 581.46
+  },
+  {
+    "word": " Morgens",
+    "start": 582.26,
+    "end": 583.02
+  },
+  {
+    "word": " bin",
+    "start": 583.02,
+    "end": 583.24
+  },
+  {
+    "word": " ich",
+    "start": 583.24,
+    "end": 583.4
+  },
+  {
+    "word": " meistens",
+    "start": 583.4,
+    "end": 583.9
+  },
+  {
+    "word": " zu",
+    "start": 583.9,
+    "end": 584.14
+  },
+  {
+    "word": " müde.",
+    "start": 584.14,
+    "end": 584.5
+  },
+  {
+    "word": " Ich",
+    "start": 585.18,
+    "end": 585.56
+  },
+  {
+    "word": " mache",
+    "start": 585.56,
+    "end": 585.72
+  },
+  {
+    "word": " abends",
+    "start": 585.72,
+    "end": 586.38
+  },
+  {
+    "word": " manchmal",
+    "start": 586.38,
+    "end": 586.56
+  },
+  {
+    "word": " Sport.",
+    "start": 586.56,
+    "end": 587.3
+  },
+  {
+    "word": " Yoga.",
+    "start": 587.66,
+    "end": 588.42
+  },
+  {
+    "word": " Ja,",
+    "start": 589.4,
+    "end": 589.66
+  },
+  {
+    "word": " das",
+    "start": 590.04,
+    "end": 590.22
+  },
+  {
+    "word": " verstehe",
+    "start": 590.22,
+    "end": 591.08
+  },
+  {
+    "word": " ich.",
+    "start": 591.08,
+    "end": 591.32
+  },
+  {
+    "word": " Und",
+    "start": 591.74,
+    "end": 591.86
+  },
+  {
+    "word": " Yoga",
+    "start": 591.86,
+    "end": 592.56
+  },
+  {
+    "word": " ist",
+    "start": 592.56,
+    "end": 593.26
+  },
+  {
+    "word": " auch",
+    "start": 593.26,
+    "end": 594.06
+  },
+  {
+    "word": " gesund",
+    "start": 594.06,
+    "end": 594.66
+  },
+  {
+    "word": " und",
+    "start": 594.66,
+    "end": 595.08
+  },
+  {
+    "word": " man",
+    "start": 595.08,
+    "end": 595.46
+  },
+  {
+    "word": " bleibt",
+    "start": 595.46,
+    "end": 596.06
+  },
+  {
+    "word": " jung.",
+    "start": 596.06,
+    "end": 596.48
+  },
+  {
+    "word": " Das",
+    "start": 597.78,
+    "end": 597.9
+  },
+  {
+    "word": " stimmt.",
+    "start": 597.9,
+    "end": 598.16
+  },
+  {
+    "word": " Das",
+    "start": 598.56,
+    "end": 598.68
+  },
+  {
+    "word": " stimmt,",
+    "start": 598.62,
+    "end": 598.88
+  },
+  {
+    "word": " Henry.",
+    "start": 599.04,
+    "end": 599.2
+  },
+  {
+    "word": " Wie",
+    "start": 599.72,
+    "end": 599.84
+  },
+  {
+    "word": " alt",
+    "start": 599.82,
+    "end": 599.96
+  },
+  {
+    "word": " bist",
+    "start": 599.96,
+    "end": 600.14
+  },
+  {
+    "word": " du",
+    "start": 600.14,
+    "end": 600.4
+  },
+  {
+    "word": " noch",
+    "start": 600.4,
+    "end": 600.82
+  },
+  {
+    "word": " mal?",
+    "start": 600.82,
+    "end": 601.14
+  },
+  {
+    "word": " Oh,",
+    "start": 601.68,
+    "end": 601.8
+  },
+  {
+    "word": " sehr",
+    "start": 602.4,
+    "end": 603.8
+  },
+  {
+    "word": " jung.",
+    "start": 603.8,
+    "end": 604.18
+  },
+  {
+    "word": " OK.",
+    "start": 605.32,
+    "end": 605.68
+  },
+  {
+    "word": " Ich",
+    "start": 606.78,
+    "end": 607.22
+  },
+  {
+    "word": " bin",
+    "start": 607.22,
+    "end": 607.4
+  },
+  {
+    "word": " immer",
+    "start": 607.4,
+    "end": 607.66
+  },
+  {
+    "word": " noch",
+    "start": 607.66,
+    "end": 607.9
+  },
+  {
+    "word": " sehr",
+    "start": 607.9,
+    "end": 608.32
+  },
+  {
+    "word": " jung.",
+    "start": 608.32,
+    "end": 608.74
+  },
+  {
+    "word": " Ich",
+    "start": 609.42,
+    "end": 609.76
+  },
+  {
+    "word": " bin",
+    "start": 609.76,
+    "end": 610.14
+  },
+  {
+    "word": " 33",
+    "start": 610.14,
+    "end": 611.08
+  },
+  {
+    "word": " Jahre",
+    "start": 611.08,
+    "end": 611.86
+  },
+  {
+    "word": " alt.",
+    "start": 611.86,
+    "end": 612.28
+  },
+  {
+    "word": " Und",
+    "start": 612.8,
+    "end": 612.92
+  },
+  {
+    "word": " du,",
+    "start": 612.92,
+    "end": 613.86
+  },
+  {
+    "word": " Lisa?",
+    "start": 614.14,
+    "end": 614.38
+  },
+  {
+    "word": " Ich",
+    "start": 614.9,
+    "end": 615.06
+  },
+  {
+    "word": " bin",
+    "start": 615.06,
+    "end": 615.24
+  },
+  {
+    "word": " auch",
+    "start": 615.24,
+    "end": 615.54
+  },
+  {
+    "word": " 33",
+    "start": 615.54,
+    "end": 616.26
+  },
+  {
+    "word": " Jahre",
+    "start": 616.26,
+    "end": 616.84
+  },
+  {
+    "word": " alt.",
+    "start": 616.84,
+    "end": 617.22
+  },
+  {
+    "word": " Lustig.",
+    "start": 617.34,
+    "end": 617.8
+  },
+  {
+    "word": " Ja,",
+    "start": 618.14,
+    "end": 618.36
+  },
+  {
+    "word": " wirklich",
+    "start": 618.6,
+    "end": 618.86
+  },
+  {
+    "word": " lustig.",
+    "start": 618.86,
+    "end": 619.46
+  },
+  {
+    "word": " Oh,",
+    "start": 620.2,
+    "end": 620.46
+  },
+  {
+    "word": " hier",
+    "start": 620.96,
+    "end": 621.2
+  },
+  {
+    "word": " bei",
+    "start": 621.2,
+    "end": 621.66
+  },
+  {
+    "word": " mir",
+    "start": 621.66,
+    "end": 621.96
+  },
+  {
+    "word": " in",
+    "start": 621.96,
+    "end": 622.24
+  },
+  {
+    "word": " Hamburg",
+    "start": 622.24,
+    "end": 622.62
+  },
+  {
+    "word": " regnet",
+    "start": 622.62,
+    "end": 623.26
+  },
+  {
+    "word": " es",
+    "start": 623.26,
+    "end": 623.44
+  },
+  {
+    "word": " nicht",
+    "start": 623.44,
+    "end": 623.6
+  },
+  {
+    "word": " mehr.",
+    "start": 623.6,
+    "end": 623.86
+  },
+  {
+    "word": " Sehr",
+    "start": 624.54,
+    "end": 624.8
+  },
+  {
+    "word": " cool.",
+    "start": 624.8,
+    "end": 625.06
+  },
+  {
+    "word": " Super.",
+    "start": 625.6,
+    "end": 626.06
+  },
+  {
+    "word": " Und",
+    "start": 626.44,
+    "end": 626.5600000000001
+  },
+  {
+    "word": " was",
+    "start": 626.56,
+    "end": 627.18
+  },
+  {
+    "word": " machst",
+    "start": 627.18,
+    "end": 627.48
+  },
+  {
+    "word": " du",
+    "start": 627.48,
+    "end": 627.68
+  },
+  {
+    "word": " dann",
+    "start": 627.68,
+    "end": 627.84
+  },
+  {
+    "word": " heute?",
+    "start": 627.84,
+    "end": 628.12
+  },
+  {
+    "word": " Keine",
+    "start": 630.22,
+    "end": 630.9
+  },
+  {
+    "word": " Ahnung.",
+    "start": 630.9,
+    "end": 631.24
+  },
+  {
+    "word": " Hast",
+    "start": 631.78,
+    "end": 631.98
+  },
+  {
+    "word": " du",
+    "start": 631.98,
+    "end": 632.12
+  },
+  {
+    "word": " eine",
+    "start": 632.12,
+    "end": 632.32
+  },
+  {
+    "word": " Idee?",
+    "start": 632.32,
+    "end": 632.56
+  },
+  {
+    "word": " Also,",
+    "start": 634.58,
+    "end": 635.22
+  },
+  {
+    "word": " du",
+    "start": 635.56,
+    "end": 635.74
+  },
+  {
+    "word": " kannst",
+    "start": 635.74,
+    "end": 636.06
+  },
+  {
+    "word": " in",
+    "start": 636.06,
+    "end": 636.36
+  },
+  {
+    "word": " ein",
+    "start": 636.36,
+    "end": 636.52
+  },
+  {
+    "word": " Café",
+    "start": 636.52,
+    "end": 637.0
+  },
+  {
+    "word": " gehen",
+    "start": 637.0,
+    "end": 637.38
+  },
+  {
+    "word": " oder",
+    "start": 637.38,
+    "end": 638.0
+  },
+  {
+    "word": " ins",
+    "start": 639.06,
+    "end": 639.7
+  },
+  {
+    "word": " Schwimmbad",
+    "start": 639.7,
+    "end": 640.2
+  },
+  {
+    "word": " gehen",
+    "start": 640.2,
+    "end": 640.58
+  },
+  {
+    "word": " und",
+    "start": 640.58,
+    "end": 640.8
+  },
+  {
+    "word": " schwimmen.",
+    "start": 640.8,
+    "end": 641.14
+  },
+  {
+    "word": " Schwimmen,",
+    "start": 641.96,
+    "end": 642.6
+  },
+  {
+    "word": " sagst",
+    "start": 642.86,
+    "end": 643.2
+  },
+  {
+    "word": " du.",
+    "start": 643.2,
+    "end": 643.48
+  },
+  {
+    "word": " Nein,",
+    "start": 645.34,
+    "end": 645.66
+  },
+  {
+    "word": " ich",
+    "start": 645.84,
+    "end": 645.98
+  },
+  {
+    "word": " glaube",
+    "start": 645.98,
+    "end": 646.28
+  },
+  {
+    "word": " nicht.",
+    "start": 646.28,
+    "end": 646.7
+  },
+  {
+    "word": " Ich",
+    "start": 647.54,
+    "end": 647.72
+  },
+  {
+    "word": " habe",
+    "start": 647.72,
+    "end": 647.98
+  },
+  {
+    "word": " heute",
+    "start": 647.98,
+    "end": 648.42
+  },
+  {
+    "word": " schon",
+    "start": 648.42,
+    "end": 648.7
+  },
+  {
+    "word": " Sport",
+    "start": 648.7,
+    "end": 649.12
+  },
+  {
+    "word": " gemacht",
+    "start": 649.12,
+    "end": 649.5
+  },
+  {
+    "word": " und",
+    "start": 649.5,
+    "end": 649.92
+  },
+  {
+    "word": " ich",
+    "start": 650.74,
+    "end": 651.38
+  },
+  {
+    "word": " glaube,",
+    "start": 651.38,
+    "end": 651.62
+  },
+  {
+    "word": " ich",
+    "start": 652.0,
+    "end": 652.14
+  },
+  {
+    "word": " brauche",
+    "start": 652.14,
+    "end": 652.46
+  },
+  {
+    "word": " eine",
+    "start": 652.46,
+    "end": 652.68
+  },
+  {
+    "word": " Pause.",
+    "start": 652.68,
+    "end": 653.08
+  },
+  {
+    "word": " Hast",
+    "start": 653.7,
+    "end": 653.92
+  },
+  {
+    "word": " du",
+    "start": 653.92,
+    "end": 654.14
+  },
+  {
+    "word": " vielleicht",
+    "start": 654.14,
+    "end": 654.62
+  },
+  {
+    "word": " eine",
+    "start": 654.62,
+    "end": 654.92
+  },
+  {
+    "word": " andere",
+    "start": 654.92,
+    "end": 655.18
+  },
+  {
+    "word": " Idee?",
+    "start": 655.18,
+    "end": 655.46
+  },
+  {
+    "word": " Stimmt.",
+    "start": 656.24,
+    "end": 656.88
+  },
+  {
+    "word": " Ja,",
+    "start": 658.44,
+    "end": 658.7
+  },
+  {
+    "word": " vielleicht",
+    "start": 659.2,
+    "end": 659.46
+  },
+  {
+    "word": " kannst",
+    "start": 659.46,
+    "end": 659.78
+  },
+  {
+    "word": " du",
+    "start": 659.78,
+    "end": 660.0
+  },
+  {
+    "word": " ins",
+    "start": 660.0,
+    "end": 660.16
+  },
+  {
+    "word": " Kino",
+    "start": 660.16,
+    "end": 660.46
+  },
+  {
+    "word": " gehen.",
+    "start": 660.46,
+    "end": 660.76
+  },
+  {
+    "word": " Gehst",
+    "start": 661.28,
+    "end": 661.62
+  },
+  {
+    "word": " du",
+    "start": 661.62,
+    "end": 661.74
+  },
+  {
+    "word": " gerne",
+    "start": 661.74,
+    "end": 661.94
+  },
+  {
+    "word": " ins",
+    "start": 661.94,
+    "end": 662.26
+  },
+  {
+    "word": " Kino?",
+    "start": 662.26,
+    "end": 662.44
+  },
+  {
+    "word": " Ja.",
+    "start": 662.92,
+    "end": 663.06
+  },
+  {
+    "word": " Gute",
+    "start": 663.62,
+    "end": 664.06
+  },
+  {
+    "word": " Idee.",
+    "start": 664.06,
+    "end": 664.36
+  },
+  {
+    "word": " Ja,",
+    "start": 664.68,
+    "end": 664.8
+  },
+  {
+    "word": " wirklich.",
+    "start": 665.3,
+    "end": 665.46
+  },
+  {
+    "word": " Ich",
+    "start": 666.08,
+    "end": 666.64
+  },
+  {
+    "word": " gehe",
+    "start": 666.64,
+    "end": 666.9
+  },
+  {
+    "word": " sehr",
+    "start": 666.9,
+    "end": 667.44
+  },
+  {
+    "word": " gerne",
+    "start": 667.44,
+    "end": 667.68
+  },
+  {
+    "word": " ins",
+    "start": 667.68,
+    "end": 667.88
+  },
+  {
+    "word": " Kino,",
+    "start": 667.88,
+    "end": 668.14
+  },
+  {
+    "word": " Lisa.",
+    "start": 668.14,
+    "end": 668.34
+  },
+  {
+    "word": " Ja,",
+    "start": 669.1,
+    "end": 669.3
+  },
+  {
+    "word": " mein",
+    "start": 669.72,
+    "end": 669.92
+  },
+  {
+    "word": " Freund",
+    "start": 669.92,
+    "end": 670.3
+  },
+  {
+    "word": " hat",
+    "start": 670.3,
+    "end": 670.6
+  },
+  {
+    "word": " letzte",
+    "start": 670.6,
+    "end": 670.88
+  },
+  {
+    "word": " Woche",
+    "start": 670.88,
+    "end": 671.28
+  },
+  {
+    "word": " einen",
+    "start": 671.28,
+    "end": 671.62
+  },
+  {
+    "word": " guten",
+    "start": 671.62,
+    "end": 671.96
+  },
+  {
+    "word": " Film",
+    "start": 671.96,
+    "end": 672.28
+  },
+  {
+    "word": " gesehen.",
+    "start": 672.28,
+    "end": 672.62
+  },
+  {
+    "word": " Aber",
+    "start": 672.68,
+    "end": 673.34
+  },
+  {
+    "word": " ich",
+    "start": 673.34,
+    "end": 673.8
+  },
+  {
+    "word": " habe",
+    "start": 673.8,
+    "end": 673.92
+  },
+  {
+    "word": " den",
+    "start": 673.92,
+    "end": 674.08
+  },
+  {
+    "word": " Namen",
+    "start": 674.08,
+    "end": 674.42
+  },
+  {
+    "word": " vergessen.",
+    "start": 674.42,
+    "end": 674.92
+  },
+  {
+    "word": " Ich",
+    "start": 676.32,
+    "end": 676.66
+  },
+  {
+    "word": " kann",
+    "start": 676.66,
+    "end": 676.82
+  },
+  {
+    "word": " ihn",
+    "start": 676.82,
+    "end": 676.94
+  },
+  {
+    "word": " fragen.",
+    "start": 676.94,
+    "end": 677.28
+  },
+  {
+    "word": " Es",
+    "start": 678.34,
+    "end": 678.46
+  },
+  {
+    "word": " ist",
+    "start": 678.46,
+    "end": 678.62
+  },
+  {
+    "word": " ein",
+    "start": 678.62,
+    "end": 678.82
+  },
+  {
+    "word": " Film",
+    "start": 678.82,
+    "end": 679.2
+  },
+  {
+    "word": " über",
+    "start": 679.2,
+    "end": 679.58
+  },
+  {
+    "word": " einen",
+    "start": 679.58,
+    "end": 679.82
+  },
+  {
+    "word": " Mann.",
+    "start": 679.82,
+    "end": 680.1
+  },
+  {
+    "word": " Er",
+    "start": 680.76,
+    "end": 680.9
+  },
+  {
+    "word": " macht",
+    "start": 680.9,
+    "end": 681.18
+  },
+  {
+    "word": " ganz",
+    "start": 681.18,
+    "end": 681.7
+  },
+  {
+    "word": " alleine",
+    "start": 681.7,
+    "end": 682.46
+  },
+  {
+    "word": " eine",
+    "start": 682.46,
+    "end": 682.88
+  },
+  {
+    "word": " Wanderung",
+    "start": 682.88,
+    "end": 683.52
+  },
+  {
+    "word": " in",
+    "start": 683.52,
+    "end": 683.68
+  },
+  {
+    "word": " der",
+    "start": 683.68,
+    "end": 683.8
+  },
+  {
+    "word": " Sahara.",
+    "start": 683.8,
+    "end": 684.26
+  },
+  {
+    "word": " Ach",
+    "start": 684.82,
+    "end": 685.02
+  },
+  {
+    "word": " ja,",
+    "start": 685.02,
+    "end": 685.22
+  },
+  {
+    "word": " ein",
+    "start": 685.7,
+    "end": 686.22
+  },
+  {
+    "word": " Mann",
+    "start": 686.22,
+    "end": 686.62
+  },
+  {
+    "word": " wandert",
+    "start": 686.62,
+    "end": 687.38
+  },
+  {
+    "word": " ganz",
+    "start": 687.38,
+    "end": 687.84
+  },
+  {
+    "word": " allein",
+    "start": 687.84,
+    "end": 688.44
+  },
+  {
+    "word": " in",
+    "start": 688.44,
+    "end": 688.96
+  },
+  {
+    "word": " der",
+    "start": 688.96,
+    "end": 689.2
+  },
+  {
+    "word": " Sahara.",
+    "start": 689.2,
+    "end": 689.98
+  },
+  {
+    "word": " Der",
+    "start": 690.76,
+    "end": 691.14
+  },
+  {
+    "word": " Film",
+    "start": 691.14,
+    "end": 691.38
+  },
+  {
+    "word": " ist",
+    "start": 691.38,
+    "end": 691.54
+  },
+  {
+    "word": " interessant.",
+    "start": 691.54,
+    "end": 692.12
+  },
+  {
+    "word": " Ja,",
+    "start": 692.68,
+    "end": 692.96
+  },
+  {
+    "word": " mein",
+    "start": 693.32,
+    "end": 693.58
+  },
+  {
+    "word": " Freund",
+    "start": 693.58,
+    "end": 693.9
+  },
+  {
+    "word": " war",
+    "start": 693.9,
+    "end": 694.16
+  },
+  {
+    "word": " begeistert.",
+    "start": 694.16,
+    "end": 694.98
+  },
+  {
+    "word": " Er",
+    "start": 695.48,
+    "end": 695.72
+  },
+  {
+    "word": " findet",
+    "start": 695.72,
+    "end": 695.92
+  },
+  {
+    "word": " den",
+    "start": 695.92,
+    "end": 696.36
+  },
+  {
+    "word": " Film",
+    "start": 696.36,
+    "end": 696.56
+  },
+  {
+    "word": " toll.",
+    "start": 696.56,
+    "end": 696.96
+  },
+  {
+    "word": " Okay,",
+    "start": 697.52,
+    "end": 697.94
+  },
+  {
+    "word": " ja.",
+    "start": 698.2,
+    "end": 698.36
+  },
+  {
+    "word": " Du",
+    "start": 698.88,
+    "end": 699.04
+  },
+  {
+    "word": " kannst",
+    "start": 699.04,
+    "end": 699.22
+  },
+  {
+    "word": " mir",
+    "start": 699.22,
+    "end": 699.46
+  },
+  {
+    "word": " gern",
+    "start": 699.46,
+    "end": 699.72
+  },
+  {
+    "word": " den",
+    "start": 699.72,
+    "end": 699.96
+  },
+  {
+    "word": " Namen",
+    "start": 699.96,
+    "end": 700.36
+  },
+  {
+    "word": " des",
+    "start": 700.36,
+    "end": 700.7
+  },
+  {
+    "word": " Filmes",
+    "start": 700.7,
+    "end": 701.22
+  },
+  {
+    "word": " schicken.",
+    "start": 701.22,
+    "end": 701.56
+  },
+  {
+    "word": " Ich",
+    "start": 702.32,
+    "end": 702.5
+  },
+  {
+    "word": " muss,",
+    "start": 702.5,
+    "end": 702.94
+  },
+  {
+    "word": " Lisa,",
+    "start": 703.2,
+    "end": 703.38
+  },
+  {
+    "word": " aber",
+    "start": 703.66,
+    "end": 703.78
+  },
+  {
+    "word": " heute",
+    "start": 703.78,
+    "end": 704.3
+  },
+  {
+    "word": " noch",
+    "start": 704.3,
+    "end": 704.92
+  },
+  {
+    "word": " einkaufen",
+    "start": 704.92,
+    "end": 705.56
+  },
+  {
+    "word": " gehen.",
+    "start": 705.56,
+    "end": 705.88
+  },
+  {
+    "word": " Mein",
+    "start": 706.28,
+    "end": 706.76
+  },
+  {
+    "word": " Kühlschrank.",
+    "start": 706.76,
+    "end": 707.36
+  },
+  {
+    "word": " Ist",
+    "start": 708.16,
+    "end": 708.84
+  },
+  {
+    "word": " komplett",
+    "start": 708.84,
+    "end": 709.38
+  },
+  {
+    "word": " leer",
+    "start": 709.38,
+    "end": 710.2
+  },
+  {
+    "word": " und",
+    "start": 710.2,
+    "end": 710.74
+  },
+  {
+    "word": " ich",
+    "start": 710.74,
+    "end": 710.98
+  },
+  {
+    "word": " habe",
+    "start": 710.98,
+    "end": 711.16
+  },
+  {
+    "word": " kein",
+    "start": 711.16,
+    "end": 711.56
+  },
+  {
+    "word": " Mineralwasser",
+    "start": 711.56,
+    "end": 713.38
+  },
+  {
+    "word": " mehr.",
+    "start": 713.38,
+    "end": 713.7
+  },
+  {
+    "word": " Und",
+    "start": 714.78,
+    "end": 715.04
+  },
+  {
+    "word": " du,",
+    "start": 715.04,
+    "end": 715.56
+  },
+  {
+    "word": " was",
+    "start": 715.9,
+    "end": 716.04
+  },
+  {
+    "word": " machst",
+    "start": 716.04,
+    "end": 716.42
+  },
+  {
+    "word": " du?",
+    "start": 716.42,
+    "end": 716.62
+  },
+  {
+    "word": " Was",
+    "start": 716.72,
+    "end": 716.84
+  },
+  {
+    "word": " musst",
+    "start": 716.8,
+    "end": 717.1
+  },
+  {
+    "word": " du",
+    "start": 717.1,
+    "end": 717.44
+  },
+  {
+    "word": " heute",
+    "start": 717.44,
+    "end": 717.78
+  },
+  {
+    "word": " noch",
+    "start": 717.78,
+    "end": 717.98
+  },
+  {
+    "word": " machen?",
+    "start": 717.98,
+    "end": 718.28
+  },
+  {
+    "word": " Zuerst",
+    "start": 719.4,
+    "end": 720.1
+  },
+  {
+    "word": " muss",
+    "start": 720.1,
+    "end": 720.4
+  },
+  {
+    "word": " ich",
+    "start": 720.4,
+    "end": 720.56
+  },
+  {
+    "word": " arbeiten.",
+    "start": 720.56,
+    "end": 721.1
+  },
+  {
+    "word": " Und",
+    "start": 722.04,
+    "end": 722.54
+  },
+  {
+    "word": " zum",
+    "start": 722.54,
+    "end": 723.38
+  },
+  {
+    "word": " Glück",
+    "start": 723.38,
+    "end": 723.68
+  },
+  {
+    "word": " habe",
+    "start": 723.68,
+    "end": 723.94
+  },
+  {
+    "word": " ich",
+    "start": 723.94,
+    "end": 724.14
+  },
+  {
+    "word": " noch",
+    "start": 724.14,
+    "end": 724.4
+  },
+  {
+    "word": " Spaghetti",
+    "start": 724.4,
+    "end": 724.94
+  },
+  {
+    "word": " mit",
+    "start": 724.94,
+    "end": 725.24
+  },
+  {
+    "word": " Tomatensoße",
+    "start": 725.24,
+    "end": 726.12
+  },
+  {
+    "word": " von",
+    "start": 726.12,
+    "end": 726.4
+  },
+  {
+    "word": " gestern.",
+    "start": 726.4,
+    "end": 726.8
+  },
+  {
+    "word": " Ja,",
+    "start": 727.66,
+    "end": 727.78
+  },
+  {
+    "word": " ich",
+    "start": 728.08,
+    "end": 728.2
+  },
+  {
+    "word": " muss",
+    "start": 728.2,
+    "end": 728.34
+  },
+  {
+    "word": " also",
+    "start": 728.34,
+    "end": 728.64
+  },
+  {
+    "word": " heute",
+    "start": 728.64,
+    "end": 728.82
+  },
+  {
+    "word": " nicht",
+    "start": 728.82,
+    "end": 729.3
+  },
+  {
+    "word": " kochen.",
+    "start": 729.3,
+    "end": 729.8
+  },
+  {
+    "word": " Und",
+    "start": 730.44,
+    "end": 730.96
+  },
+  {
+    "word": " nach",
+    "start": 730.96,
+    "end": 731.44
+  },
+  {
+    "word": " der",
+    "start": 731.44,
+    "end": 731.66
+  },
+  {
+    "word": " Arbeit",
+    "start": 731.66,
+    "end": 732.0
+  },
+  {
+    "word": " möchte",
+    "start": 732.0,
+    "end": 732.28
+  },
+  {
+    "word": " ich",
+    "start": 732.28,
+    "end": 732.6
+  },
+  {
+    "word": " heute",
+    "start": 732.6,
+    "end": 732.78
+  },
+  {
+    "word": " früh",
+    "start": 732.78,
+    "end": 733.18
+  },
+  {
+    "word": " einschlafen.",
+    "start": 733.18,
+    "end": 733.9
+  },
+  {
+    "word": " Ich",
+    "start": 734.12,
+    "end": 734.24
+  },
+  {
+    "word": " bin",
+    "start": 734.2,
+    "end": 734.36
+  },
+  {
+    "word": " sehr",
+    "start": 734.36,
+    "end": 734.74
+  },
+  {
+    "word": " müde.",
+    "start": 734.74,
+    "end": 735.12
+  },
+  {
+    "word": " Echt?",
+    "start": 735.44,
+    "end": 735.74
+  },
+  {
+    "word": " Hast",
+    "start": 736.22,
+    "end": 736.36
+  },
+  {
+    "word": " du",
+    "start": 736.36,
+    "end": 736.7
+  },
+  {
+    "word": " letzte",
+    "start": 736.7,
+    "end": 737.08
+  },
+  {
+    "word": " Nacht",
+    "start": 737.08,
+    "end": 737.54
+  },
+  {
+    "word": " nicht",
+    "start": 737.54,
+    "end": 737.96
+  },
+  {
+    "word": " gut",
+    "start": 737.96,
+    "end": 738.22
+  },
+  {
+    "word": " geschlafen,",
+    "start": 738.22,
+    "end": 738.7
+  },
+  {
+    "word": " Lisa?",
+    "start": 738.82,
+    "end": 739.0
+  },
+  {
+    "word": " Nein.",
+    "start": 739.74,
+    "end": 740.06
+  },
+  {
+    "word": " Ich",
+    "start": 740.5,
+    "end": 740.64
+  },
+  {
+    "word": " habe",
+    "start": 740.64,
+    "end": 740.82
+  },
+  {
+    "word": " gestern",
+    "start": 740.82,
+    "end": 741.4
+  },
+  {
+    "word": " Abend",
+    "start": 741.4,
+    "end": 741.76
+  },
+  {
+    "word": " sehr",
+    "start": 741.76,
+    "end": 742.16
+  },
+  {
+    "word": " lange",
+    "start": 742.16,
+    "end": 742.56
+  },
+  {
+    "word": " mit",
+    "start": 742.56,
+    "end": 742.76
+  },
+  {
+    "word": " meiner",
+    "start": 742.76,
+    "end": 743.02
+  },
+  {
+    "word": " Schwester",
+    "start": 743.02,
+    "end": 743.48
+  },
+  {
+    "word": " telefoniert.",
+    "start": 743.48,
+    "end": 744.0
+  },
+  {
+    "word": " Sie",
+    "start": 744.58,
+    "end": 745.14
+  },
+  {
+    "word": " hat",
+    "start": 745.14,
+    "end": 745.26
+  },
+  {
+    "word": " eine",
+    "start": 745.24,
+    "end": 745.46
+  },
+  {
+    "word": " Erkältung",
+    "start": 745.46,
+    "end": 746.24
+  },
+  {
+    "word": " und",
+    "start": 746.24,
+    "end": 746.52
+  },
+  {
+    "word": " ihre",
+    "start": 746.52,
+    "end": 746.76
+  },
+  {
+    "word": " Nase",
+    "start": 746.76,
+    "end": 747.22
+  },
+  {
+    "word": " war",
+    "start": 747.22,
+    "end": 747.86
+  },
+  {
+    "word": " rot",
+    "start": 747.86,
+    "end": 748.38
+  },
+  {
+    "word": " und",
+    "start": 748.38,
+    "end": 748.62
+  },
+  {
+    "word": " dick.",
+    "start": 748.62,
+    "end": 748.88
+  },
+  {
+    "word": " Sie",
+    "start": 749.58,
+    "end": 749.84
+  },
+  {
+    "word": " war",
+    "start": 749.84,
+    "end": 749.98
+  },
+  {
+    "word": " traurig,",
+    "start": 749.98,
+    "end": 750.68
+  },
+  {
+    "word": " weil",
+    "start": 750.86,
+    "end": 751.04
+  },
+  {
+    "word": " sie",
+    "start": 751.04,
+    "end": 751.36
+  },
+  {
+    "word": " nächste",
+    "start": 751.36,
+    "end": 751.64
+  },
+  {
+    "word": " Woche",
+    "start": 751.64,
+    "end": 751.92
+  },
+  {
+    "word": " einen",
+    "start": 751.92,
+    "end": 752.24
+  },
+  {
+    "word": " neuen",
+    "start": 752.24,
+    "end": 752.5
+  },
+  {
+    "word": " Tanzkurs",
+    "start": 752.5,
+    "end": 753.16
+  },
+  {
+    "word": " anfangen",
+    "start": 753.16,
+    "end": 753.88
+  },
+  {
+    "word": " möchte.",
+    "start": 753.88,
+    "end": 754.04
+  },
+  {
+    "word": " Bis",
+    "start": 755.18,
+    "end": 755.46
+  },
+  {
+    "word": " Montag",
+    "start": 755.46,
+    "end": 755.98
+  },
+  {
+    "word": " muss",
+    "start": 755.98,
+    "end": 756.32
+  },
+  {
+    "word": " sie",
+    "start": 756.32,
+    "end": 756.56
+  },
+  {
+    "word": " gesund",
+    "start": 756.56,
+    "end": 756.98
+  },
+  {
+    "word": " sein.",
+    "start": 756.98,
+    "end": 757.32
+  },
+  {
+    "word": " Oh,",
+    "start": 758.42,
+    "end": 758.58
+  },
+  {
+    "word": " das",
+    "start": 758.64,
+    "end": 758.76
+  },
+  {
+    "word": " tut",
+    "start": 758.76,
+    "end": 758.92
+  },
+  {
+    "word": " mir",
+    "start": 758.92,
+    "end": 759.12
+  },
+  {
+    "word": " leid,",
+    "start": 759.12,
+    "end": 759.42
+  },
+  {
+    "word": " Lisa.",
+    "start": 759.52,
+    "end": 759.72
+  },
+  {
+    "word": " Sie",
+    "start": 761.12,
+    "end": 761.44
+  },
+  {
+    "word": " soll",
+    "start": 761.44,
+    "end": 761.94
+  },
+  {
+    "word": " viel",
+    "start": 761.94,
+    "end": 762.86
+  },
+  {
+    "word": " trinken.",
+    "start": 762.86,
+    "end": 763.32
+  },
+  {
+    "word": " Und",
+    "start": 764.58,
+    "end": 765.14
+  },
+  {
+    "word": " früh",
+    "start": 765.14,
+    "end": 765.62
+  },
+  {
+    "word": " ins",
+    "start": 765.62,
+    "end": 765.84
+  },
+  {
+    "word": " Bett",
+    "start": 765.84,
+    "end": 766.0
+  },
+  {
+    "word": " gehen.",
+    "start": 766.0,
+    "end": 766.38
+  },
+  {
+    "word": " Dann",
+    "start": 767.18,
+    "end": 767.36
+  },
+  {
+    "word": " ist",
+    "start": 767.36,
+    "end": 767.82
+  },
+  {
+    "word": " sie",
+    "start": 767.82,
+    "end": 768.06
+  },
+  {
+    "word": " schnell.",
+    "start": 768.06,
+    "end": 768.46
+  },
+  {
+    "word": " Ja,",
+    "start": 768.92,
+    "end": 769.14
+  },
+  {
+    "word": " dann",
+    "start": 769.38,
+    "end": 769.52
+  },
+  {
+    "word": " ist",
+    "start": 769.52,
+    "end": 769.66
+  },
+  {
+    "word": " sie",
+    "start": 769.66,
+    "end": 769.82
+  },
+  {
+    "word": " schnell",
+    "start": 769.82,
+    "end": 770.04
+  },
+  {
+    "word": " gesund.",
+    "start": 770.04,
+    "end": 770.3
+  },
+  {
+    "word": " Ja,",
+    "start": 770.98,
+    "end": 771.34
+  },
+  {
+    "word": " das",
+    "start": 771.62,
+    "end": 771.82
+  },
+  {
+    "word": " habe",
+    "start": 771.82,
+    "end": 771.98
+  },
+  {
+    "word": " ich",
+    "start": 771.98,
+    "end": 772.12
+  },
+  {
+    "word": " ja",
+    "start": 772.12,
+    "end": 772.26
+  },
+  {
+    "word": " auch",
+    "start": 772.26,
+    "end": 772.4
+  },
+  {
+    "word": " gesagt.",
+    "start": 772.4,
+    "end": 772.76
+  },
+  {
+    "word": " Und",
+    "start": 773.3,
+    "end": 773.64
+  },
+  {
+    "word": " es",
+    "start": 773.64,
+    "end": 773.96
+  },
+  {
+    "word": " ist",
+    "start": 773.96,
+    "end": 774.1
+  },
+  {
+    "word": " bestimmt",
+    "start": 774.1,
+    "end": 774.52
+  },
+  {
+    "word": " nur",
+    "start": 774.52,
+    "end": 774.96
+  },
+  {
+    "word": " eine",
+    "start": 774.96,
+    "end": 775.48
+  },
+  {
+    "word": " Erkältung.",
+    "start": 775.48,
+    "end": 776.04
+  },
+  {
+    "word": " In",
+    "start": 776.4,
+    "end": 776.54
+  },
+  {
+    "word": " zwei",
+    "start": 776.54,
+    "end": 776.78
+  },
+  {
+    "word": " Tagen",
+    "start": 776.78,
+    "end": 777.22
+  },
+  {
+    "word": " ist",
+    "start": 777.22,
+    "end": 777.42
+  },
+  {
+    "word": " sie",
+    "start": 777.42,
+    "end": 777.62
+  },
+  {
+    "word": " wieder",
+    "start": 777.62,
+    "end": 777.88
+  },
+  {
+    "word": " gesund.",
+    "start": 777.88,
+    "end": 778.6
+  },
+  {
+    "word": " Ja,",
+    "start": 779.46,
+    "end": 779.72
+  },
+  {
+    "word": " das",
+    "start": 779.94,
+    "end": 780.12
+  },
+  {
+    "word": " denke",
+    "start": 780.12,
+    "end": 780.28
+  },
+  {
+    "word": " ich",
+    "start": 780.28,
+    "end": 780.56
+  },
+  {
+    "word": " auch.",
+    "start": 780.56,
+    "end": 780.8
+  },
+  {
+    "word": " Sag",
+    "start": 781.42,
+    "end": 781.58
+  },
+  {
+    "word": " mal,",
+    "start": 781.58,
+    "end": 781.82
+  },
+  {
+    "word": " Henry,",
+    "start": 782.18,
+    "end": 782.4
+  },
+  {
+    "word": " hast",
+    "start": 782.72,
+    "end": 782.96
+  },
+  {
+    "word": " du",
+    "start": 782.96,
+    "end": 783.16
+  },
+  {
+    "word": " auch",
+    "start": 783.16,
+    "end": 783.4
+  },
+  {
+    "word": " Geschwister?",
+    "start": 783.4,
+    "end": 783.94
+  },
+  {
+    "word": " Ja,",
+    "start": 784.38,
+    "end": 784.64
+  },
+  {
+    "word": " ja,",
+    "start": 785.04,
+    "end": 785.16
+  },
+  {
+    "word": " ich",
+    "start": 785.32,
+    "end": 785.54
+  },
+  {
+    "word": " habe",
+    "start": 785.54,
+    "end": 785.74
+  },
+  {
+    "word": " eine",
+    "start": 785.74,
+    "end": 786.92
+  },
+  {
+    "word": " Schwester.",
+    "start": 786.92,
+    "end": 787.46
+  },
+  {
+    "word": " Und",
+    "start": 788.48,
+    "end": 788.66
+  },
+  {
+    "word": " sie",
+    "start": 788.66,
+    "end": 789.14
+  },
+  {
+    "word": " ist",
+    "start": 789.14,
+    "end": 789.58
+  },
+  {
+    "word": " 38",
+    "start": 789.58,
+    "end": 790.44
+  },
+  {
+    "word": " Jahre",
+    "start": 790.44,
+    "end": 791.0
+  },
+  {
+    "word": " alt.",
+    "start": 791.0,
+    "end": 791.48
+  },
+  {
+    "word": " OK.",
+    "start": 791.76,
+    "end": 792.06
+  },
+  {
+    "word": " Sie",
+    "start": 792.5,
+    "end": 793.06
+  },
+  {
+    "word": " wohnt",
+    "start": 793.06,
+    "end": 793.68
+  },
+  {
+    "word": " in",
+    "start": 793.68,
+    "end": 793.96
+  },
+  {
+    "word": " Lübeck",
+    "start": 793.96,
+    "end": 794.5
+  },
+  {
+    "word": " und",
+    "start": 794.5,
+    "end": 795.46
+  },
+  {
+    "word": " hat.",
+    "start": 795.46,
+    "end": 795.86
+  },
+  {
+    "word": " Zwei",
+    "start": 797.06,
+    "end": 797.68
+  },
+  {
+    "word": " hat",
+    "start": 797.68,
+    "end": 798.16
+  },
+  {
+    "word": " zwei",
+    "start": 798.16,
+    "end": 798.42
+  },
+  {
+    "word": " hat",
+    "start": 798.42,
+    "end": 799.46
+  },
+  {
+    "word": " zwei",
+    "start": 799.46,
+    "end": 799.76
+  },
+  {
+    "word": " Kinder.",
+    "start": 799.76,
+    "end": 800.22
+  },
+  {
+    "word": " Wie",
+    "start": 800.78,
+    "end": 800.92
+  },
+  {
+    "word": " schön,",
+    "start": 800.92,
+    "end": 801.26
+  },
+  {
+    "word": " zwei",
+    "start": 801.54,
+    "end": 801.8
+  },
+  {
+    "word": " Kinder.",
+    "start": 801.8,
+    "end": 802.26
+  },
+  {
+    "word": " Ja,",
+    "start": 802.26,
+    "end": 802.88
+  },
+  {
+    "word": " richtig",
+    "start": 803.06,
+    "end": 803.3
+  },
+  {
+    "word": " schön,",
+    "start": 803.3,
+    "end": 803.66
+  },
+  {
+    "word": " zwei",
+    "start": 803.72,
+    "end": 803.92
+  },
+  {
+    "word": " Kinder.",
+    "start": 803.92,
+    "end": 804.3
+  },
+  {
+    "word": " Und",
+    "start": 805.42,
+    "end": 805.98
+  },
+  {
+    "word": " ja,",
+    "start": 805.98,
+    "end": 806.24
+  },
+  {
+    "word": " sie",
+    "start": 806.38,
+    "end": 806.56
+  },
+  {
+    "word": " ist",
+    "start": 806.56,
+    "end": 806.76
+  },
+  {
+    "word": " mit",
+    "start": 806.76,
+    "end": 806.94
+  },
+  {
+    "word": " einem",
+    "start": 806.94,
+    "end": 807.2
+  },
+  {
+    "word": " Spanier",
+    "start": 807.2,
+    "end": 807.86
+  },
+  {
+    "word": " verheiratet.",
+    "start": 807.86,
+    "end": 809.22
+  },
+  {
+    "word": " OK,",
+    "start": 809.72,
+    "end": 809.96
+  },
+  {
+    "word": " ihr",
+    "start": 810.42,
+    "end": 810.54
+  },
+  {
+    "word": " Mann",
+    "start": 810.54,
+    "end": 810.76
+  },
+  {
+    "word": " kommt",
+    "start": 810.76,
+    "end": 811.06
+  },
+  {
+    "word": " aus",
+    "start": 811.06,
+    "end": 811.3
+  },
+  {
+    "word": " Spanien.",
+    "start": 811.3,
+    "end": 811.86
+  },
+  {
+    "word": " Ja,",
+    "start": 812.52,
+    "end": 812.82
+  },
+  {
+    "word": " aber",
+    "start": 813.24,
+    "end": 813.6
+  },
+  {
+    "word": " er",
+    "start": 813.6,
+    "end": 814.12
+  },
+  {
+    "word": " spricht",
+    "start": 814.12,
+    "end": 814.52
+  },
+  {
+    "word": " schon",
+    "start": 814.52,
+    "end": 815.08
+  },
+  {
+    "word": " sehr,",
+    "start": 815.08,
+    "end": 815.76
+  },
+  {
+    "word": " sehr",
+    "start": 815.76,
+    "end": 815.96
+  },
+  {
+    "word": " gut",
+    "start": 815.96,
+    "end": 816.26
+  },
+  {
+    "word": " Deutsch.",
+    "start": 816.26,
+    "end": 816.74
+  },
+  {
+    "word": " Er",
+    "start": 817.28,
+    "end": 817.72
+  },
+  {
+    "word": " hat",
+    "start": 817.72,
+    "end": 818.02
+  },
+  {
+    "word": " nämlich",
+    "start": 818.02,
+    "end": 818.38
+  },
+  {
+    "word": " schon",
+    "start": 818.38,
+    "end": 818.82
+  },
+  {
+    "word": " ein",
+    "start": 818.82,
+    "end": 819.12
+  },
+  {
+    "word": " paar",
+    "start": 819.12,
+    "end": 819.36
+  },
+  {
+    "word": " Deutschkurse",
+    "start": 819.36,
+    "end": 820.68
+  },
+  {
+    "word": " bei.",
+    "start": 820.68,
+    "end": 821.06
+  },
+  {
+    "word": " Natürlich",
+    "start": 821.4,
+    "end": 822.12
+  },
+  {
+    "word": " bei",
+    "start": 822.12,
+    "end": 822.58
+  },
+  {
+    "word": " uns",
+    "start": 822.58,
+    "end": 822.88
+  },
+  {
+    "word": " gemacht.",
+    "start": 822.88,
+    "end": 823.44
+  },
+  {
+    "word": " Natürlich.",
+    "start": 823.94,
+    "end": 824.0600000000001
+  },
+  {
+    "word": " Und",
+    "start": 824.44,
+    "end": 824.86
+  },
+  {
+    "word": " ja,",
+    "start": 824.86,
+    "end": 825.18
+  },
+  {
+    "word": " jetzt",
+    "start": 825.38,
+    "end": 825.66
+  },
+  {
+    "word": " versteht",
+    "start": 825.66,
+    "end": 826.48
+  },
+  {
+    "word": " er",
+    "start": 826.48,
+    "end": 826.6
+  },
+  {
+    "word": " die",
+    "start": 826.56,
+    "end": 826.7
+  },
+  {
+    "word": " Grammatik",
+    "start": 826.7,
+    "end": 827.26
+  },
+  {
+    "word": " sehr",
+    "start": 827.26,
+    "end": 827.54
+  },
+  {
+    "word": " gut",
+    "start": 827.54,
+    "end": 828.02
+  },
+  {
+    "word": " und",
+    "start": 828.02,
+    "end": 828.72
+  },
+  {
+    "word": " er",
+    "start": 828.72,
+    "end": 829.08
+  },
+  {
+    "word": " hat",
+    "start": 829.08,
+    "end": 829.2
+  },
+  {
+    "word": " keine",
+    "start": 829.2,
+    "end": 829.46
+  },
+  {
+    "word": " Probleme",
+    "start": 829.46,
+    "end": 829.92
+  },
+  {
+    "word": " mehr.",
+    "start": 829.92,
+    "end": 830.36
+  },
+  {
+    "word": " Und",
+    "start": 830.72,
+    "end": 831.22
+  },
+  {
+    "word": " er",
+    "start": 831.22,
+    "end": 831.84
+  },
+  {
+    "word": " ist",
+    "start": 831.84,
+    "end": 831.98
+  },
+  {
+    "word": " sehr,",
+    "start": 831.98,
+    "end": 832.24
+  },
+  {
+    "word": " sehr",
+    "start": 832.24,
+    "end": 832.44
+  },
+  {
+    "word": " glücklich.",
+    "start": 832.44,
+    "end": 832.8
+  },
+  {
+    "word": " Toll.",
+    "start": 833.46,
+    "end": 834.28
+  },
+  {
+    "word": " Und",
+    "start": 834.9,
+    "end": 835.08
+  },
+  {
+    "word": " was",
+    "start": 835.08,
+    "end": 835.58
+  },
+  {
+    "word": " machen",
+    "start": 835.58,
+    "end": 835.9
+  },
+  {
+    "word": " deine",
+    "start": 835.9,
+    "end": 836.12
+  },
+  {
+    "word": " Schwester",
+    "start": 836.12,
+    "end": 836.68
+  },
+  {
+    "word": " und",
+    "start": 836.68,
+    "end": 836.92
+  },
+  {
+    "word": " ihr",
+    "start": 836.92,
+    "end": 837.08
+  },
+  {
+    "word": " Mann",
+    "start": 837.08,
+    "end": 837.22
+  },
+  {
+    "word": " beruflich?",
+    "start": 837.22,
+    "end": 837.92
+  },
+  {
+    "word": " Was",
+    "start": 838.74,
+    "end": 838.94
+  },
+  {
+    "word": " arbeiten",
+    "start": 838.94,
+    "end": 839.34
+  },
+  {
+    "word": " sie?",
+    "start": 839.34,
+    "end": 839.64
+  },
+  {
+    "word": " Meine",
+    "start": 840.34,
+    "end": 841.3
+  },
+  {
+    "word": " Schwester",
+    "start": 841.3,
+    "end": 841.88
+  },
+  {
+    "word": " und",
+    "start": 841.88,
+    "end": 842.22
+  },
+  {
+    "word": " er",
+    "start": 842.22,
+    "end": 842.56
+  },
+  {
+    "word": " haben",
+    "start": 842.56,
+    "end": 843.54
+  },
+  {
+    "word": " einen",
+    "start": 843.54,
+    "end": 844.04
+  },
+  {
+    "word": " kleinen",
+    "start": 844.04,
+    "end": 844.4
+  },
+  {
+    "word": " Laden",
+    "start": 844.4,
+    "end": 844.9
+  },
+  {
+    "word": " in",
+    "start": 844.9,
+    "end": 845.94
+  },
+  {
+    "word": " Lübeck.",
+    "start": 845.94,
+    "end": 846.7
+  },
+  {
+    "word": " Sie",
+    "start": 848.1,
+    "end": 848.6
+  },
+  {
+    "word": " verkaufen",
+    "start": 848.6,
+    "end": 849.7
+  },
+  {
+    "word": " spanische",
+    "start": 849.7,
+    "end": 850.68
+  },
+  {
+    "word": " Spezialitäten",
+    "start": 850.68,
+    "end": 851.74
+  },
+  {
+    "word": " und",
+    "start": 851.74,
+    "end": 852.56
+  },
+  {
+    "word": " Wein.",
+    "start": 852.56,
+    "end": 853.18
+  },
+  {
+    "word": " Oh,",
+    "start": 853.82,
+    "end": 854.04
+  },
+  {
+    "word": " wow,",
+    "start": 854.34,
+    "end": 854.46
+  },
+  {
+    "word": " toll.",
+    "start": 854.66,
+    "end": 854.84
+  },
+  {
+    "word": " Das",
+    "start": 855.44,
+    "end": 855.72
+  },
+  {
+    "word": " finde",
+    "start": 855.72,
+    "end": 855.88
+  },
+  {
+    "word": " ich",
+    "start": 855.88,
+    "end": 856.12
+  },
+  {
+    "word": " super.",
+    "start": 856.12,
+    "end": 856.44
+  },
+  {
+    "word": " Willkommen",
+    "start": 857.66,
+    "end": 858.34
+  },
+  {
+    "word": " zurück.",
+    "start": 858.34,
+    "end": 858.86
+  },
+  {
+    "word": " Welcome",
+    "start": 859.28,
+    "end": 859.72
+  },
+  {
+    "word": " back.",
+    "start": 859.72,
+    "end": 860.26
+  },
+  {
+    "word": " And",
+    "start": 860.84,
+    "end": 860.96
+  },
+  {
+    "word": " if",
+    "start": 860.92,
+    "end": 861.18
+  },
+  {
+    "word": " you",
+    "start": 861.18,
+    "end": 861.4
+  },
+  {
+    "word": " want",
+    "start": 861.4,
+    "end": 861.74
+  },
+  {
+    "word": " to",
+    "start": 861.74,
+    "end": 861.96
+  },
+  {
+    "word": " learn",
+    "start": 861.96,
+    "end": 862.26
+  },
+  {
+    "word": " and",
+    "start": 862.26,
+    "end": 862.44
+  },
+  {
+    "word": " understand",
+    "start": 862.44,
+    "end": 862.92
+  },
+  {
+    "word": " German,",
+    "start": 862.92,
+    "end": 863.44
+  },
+  {
+    "word": " we",
+    "start": 863.8,
+    "end": 864.0
+  },
+  {
+    "word": " have",
+    "start": 864.0,
+    "end": 864.4
+  },
+  {
+    "word": " got",
+    "start": 864.4,
+    "end": 864.52
+  },
+  {
+    "word": " the",
+    "start": 864.52,
+    "end": 864.7
+  },
+  {
+    "word": " right",
+    "start": 864.7,
+    "end": 865.02
+  },
+  {
+    "word": " formula",
+    "start": 865.02,
+    "end": 865.48
+  },
+  {
+    "word": " for",
+    "start": 865.48,
+    "end": 865.92
+  },
+  {
+    "word": " you.",
+    "start": 865.92,
+    "end": 866.2
+  },
+  {
+    "word": " In",
+    "start": 866.58,
+    "end": 866.74
+  },
+  {
+    "word": " our",
+    "start": 866.74,
+    "end": 866.92
+  },
+  {
+    "word": " highly",
+    "start": 866.92,
+    "end": 867.3
+  },
+  {
+    "word": " effective",
+    "start": 867.3,
+    "end": 867.9
+  },
+  {
+    "word": " online",
+    "start": 867.9,
+    "end": 868.4
+  },
+  {
+    "word": " German",
+    "start": 868.4,
+    "end": 868.84
+  },
+  {
+    "word": " courses,",
+    "start": 868.84,
+    "end": 869.32
+  },
+  {
+    "word": " we",
+    "start": 869.84,
+    "end": 869.96
+  },
+  {
+    "word": " will",
+    "start": 869.9,
+    "end": 870.1
+  },
+  {
+    "word": " teach",
+    "start": 870.1,
+    "end": 870.34
+  },
+  {
+    "word": " you",
+    "start": 870.34,
+    "end": 870.62
+  },
+  {
+    "word": " all",
+    "start": 870.62,
+    "end": 870.94
+  },
+  {
+    "word": " the",
+    "start": 870.94,
+    "end": 871.14
+  },
+  {
+    "word": " necessary",
+    "start": 871.14,
+    "end": 871.72
+  },
+  {
+    "word": " grammar",
+    "start": 871.72,
+    "end": 872.14
+  },
+  {
+    "word": " with",
+    "start": 872.14,
+    "end": 872.7
+  },
+  {
+    "word": " easy",
+    "start": 872.7,
+    "end": 873.12
+  },
+  {
+    "word": " and",
+    "start": 873.12,
+    "end": 873.3
+  },
+  {
+    "word": " structured",
+    "start": 873.3,
+    "end": 873.64
+  },
+  {
+    "word": " explanations",
+    "start": 873.64,
+    "end": 874.24
+  },
+  {
+    "word": " and",
+    "start": 874.24,
+    "end": 874.58
+  },
+  {
+    "word": " then",
+    "start": 874.58,
+    "end": 874.78
+  },
+  {
+    "word": " show",
+    "start": 874.78,
+    "end": 875.06
+  },
+  {
+    "word": " you",
+    "start": 875.06,
+    "end": 875.24
+  },
+  {
+    "word": " in",
+    "start": 875.24,
+    "end": 875.36
+  },
+  {
+    "word": " specifically",
+    "start": 875.36,
+    "end": 875.84
+  },
+  {
+    "word": " prepared",
+    "start": 875.84,
+    "end": 876.42
+  },
+  {
+    "word": " dialogues",
+    "start": 876.42,
+    "end": 876.92
+  },
+  {
+    "word": " like",
+    "start": 876.92,
+    "end": 877.56
+  },
+  {
+    "word": " this",
+    "start": 877.56,
+    "end": 877.96
+  },
+  {
+    "word": " one,",
+    "start": 877.96,
+    "end": 878.22
+  },
+  {
+    "word": " how",
+    "start": 878.54,
+    "end": 878.68
+  },
+  {
+    "word": " you",
+    "start": 878.68,
+    "end": 878.88
+  },
+  {
+    "word": " can",
+    "start": 878.88,
+    "end": 879.06
+  },
+  {
+    "word": " apply",
+    "start": 879.06,
+    "end": 879.46
+  },
+  {
+    "word": " it",
+    "start": 879.46,
+    "end": 879.68
+  },
+  {
+    "word": " correctly",
+    "start": 879.68,
+    "end": 880.14
+  },
+  {
+    "word": " in",
+    "start": 880.14,
+    "end": 880.58
+  },
+  {
+    "word": " your",
+    "start": 880.58,
+    "end": 880.7
+  },
+  {
+    "word": " next",
+    "start": 880.7,
+    "end": 880.92
+  },
+  {
+    "word": " conversation.",
+    "start": 880.92,
+    "end": 881.48
+  },
+  {
+    "word": " You",
+    "start": 881.86,
+    "end": 882.2
+  },
+  {
+    "word": " will",
+    "start": 882.2,
+    "end": 882.32
+  },
+  {
+    "word": " be",
+    "start": 882.32,
+    "end": 882.46
+  },
+  {
+    "word": " able",
+    "start": 882.46,
+    "end": 882.7
+  },
+  {
+    "word": " to",
+    "start": 882.7,
+    "end": 882.9
+  },
+  {
+    "word": " put",
+    "start": 882.9,
+    "end": 883.06
+  },
+  {
+    "word": " the",
+    "start": 883.06,
+    "end": 883.28
+  },
+  {
+    "word": " theory",
+    "start": 883.28,
+    "end": 883.74
+  },
+  {
+    "word": " into",
+    "start": 883.74,
+    "end": 884.44
+  },
+  {
+    "word": " practice",
+    "start": 884.44,
+    "end": 884.92
+  },
+  {
+    "word": " and",
+    "start": 884.92,
+    "end": 885.24
+  },
+  {
+    "word": " speak",
+    "start": 885.24,
+    "end": 885.58
+  },
+  {
+    "word": " German",
+    "start": 885.58,
+    "end": 886.04
+  },
+  {
+    "word": " correctly.",
+    "start": 886.04,
+    "end": 886.6
+  },
+  {
+    "word": " Check",
+    "start": 887.12,
+    "end": 887.38
+  },
+  {
+    "word": " out",
+    "start": 887.38,
+    "end": 887.68
+  },
+  {
+    "word": " all",
+    "start": 887.68,
+    "end": 887.96
+  },
+  {
+    "word": " the",
+    "start": 887.96,
+    "end": 888.12
+  },
+  {
+    "word": " information",
+    "start": 888.12,
+    "end": 888.56
+  },
+  {
+    "word": " on",
+    "start": 888.56,
+    "end": 888.98
+  },
+  {
+    "word": " our",
+    "start": 888.98,
+    "end": 889.28
+  },
+  {
+    "word": " website,",
+    "start": 889.28,
+    "end": 889.74
+  },
+  {
+    "word": " www",
+    "start": 889.92,
+    "end": 890.4
+  },
+  {
+    "word": ".langura",
+    "start": 890.4,
+    "end": 891.78
+  },
+  {
+    "word": ".de",
+    "start": 891.78,
+    "end": 892.68
+  },
+  {
+    "word": " and",
+    "start": 892.68,
+    "end": 893.32
+  },
+  {
+    "word": " start",
+    "start": 893.32,
+    "end": 893.7
+  },
+  {
+    "word": " improving",
+    "start": 893.7,
+    "end": 894.34
+  },
+  {
+    "word": " your",
+    "start": 894.34,
+    "end": 894.62
+  },
+  {
+    "word": " German",
+    "start": 894.62,
+    "end": 895.02
+  },
+  {
+    "word": " right",
+    "start": 895.02,
+    "end": 895.44
+  },
+  {
+    "word": " now.",
+    "start": 895.44,
+    "end": 895.9
+  },
+  {
+    "word": " Hopefully",
+    "start": 896.52,
+    "end": 896.82
+  },
+  {
+    "word": " you",
+    "start": 896.82,
+    "end": 897.24
+  },
+  {
+    "word": " found",
+    "start": 897.24,
+    "end": 897.52
+  },
+  {
+    "word": " this",
+    "start": 897.52,
+    "end": 897.76
+  },
+  {
+    "word": " video",
+    "start": 897.76,
+    "end": 898.02
+  },
+  {
+    "word": " interesting",
+    "start": 898.02,
+    "end": 898.56
+  },
+  {
+    "word": " and",
+    "start": 898.56,
+    "end": 898.96
+  },
+  {
+    "word": " valuable.",
+    "start": 898.96,
+    "end": 899.54
+  },
+  {
+    "word": " If",
+    "start": 899.88,
+    "end": 900.0
+  },
+  {
+    "word": " so,",
+    "start": 900.0,
+    "end": 900.28
+  },
+  {
+    "word": " consider",
+    "start": 900.66,
+    "end": 900.82
+  },
+  {
+    "word": " giving",
+    "start": 900.82,
+    "end": 901.14
+  },
+  {
+    "word": " us",
+    "start": 901.14,
+    "end": 901.4
+  },
+  {
+    "word": " a",
+    "start": 901.4,
+    "end": 901.52
+  },
+  {
+    "word": " thumbs",
+    "start": 901.52,
+    "end": 901.82
+  },
+  {
+    "word": " up.",
+    "start": 901.82,
+    "end": 902.24
+  },
+  {
+    "word": " This",
+    "start": 902.64,
+    "end": 902.88
+  },
+  {
+    "word": " really",
+    "start": 902.88,
+    "end": 903.38
+  },
+  {
+    "word": " helps",
+    "start": 903.38,
+    "end": 903.86
+  },
+  {
+    "word": " other",
+    "start": 903.86,
+    "end": 904.16
+  },
+  {
+    "word": " students",
+    "start": 904.16,
+    "end": 904.5
+  },
+  {
+    "word": " find",
+    "start": 904.5,
+    "end": 904.82
+  },
+  {
+    "word": " our",
+    "start": 904.82,
+    "end": 905.0
+  },
+  {
+    "word": " videos",
+    "start": 905.0,
+    "end": 905.3
+  },
+  {
+    "word": " more",
+    "start": 905.3,
+    "end": 905.56
+  },
+  {
+    "word": " easily.",
+    "start": 905.56,
+    "end": 906.04
+  },
+  {
+    "word": " Thank",
+    "start": 906.66,
+    "end": 906.94
+  },
+  {
+    "word": " you",
+    "start": 906.94,
+    "end": 907.18
+  },
+  {
+    "word": " so",
+    "start": 907.18,
+    "end": 907.44
+  },
+  {
+    "word": " much",
+    "start": 907.44,
+    "end": 907.74
+  },
+  {
+    "word": " for",
+    "start": 907.74,
+    "end": 908.12
+  },
+  {
+    "word": " your",
+    "start": 908.12,
+    "end": 908.32
+  },
+  {
+    "word": " support.",
+    "start": 908.32,
+    "end": 908.72
+  },
+  {
+    "word": " And",
+    "start": 909.28,
+    "end": 909.58
+  },
+  {
+    "word": " now",
+    "start": 909.58,
+    "end": 909.86
+  },
+  {
+    "word": " we",
+    "start": 909.86,
+    "end": 910.14
+  },
+  {
+    "word": " see",
+    "start": 910.14,
+    "end": 910.4
+  },
+  {
+    "word": " each",
+    "start": 910.4,
+    "end": 910.68
+  },
+  {
+    "word": " other",
+    "start": 910.68,
+    "end": 910.92
+  },
+  {
+    "word": " in",
+    "start": 910.92,
+    "end": 911.12
+  },
+  {
+    "word": " the",
+    "start": 911.12,
+    "end": 911.24
+  },
+  {
+    "word": " next",
+    "start": 911.22,
+    "end": 911.56
+  },
+  {
+    "word": " video.",
+    "start": 911.56,
+    "end": 912.08
+  },
+  {
+    "word": " Wir",
+    "start": 912.32,
+    "end": 912.44
+  },
+  {
+    "word": " sehen",
+    "start": 912.44,
+    "end": 912.78
+  },
+  {
+    "word": " uns",
+    "start": 912.78,
+    "end": 913.1
+  },
+  {
+    "word": " im",
+    "start": 913.1,
+    "end": 913.42
+  },
+  {
+    "word": " nächsten",
+    "start": 913.42,
+    "end": 913.82
+  },
+  {
+    "word": " Video.",
+    "start": 913.82,
+    "end": 914.32
+  }
+];
+window.sectionStartTimes = {"1": 0.0};
+
+// BOOKMARK STORAGE KEY - UNIQUE FOR EACH BOOK
+const BOOK_TITLE = "German Conversation With Native Speakers A1";
+const BOOK_ID = "f738b262";
+const BOOK_STORAGE_KEY = `audioBookBookmarks_${BOOK_TITLE}_${BOOK_ID}`;
+
+function wordsToSentences(words, pause=0.7){
+    let sentences=[], buffer=[], startTime=null;
+    for(let i=0;i<words.length;i++){
+        if(startTime===null) startTime=words[i].start;
+        buffer.push(words[i]);
+        const next=words[i+1];
+        if(!next||/[.!?]$/.test(words[i].word)||(next.start-words[i].end>pause)){
+            let endTime=words[i].end;
+            sentences.push({start:startTime, end:endTime, words:buffer});
+            buffer=[], startTime=null;
+        }
+    }
+    return sentences;
+}
+
+const sentenceData = wordsToSentences(wordData);
+const audio = document.getElementById("audio");
+const textDiv = document.getElementById("text");
+
+let autoScrollEnabled = true, currentSentence=-1;
+const allSentences = [];
+let isBookmarkMode = false;
+let selectedBookmarkColor = null;
+
+// ============ Variables for hybrid system ============
+let currentSelection = null;
+let currentRange = null;
+let isSelecting = false;
+let lastSelectionTime = 0;
+let singleClickMode = false;
+
+// Display text and create sentences - مشابه نمونه
+sentenceData.forEach(item=>{
+    let div=document.createElement("div"); 
+    div.className="block";
+    
+    // Check for section header (only if multi-section)
+    if (false && item.words[0] && item.words[0].section && 
+        (!item.words[0].previousSection || item.words[0].section !== item.words[0].previousSection)) {
+        const sectionDiv = document.createElement("div");
+        sectionDiv.className = "section-header";
+        sectionDiv.setAttribute("data-section", item.words[0].section);
+        sectionDiv.textContent = [][item.words[0].section - 1] || ("Section " + item.words[0].section);
+        textDiv.appendChild(sectionDiv);
+    }
+    
+    item.words.forEach((w, index)=>{
+        let span=document.createElement("span");
+        span.className="word";
+        
+        // حفظ فاصله قبل از کلمه (مشابه نمونه)
+        let wordText = w.word;
+        if (index > 0 && !wordText.startsWith(' ')) {
+            wordText = ' ' + wordText;
+        }
+        
+        span.textContent = wordText;
+        span.dataset.start = w.start;
+        span.dataset.word = w.word.trim();
+        span.dataset.end = w.end;
+        
+        // Hybrid click functionality - مشابه نمونه
+        span.onclick=(e)=>{
+            if (isBookmarkMode) {
+                e.stopPropagation();
+                e.preventDefault();
+                
+                if (selectedBookmarkColor) {
+                    singleClickMode = true;
+                    toggleBookmark(span, w.start, w.word.trim(), selectedBookmarkColor);
+                    singleClickMode = false;
+                }
+            } else {
+                audio.currentTime=w.start; 
+                audio.play();
+            }
+        };
+        
+        div.appendChild(span);
+    });
+    
+    textDiv.appendChild(div);
+    allSentences.push({
+        div: div,
+        start: item.start,
+        end: item.end
+    });
+});
+
+// Highlight sentences during playback
+audio.ontimeupdate=()=>{
+    allSentences.forEach((s,idx)=>{
+        if(audio.currentTime >= s.start && audio.currentTime <= s.end){
+            if(currentSentence !== idx){
+                allSentences.forEach(ss=>ss.div.classList.remove("sentence-highlight"));
+                s.div.classList.add("sentence-highlight");
+                
+                if(autoScrollEnabled){
+                    s.div.scrollIntoView({
+                        behavior: "smooth", 
+                        block: "center"
+                    });
+                }
+                currentSentence=idx;
+            }
+        }
+    });
+};
+
+// ==================== Hybrid Bookmark System ====================
+
+// Load saved bookmarks - ONLY FOR THIS BOOK
+function loadBookmarks() {
+    const saved = localStorage.getItem(BOOK_STORAGE_KEY);
+    return saved ? JSON.parse(saved) : [];
+}
+
+// Save bookmarks - ONLY FOR THIS BOOK
+function saveBookmarks(bookmarks) {
+    localStorage.setItem(BOOK_STORAGE_KEY, JSON.stringify(bookmarks));
+}
+
+// ============ Multiple word selection logic ============
+
+// Handle selection start
+document.addEventListener('mousedown', function(e) {
+    if (isBookmarkMode && e.button === 0 && !singleClickMode) {
+        isSelecting = true;
+        lastSelectionTime = Date.now();
+    }
+});
+
+// Handle selection end
+document.addEventListener('mouseup', function(e) {
+    if (isBookmarkMode && e.button === 0 && !singleClickMode) {
+        isSelecting = false;
+        
+        setTimeout(() => {
+            const selection = window.getSelection();
+            const selectedText = selection.toString().trim();
+            
+            if (selectedText.length > 0 && selectedBookmarkColor) {
+                const range = selection.rangeCount > 0 ? selection.getRangeAt(0).cloneRange() : null;
+                
+                if (range) {
+                    saveSelectionBookmark(range, selectedText, selectedBookmarkColor);
+                    window.getSelection().removeAllRanges();
+                }
+            } else {
+                processSelection();
+            }
+        }, 50);
+    }
+});
+
+// Selection processing function
+function processSelection() {
+    const selection = window.getSelection();
+    const selectedText = selection.toString().trim();
+    
+    if (selectedText.length > 0 && isBookmarkMode && !isSelecting && !singleClickMode) {
+        const now = Date.now();
+        
+        if (now - lastSelectionTime > 300) {
+            currentSelection = selectedText;
+            currentRange = selection.rangeCount > 0 ? selection.getRangeAt(0).cloneRange() : null;
+            
+            lastSelectionTime = now;
+            
+            if (selectedBookmarkColor && currentSelection && currentRange) {
+                setTimeout(() => {
+                    saveSelectionBookmark(currentRange, currentSelection, selectedBookmarkColor);
+                    currentSelection = null;
+                    currentRange = null;
+                    window.getSelection().removeAllRanges();
+                }, 100);
+            }
+        }
+    } else {
+        currentSelection = null;
+        currentRange = null;
+    }
+}
+
+// Function to get exact selected word nodes
+function getSelectedWordNodes(range) {
+    if (!range) return [];
+    
+    const selectedNodes = [];
+    const fragment = range.cloneContents();
+    const tempDiv = document.createElement('div');
+    tempDiv.appendChild(fragment);
+    
+    const wordSpans = tempDiv.querySelectorAll('.word');
+    
+    wordSpans.forEach(spanInFragment => {
+        const wordText = spanInFragment.dataset.word;
+        const startTime = spanInFragment.dataset.start;
+        
+        if (wordText && startTime) {
+            document.querySelectorAll('.word').forEach(originalSpan => {
+                if (originalSpan.dataset.word === wordText && 
+                    originalSpan.dataset.start === startTime &&
+                    !selectedNodes.includes(originalSpan)) {
+                    selectedNodes.push(originalSpan);
+                }
+            });
+        }
+    });
+    
+    return selectedNodes;
+}
+
+// Truncate text for display in list
+function truncateTextForDisplay(text, maxWords = 6) {
+    if (!text) return '';
+    
+    const words = text.trim().split(/\s+/);
+    if (words.length <= maxWords) return text;
+    
+    const firstPart = words.slice(0, 3).join(' ');
+    const lastPart = words.slice(-3).join(' ');
+    return `${firstPart} ... ${lastPart}`;
+}
+
+// Get full selected text with spaces
+function getFullSelectedText(range) {
+    if (!range) return '';
+    
+    const fragment = range.cloneContents();
+    const tempDiv = document.createElement('div');
+    tempDiv.appendChild(fragment);
+    
+    return tempDiv.textContent;
+}
+
+// Apply bookmark to word (single word)
+function toggleBookmark(spanElement, startTime, wordText, color) {
+    const bookmarks = loadBookmarks();
+    const existingIndex = bookmarks.findIndex(b => 
+        Math.abs(b.startTime - startTime) < 0.1 && b.word === wordText && b.type === 'single'
+    );
+    
+    if (existingIndex >= 0) {
+        bookmarks.splice(existingIndex, 1);
+        spanElement.classList.remove(`bookmark-${color}`);
+        showNotification('Bookmark removed', 'info');
+    } else {
+        const newBookmark = {
+            id: Date.now(),
+            startTime: startTime,
+            word: wordText,
+            color: color,
+            type: 'single',
+            timestamp: new Date().toISOString(),
+            bookTitle: BOOK_TITLE,
+            bookId: BOOK_ID,
+            displayText: wordText
+        };
+        bookmarks.push(newBookmark);
+        spanElement.classList.add(`bookmark-${color}`);
+        showNotification(`Word "${wordText}" bookmarked with ${getColorName(color)} color`, 'success');
+    }
+    
+    saveBookmarks(bookmarks);
+    updateBookmarkCount();
+}
+
+// Save selection bookmark (multiple words)
+function saveSelectionBookmark(range, selectedText, color) {
+    if (!range || !selectedText || !color) return;
+    
+    const bookmarks = loadBookmarks();
+    const selectedNodes = getSelectedWordNodes(range);
+    if (selectedNodes.length === 0) return;
+    
+    const fullText = getFullSelectedText(range);
+    const startTime = parseFloat(selectedNodes[0].dataset.start);
+    const endTime = parseFloat(selectedNodes[selectedNodes.length - 1].dataset.end);
+    
+    selectedNodes.forEach(node => {
+        node.classList.remove('bookmark-red', 'bookmark-blue', 'bookmark-green', 
+                              'bookmark-purple', 'bookmark-orange');
+        node.classList.add(`bookmark-${color}`);
+    });
+    
+    const newBookmark = {
+        id: Date.now(),
+        startTime: startTime,
+        endTime: endTime,
+        text: fullText,
+        displayText: truncateTextForDisplay(fullText),
+        color: color,
+        type: 'selection',
+        timestamp: new Date().toISOString(),
+        bookTitle: BOOK_TITLE,
+        bookId: BOOK_ID,
+        wordIds: selectedNodes.map(node => {
+            return {
+                startTime: node.dataset.start,
+                text: node.dataset.word
+            };
+        })
+    };
+    
+    bookmarks.push(newBookmark);
+    saveBookmarks(bookmarks);
+    
+    showNotification(`"${truncateTextForDisplay(fullText, 5)}" bookmarked`, 'success');
+    updateBookmarkCount();
+    
+    return newBookmark;
+}
+
+// Get color name
+function getColorName(color) {
+    const names = {
+        'red': 'Red (Important)',
+        'blue': 'Blue (Grammar)',
+        'green': 'Green (Vocabulary)',
+        'purple': 'Purple (Questions)',
+        'orange': 'Orange (Practice)'
+    };
+    return names[color] || color;
+}
+
+// Show notification
+function showNotification(message, type) {
+    const oldNotif = document.querySelector('.bookmark-notification');
+    if (oldNotif) oldNotif.remove();
+    
+    const notif = document.createElement('div');
+    notif.className = 'bookmark-notification';
+    notif.textContent = message;
+    
+    const colors = {
+        'success': '#6bcf7f',
+        'info': '#4d96ff',
+        'warning': '#ffa94d',
+        'error': '#ff6b6b'
+    };
+    
+    notif.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${colors[type] || '#4d96ff'};
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 10003;
+        font-weight: bold;
+        animation: slideIn 0.3s ease;
+        max-width: 300px;
+    `;
+    
+    document.body.appendChild(notif);
+    
+    setTimeout(() => {
+        notif.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notif.remove(), 300);
+    }, 3000);
+}
+
+// Apply saved bookmarks after page load - ONLY FOR THIS BOOK
+function applySavedBookmarks() {
+    const bookmarks = loadBookmarks();
+    bookmarks.forEach(bookmark => {
+        if (bookmark.type === 'single') {
+            document.querySelectorAll('.word').forEach(word => {
+                if (Math.abs(parseFloat(word.dataset.start) - bookmark.startTime) < 0.1 && 
+                    word.dataset.word === bookmark.word) {
+                    word.classList.add(`bookmark-${bookmark.color}`);
+                }
+            });
+        } else if (bookmark.type === 'selection' && bookmark.wordIds) {
+            bookmark.wordIds.forEach(wordInfo => {
+                document.querySelectorAll('.word').forEach(word => {
+                    if (word.dataset.start === wordInfo.startTime && 
+                        word.dataset.word === wordInfo.text) {
+                        word.classList.add(`bookmark-${bookmark.color}`);
+                    }
+                });
+            });
+        }
+    });
+}
+
+// Update bookmark count
+function updateBookmarkCount() {
+    const bookmarks = loadBookmarks();
+    const countElement = document.getElementById('bookmark-count');
+    if (countElement) {
+        countElement.textContent = `📌 Bookmarks: ${bookmarks.length}`;
+    }
+}
+
+// Jump to bookmark - مشابه نمونه: فقط حرکت بدون پخش صوت
+function jumpToBookmark(startTime) {
+    const audio = document.getElementById('audio');
+    audio.currentTime = startTime;
+    
+    allSentences.forEach((s, idx) => {
+        if (startTime >= s.start && startTime <= s.end) {
+            allSentences.forEach(ss => ss.div.classList.remove("sentence-highlight"));
+            s.div.classList.add("sentence-highlight");
+            currentSentence = idx;
+            
+            s.div.scrollIntoView({
+                behavior: "smooth", 
+                block: "center"
+            });
+        }
+    });
+    
+    const seekBar = document.getElementById('audio-seek-bar');
+    if (seekBar) {
+        seekBar.value = Math.floor(startTime);
+    }
+    
+    const timeDisplay = document.getElementById('audio-time-display');
+    if (timeDisplay && audio) {
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "00:00";
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        timeDisplay.textContent = `${formatTime(startTime)} / ${formatTime(audio.duration)}`;
+    }
+    
+    showNotification('Moved to bookmark position', 'success');
+}
+
+// Remove bookmark - ONLY FOR THIS BOOK
+function removeBookmark(bookmarkId) {
+    const bookmarks = loadBookmarks();
+    const filtered = bookmarks.filter(b => b.id !== bookmarkId);
+    saveBookmarks(filtered);
+    
+    // Reapply bookmarks to refresh display
+    document.querySelectorAll('.word').forEach(word => {
+        word.classList.remove('bookmark-red', 'bookmark-blue', 'bookmark-green', 
+                              'bookmark-purple', 'bookmark-orange');
+    });
+    
+    applySavedBookmarks();
+    updateBookmarkCount();
+    showNotification('Bookmark removed', 'info');
+}
+
+// Remove all bookmarks - ONLY FOR THIS BOOK
+function clearAllBookmarks() {
+    if (confirm('Are you sure you want to remove all bookmarks for this book?')) {
+        localStorage.removeItem(BOOK_STORAGE_KEY); // Only remove bookmarks for this book
+        document.querySelectorAll('.word').forEach(word => {
+            word.classList.remove('bookmark-red', 'bookmark-blue', 'bookmark-green', 
+                                  'bookmark-purple', 'bookmark-orange');
+        });
+        showNotification('All bookmarks removed for this book', 'warning');
+        updateBookmarkCount();
+    }
+}
+
+// Initial execution
+document.addEventListener('DOMContentLoaded', function() {
+    applySavedBookmarks();
+    updateBookmarkCount();
+});
+
+// Notification animation styles
+const notificationStyle = document.createElement('style');
+notificationStyle.textContent = `
+    @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+    }
+`;
+document.head.appendChild(notificationStyle);
+</script>
+
+<!-- BOOK CONTROLS SCRIPT START -->
+<script>
+// Navigation variables - مشابه فایل نویگیتور
+const prevLink = "../German Conversation with native speakers A1/German Conversation with native speakers A1.2.html";
+const nextLink = "../German Conversation with native speakers A2/Easy German Dialogue for Beginners A2.2.html";
+const indexLink = "../../PIONAN Deutsch Course_index.html";
+
+// Text file variables
+const textFile = "German Conversation with native speakers A1.docx";
+
+// Page load
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Page loaded, initializing controls...');
+    initializeAllControls();
+    setupTOCNavigation();
+    setupBookmarkControls();
+});
+
+function initializeAllControls() {
+    createControlPanel();
+    createBackToTopButton();
+    setupAudioPlayer();
+    setupNavigation();
+    setupAutoScroll();
+    setupFontControls();
+    console.log('✅ All controls initialized successfully!');
+}
+
+function setupTOCNavigation() {
+    // Add click events to TOC items (only if they exist)
+    document.querySelectorAll('.toc-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const sectionNum = this.getAttribute('data-section');
+            const targetDiv = document.querySelector(`.section-header[data-section="${sectionNum}"]`);
+            if (targetDiv) {
+                targetDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                document.querySelectorAll('.section-header').forEach(h => h.style.background = '#3498db');
+                targetDiv.style.background = '#2980b9';
+                
+                const audio = document.getElementById('audio');
+                if (audio && window.sectionStartTimes && window.sectionStartTimes[sectionNum]) {
+                    audio.currentTime = window.sectionStartTimes[sectionNum];
+                    audio.play();
+                }
+            }
+        });
+    });
+    
+    // Add click events to section headers (only if they exist)
+    document.querySelectorAll('.section-header').forEach(header => {
+        header.addEventListener('click', function() {
+            const sectionNum = this.getAttribute('data-section');
+            const audio = document.getElementById('audio');
+            if (audio && window.sectionStartTimes && window.sectionStartTimes[sectionNum]) {
+                audio.currentTime = window.sectionStartTimes[sectionNum];
+                audio.play();
+            }
+        });
+    });
+}
+
+function createControlPanel() {
+    // Remove old controls
+    const oldPanel = document.getElementById('book-controls-panel');
+    if (oldPanel) oldPanel.remove();
+    
+    // Create control panel
+    const panel = document.createElement('div');
+    panel.id = 'book-controls-panel';
+    panel.style.cssText = `
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        padding: 15px 20px;
+        border-top: 3px solid #0f3460;
+        z-index: 10000;
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    `;
+    
+    // Row 1: Audio controls
+    const audioRow = document.createElement('div');
+    audioRow.style.cssText = 'display: flex; gap: 15px; align-items: center; margin-bottom: 15px; flex-wrap: wrap;';
+    
+    // Play/Pause button
+    const playBtn = document.createElement('button');
+    playBtn.id = 'audio-play-btn';
+    playBtn.innerHTML = '▶ <span style="margin-left: 5px;">Play</span>';
+    playBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #00b894, #00a085);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    // Seek Bar
+    const seekBar = document.createElement('input');
+    seekBar.id = 'audio-seek-bar';
+    seekBar.type = 'range';
+    seekBar.style.cssText = `
+        flex: 1;
+        min-width: 200px;
+        height: 8px;
+        border-radius: 4px;
+        background: #2c3e50;
+        outline: none;
+    `;
+    
+    // Speed control
+    const speedControl = document.createElement('div');
+    speedControl.style.cssText = 'display: flex; align-items: center; gap: 8px;';
+    
+    const speedLabel = document.createElement('span');
+    speedLabel.textContent = 'Speed:';
+    speedLabel.style.cssText = 'color: #ecf0f1; font-size: 14px;';
+    
+    const speedSelect = document.createElement('select');
+    speedSelect.id = 'audio-speed-select';
+    speedSelect.innerHTML = `
+        <option value="0.5">0.5x</option>
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1.0x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2.0x</option>
+    `;
+    speedSelect.style.cssText = `
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 2px solid #3498db;
+        background: #2c3e50;
+        color: #ecf0f1;
+        font-weight: bold;
+    `;
+    
+    speedControl.appendChild(speedLabel);
+    speedControl.appendChild(speedSelect);
+    
+    // Time display
+    const timeDisplay = document.createElement('div');
+    timeDisplay.id = 'audio-time-display';
+    timeDisplay.textContent = '00:00 / 00:00';
+    timeDisplay.style.cssText = `
+        color: #ecf0f1;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        min-width: 110px;
+        text-align: center;
+        background: rgba(44, 62, 80, 0.7);
+        padding: 6px 12px;
+        border-radius: 6px;
+    `;
+    
+    audioRow.appendChild(playBtn);
+    audioRow.appendChild(seekBar);
+    audioRow.appendChild(speedControl);
+    audioRow.appendChild(timeDisplay);
+    
+    // Row 2: Other controls
+    const controlRow = document.createElement('div');
+    controlRow.style.cssText = 'display: flex; gap: 15px; align-items: center; margin-bottom: 10px; flex-wrap: wrap;';
+    
+    // Auto scroll button
+    const scrollBtn = document.createElement('button');
+    scrollBtn.id = 'auto-scroll-btn';
+    scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: OFF</span>';
+    scrollBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #0984e3, #074a7a);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    // Bookmark mode button
+    const bookmarkModeBtn = document.createElement('button');
+    bookmarkModeBtn.id = 'bookmark-mode-btn';
+    bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: OFF</span>';
+    bookmarkModeBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    // Font control
+    const fontControl = document.createElement('div');
+    fontControl.style.cssText = 'display: flex; align-items: center; gap: 10px;';
+    
+    const fontBtn = document.createElement('button');
+    fontBtn.id = 'font-change-btn';
+    fontBtn.innerHTML = 'A <span style="margin-left: 5px;">Font</span>';
+    fontBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    const fontSizeSelect = document.createElement('select');
+    fontSizeSelect.id = 'font-size-select';
+    fontSizeSelect.innerHTML = `
+        <option value="16">16px</option>
+        <option value="18" selected>18px</option>
+        <option value="20">20px</option>
+        <option value="24">24px</option>
+        <option value="28">28px</option>
+        <option value="32">32px</option>
+        <option value="36">36px</option>
+        <option value="40">40px</option>
+        <option value="44">44px</option>
+        <option value="48">48px</option>
+    `;
+    fontSizeSelect.style.cssText = `
+        padding: 8px 15px;
+        border-radius: 6px;
+        border: 2px solid #9b59b6;
+        background: #2c3e50;
+        color: #ecf0f1;
+        font-weight: bold;
+        min-width: 80px;
+    `;
+    
+    fontControl.appendChild(fontBtn);
+    fontControl.appendChild(fontSizeSelect);
+    
+    // Text button
+    const textBtn = document.createElement('button');
+    textBtn.id = 'text-file-btn';
+    textBtn.innerHTML = '📄 <span style="margin-left: 5px;">Text</span>';
+    textBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #e17055, #d63031);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    textBtn.addEventListener('click', function() {
+        window.open(textFile, '_blank');
+    });
+    
+    // Navigation - مشابه فایل نویگیتور
+    const navControl = document.createElement('div');
+    navControl.style.cssText = 'display: flex; gap: 10px; align-items: center; margin-left: auto;';
+    
+    const prevBtn = document.createElement('button');
+    prevBtn.id = 'nav-prev-btn';
+    prevBtn.innerHTML = '◀ <span style="margin-left: 5px;">Previous</span>';
+    prevBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #e17055, #d63031);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    if (!prevLink || prevLink === 'null') {
+        prevBtn.disabled = true;
+        prevBtn.style.opacity = '0.5';
+        prevBtn.style.cursor = 'not-allowed';
+    }
+    
+    const indexBtn = document.createElement('button');
+    indexBtn.id = 'nav-index-btn';
+    indexBtn.innerHTML = '📑 <span style="margin-left: 5px;">Index</span>';
+    indexBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #fdcb6e, #e17055);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    
+    const nextBtn = document.createElement('button');
+    nextBtn.id = 'nav-next-btn';
+    nextBtn.innerHTML = '<span style="margin-right: 5px;">Next</span> ▶';
+    nextBtn.style.cssText = `
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #00cec9, #00b894);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+    `;
+    if (!nextLink || nextLink === 'null') {
+        nextBtn.disabled = true;
+        nextBtn.style.opacity = '0.5';
+        nextBtn.style.cursor = 'not-allowed';
+    }
+    
+    navControl.appendChild(prevBtn);
+    navControl.appendChild(indexBtn);
+    navControl.appendChild(nextBtn);
+    
+    controlRow.appendChild(scrollBtn);
+    controlRow.appendChild(bookmarkModeBtn);
+    controlRow.appendChild(fontControl);
+    controlRow.appendChild(textBtn);
+    controlRow.appendChild(navControl);
+    
+    // Row 3: File information - مشابه نمونه
+    const infoRow = document.createElement('div');
+    infoRow.style.cssText = 'display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; gap: 10px;';
+    
+    const fileInfo = document.createElement('div');
+    fileInfo.id = 'file-info';
+    fileInfo.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="background: #e74c3c; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold;">German Conversation With Native Speakers A1</span>
+            <span id="bookmark-count" style="background: #9b59b6; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold;">
+                📌 Bookmarks: 0
+            </span>
+        </div>
+    `;
+    
+    infoRow.appendChild(fileInfo);
+    
+    // Add everything to panel
+    panel.appendChild(audioRow);
+    panel.appendChild(controlRow);
+    panel.appendChild(infoRow);
+    
+    // Add panel to page
+    document.body.appendChild(panel);
+    
+    // Add padding to body
+    const panelHeight = panel.offsetHeight;
+    document.body.style.paddingBottom = panelHeight + 20 + 'px';
+}
+
+function createBackToTopButton() {
+    const existingBackBtn = document.getElementById('back-to-top-btn');
+    if (existingBackBtn) existingBackBtn.remove();
+    
+    const backBtn = document.createElement('button');
+    backBtn.id = 'back-to-top-btn';
+    backBtn.innerHTML = '⬆ <span style="color: white; margin-left: 5px;">Back to Top</span>';
+    backBtn.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #118AB2, #2980b9);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        z-index: 10001;
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        transition: all 0.3s;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    `;
+    
+    backBtn.addEventListener('click', function() {
+        const audio = document.querySelector('audio');
+        if (audio) {
+            audio.pause();
+        }
+        
+        const scrollBtn = document.getElementById('auto-scroll-btn');
+        if (scrollBtn && scrollBtn.innerHTML.includes('ON')) {
+            scrollBtn.click();
+        }
+        
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        if (audio) {
+            audio.currentTime = 0;
+        }
+        
+        const seekBar = document.getElementById('audio-seek-bar');
+        if (seekBar) {
+            seekBar.value = 0;
+        }
+        
+        if (audio) {
+            const timeDisplay = document.getElementById('audio-time-display');
+            if (timeDisplay) {
+                function formatTime(seconds) {
+                    if (isNaN(seconds)) return "00:00";
+                    const mins = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                }
+                
+                timeDisplay.textContent = `00:00 / ${formatTime(audio.duration)}`;
+            }
+        }
+        
+        document.querySelectorAll('.sentence-highlight').forEach(el => {
+            el.classList.remove('sentence-highlight');
+        });
+    });
+    
+    document.body.appendChild(backBtn);
+}
+
+function setupAudioPlayer() {
+    const audio = document.querySelector('audio');
+    if (!audio) {
+        document.getElementById('audio-play-btn').style.display = 'none';
+        document.getElementById('audio-seek-bar').style.display = 'none';
+        document.getElementById('audio-speed-select').parentElement.style.display = 'none';
+        document.getElementById('audio-time-display').style.display = 'none';
+        return;
+    }
+    
+    const playBtn = document.getElementById('audio-play-btn');
+    const seekBar = document.getElementById('audio-seek-bar');
+    const speedSelect = document.getElementById('audio-speed-select');
+    const timeDisplay = document.getElementById('audio-time-display');
+    
+    function formatTime(seconds) {
+        if (isNaN(seconds)) return "00:00";
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+    
+    function updateTime() {
+        if (audio.duration) {
+            timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+            seekBar.max = Math.floor(audio.duration);
+            seekBar.value = Math.floor(audio.currentTime);
+        }
+    }
+    
+    audio.addEventListener('loadedmetadata', updateTime);
+    audio.addEventListener('timeupdate', updateTime);
+    
+    audio.addEventListener('play', function() {
+        playBtn.innerHTML = '⏸ <span style="margin-left: 5px;">Pause</span>';
+        playBtn.style.background = 'linear-gradient(135deg, #d63031, #c0392b)';
+        playBtn.disabled = false;
+    });
+    
+    audio.addEventListener('pause', function() {
+        playBtn.innerHTML = '▶ <span style="margin-left: 5px;">Play</span>';
+        playBtn.style.background = 'linear-gradient(135deg, #00b894, #00a085)';
+        playBtn.disabled = false;
+    });
+    
+    playBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play().catch(e => console.log('Play error:', e));
+        } else {
+            audio.pause();
+        }
+    });
+    
+    seekBar.addEventListener('input', function() {
+        if (audio.duration) {
+            audio.currentTime = this.value;
+        }
+    });
+    
+    speedSelect.addEventListener('change', function() {
+        audio.playbackRate = parseFloat(this.value);
+    });
+    
+    audio.playbackRate = 1.0;
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.code === 'Space' && !e.target.matches('input, textarea, button, select')) {
+            e.preventDefault();
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    });
+}
+
+function setupNavigation() {
+    const prevBtn = document.getElementById('nav-prev-btn');
+    const nextBtn = document.getElementById('nav-next-btn');
+    const indexBtn = document.getElementById('nav-index-btn');
+    
+    if (prevBtn && !prevBtn.disabled) {
+        prevBtn.addEventListener('click', function() {
+            if (prevLink && prevLink !== 'null') {
+                window.location.href = prevLink;
+            }
+        });
+    }
+    
+    if (nextBtn && !nextBtn.disabled) {
+        nextBtn.addEventListener('click', function() {
+            if (nextLink && nextLink !== 'null') {
+                window.location.href = nextLink;
+            }
+        });
+    }
+    
+    if (indexBtn) {
+        indexBtn.addEventListener('click', function() {
+            if (indexLink && indexLink !== 'null') {
+                window.location.href = indexLink;
+            }
+        });
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.target.matches('input, textarea, button, select')) return;
+        
+        switch(e.code) {
+            case 'ArrowLeft':
+                if (prevLink && prevLink !== 'null' && prevBtn && !prevBtn.disabled) {
+                    window.location.href = prevLink;
+                }
+                break;
+                
+            case 'ArrowRight':
+                if (nextLink && nextLink !== 'null' && nextBtn && !nextBtn.disabled) {
+                    window.location.href = nextLink;
+                }
+                break;
+                
+            case 'Home':
+                if (indexLink && indexLink !== 'null') {
+                    window.location.href = indexLink;
+                }
+                break;
+        }
+    });
+}
+
+function setupAutoScroll() {
+    const scrollBtn = document.getElementById('auto-scroll-btn');
+    if (!scrollBtn) return;
+    
+    let isScrolling = false;
+    let scrollInterval;
+    let scrollSpeed = 1;
+    
+    scrollBtn.addEventListener('click', function() {
+        isScrolling = !isScrolling;
+        
+        if (isScrolling) {
+            scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: ON</span>';
+            scrollBtn.style.background = 'linear-gradient(135deg, #00cec9, #00b894)';
+            
+            scrollInterval = setInterval(function() {
+                window.scrollBy({
+                    top: scrollSpeed,
+                    behavior: 'smooth'
+                });
+                
+                if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100) {
+                    clearInterval(scrollInterval);
+                    isScrolling = false;
+                    scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: OFF</span>';
+                    scrollBtn.style.background = 'linear-gradient(135deg, #0984e3, #074a7a)';
+                }
+            }, 30);
+        } else {
+            scrollBtn.innerHTML = '📜 <span style="margin-left: 5px;">Auto Scroll: OFF</span>';
+            scrollBtn.style.background = 'linear-gradient(135deg, #0984e3, #074a7a)';
+            
+            if (scrollInterval) {
+                clearInterval(scrollInterval);
+            }
+        }
+    });
+}
+
+function setupFontControls() {
+    const fontBtn = document.getElementById('font-change-btn');
+    const fontSizeSelect = document.getElementById('font-size-select');
+    
+    if (!fontBtn || !fontSizeSelect) return;
+    
+    const fonts = [
+        'Arial, Helvetica, sans-serif',
+        'Tahoma, Geneva, sans-serif',
+        'Verdana, Geneva, sans-serif',
+        'Georgia, serif',
+        '"Times New Roman", Times, serif',
+        '"Courier New", Courier, monospace',
+        '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
+    ];
+    
+    const fontNames = ['Arial', 'Tahoma', 'Verdana', 'Georgia', 'Times', 'Courier', 'Segoe'];
+    let fontIndex = 0;
+    
+    const savedFont = localStorage.getItem('book-pro-font') || fonts[0];
+    const savedSize = localStorage.getItem('book-pro-size') || '18';
+    
+    document.body.style.fontFamily = savedFont;
+    document.body.style.fontSize = savedSize + 'px';
+    
+    const savedIndex = fonts.findIndex(f => f === savedFont);
+    if (savedIndex !== -1) {
+        fontIndex = savedIndex;
+    }
+    
+    fontSizeSelect.value = savedSize;
+    
+    fontBtn.addEventListener('click', function() {
+        fontIndex = (fontIndex + 1) % fonts.length;
+        const newFont = fonts[fontIndex];
+        document.body.style.fontFamily = newFont;
+        localStorage.setItem('book-pro-font', newFont);
+        fontBtn.innerHTML = `${fontNames[fontIndex][0]} <span style="margin-left: 5px;">${fontNames[fontIndex]}</span>`;
+    });
+    
+    fontBtn.innerHTML = `${fontNames[fontIndex][0]} <span style="margin-left: 5px;">${fontNames[fontIndex]}</span>`;
+    
+    fontSizeSelect.addEventListener('change', function() {
+        const size = this.value + 'px';
+        document.body.style.fontSize = size;
+        localStorage.setItem('book-pro-size', this.value);
+    });
+}
+
+// ==================== Hybrid Bookmark System in Controls ====================
+
+function setupBookmarkControls() {
+    const bookmarkModeBtn = document.getElementById('bookmark-mode-btn');
+    const palette = document.getElementById('bookmark-palette');
+    const cancelBtn = document.getElementById('cancel-bookmark');
+    const showAllBtn = document.getElementById('show-all-bookmarks');
+    const clearAllBtn = document.getElementById('clear-all-bookmarks');
+    const audio = document.getElementById('audio');
+    const playBtn = document.getElementById('audio-play-btn');
+    
+    if (!bookmarkModeBtn) return;
+    
+    bookmarkModeBtn.addEventListener('click', function() {
+        isBookmarkMode = !isBookmarkMode;
+        
+        if (isBookmarkMode) {
+            bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: ON</span>';
+            bookmarkModeBtn.style.background = 'linear-gradient(135deg, #00cec9, #00b894)';
+            palette.style.display = 'block';
+            
+            if (audio && !audio.paused) {
+                audio.pause();
+            }
+            
+            if (playBtn) {
+                playBtn.disabled = true;
+                playBtn.style.opacity = '0.5';
+                playBtn.style.cursor = 'not-allowed';
+            }
+            
+            showNotification('Bookmark mode activated. Choose a color and click on words or select multiple words', 'info');
+        } else {
+            bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: OFF</span>';
+            bookmarkModeBtn.style.background = 'linear-gradient(135deg, #9b59b6, #8e44ad)';
+            palette.style.display = 'none';
+            selectedBookmarkColor = null;
+            currentSelection = null;
+            currentRange = null;
+            isSelecting = false;
+            
+            if (playBtn) {
+                playBtn.disabled = false;
+                playBtn.style.opacity = '1';
+                playBtn.style.cursor = 'pointer';
+            }
+            
+            showNotification('Bookmark mode deactivated', 'info');
+        }
+    });
+    
+    document.querySelectorAll('.bookmark-color-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            
+            selectedBookmarkColor = this.dataset.color;
+            
+            document.querySelectorAll('.bookmark-color-btn').forEach(b => {
+                b.style.transform = 'scale(1)';
+                b.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+            });
+            this.style.transform = 'scale(1.1)';
+            this.style.boxShadow = '0 6px 12px rgba(0,0,0,0.3)';
+            
+            if (currentSelection && currentRange) {
+                saveSelectionBookmark(currentRange, currentSelection, selectedBookmarkColor);
+                currentSelection = null;
+                currentRange = null;
+            } else {
+                showNotification(`Color ${getColorName(selectedBookmarkColor)} selected. Click on words or select multiple words`, 'info');
+            }
+        });
+    });
+    
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', function() {
+            isBookmarkMode = false;
+            bookmarkModeBtn.innerHTML = '📌 <span style="margin-left: 5px;">Bookmark Mode: OFF</span>';
+            bookmarkModeBtn.style.background = 'linear-gradient(135deg, #9b59b6, #8e44ad)';
+            palette.style.display = 'none';
+            selectedBookmarkColor = null;
+            currentSelection = null;
+            currentRange = null;
+            isSelecting = false;
+            
+            if (playBtn) {
+                playBtn.disabled = false;
+                playBtn.style.opacity = '1';
+                playBtn.style.cursor = 'pointer';
+            }
+            
+            showNotification('Bookmark mode cancelled', 'info');
+        });
+    }
+    
+    if (showAllBtn) {
+        showAllBtn.addEventListener('click', function() {
+            const bookmarks = loadBookmarks();
+            if (bookmarks.length === 0) {
+                showNotification('No bookmarks available for this book', 'info');
+                return;
+            }
+            
+            const modal = document.createElement('div');
+            modal.id = 'bookmarks-modal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.7);
+                z-index: 10004;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                animation: fadeIn 0.3s ease;
+            `;
+            
+            let contentHTML = `
+                <div style="background: white; border-radius: 15px; padding: 25px; max-width: 600px; max-height: 500px; overflow-y: auto; box-shadow: 0 15px 40px rgba(0,0,0,0.4);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="margin: 0; color: #1a1a2e;">📚 Your Bookmarks (${bookmarks.length}) - ${BOOK_TITLE}</h3>
+                        <button id="close-bookmarks-modal" style="background: none; border: none; font-size: 20px; cursor: pointer; color: #666;">×</button>
+                    </div>
+            `;
+            
+            if (bookmarks.length === 0) {
+                contentHTML += `
+                    <div style="text-align: center; padding: 40px; color: #666;">
+                        No bookmarks available for this book
+                    </div>
+                `;
+            } else {
+                bookmarks.forEach((b, i) => {
+                    const colorHex = {
+                        'red': '#ff6b6b',
+                        'blue': '#4d96ff',
+                        'green': '#6bcf7f',
+                        'purple': '#9d65c9',
+                        'orange': '#ffa94d'
+                    }[b.color] || '#888';
+                    
+                    const colorStyle = `background: ${colorHex}; color: white; padding: 2px 8px; border-radius: 10px; font-size: 11px;`;
+                    
+                    let displayText = b.displayText || b.word;
+                    if (b.text && b.text.split(/\s+/).length > 6) {
+                        const words = b.text.split(/\s+/);
+                        if (words.length > 6) {
+                            const firstThree = words.slice(0, 3).join(' ');
+                            const lastThree = words.slice(-3).join(' ');
+                            displayText = `${firstThree} ... ${lastThree}`;
+                        }
+                    }
+                    
+                    contentHTML += `
+                        <div style="margin: 12px 0; padding: 15px; border: 1px solid #eee; border-radius: 10px; background: #f9f9f9;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: bold; font-size: 14px; margin-bottom: 5px; cursor: pointer;" 
+                                         onclick="jumpToBookmark(${b.startTime}); document.getElementById('bookmarks-modal').remove();"
+                                         title="${b.text || b.word}">
+                                        ${i+1}. "${displayText}"
+                                    </div>
+                                    <div style="font-size: 12px; color: #888; margin-top: 8px;">
+                                        Time: ${formatTime(b.startTime)} • 
+                                        ${new Date(b.timestamp).toLocaleDateString('en-US')}
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 8px; align-items: center;">
+                                    <span style="${colorStyle}">${getColorName(b.color)}</span>
+                                    <button onclick="removeBookmark(${b.id}); this.parentElement.parentElement.parentElement.remove(); updateBookmarkCount();" 
+                                            style="background: #d63031; color: white; border: none; border-radius: 5px; padding: 4px 10px; font-size: 11px; cursor: pointer;">
+                                        Remove
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            contentHTML += `
+                    <div style="margin-top: 20px; text-align: center;">
+                        <button id="close-bookmarks-btn" style="padding: 10px 25px; background: #0984e3; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            modal.innerHTML = contentHTML;
+            document.body.appendChild(modal);
+            
+            document.getElementById('close-bookmarks-modal').addEventListener('click', function() {
+                modal.remove();
+            });
+            
+            document.getElementById('close-bookmarks-btn').addEventListener('click', function() {
+                modal.remove();
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        });
+    }
+    
+    if (clearAllBtn) {
+        clearAllBtn.addEventListener('click', function() {
+            clearAllBookmarks();
+        });
+    }
+    
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+}
+
+const proStyle = document.createElement('style');
+proStyle.textContent = `
+    #book-controls-panel button {
+        transition: all 0.3s ease !important;
+    }
+    
+    #book-controls-panel button:hover:not(:disabled) {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    #book-controls-panel button:active:not(:disabled) {
+        transform: translateY(0) !important;
+    }
+    
+    #audio-seek-bar {
+        -webkit-appearance: none;
+        height: 8px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #3498db 0%, #2c3e50 100%);
+        outline: none;
+    }
+    
+    #audio-seek-bar::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #3498db;
+        cursor: pointer;
+        border: 3px solid white;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    
+    .bookmark-color-btn {
+        transition: all 0.3s ease !important;
+    }
+    
+    .bookmark-color-btn:hover {
+        transform: scale(1.1) !important;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.3) !important;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+`;
+document.head.appendChild(proStyle);
+
+console.log('🎯 Book Pro controls loaded successfully!');
+</script>
+</body>
+</html>
