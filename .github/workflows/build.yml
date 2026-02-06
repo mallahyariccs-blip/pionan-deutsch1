@@ -4,16 +4,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: crazymax/buildozer:latest
+      image: kivy/buildozer:latest
     steps:
-      - name: Checkout Code
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Build APK with Buildozer
+      - name: Build
         run: |
           buildozer android debug
-      - name: Upload APK
+      - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: pionan-apk
-          path: /home/buildozer/*.apk
+          name: app-apk
+          path: /home/kivy/build/*.apk
           retention-days: 7
