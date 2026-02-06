@@ -1,21 +1,45 @@
-name: Build APK - Public Docker
+name: Build APK - Guaranteed
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       
-      - name: Build with Official Kivy Docker
+      - name: Install Buildozer the Right Way
         run: |
-          docker run --rm \
-            -v "$PWD":/src \
-            -w /src \
-            kivy/kivy:latest \
-            /bin/bash -c "pip install buildozer && buildozer android debug"
-      
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: pimon-apk
-          path: bin/*.apk
+          # روش نصب توصیه‌شده توسط Buildozer
+          sudo apt-get update
+          sudo apt-get install -y \
+            python3-pip \
+            python3-dev \
+            git \
+            wget \
+            make \
+            unzip \
+            openjdk-11-jdk \
+            libssl-dev \
+            libffi-dev \
+            zlib1g-dev \
+            libncurses5-dev
+          
+          # نصب Cython و Buildozer
+          python3 -m pip install --upgrade pip wheel setuptools virtualenv
+          python3 -m pip install cython==0.29.33
+          python3 -m pip install buildozer==1.5.0
+          
+      - name: Build APK
+        run: |
+          buildozer android debug
+          
+      - name: Check and Upload
+        run: |
+          if [ -f bin/*.apk ]; then
+            echo "✅ APK ساخته شد!"
+            ls -lh bin/*.apk
+          else
+            echo "❌ APK ساخته نشد. بررسی کن:"
+            find . -name "*.apk" 2>/dev/null
+            exit 1
+          fi
