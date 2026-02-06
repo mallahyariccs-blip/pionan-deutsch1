@@ -2,42 +2,18 @@ name: Build APK
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-22.04
-    timeout-minutes: 90
+    runs-on: ubuntu-latest
+    container:
+      image: crazymax/buildozer:latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Install Dependencies
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Build APK with Buildozer
         run: |
-          sudo apt-get update
-          sudo apt-get install -y python3-pip python3-dev openjdk-11-jdk wget unzip git
-          pip3 install buildozer cython==0.29.33
-      - name: Force Older Build-Tools
-        run: |
-          # تنظیم مسیر SDK
-          export ANDROID_SDK_ROOT="$HOME/.buildozer/android/platform/android-sdk"
-          mkdir -p $ANDROID_SDK_ROOT
-          
-          # نصب cmdline-tools
-          wget -q https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O cmdline-tools.zip
-          unzip -q cmdline-tools.zip -d $ANDROID_SDK_ROOT
-          mv $ANDROID_SDK_ROOT/cmdline-tools $ANDROID_SDK_ROOT/cmdline-tools-tmp
-          mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
-          mv $ANDROID_SDK_ROOT/cmdline-tools-tmp/* $ANDROID_SDK_ROOT/cmdline-tools/latest/
-          
-          # قبول licenses
-          yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses
-          
-          # نصب build-tools 34.0.0 (پایدار)
-          $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "build-tools;34.0.0" "platforms;android-34" "platform-tools"
-      - name: Build APK
-        run: |
-          # ساخت با تنظیمات دستی
-          export ANDROID_SDK_ROOT="$HOME/.buildozer/android/platform/android-sdk"
           buildozer android debug
       - name: Upload APK
-        if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: app-apk
-          path: bin/*.apk
+          name: pionan-apk
+          path: /home/buildozer/*.apk
           retention-days: 7
