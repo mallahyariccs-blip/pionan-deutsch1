@@ -10,3 +10,6 @@ orientation = portrait
 
 [android]
 permission = INTERNET
+
+[buildozer]
+log_level = 2
